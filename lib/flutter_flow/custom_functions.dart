@@ -68,7 +68,7 @@ dynamic filter(
       } else if (transactionTrendFilter.startsWith('+(') &&
           transactionTrendFilter.endsWith(')')) {
         var range = transactionTrendFilter.substring(
-            1, transactionTrendFilter.length - 1);
+            2, transactionTrendFilter.length - 1);
         var rangeValues = range.split(' - ');
         var upperBound =
             int.tryParse(rangeValues[0].replaceAll('%', '').trim());
@@ -107,7 +107,7 @@ dynamic filter(
       } else if (uptimeTrendFilter.startsWith('+(') &&
           uptimeTrendFilter.endsWith(')')) {
         var range =
-            uptimeTrendFilter.substring(1, uptimeTrendFilter.length - 1);
+            uptimeTrendFilter.substring(2, uptimeTrendFilter.length - 1);
         var rangeValues = range.split(' - ');
         var upperBound =
             int.tryParse(rangeValues[0].replaceAll('%', '').trim());
