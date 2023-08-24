@@ -1590,7 +1590,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                         MainAxisAlignment
                                                                             .start,
                                                                     children: [
-                                                                      Expanded(
+                                                                      Flexible(
                                                                         child:
                                                                             Row(
                                                                           mainAxisSize:
@@ -1728,31 +1728,34 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                               ),
                                                                             if (FFAppState().atmInfoState)
                                                                               Expanded(
-                                                                                child: Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
-                                                                                  child: Text(
-                                                                                    getJsonField(
-                                                                                      dipDataItem,
-                                                                                      r'''$..bankName''',
-                                                                                    ).toString(),
-                                                                                    textAlign: TextAlign.start,
-                                                                                    style: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                child: Container(
+                                                                                  decoration: BoxDecoration(
+                                                                                    color: Colors.white,
+                                                                                  ),
+                                                                                  child: Padding(
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                                                                                    child: AutoSizeText(
+                                                                                      getJsonField(
+                                                                                        dipDataItem,
+                                                                                        r'''$..bankName''',
+                                                                                      ).toString(),
+                                                                                      textAlign: TextAlign.start,
+                                                                                      maxLines: 2,
+                                                                                      style: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                      minFontSize: 1.0,
+                                                                                    ),
                                                                                   ),
                                                                                 ),
                                                                               ),
                                                                             if (FFAppState().atmInfoState)
                                                                               Expanded(
-                                                                                child: Wrap(
-                                                                                  spacing: 0.0,
-                                                                                  runSpacing: 0.0,
-                                                                                  alignment: WrapAlignment.start,
-                                                                                  crossAxisAlignment: WrapCrossAlignment.start,
-                                                                                  direction: Axis.horizontal,
-                                                                                  runAlignment: WrapAlignment.start,
-                                                                                  verticalDirection: VerticalDirection.down,
-                                                                                  clipBehavior: Clip.none,
-                                                                                  children: [
-                                                                                    AutoSizeText(
+                                                                                child: Padding(
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                                                                                  child: Container(
+                                                                                    decoration: BoxDecoration(
+                                                                                      color: Colors.white,
+                                                                                    ),
+                                                                                    child: AutoSizeText(
                                                                                       getJsonField(
                                                                                         dipDataItem,
                                                                                         r'''$..location''',
@@ -1762,7 +1765,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                       minFontSize: 1.0,
                                                                                     ),
-                                                                                  ],
+                                                                                  ),
                                                                                 ),
                                                                               ),
                                                                             Expanded(
@@ -1826,17 +1829,13 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                               ),
                                                                             ),
                                                                             Expanded(
-                                                                              child: Wrap(
-                                                                                spacing: 0.0,
-                                                                                runSpacing: 0.0,
-                                                                                alignment: WrapAlignment.start,
-                                                                                crossAxisAlignment: WrapCrossAlignment.start,
-                                                                                direction: Axis.horizontal,
-                                                                                runAlignment: WrapAlignment.start,
-                                                                                verticalDirection: VerticalDirection.down,
-                                                                                clipBehavior: Clip.none,
-                                                                                children: [
-                                                                                  AutoSizeText(
+                                                                              child: Padding(
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                                                                                child: Container(
+                                                                                  decoration: BoxDecoration(
+                                                                                    color: Colors.white,
+                                                                                  ),
+                                                                                  child: AutoSizeText(
                                                                                     getJsonField(
                                                                                       dipDataItem,
                                                                                       r'''$..reason''',
@@ -1846,7 +1845,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                     minFontSize: 1.0,
                                                                                   ),
-                                                                                ],
+                                                                                ),
                                                                               ),
                                                                             ),
                                                                           ],
