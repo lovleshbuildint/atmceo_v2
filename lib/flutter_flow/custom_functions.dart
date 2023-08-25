@@ -214,3 +214,8 @@ dynamic getCommon(
 
   return {'userId': mainData['userId'], 'data': finalData};
 }
+
+dynamic newCustomFunction2(dynamic input) {
+  // return data with comma sepration
+  return input.join(',');
+}

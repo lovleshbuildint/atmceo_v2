@@ -111,361 +111,361 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                   ),
                 ),
               ),
-              Row(
-                mainAxisSize: MainAxisSize.max,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    width: 100.0,
-                    height: MediaQuery.sizeOf(context).height * 1.0,
-                    decoration: BoxDecoration(
-                      color: Color(0xFFF2F2F2),
+              Expanded(
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      width: 100.0,
+                      height: MediaQuery.sizeOf(context).height * 1.0,
+                      decoration: BoxDecoration(
+                        color: Color(0xFFF2F2F2),
+                      ),
+                      alignment: AlignmentDirectional(0.0, -1.0),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              FFAppState().update(() {
+                                FFAppState().sortByFilterTab = true;
+                                FFAppState().reasonFilterTab = false;
+                                FFAppState().gradeFilterTab = false;
+                                FFAppState().uptimeTrendFilterTab = false;
+                                FFAppState().transactionTrendFilterTab = false;
+                                FFAppState().downTimeFilterTab = false;
+                                FFAppState().bankFilterTab = false;
+                                FFAppState().locationFilterTab = false;
+                              });
+                              setState(() {
+                                _model.shortCCValueController?.value = [
+                                  FFAppState().sortByFilter
+                                ];
+                              });
+                            },
+                            child: Container(
+                              width: MediaQuery.sizeOf(context).width * 1.0,
+                              height: 50.0,
+                              decoration: BoxDecoration(
+                                color: FFAppState().sortByFilterTab
+                                    ? Colors.white
+                                    : Color(0xFFF2F2F2),
+                              ),
+                              alignment: AlignmentDirectional(0.0, 0.0),
+                              child: Text(
+                                'Sort By',
+                                textAlign: TextAlign.center,
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .bodyMediumFamily,
+                                      color: Color(0xBACD737373),
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily),
+                                    ),
+                              ),
+                            ),
+                          ),
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              FFAppState().update(() {
+                                FFAppState().sortByFilterTab = false;
+                                FFAppState().reasonFilterTab = false;
+                                FFAppState().gradeFilterTab = true;
+                                FFAppState().uptimeTrendFilterTab = false;
+                                FFAppState().transactionTrendFilterTab = false;
+                                FFAppState().downTimeFilterTab = false;
+                                FFAppState().bankFilterTab = false;
+                                FFAppState().locationFilterTab = false;
+                              });
+                              setState(() {
+                                _model.shortCCValueController?.value = [
+                                  FFAppState().gradeFilter
+                                ];
+                              });
+                            },
+                            child: Container(
+                              width: MediaQuery.sizeOf(context).width * 1.0,
+                              height: 50.0,
+                              decoration: BoxDecoration(
+                                color: FFAppState().gradeFilterTab
+                                    ? Colors.white
+                                    : Color(0xFFF2F2F2),
+                              ),
+                              alignment: AlignmentDirectional(0.0, 0.0),
+                              child: Text(
+                                'Grade',
+                                textAlign: TextAlign.center,
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .bodyMediumFamily,
+                                      color: Color(0xBACD737373),
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily),
+                                    ),
+                              ),
+                            ),
+                          ),
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              FFAppState().update(() {
+                                FFAppState().sortByFilterTab = false;
+                                FFAppState().reasonFilterTab = false;
+                                FFAppState().gradeFilterTab = false;
+                                FFAppState().uptimeTrendFilterTab = false;
+                                FFAppState().transactionTrendFilterTab = false;
+                                FFAppState().downTimeFilterTab = false;
+                                FFAppState().bankFilterTab = true;
+                                FFAppState().locationFilterTab = false;
+                              });
+                              setState(() {
+                                _model.shortCCValueController?.value = [
+                                  FFAppState().bankFilter
+                                ];
+                              });
+                            },
+                            child: Container(
+                              width: MediaQuery.sizeOf(context).width * 1.0,
+                              height: 50.0,
+                              decoration: BoxDecoration(
+                                color: FFAppState().bankFilterTab
+                                    ? Colors.white
+                                    : Color(0xFFF2F2F2),
+                              ),
+                              alignment: AlignmentDirectional(0.0, 0.0),
+                              child: Text(
+                                'Bank',
+                                textAlign: TextAlign.center,
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .bodyMediumFamily,
+                                      color: Color(0xBACD737373),
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily),
+                                    ),
+                              ),
+                            ),
+                          ),
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              FFAppState().update(() {
+                                FFAppState().sortByFilterTab = false;
+                                FFAppState().reasonFilterTab = false;
+                                FFAppState().gradeFilterTab = false;
+                                FFAppState().uptimeTrendFilterTab = false;
+                                FFAppState().transactionTrendFilterTab = true;
+                                FFAppState().downTimeFilterTab = false;
+                                FFAppState().bankFilterTab = false;
+                                FFAppState().locationFilterTab = false;
+                              });
+                              setState(() {
+                                _model.shortCCValueController?.value = [
+                                  FFAppState().transactionTrendFilter
+                                ];
+                              });
+                            },
+                            child: Container(
+                              width: MediaQuery.sizeOf(context).width * 1.0,
+                              height: 50.0,
+                              decoration: BoxDecoration(
+                                color: FFAppState().transactionTrendFilterTab
+                                    ? Colors.white
+                                    : Color(0xFFF2F2F2),
+                              ),
+                              alignment: AlignmentDirectional(0.0, 0.0),
+                              child: Text(
+                                'Transaction Trend',
+                                textAlign: TextAlign.center,
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .bodyMediumFamily,
+                                      color: Color(0xBACD737373),
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily),
+                                    ),
+                              ),
+                            ),
+                          ),
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              FFAppState().update(() {
+                                FFAppState().sortByFilterTab = false;
+                                FFAppState().reasonFilterTab = false;
+                                FFAppState().gradeFilterTab = false;
+                                FFAppState().uptimeTrendFilterTab = true;
+                                FFAppState().transactionTrendFilterTab = false;
+                                FFAppState().downTimeFilterTab = false;
+                                FFAppState().bankFilterTab = false;
+                                FFAppState().locationFilterTab = false;
+                              });
+                              setState(() {
+                                _model.shortCCValueController?.value = [
+                                  FFAppState().uptimeTrendFilter
+                                ];
+                              });
+                            },
+                            child: Container(
+                              width: MediaQuery.sizeOf(context).width * 1.0,
+                              height: 50.0,
+                              decoration: BoxDecoration(
+                                color: FFAppState().uptimeTrendFilterTab
+                                    ? Colors.white
+                                    : Color(0xFFF2F2F2),
+                              ),
+                              alignment: AlignmentDirectional(0.0, 0.0),
+                              child: Text(
+                                'Uptime Trend',
+                                textAlign: TextAlign.center,
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .bodyMediumFamily,
+                                      color: Color(0xBACD737373),
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily),
+                                    ),
+                              ),
+                            ),
+                          ),
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              FFAppState().update(() {
+                                FFAppState().sortByFilterTab = false;
+                                FFAppState().reasonFilterTab = false;
+                                FFAppState().gradeFilterTab = false;
+                                FFAppState().uptimeTrendFilterTab = false;
+                                FFAppState().transactionTrendFilterTab = false;
+                                FFAppState().downTimeFilterTab = true;
+                                FFAppState().bankFilterTab = false;
+                                FFAppState().locationFilterTab = false;
+                              });
+                              setState(() {
+                                _model.shortCCValueController?.value = [
+                                  FFAppState().downTimeFilter
+                                ];
+                              });
+                            },
+                            child: Container(
+                              width: MediaQuery.sizeOf(context).width * 1.0,
+                              height: 50.0,
+                              decoration: BoxDecoration(
+                                color: FFAppState().downTimeFilterTab
+                                    ? Colors.white
+                                    : Color(0xFFF2F2F2),
+                              ),
+                              alignment: AlignmentDirectional(0.0, 0.0),
+                              child: Text(
+                                'Down Time',
+                                textAlign: TextAlign.center,
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .bodyMediumFamily,
+                                      color: Color(0xBACD737373),
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily),
+                                    ),
+                              ),
+                            ),
+                          ),
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              FFAppState().update(() {
+                                FFAppState().sortByFilterTab = false;
+                                FFAppState().reasonFilterTab = false;
+                                FFAppState().gradeFilterTab = false;
+                                FFAppState().uptimeTrendFilterTab = false;
+                                FFAppState().transactionTrendFilterTab = false;
+                                FFAppState().downTimeFilterTab = false;
+                                FFAppState().bankFilterTab = false;
+                                FFAppState().locationFilterTab = true;
+                              });
+                              setState(() {
+                                _model.shortCCValueController?.value = [
+                                  FFAppState().locationFilter
+                                ];
+                              });
+                            },
+                            child: Container(
+                              width: MediaQuery.sizeOf(context).width * 1.0,
+                              height: 50.0,
+                              decoration: BoxDecoration(
+                                color: FFAppState().locationFilterTab
+                                    ? Colors.white
+                                    : Color(0xFFF2F2F2),
+                              ),
+                              alignment: AlignmentDirectional(0.0, 0.0),
+                              child: Text(
+                                'Location',
+                                textAlign: TextAlign.center,
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .bodyMediumFamily,
+                                      color: Color(0xBACD737373),
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily),
+                                    ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                    alignment: AlignmentDirectional(0.0, -1.0),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        InkWell(
-                          splashColor: Colors.transparent,
-                          focusColor: Colors.transparent,
-                          hoverColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onTap: () async {
-                            FFAppState().update(() {
-                              FFAppState().sortByFilterTab = true;
-                              FFAppState().reasonFilterTab = false;
-                              FFAppState().gradeFilterTab = false;
-                              FFAppState().uptimeTrendFilterTab = false;
-                              FFAppState().transactionTrendFilterTab = false;
-                              FFAppState().downTimeFilterTab = false;
-                              FFAppState().bankFilterTab = false;
-                              FFAppState().locationFilterTab = false;
-                            });
-                            setState(() {
-                              _model.shortCCValueController?.value = [
-                                FFAppState().sortByFilter
-                              ];
-                            });
-                          },
-                          child: Container(
-                            width: MediaQuery.sizeOf(context).width * 1.0,
-                            height: 50.0,
-                            decoration: BoxDecoration(
-                              color: FFAppState().sortByFilterTab
-                                  ? Colors.white
-                                  : Color(0xFFF2F2F2),
-                            ),
-                            alignment: AlignmentDirectional(0.0, 0.0),
-                            child: Text(
-                              'Sort By',
-                              textAlign: TextAlign.center,
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .bodyMediumFamily,
-                                    color: Color(0xBACD737373),
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .bodyMediumFamily),
-                                  ),
-                            ),
-                          ),
-                        ),
-                        InkWell(
-                          splashColor: Colors.transparent,
-                          focusColor: Colors.transparent,
-                          hoverColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onTap: () async {
-                            FFAppState().update(() {
-                              FFAppState().sortByFilterTab = false;
-                              FFAppState().reasonFilterTab = false;
-                              FFAppState().gradeFilterTab = true;
-                              FFAppState().uptimeTrendFilterTab = false;
-                              FFAppState().transactionTrendFilterTab = false;
-                              FFAppState().downTimeFilterTab = false;
-                              FFAppState().bankFilterTab = false;
-                              FFAppState().locationFilterTab = false;
-                            });
-                            setState(() {
-                              _model.shortCCValueController?.value = [
-                                FFAppState().gradeFilter
-                              ];
-                            });
-                          },
-                          child: Container(
-                            width: MediaQuery.sizeOf(context).width * 1.0,
-                            height: 50.0,
-                            decoration: BoxDecoration(
-                              color: FFAppState().gradeFilterTab
-                                  ? Colors.white
-                                  : Color(0xFFF2F2F2),
-                            ),
-                            alignment: AlignmentDirectional(0.0, 0.0),
-                            child: Text(
-                              'Grade',
-                              textAlign: TextAlign.center,
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .bodyMediumFamily,
-                                    color: Color(0xBACD737373),
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .bodyMediumFamily),
-                                  ),
-                            ),
-                          ),
-                        ),
-                        InkWell(
-                          splashColor: Colors.transparent,
-                          focusColor: Colors.transparent,
-                          hoverColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onTap: () async {
-                            FFAppState().update(() {
-                              FFAppState().sortByFilterTab = false;
-                              FFAppState().reasonFilterTab = false;
-                              FFAppState().gradeFilterTab = false;
-                              FFAppState().uptimeTrendFilterTab = false;
-                              FFAppState().transactionTrendFilterTab = false;
-                              FFAppState().downTimeFilterTab = false;
-                              FFAppState().bankFilterTab = true;
-                              FFAppState().locationFilterTab = false;
-                            });
-                            setState(() {
-                              _model.shortCCValueController?.value = [
-                                FFAppState().bankFilter
-                              ];
-                            });
-                          },
-                          child: Container(
-                            width: MediaQuery.sizeOf(context).width * 1.0,
-                            height: 50.0,
-                            decoration: BoxDecoration(
-                              color: FFAppState().bankFilterTab
-                                  ? Colors.white
-                                  : Color(0xFFF2F2F2),
-                            ),
-                            alignment: AlignmentDirectional(0.0, 0.0),
-                            child: Text(
-                              'Bank',
-                              textAlign: TextAlign.center,
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .bodyMediumFamily,
-                                    color: Color(0xBACD737373),
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .bodyMediumFamily),
-                                  ),
-                            ),
-                          ),
-                        ),
-                        InkWell(
-                          splashColor: Colors.transparent,
-                          focusColor: Colors.transparent,
-                          hoverColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onTap: () async {
-                            FFAppState().update(() {
-                              FFAppState().sortByFilterTab = false;
-                              FFAppState().reasonFilterTab = false;
-                              FFAppState().gradeFilterTab = false;
-                              FFAppState().uptimeTrendFilterTab = false;
-                              FFAppState().transactionTrendFilterTab = true;
-                              FFAppState().downTimeFilterTab = false;
-                              FFAppState().bankFilterTab = false;
-                              FFAppState().locationFilterTab = false;
-                            });
-                            setState(() {
-                              _model.shortCCValueController?.value = [
-                                FFAppState().transactionTrendFilter
-                              ];
-                            });
-                          },
-                          child: Container(
-                            width: MediaQuery.sizeOf(context).width * 1.0,
-                            height: 50.0,
-                            decoration: BoxDecoration(
-                              color: FFAppState().transactionTrendFilterTab
-                                  ? Colors.white
-                                  : Color(0xFFF2F2F2),
-                            ),
-                            alignment: AlignmentDirectional(0.0, 0.0),
-                            child: Text(
-                              'Transaction Trend',
-                              textAlign: TextAlign.center,
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .bodyMediumFamily,
-                                    color: Color(0xBACD737373),
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .bodyMediumFamily),
-                                  ),
-                            ),
-                          ),
-                        ),
-                        InkWell(
-                          splashColor: Colors.transparent,
-                          focusColor: Colors.transparent,
-                          hoverColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onTap: () async {
-                            FFAppState().update(() {
-                              FFAppState().sortByFilterTab = false;
-                              FFAppState().reasonFilterTab = false;
-                              FFAppState().gradeFilterTab = false;
-                              FFAppState().uptimeTrendFilterTab = true;
-                              FFAppState().transactionTrendFilterTab = false;
-                              FFAppState().downTimeFilterTab = false;
-                              FFAppState().bankFilterTab = false;
-                              FFAppState().locationFilterTab = false;
-                            });
-                            setState(() {
-                              _model.shortCCValueController?.value = [
-                                FFAppState().uptimeTrendFilter
-                              ];
-                            });
-                          },
-                          child: Container(
-                            width: MediaQuery.sizeOf(context).width * 1.0,
-                            height: 50.0,
-                            decoration: BoxDecoration(
-                              color: FFAppState().uptimeTrendFilterTab
-                                  ? Colors.white
-                                  : Color(0xFFF2F2F2),
-                            ),
-                            alignment: AlignmentDirectional(0.0, 0.0),
-                            child: Text(
-                              'Uptime Trend',
-                              textAlign: TextAlign.center,
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .bodyMediumFamily,
-                                    color: Color(0xBACD737373),
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .bodyMediumFamily),
-                                  ),
-                            ),
-                          ),
-                        ),
-                        InkWell(
-                          splashColor: Colors.transparent,
-                          focusColor: Colors.transparent,
-                          hoverColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onTap: () async {
-                            FFAppState().update(() {
-                              FFAppState().sortByFilterTab = false;
-                              FFAppState().reasonFilterTab = false;
-                              FFAppState().gradeFilterTab = false;
-                              FFAppState().uptimeTrendFilterTab = false;
-                              FFAppState().transactionTrendFilterTab = false;
-                              FFAppState().downTimeFilterTab = true;
-                              FFAppState().bankFilterTab = false;
-                              FFAppState().locationFilterTab = false;
-                            });
-                            setState(() {
-                              _model.shortCCValueController?.value = [
-                                FFAppState().downTimeFilter
-                              ];
-                            });
-                          },
-                          child: Container(
-                            width: MediaQuery.sizeOf(context).width * 1.0,
-                            height: 50.0,
-                            decoration: BoxDecoration(
-                              color: FFAppState().downTimeFilterTab
-                                  ? Colors.white
-                                  : Color(0xFFF2F2F2),
-                            ),
-                            alignment: AlignmentDirectional(0.0, 0.0),
-                            child: Text(
-                              'Down Time',
-                              textAlign: TextAlign.center,
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .bodyMediumFamily,
-                                    color: Color(0xBACD737373),
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .bodyMediumFamily),
-                                  ),
-                            ),
-                          ),
-                        ),
-                        InkWell(
-                          splashColor: Colors.transparent,
-                          focusColor: Colors.transparent,
-                          hoverColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onTap: () async {
-                            FFAppState().update(() {
-                              FFAppState().sortByFilterTab = false;
-                              FFAppState().reasonFilterTab = false;
-                              FFAppState().gradeFilterTab = false;
-                              FFAppState().uptimeTrendFilterTab = false;
-                              FFAppState().transactionTrendFilterTab = false;
-                              FFAppState().downTimeFilterTab = false;
-                              FFAppState().bankFilterTab = false;
-                              FFAppState().locationFilterTab = true;
-                            });
-                            setState(() {
-                              _model.shortCCValueController?.value = [
-                                FFAppState().locationFilter
-                              ];
-                            });
-                          },
-                          child: Container(
-                            width: MediaQuery.sizeOf(context).width * 1.0,
-                            height: 50.0,
-                            decoration: BoxDecoration(
-                              color: FFAppState().locationFilterTab
-                                  ? Colors.white
-                                  : Color(0xFFF2F2F2),
-                            ),
-                            alignment: AlignmentDirectional(0.0, 0.0),
-                            child: Text(
-                              'Location',
-                              textAlign: TextAlign.center,
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .bodyMediumFamily,
-                                    color: Color(0xBACD737373),
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .bodyMediumFamily),
-                                  ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Expanded(
-                    child: SingleChildScrollView(
+                    Expanded(
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -497,272 +497,340 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                               style: FlutterFlowTheme.of(context).bodyMedium,
                             ),
                           ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                16.0, 16.0, 0.0, 0.0),
-                            child: Wrap(
-                              spacing: 0.0,
-                              runSpacing: 0.0,
-                              alignment: WrapAlignment.start,
-                              crossAxisAlignment: WrapCrossAlignment.start,
-                              direction: Axis.horizontal,
-                              runAlignment: WrapAlignment.start,
-                              verticalDirection: VerticalDirection.down,
-                              clipBehavior: Clip.none,
-                              children: [
-                                FlutterFlowChoiceChips(
-                                  options: () {
-                                    if (FFAppState().sortByFilterTab) {
-                                      return [
-                                        'Grade: High to Low',
-                                        'Grade: Low to High',
-                                        'Transaction: High to Low',
-                                        'Transaction: Low to High',
-                                        'Uptime: High to Low',
-                                        'Uptime: Low to High',
-                                        'Downtime: High to Low',
-                                        'Downtime: Low to High'
-                                      ];
-                                    } else if (FFAppState().gradeFilterTab) {
-                                      return (widget.tabBar == 0
-                                          ? (getJsonField(
-                                              functions.getCommon(
-                                                  FFAppState().machineDownJson,
-                                                  'grade'),
-                                              r'''$..grade''',
-                                            ) as List)
-                                              .map<String>((s) => s.toString())
-                                              .toList()!
-                                          : (getJsonField(
-                                              functions.getCommon(
-                                                  FFAppState()
-                                                      .transactionDipJson,
-                                                  'grade'),
-                                              r'''$..grade''',
-                                            ) as List)
-                                              .map<String>((s) => s.toString())
-                                              .toList()!);
-                                    } else if (FFAppState()
-                                        .transactionTrendFilterTab) {
-                                      return [
-                                        '-(100% - 80%)',
-                                        '-(80% - 60%)',
-                                        '-(60% - 40%)',
-                                        '-(40% - 20%)',
-                                        '-(20% - 0%)',
-                                        '+(100% - 80%)',
-                                        '+(80% - 60%)',
-                                        '+(60% - 40%)',
-                                        '+(40% - 20%)',
-                                        '+(20% - 0%)'
-                                      ];
-                                    } else if (FFAppState()
-                                        .uptimeTrendFilterTab) {
-                                      return [
-                                        '-(100% - 80%)',
-                                        '-(80% - 60%)',
-                                        '-(60% - 40%)',
-                                        '-(40% - 20%)',
-                                        '-(20% - 0%)',
-                                        '+(100% - 80%)',
-                                        '+(80% - 60%)',
-                                        '+(60% - 40%)',
-                                        '+(40% - 20%)',
-                                        '+(20% - 0%)'
-                                      ];
-                                    } else if (FFAppState().bankFilterTab) {
-                                      return (widget.tabBar == 0
-                                          ? (getJsonField(
-                                              functions.getCommon(
-                                                  FFAppState().machineDownJson,
-                                                  'bankName'),
-                                              r'''$..bankName''',
-                                            ) as List)
-                                              .map<String>((s) => s.toString())
-                                              .toList()!
-                                          : (getJsonField(
-                                              functions.getCommon(
-                                                  FFAppState()
-                                                      .transactionDipJson,
-                                                  'bankName'),
-                                              r'''$..bankName''',
-                                            ) as List)
-                                              .map<String>((s) => s.toString())
-                                              .toList()!);
-                                    } else if (FFAppState().locationFilterTab) {
-                                      return (widget.tabBar == 0
-                                          ? (getJsonField(
-                                              functions.getCommon(
-                                                  FFAppState().machineDownJson,
-                                                  'location'),
-                                              r'''$..location''',
-                                            ) as List)
-                                              .map<String>((s) => s.toString())
-                                              .toList()!
-                                          : (getJsonField(
-                                              functions.getCommon(
-                                                  FFAppState()
-                                                      .transactionDipJson,
-                                                  'location'),
-                                              r'''$..location''',
-                                            ) as List)
-                                              .map<String>((s) => s.toString())
-                                              .toList()!);
-                                    } else {
-                                      return [
-                                        '0 - 2 Hrs',
-                                        '2 - 4 Hrs',
-                                        '4 - 8 Hrs',
-                                        '48 - 72 Hrs',
-                                        '> 72 Hrs'
-                                      ];
-                                    }
-                                  }()
-                                      .map((label) => ChipData(label))
-                                      .toList(),
-                                  onChanged: (val) async {
-                                    setState(
-                                        () => _model.shortCCValue = val?.first);
-                                    if (FFAppState().sortByFilterTab) {
-                                      FFAppState().update(() {
-                                        FFAppState().sortByFilter =
-                                            _model.shortCCValue!;
-                                      });
-                                    } else {
-                                      if (FFAppState().gradeFilterTab) {
-                                        FFAppState().update(() {
-                                          FFAppState().gradeFilter =
-                                              _model.shortCCValue!;
-                                        });
-                                      } else {
-                                        if (FFAppState()
-                                            .transactionTrendFilterTab) {
-                                          FFAppState().update(() {
-                                            FFAppState()
-                                                    .transactionTrendFilter =
-                                                _model.shortCCValue!;
-                                          });
-                                        } else {
-                                          if (FFAppState()
-                                              .uptimeTrendFilterTab) {
-                                            FFAppState().update(() {
-                                              FFAppState().uptimeTrendFilter =
-                                                  _model.shortCCValue!;
-                                            });
-                                          } else {
-                                            if (FFAppState()
-                                                .downTimeFilterTab) {
-                                              FFAppState().update(() {
-                                                FFAppState().downTimeFilter =
-                                                    _model.shortCCValue!;
-                                              });
-                                            } else {
-                                              if (FFAppState().bankFilterTab) {
+                          Expanded(
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 75.0),
+                              child: SingleChildScrollView(
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          16.0, 16.0, 0.0, 0.0),
+                                      child: Wrap(
+                                        spacing: 0.0,
+                                        runSpacing: 0.0,
+                                        alignment: WrapAlignment.start,
+                                        crossAxisAlignment:
+                                            WrapCrossAlignment.start,
+                                        direction: Axis.horizontal,
+                                        runAlignment: WrapAlignment.start,
+                                        verticalDirection:
+                                            VerticalDirection.down,
+                                        clipBehavior: Clip.none,
+                                        children: [
+                                          FlutterFlowChoiceChips(
+                                            options: () {
+                                              if (FFAppState()
+                                                  .sortByFilterTab) {
+                                                return [
+                                                  'Grade: High to Low',
+                                                  'Grade: Low to High',
+                                                  'Transaction: High to Low',
+                                                  'Transaction: Low to High',
+                                                  'Uptime: High to Low',
+                                                  'Uptime: Low to High',
+                                                  'Downtime: High to Low',
+                                                  'Downtime: Low to High'
+                                                ];
+                                              } else if (FFAppState()
+                                                  .gradeFilterTab) {
+                                                return (widget.tabBar == 0
+                                                    ? (getJsonField(
+                                                        functions.getCommon(
+                                                            FFAppState()
+                                                                .machineDownJson,
+                                                            'grade'),
+                                                        r'''$..grade''',
+                                                      ) as List)
+                                                        .map<String>(
+                                                            (s) => s.toString())
+                                                        .toList()!
+                                                    : (getJsonField(
+                                                        functions.getCommon(
+                                                            FFAppState()
+                                                                .transactionDipJson,
+                                                            'grade'),
+                                                        r'''$..grade''',
+                                                      ) as List)
+                                                        .map<String>(
+                                                            (s) => s.toString())
+                                                        .toList()!);
+                                              } else if (FFAppState()
+                                                  .transactionTrendFilterTab) {
+                                                return [
+                                                  '-(100% - 80%)',
+                                                  '-(80% - 60%)',
+                                                  '-(60% - 40%)',
+                                                  '-(40% - 20%)',
+                                                  '-(20% - 0%)',
+                                                  '+(100% - 80%)',
+                                                  '+(80% - 60%)',
+                                                  '+(60% - 40%)',
+                                                  '+(40% - 20%)',
+                                                  '+(20% - 0%)'
+                                                ];
+                                              } else if (FFAppState()
+                                                  .uptimeTrendFilterTab) {
+                                                return [
+                                                  '-(100% - 80%)',
+                                                  '-(80% - 60%)',
+                                                  '-(60% - 40%)',
+                                                  '-(40% - 20%)',
+                                                  '-(20% - 0%)',
+                                                  '+(100% - 80%)',
+                                                  '+(80% - 60%)',
+                                                  '+(60% - 40%)',
+                                                  '+(40% - 20%)',
+                                                  '+(20% - 0%)'
+                                                ];
+                                              } else if (FFAppState()
+                                                  .bankFilterTab) {
+                                                return (widget.tabBar == 0
+                                                    ? (getJsonField(
+                                                        functions.getCommon(
+                                                            FFAppState()
+                                                                .machineDownJson,
+                                                            'bankName'),
+                                                        r'''$..bankName''',
+                                                      ) as List)
+                                                        .map<String>(
+                                                            (s) => s.toString())
+                                                        .toList()!
+                                                    : (getJsonField(
+                                                        functions.getCommon(
+                                                            FFAppState()
+                                                                .transactionDipJson,
+                                                            'bankName'),
+                                                        r'''$..bankName''',
+                                                      ) as List)
+                                                        .map<String>(
+                                                            (s) => s.toString())
+                                                        .toList()!);
+                                              } else if (FFAppState()
+                                                  .locationFilterTab) {
+                                                return (widget.tabBar == 0
+                                                    ? (getJsonField(
+                                                        functions.getCommon(
+                                                            FFAppState()
+                                                                .machineDownJson,
+                                                            'location'),
+                                                        r'''$..location''',
+                                                      ) as List)
+                                                        .map<String>(
+                                                            (s) => s.toString())
+                                                        .toList()!
+                                                    : (getJsonField(
+                                                        functions.getCommon(
+                                                            FFAppState()
+                                                                .transactionDipJson,
+                                                            'location'),
+                                                        r'''$..location''',
+                                                      ) as List)
+                                                        .map<String>(
+                                                            (s) => s.toString())
+                                                        .toList()!);
+                                              } else {
+                                                return [
+                                                  '0 - 2 Hrs',
+                                                  '2 - 4 Hrs',
+                                                  '4 - 8 Hrs',
+                                                  '48 - 72 Hrs',
+                                                  '> 72 Hrs'
+                                                ];
+                                              }
+                                            }()
+                                                .map((label) => ChipData(label))
+                                                .toList(),
+                                            onChanged: (val) async {
+                                              setState(() => _model
+                                                  .shortCCValue = val?.first);
+                                              if (FFAppState()
+                                                  .sortByFilterTab) {
                                                 FFAppState().update(() {
-                                                  FFAppState().bankFilter =
+                                                  FFAppState().sortByFilter =
                                                       _model.shortCCValue!;
                                                 });
                                               } else {
                                                 if (FFAppState()
-                                                    .locationFilterTab) {
+                                                    .gradeFilterTab) {
                                                   FFAppState().update(() {
-                                                    FFAppState()
-                                                            .locationFilter =
+                                                    FFAppState().gradeFilter =
                                                         _model.shortCCValue!;
                                                   });
+                                                } else {
+                                                  if (FFAppState()
+                                                      .transactionTrendFilterTab) {
+                                                    FFAppState().update(() {
+                                                      FFAppState()
+                                                              .transactionTrendFilter =
+                                                          _model.shortCCValue!;
+                                                    });
+                                                  } else {
+                                                    if (FFAppState()
+                                                        .uptimeTrendFilterTab) {
+                                                      FFAppState().update(() {
+                                                        FFAppState()
+                                                                .uptimeTrendFilter =
+                                                            _model
+                                                                .shortCCValue!;
+                                                      });
+                                                    } else {
+                                                      if (FFAppState()
+                                                          .downTimeFilterTab) {
+                                                        FFAppState().update(() {
+                                                          FFAppState()
+                                                                  .downTimeFilter =
+                                                              _model
+                                                                  .shortCCValue!;
+                                                        });
+                                                      } else {
+                                                        if (FFAppState()
+                                                            .bankFilterTab) {
+                                                          FFAppState()
+                                                              .update(() {
+                                                            FFAppState()
+                                                                    .bankFilter =
+                                                                _model
+                                                                    .shortCCValue!;
+                                                          });
+                                                        } else {
+                                                          if (FFAppState()
+                                                              .locationFilterTab) {
+                                                            FFAppState()
+                                                                .update(() {
+                                                              FFAppState()
+                                                                      .locationFilter =
+                                                                  _model
+                                                                      .shortCCValue!;
+                                                            });
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
                                                 }
                                               }
-                                            }
-                                          }
-                                        }
-                                      }
-                                    }
-                                  },
-                                  selectedChipStyle: ChipStyle(
-                                    backgroundColor: Color(0xFFFF0026),
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMediumFamily,
-                                          color: Color(0xFF4D4D4D),
-                                          fontSize: 16.0,
-                                          useGoogleFonts: GoogleFonts.asMap()
-                                              .containsKey(
+                                            },
+                                            selectedChipStyle: ChipStyle(
+                                              backgroundColor:
+                                                  Color(0xFFFF0026),
+                                              textStyle:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyMediumFamily),
-                                        ),
-                                    iconColor: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                    iconSize: 18.0,
-                                    elevation: 1.0,
-                                    borderRadius: BorderRadius.circular(4.0),
-                                  ),
-                                  unselectedChipStyle: ChipStyle(
-                                    backgroundColor: Colors.white,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMediumFamily,
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryText,
-                                          useGoogleFonts: GoogleFonts.asMap()
-                                              .containsKey(
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMediumFamily,
+                                                        color:
+                                                            Color(0xFF4D4D4D),
+                                                        fontSize: 16.0,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily),
+                                                      ),
+                                              iconColor:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyMediumFamily),
-                                        ),
-                                    iconColor: FlutterFlowTheme.of(context)
-                                        .secondaryText,
-                                    iconSize: 18.0,
-                                    elevation: 0.0,
-                                    borderColor: Color(0xFFF2F2F2),
-                                    borderWidth: 2.0,
-                                    borderRadius: BorderRadius.circular(4.0),
-                                  ),
-                                  chipSpacing: 12.0,
-                                  rowSpacing: 12.0,
-                                  multiselect: false,
-                                  initialized: _model.shortCCValue != null,
-                                  alignment: WrapAlignment.start,
-                                  controller: _model.shortCCValueController ??=
-                                      FormFieldController<List<String>>(
-                                    [
-                                      () {
-                                        if (FFAppState().sortByFilterTab) {
-                                          return FFAppState().sortByFilter;
-                                        } else if (FFAppState()
-                                            .gradeFilterTab) {
-                                          return FFAppState().gradeFilter;
-                                        } else if (FFAppState()
-                                            .transactionTrendFilterTab) {
-                                          return FFAppState()
-                                              .transactionTrendFilter;
-                                        } else if (FFAppState()
-                                            .uptimeTrendFilterTab) {
-                                          return FFAppState().uptimeTrendFilter;
-                                        } else if (FFAppState().bankFilterTab) {
-                                          return FFAppState().bankFilter;
-                                        } else if (FFAppState()
-                                            .locationFilterTab) {
-                                          return FFAppState().locationFilter;
-                                        } else {
-                                          return FFAppState().downTimeFilter;
-                                        }
-                                      }()
-                                    ],
-                                  ),
+                                                      .primaryText,
+                                              iconSize: 18.0,
+                                              elevation: 1.0,
+                                              borderRadius:
+                                                  BorderRadius.circular(4.0),
+                                            ),
+                                            unselectedChipStyle: ChipStyle(
+                                              backgroundColor: Colors.white,
+                                              textStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMediumFamily,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily),
+                                                      ),
+                                              iconColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryText,
+                                              iconSize: 18.0,
+                                              elevation: 0.0,
+                                              borderColor: Color(0xFFF2F2F2),
+                                              borderWidth: 2.0,
+                                              borderRadius:
+                                                  BorderRadius.circular(4.0),
+                                            ),
+                                            chipSpacing: 12.0,
+                                            rowSpacing: 12.0,
+                                            multiselect: false,
+                                            initialized:
+                                                _model.shortCCValue != null,
+                                            alignment: WrapAlignment.start,
+                                            controller: _model
+                                                    .shortCCValueController ??=
+                                                FormFieldController<
+                                                    List<String>>(
+                                              [
+                                                () {
+                                                  if (FFAppState()
+                                                      .sortByFilterTab) {
+                                                    return FFAppState()
+                                                        .sortByFilter;
+                                                  } else if (FFAppState()
+                                                      .gradeFilterTab) {
+                                                    return FFAppState()
+                                                        .gradeFilter;
+                                                  } else if (FFAppState()
+                                                      .transactionTrendFilterTab) {
+                                                    return FFAppState()
+                                                        .transactionTrendFilter;
+                                                  } else if (FFAppState()
+                                                      .uptimeTrendFilterTab) {
+                                                    return FFAppState()
+                                                        .uptimeTrendFilter;
+                                                  } else if (FFAppState()
+                                                      .bankFilterTab) {
+                                                    return FFAppState()
+                                                        .bankFilter;
+                                                  } else if (FFAppState()
+                                                      .locationFilterTab) {
+                                                    return FFAppState()
+                                                        .locationFilter;
+                                                  } else {
+                                                    return FFAppState()
+                                                        .downTimeFilter;
+                                                  }
+                                                }()
+                                              ],
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                              ],
+                              ),
                             ),
                           ),
                         ],
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ],
           ),
