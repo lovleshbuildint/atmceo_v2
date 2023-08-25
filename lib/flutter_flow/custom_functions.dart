@@ -33,6 +33,7 @@ dynamic filter(
   String? gradeFilter,
   String? uptimeTrendFilter,
   String? bankFilter,
+  String? locationFilter,
 ) {
   bool isFilterMultipleEnabled = false;
   int filterCount =
@@ -41,6 +42,7 @@ dynamic filter(
               : 0) +
           (gradeFilter != null && gradeFilter.isNotEmpty ? 1 : 0) +
           (uptimeTrendFilter != null && uptimeTrendFilter.isNotEmpty ? 1 : 0) +
+          (locationFilter != null && locationFilter.isNotEmpty ? 1 : 0) +
           (bankFilter != null && bankFilter.isNotEmpty ? 1 : 0);
 
   isFilterMultipleEnabled = filterCount > 1 ? true : false;
@@ -139,6 +141,17 @@ dynamic filter(
     if (bankFilter != null && bankFilter.isNotEmpty) {
       for (dynamic data in mainData['data']) {
         if (data['bankName'].contains(bankFilter)) {
+          filteredData1.add(data);
+        }
+      }
+      if (!isFilterMultipleEnabled) {
+        return {'userId': mainData['userId'], 'data': filteredData1};
+      }
+    }
+
+    if (locationFilter != null && locationFilter.isNotEmpty) {
+      for (dynamic data in mainData['data']) {
+        if (data['location'].contains(locationFilter)) {
           filteredData1.add(data);
         }
       }

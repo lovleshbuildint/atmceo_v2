@@ -449,238 +449,260 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                               style: FlutterFlowTheme.of(context).bodyMedium,
                             ),
                           ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                16.0, 16.0, 0.0, 0.0),
-                            child: Wrap(
-                              spacing: 0.0,
-                              runSpacing: 0.0,
-                              alignment: WrapAlignment.start,
-                              crossAxisAlignment: WrapCrossAlignment.start,
-                              direction: Axis.horizontal,
-                              runAlignment: WrapAlignment.start,
-                              verticalDirection: VerticalDirection.down,
-                              clipBehavior: Clip.none,
-                              children: [
-                                FlutterFlowChoiceChips(
-                                  options: () {
-                                    if (FFAppState().sortByFilterTab) {
-                                      return [
-                                        'Grade: High to Low',
-                                        'Grade: Low to High',
-                                        'Transaction: High to Low',
-                                        'Transaction: Low to High',
-                                        'Uptime: High to Low',
-                                        'Uptime: Low to High',
-                                        'Downtime: High to Low',
-                                        'Downtime: Low to High'
-                                      ];
-                                    } else if (FFAppState().gradeFilterTab) {
-                                      return (getJsonField(
-                                        functions.getCommon(
-                                            FFAppState().allMachineDetails,
-                                            'grade'),
-                                        r'''$..grade''',
-                                      ) as List)
-                                          .map<String>((s) => s.toString())
-                                          .toList()!;
-                                    } else if (FFAppState()
-                                        .transactionTrendFilterTab) {
-                                      return [
-                                        '-(100% - 80%)',
-                                        '-(80% - 60%)',
-                                        '-(60% - 40%)',
-                                        '-(40% - 20%)',
-                                        '-(20% - 0%)',
-                                        '+(100% - 80%)',
-                                        '+(80% - 60%)',
-                                        '+(60% - 40%)',
-                                        '+(40% - 20%)',
-                                        '+(20% - 0%)'
-                                      ];
-                                    } else if (FFAppState()
-                                        .uptimeTrendFilterTab) {
-                                      return [
-                                        '-(100% - 80%)',
-                                        '-(80% - 60%)',
-                                        '-(60% - 40%)',
-                                        '-(40% - 20%)',
-                                        '-(20% - 0%)',
-                                        '+(100% - 80%)',
-                                        '+(80% - 60%)',
-                                        '+(60% - 40%)',
-                                        '+(40% - 20%)',
-                                        '+(20% - 0%)'
-                                      ];
-                                    } else if (FFAppState().bankFilterTab) {
-                                      return (getJsonField(
-                                        functions.getCommon(
-                                            FFAppState().allMachineDetails,
-                                            'bankName'),
-                                        r'''$..bankName''',
-                                      ) as List)
-                                          .map<String>((s) => s.toString())
-                                          .toList()!;
-                                    } else if (FFAppState().locationFilterTab) {
-                                      return (getJsonField(
-                                        functions.getCommon(
-                                            FFAppState().allMachineDetails,
-                                            'location'),
-                                        r'''$..location''',
-                                      ) as List)
-                                          .map<String>((s) => s.toString())
-                                          .toList()!;
-                                    } else {
-                                      return [
-                                        '0 - 2 Hrs',
-                                        '2 - 4 Hrs',
-                                        '4 - 8 Hrs',
-                                        '48 - 72 Hrs',
-                                        '> 72 Hrs'
-                                      ];
-                                    }
-                                  }()
-                                      .map((label) => ChipData(label))
-                                      .toList(),
-                                  onChanged: (val) async {
-                                    setState(
-                                        () => _model.shortCCValue = val?.first);
-                                    if (FFAppState().sortByFilterTab) {
-                                      FFAppState().update(() {
-                                        FFAppState().sortByFilter =
-                                            _model.shortCCValue!;
-                                      });
-                                    } else {
-                                      if (FFAppState().gradeFilterTab) {
-                                        FFAppState().update(() {
-                                          FFAppState().gradeFilter =
-                                              _model.shortCCValue!;
-                                        });
-                                      } else {
-                                        if (FFAppState()
+                          Column(
+                            mainAxisSize: MainAxisSize.max,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    16.0, 16.0, 0.0, 0.0),
+                                child: Wrap(
+                                  spacing: 0.0,
+                                  runSpacing: 0.0,
+                                  alignment: WrapAlignment.start,
+                                  crossAxisAlignment: WrapCrossAlignment.start,
+                                  direction: Axis.horizontal,
+                                  runAlignment: WrapAlignment.start,
+                                  verticalDirection: VerticalDirection.down,
+                                  clipBehavior: Clip.antiAlias,
+                                  children: [
+                                    FlutterFlowChoiceChips(
+                                      options: () {
+                                        if (FFAppState().sortByFilterTab) {
+                                          return [
+                                            'Grade: High to Low',
+                                            'Grade: Low to High',
+                                            'Transaction: High to Low',
+                                            'Transaction: Low to High',
+                                            'Uptime: High to Low',
+                                            'Uptime: Low to High',
+                                            'Downtime: High to Low',
+                                            'Downtime: Low to High'
+                                          ];
+                                        } else if (FFAppState()
+                                            .gradeFilterTab) {
+                                          return (getJsonField(
+                                            functions.getCommon(
+                                                FFAppState().allMachineDetails,
+                                                'grade'),
+                                            r'''$..grade''',
+                                          ) as List)
+                                              .map<String>((s) => s.toString())
+                                              .toList()!;
+                                        } else if (FFAppState()
                                             .transactionTrendFilterTab) {
+                                          return [
+                                            '-(100% - 80%)',
+                                            '-(80% - 60%)',
+                                            '-(60% - 40%)',
+                                            '-(40% - 20%)',
+                                            '-(20% - 0%)',
+                                            '+(100% - 80%)',
+                                            '+(80% - 60%)',
+                                            '+(60% - 40%)',
+                                            '+(40% - 20%)',
+                                            '+(20% - 0%)'
+                                          ];
+                                        } else if (FFAppState()
+                                            .uptimeTrendFilterTab) {
+                                          return [
+                                            '-(100% - 80%)',
+                                            '-(80% - 60%)',
+                                            '-(60% - 40%)',
+                                            '-(40% - 20%)',
+                                            '-(20% - 0%)',
+                                            '+(100% - 80%)',
+                                            '+(80% - 60%)',
+                                            '+(60% - 40%)',
+                                            '+(40% - 20%)',
+                                            '+(20% - 0%)'
+                                          ];
+                                        } else if (FFAppState().bankFilterTab) {
+                                          return (getJsonField(
+                                            functions.getCommon(
+                                                FFAppState().allMachineDetails,
+                                                'bankName'),
+                                            r'''$..bankName''',
+                                          ) as List)
+                                              .map<String>((s) => s.toString())
+                                              .toList()!;
+                                        } else if (FFAppState()
+                                            .locationFilterTab) {
+                                          return (getJsonField(
+                                            functions.getCommon(
+                                                FFAppState().allMachineDetails,
+                                                'location'),
+                                            r'''$..location''',
+                                          ) as List)
+                                              .map<String>((s) => s.toString())
+                                              .toList()!;
+                                        } else {
+                                          return [
+                                            '0 - 2 Hrs',
+                                            '2 - 4 Hrs',
+                                            '4 - 8 Hrs',
+                                            '48 - 72 Hrs',
+                                            '> 72 Hrs'
+                                          ];
+                                        }
+                                      }()
+                                          .map((label) => ChipData(label))
+                                          .toList(),
+                                      onChanged: (val) async {
+                                        setState(() =>
+                                            _model.shortCCValue = val?.first);
+                                        if (FFAppState().sortByFilterTab) {
                                           FFAppState().update(() {
-                                            FFAppState()
-                                                    .transactionTrendFilter =
+                                            FFAppState().sortByFilter =
                                                 _model.shortCCValue!;
                                           });
                                         } else {
-                                          if (FFAppState()
-                                              .uptimeTrendFilterTab) {
+                                          if (FFAppState().gradeFilterTab) {
                                             FFAppState().update(() {
-                                              FFAppState().uptimeTrendFilter =
+                                              FFAppState().gradeFilter =
                                                   _model.shortCCValue!;
                                             });
                                           } else {
                                             if (FFAppState()
-                                                .downTimeFilterTab) {
+                                                .transactionTrendFilterTab) {
                                               FFAppState().update(() {
-                                                FFAppState().downTimeFilter =
+                                                FFAppState()
+                                                        .transactionTrendFilter =
                                                     _model.shortCCValue!;
                                               });
                                             } else {
-                                              if (FFAppState().bankFilterTab) {
+                                              if (FFAppState()
+                                                  .uptimeTrendFilterTab) {
                                                 FFAppState().update(() {
-                                                  FFAppState().bankFilter =
+                                                  FFAppState()
+                                                          .uptimeTrendFilter =
                                                       _model.shortCCValue!;
                                                 });
                                               } else {
                                                 if (FFAppState()
-                                                    .locationFilterTab) {
+                                                    .downTimeFilterTab) {
                                                   FFAppState().update(() {
                                                     FFAppState()
-                                                            .locationFilter =
+                                                            .downTimeFilter =
                                                         _model.shortCCValue!;
                                                   });
+                                                } else {
+                                                  if (FFAppState()
+                                                      .bankFilterTab) {
+                                                    FFAppState().update(() {
+                                                      FFAppState().bankFilter =
+                                                          _model.shortCCValue!;
+                                                    });
+                                                  } else {
+                                                    if (FFAppState()
+                                                        .locationFilterTab) {
+                                                      FFAppState().update(() {
+                                                        FFAppState()
+                                                                .locationFilter =
+                                                            _model
+                                                                .shortCCValue!;
+                                                      });
+                                                    }
+                                                  }
                                                 }
                                               }
                                             }
                                           }
                                         }
-                                      }
-                                    }
-                                  },
-                                  selectedChipStyle: ChipStyle(
-                                    backgroundColor: Color(0xFFFF0026),
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMediumFamily,
-                                          color: Color(0xFF4D4D4D),
-                                          fontSize: 16.0,
-                                          useGoogleFonts: GoogleFonts.asMap()
-                                              .containsKey(
+                                      },
+                                      selectedChipStyle: ChipStyle(
+                                        backgroundColor: Color(0xFFFF0026),
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyMediumFamily),
-                                        ),
-                                    iconColor: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                    iconSize: 18.0,
-                                    elevation: 1.0,
-                                    borderRadius: BorderRadius.circular(4.0),
-                                  ),
-                                  unselectedChipStyle: ChipStyle(
-                                    backgroundColor: Colors.white,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMediumFamily,
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryText,
-                                          useGoogleFonts: GoogleFonts.asMap()
-                                              .containsKey(
+                                                      .bodyMediumFamily,
+                                              color: Color(0xFF4D4D4D),
+                                              fontSize: 14.0,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily),
+                                            ),
+                                        iconColor: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                        iconSize: 18.0,
+                                        elevation: 1.0,
+                                        borderRadius:
+                                            BorderRadius.circular(4.0),
+                                      ),
+                                      unselectedChipStyle: ChipStyle(
+                                        backgroundColor: Colors.white,
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyMediumFamily),
-                                        ),
-                                    iconColor: FlutterFlowTheme.of(context)
-                                        .secondaryText,
-                                    iconSize: 18.0,
-                                    elevation: 0.0,
-                                    borderColor: Color(0xFFF2F2F2),
-                                    borderWidth: 2.0,
-                                    borderRadius: BorderRadius.circular(4.0),
-                                  ),
-                                  chipSpacing: 12.0,
-                                  rowSpacing: 12.0,
-                                  multiselect: false,
-                                  initialized: _model.shortCCValue != null,
-                                  alignment: WrapAlignment.start,
-                                  controller: _model.shortCCValueController ??=
-                                      FormFieldController<List<String>>(
-                                    [
-                                      () {
-                                        if (FFAppState().sortByFilterTab) {
-                                          return FFAppState().sortByFilter;
-                                        } else if (FFAppState()
-                                            .gradeFilterTab) {
-                                          return FFAppState().gradeFilter;
-                                        } else if (FFAppState()
-                                            .transactionTrendFilterTab) {
-                                          return FFAppState()
-                                              .transactionTrendFilter;
-                                        } else if (FFAppState()
-                                            .uptimeTrendFilterTab) {
-                                          return FFAppState().uptimeTrendFilter;
-                                        } else if (FFAppState().bankFilterTab) {
-                                          return FFAppState().bankFilter;
-                                        } else if (FFAppState()
-                                            .locationFilterTab) {
-                                          return FFAppState()
-                                              .locationFilterTab
-                                              .toString();
-                                        } else {
-                                          return FFAppState().downTimeFilter;
-                                        }
-                                      }()
-                                    ],
-                                  ),
+                                                      .bodyMediumFamily,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryText,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily),
+                                            ),
+                                        iconColor: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        iconSize: 18.0,
+                                        elevation: 0.0,
+                                        borderColor: Color(0xFFF2F2F2),
+                                        borderWidth: 2.0,
+                                        borderRadius:
+                                            BorderRadius.circular(4.0),
+                                      ),
+                                      chipSpacing: 12.0,
+                                      rowSpacing: 12.0,
+                                      multiselect: false,
+                                      initialized: _model.shortCCValue != null,
+                                      alignment: WrapAlignment.start,
+                                      controller:
+                                          _model.shortCCValueController ??=
+                                              FormFieldController<List<String>>(
+                                        [
+                                          () {
+                                            if (FFAppState().sortByFilterTab) {
+                                              return FFAppState().sortByFilter;
+                                            } else if (FFAppState()
+                                                .gradeFilterTab) {
+                                              return FFAppState().gradeFilter;
+                                            } else if (FFAppState()
+                                                .transactionTrendFilterTab) {
+                                              return FFAppState()
+                                                  .transactionTrendFilter;
+                                            } else if (FFAppState()
+                                                .uptimeTrendFilterTab) {
+                                              return FFAppState()
+                                                  .uptimeTrendFilter;
+                                            } else if (FFAppState()
+                                                .bankFilterTab) {
+                                              return FFAppState().bankFilter;
+                                            } else if (FFAppState()
+                                                .locationFilterTab) {
+                                              return FFAppState()
+                                                  .locationFilter;
+                                            } else {
+                                              return FFAppState()
+                                                  .downTimeFilter;
+                                            }
+                                          }()
+                                        ],
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                         ],
                       ),

@@ -391,6 +391,28 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                             stackDashboardResponse.jsonBody,
                                             r'''$.data.targetData.totalMachinesManaged''',
                                           ).toString();
+                                          FFAppState().visibilityState = false;
+                                          FFAppState().deleteSearchValue1();
+                                          FFAppState().searchValue1 = '';
+
+                                          FFAppState().deleteSearchValue2();
+                                          FFAppState().searchValue2 = '';
+
+                                          FFAppState().deleteMachineDownJson();
+                                          FFAppState().machineDownJson = null;
+
+                                          FFAppState()
+                                              .deleteTransactionDipJson();
+                                          FFAppState().transactionDipJson =
+                                              null;
+
+                                          FFAppState().atmInfoState = false;
+                                          FFAppState().deleteSearchValue3();
+                                          FFAppState().searchValue3 = '';
+
+                                          FFAppState()
+                                              .deleteAllMachineDetails();
+                                          FFAppState().allMachineDetails = null;
                                         });
                                       },
                                       child: Container(
@@ -1421,25 +1443,6 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
-                                          setState(() {
-                                            FFAppState().noOfMachinesDown =
-                                                getJsonField(
-                                              stackDashboardResponse.jsonBody,
-                                              r'''$.data.actionsRequired.noOfMachinesDown''',
-                                            ).toString();
-                                            FFAppState()
-                                                    .noOfMachineTransactionDip =
-                                                getJsonField(
-                                              stackDashboardResponse.jsonBody,
-                                              r'''$.data.actionsRequired.noOfMachineTransactionDip''',
-                                            ).toString();
-                                            FFAppState().totalMachinesManaged =
-                                                getJsonField(
-                                              stackDashboardResponse.jsonBody,
-                                              r'''$.data.targetData.totalMachinesManaged''',
-                                            ).toString();
-                                          });
-
                                           context.pushNamed(
                                             'Allatm',
                                             queryParameters: {
@@ -1459,6 +1462,50 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                               ),
                                             },
                                           );
+
+                                          setState(() {
+                                            FFAppState().noOfMachinesDown =
+                                                getJsonField(
+                                              stackDashboardResponse.jsonBody,
+                                              r'''$.data.actionsRequired.noOfMachinesDown''',
+                                            ).toString();
+                                            FFAppState()
+                                                    .noOfMachineTransactionDip =
+                                                getJsonField(
+                                              stackDashboardResponse.jsonBody,
+                                              r'''$.data.actionsRequired.noOfMachineTransactionDip''',
+                                            ).toString();
+                                            FFAppState().totalMachinesManaged =
+                                                getJsonField(
+                                              stackDashboardResponse.jsonBody,
+                                              r'''$.data.targetData.totalMachinesManaged''',
+                                            ).toString();
+                                            FFAppState().visibilityState =
+                                                false;
+                                            FFAppState().deleteSearchValue1();
+                                            FFAppState().searchValue1 = '';
+
+                                            FFAppState().deleteSearchValue2();
+                                            FFAppState().searchValue2 = '';
+
+                                            FFAppState()
+                                                .deleteMachineDownJson();
+                                            FFAppState().machineDownJson = null;
+
+                                            FFAppState()
+                                                .deleteTransactionDipJson();
+                                            FFAppState().transactionDipJson =
+                                                null;
+
+                                            FFAppState().atmInfoState = false;
+                                            FFAppState().deleteSearchValue3();
+                                            FFAppState().searchValue3 = '';
+
+                                            FFAppState()
+                                                .deleteAllMachineDetails();
+                                            FFAppState().allMachineDetails =
+                                                null;
+                                          });
                                         },
                                         child: Container(
                                           width:
@@ -1721,25 +1768,6 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
-                                          setState(() {
-                                            FFAppState().noOfMachinesDown =
-                                                getJsonField(
-                                              stackDashboardResponse.jsonBody,
-                                              r'''$.data.actionsRequired.noOfMachinesDown''',
-                                            ).toString();
-                                            FFAppState()
-                                                    .noOfMachineTransactionDip =
-                                                getJsonField(
-                                              stackDashboardResponse.jsonBody,
-                                              r'''$.data.actionsRequired.noOfMachineTransactionDip''',
-                                            ).toString();
-                                            FFAppState().totalMachinesManaged =
-                                                getJsonField(
-                                              stackDashboardResponse.jsonBody,
-                                              r'''$.data.targetData.totalMachinesManaged''',
-                                            ).toString();
-                                          });
-
                                           context.pushNamed(
                                             'Allatm',
                                             queryParameters: {
@@ -1759,6 +1787,50 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                               ),
                                             },
                                           );
+
+                                          setState(() {
+                                            FFAppState().noOfMachinesDown =
+                                                getJsonField(
+                                              stackDashboardResponse.jsonBody,
+                                              r'''$.data.actionsRequired.noOfMachinesDown''',
+                                            ).toString();
+                                            FFAppState()
+                                                    .noOfMachineTransactionDip =
+                                                getJsonField(
+                                              stackDashboardResponse.jsonBody,
+                                              r'''$.data.actionsRequired.noOfMachineTransactionDip''',
+                                            ).toString();
+                                            FFAppState().totalMachinesManaged =
+                                                getJsonField(
+                                              stackDashboardResponse.jsonBody,
+                                              r'''$.data.targetData.totalMachinesManaged''',
+                                            ).toString();
+                                            FFAppState().visibilityState =
+                                                false;
+                                            FFAppState().deleteSearchValue1();
+                                            FFAppState().searchValue1 = '';
+
+                                            FFAppState().deleteSearchValue2();
+                                            FFAppState().searchValue2 = '';
+
+                                            FFAppState()
+                                                .deleteMachineDownJson();
+                                            FFAppState().machineDownJson = null;
+
+                                            FFAppState()
+                                                .deleteTransactionDipJson();
+                                            FFAppState().transactionDipJson =
+                                                null;
+
+                                            FFAppState().atmInfoState = false;
+                                            FFAppState().deleteSearchValue3();
+                                            FFAppState().searchValue3 = '';
+
+                                            FFAppState()
+                                                .deleteAllMachineDetails();
+                                            FFAppState().allMachineDetails =
+                                                null;
+                                          });
                                         },
                                         child: Container(
                                           width:

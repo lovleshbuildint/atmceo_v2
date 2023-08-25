@@ -5,7 +5,6 @@ import '/pages/all_a_t_m_filter/all_a_t_m_filter_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:aligned_tooltip/aligned_tooltip.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:data_table_2/data_table_2.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -614,812 +613,791 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 16.0, 0.0, 0.0),
-                                        child: Container(
-                                          width:
-                                              MediaQuery.sizeOf(context).width *
-                                                  1.0,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                          ),
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 15.0),
-                                            child: Builder(
-                                              builder: (context) {
-                                                final dipData = getJsonField(
-                                                  functions.filter(
-                                                      FFAppState()
-                                                          .allMachineDetails,
-                                                      FFAppState().searchValue1,
-                                                      FFAppState()
-                                                          .transactionTrendFilter,
-                                                      FFAppState().gradeFilter,
-                                                      FFAppState()
-                                                          .uptimeTrendFilter,
-                                                      FFAppState().bankFilter),
-                                                  r'''$.data''',
-                                                ).toList();
-                                                return DataTable2(
-                                                  columns: [
-                                                    DataColumn2(
-                                                      label: DefaultTextStyle
-                                                          .merge(
-                                                        softWrap: true,
-                                                        child: Column(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .spaceEvenly,
-                                                          children: [
-                                                            Row(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              children: [
-                                                                Container(
-                                                                  width: FFAppState()
-                                                                          .atmInfoState
-                                                                      ? 360.0
-                                                                      : 240.0,
-                                                                  height: 46.0,
-                                                                  decoration:
-                                                                      BoxDecoration(
-                                                                    gradient:
-                                                                        LinearGradient(
-                                                                      colors: [
-                                                                        Color(
-                                                                            0xFF3B3B3C),
-                                                                        Colors
-                                                                            .black
-                                                                      ],
-                                                                      stops: [
-                                                                        0.0,
-                                                                        1.0
-                                                                      ],
-                                                                      begin: AlignmentDirectional(
-                                                                          0.0,
-                                                                          -1.0),
-                                                                      end: AlignmentDirectional(
-                                                                          0,
-                                                                          1.0),
+                                        child: SingleChildScrollView(
+                                          scrollDirection: Axis.horizontal,
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        16.0, 0.0, 16.0, 16.0),
+                                                child: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      children: [
+                                                        Container(
+                                                          width: (FFAppState()
+                                                                      .atmInfoState
+                                                                  ? 440
+                                                                  : 180)
+                                                              .toDouble(),
+                                                          height: 46.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            gradient:
+                                                                LinearGradient(
+                                                              colors: [
+                                                                Color(
+                                                                    0xFF3B3B3C),
+                                                                Colors.black
+                                                              ],
+                                                              stops: [0.0, 1.0],
+                                                              begin:
+                                                                  AlignmentDirectional(
+                                                                      0.0,
+                                                                      -1.0),
+                                                              end:
+                                                                  AlignmentDirectional(
+                                                                      0, 1.0),
+                                                            ),
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .only(
+                                                              bottomLeft: Radius
+                                                                  .circular(
+                                                                      0.0),
+                                                              bottomRight:
+                                                                  Radius
+                                                                      .circular(
+                                                                          0.0),
+                                                              topLeft: Radius
+                                                                  .circular(
+                                                                      6.0),
+                                                              topRight: Radius
+                                                                  .circular(
+                                                                      0.0),
+                                                            ),
+                                                          ),
+                                                          alignment:
+                                                              AlignmentDirectional(
+                                                                  0.0, 0.0),
+                                                          child: Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .center,
+                                                            children: [
+                                                              Text(
+                                                                'ATM Information',
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryBackground,
+                                                                      useGoogleFonts: GoogleFonts
+                                                                              .asMap()
+                                                                          .containsKey(
+                                                                              FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                     ),
-                                                                    borderRadius:
-                                                                        BorderRadius
-                                                                            .only(
-                                                                      bottomLeft:
-                                                                          Radius.circular(
-                                                                              0.0),
-                                                                      bottomRight:
-                                                                          Radius.circular(
-                                                                              0.0),
-                                                                      topLeft: Radius
-                                                                          .circular(
-                                                                              6.0),
-                                                                      topRight:
-                                                                          Radius.circular(
-                                                                              0.0),
-                                                                    ),
+                                                              ),
+                                                              if (!FFAppState()
+                                                                  .atmInfoState)
+                                                                InkWell(
+                                                                  splashColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  focusColor: Colors
+                                                                      .transparent,
+                                                                  hoverColor: Colors
+                                                                      .transparent,
+                                                                  highlightColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  onTap:
+                                                                      () async {
+                                                                    setState(
+                                                                        () {
+                                                                      FFAppState()
+                                                                              .atmInfoState =
+                                                                          true;
+                                                                    });
+                                                                  },
+                                                                  child: Icon(
+                                                                    Icons
+                                                                        .keyboard_arrow_right,
+                                                                    color: Color(
+                                                                        0xFFFF0026),
+                                                                    size: 24.0,
                                                                   ),
-                                                                  alignment:
-                                                                      AlignmentDirectional(
+                                                                ),
+                                                              if (FFAppState()
+                                                                  .atmInfoState)
+                                                                InkWell(
+                                                                  splashColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  focusColor: Colors
+                                                                      .transparent,
+                                                                  hoverColor: Colors
+                                                                      .transparent,
+                                                                  highlightColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  onTap:
+                                                                      () async {
+                                                                    setState(
+                                                                        () {
+                                                                      FFAppState()
+                                                                              .atmInfoState =
+                                                                          false;
+                                                                    });
+                                                                  },
+                                                                  child: Icon(
+                                                                    Icons
+                                                                        .keyboard_arrow_left,
+                                                                    color: Color(
+                                                                        0xFFFF0026),
+                                                                    size: 24.0,
+                                                                  ),
+                                                                ),
+                                                            ],
+                                                          ),
+                                                        ),
+                                                        Container(
+                                                          width: 202.0,
+                                                          height: 46.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            gradient:
+                                                                LinearGradient(
+                                                              colors: [
+                                                                Color(
+                                                                    0xFF3B3B3C),
+                                                                Colors.black
+                                                              ],
+                                                              stops: [0.0, 1.0],
+                                                              begin:
+                                                                  AlignmentDirectional(
+                                                                      0.0,
+                                                                      -1.0),
+                                                              end:
+                                                                  AlignmentDirectional(
+                                                                      0, 1.0),
+                                                            ),
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .only(
+                                                              bottomLeft: Radius
+                                                                  .circular(
+                                                                      0.0),
+                                                              bottomRight:
+                                                                  Radius
+                                                                      .circular(
+                                                                          0.0),
+                                                              topLeft: Radius
+                                                                  .circular(
+                                                                      0.0),
+                                                              topRight: Radius
+                                                                  .circular(
+                                                                      6.0),
+                                                            ),
+                                                          ),
+                                                          alignment:
+                                                              AlignmentDirectional(
+                                                                  0.0, 0.0),
+                                                          child: Text(
+                                                            'ATM Performance',
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryBackground,
+                                                                  useGoogleFonts: GoogleFonts
+                                                                          .asMap()
+                                                                      .containsKey(
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily),
+                                                                ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      children: [
+                                                        Container(
+                                                          width: 120.0,
+                                                          height: 46.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: Color(
+                                                                0xFFF5F5F5),
+                                                          ),
+                                                          alignment:
+                                                              AlignmentDirectional(
+                                                                  -1.0, 0.0),
+                                                          child: Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        16.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
+                                                            child: Text(
+                                                              'ATM ID',
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .start,
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily,
+                                                                    fontSize:
+                                                                        12.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .bold,
+                                                                    useGoogleFonts: GoogleFonts
+                                                                            .asMap()
+                                                                        .containsKey(
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                  ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        Container(
+                                                          width: 60.0,
+                                                          height: 46.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: Color(
+                                                                0xFFF5F5F5),
+                                                          ),
+                                                          alignment:
+                                                              AlignmentDirectional(
+                                                                  0.0, 0.0),
+                                                          child: Text(
+                                                            'Grade',
+                                                            textAlign:
+                                                                TextAlign.start,
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily,
+                                                                  fontSize:
+                                                                      12.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
+                                                                  useGoogleFonts: GoogleFonts
+                                                                          .asMap()
+                                                                      .containsKey(
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily),
+                                                                ),
+                                                          ),
+                                                        ),
+                                                        if (FFAppState()
+                                                            .atmInfoState)
+                                                          Container(
+                                                            width: 120.0,
+                                                            height: 46.0,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: Color(
+                                                                  0xFFF5F5F5),
+                                                            ),
+                                                            alignment:
+                                                                AlignmentDirectional(
+                                                                    -1.0, 0.0),
+                                                            child: Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          16.0,
+                                                                          0.0,
                                                                           0.0,
                                                                           0.0),
-                                                                  child: Row(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    mainAxisAlignment:
-                                                                        MainAxisAlignment
-                                                                            .center,
-                                                                    children: [
-                                                                      Text(
-                                                                        'ATM Information',
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                              color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                            ),
-                                                                      ),
-                                                                      if (!FFAppState()
-                                                                          .atmInfoState)
-                                                                        InkWell(
-                                                                          splashColor:
-                                                                              Colors.transparent,
-                                                                          focusColor:
-                                                                              Colors.transparent,
-                                                                          hoverColor:
-                                                                              Colors.transparent,
-                                                                          highlightColor:
-                                                                              Colors.transparent,
-                                                                          onTap:
-                                                                              () async {
-                                                                            setState(() {
-                                                                              FFAppState().atmInfoState = true;
-                                                                            });
-                                                                          },
-                                                                          child:
-                                                                              Icon(
-                                                                            Icons.keyboard_arrow_right,
-                                                                            color:
-                                                                                Color(0xFFFF0026),
-                                                                            size:
-                                                                                24.0,
-                                                                          ),
-                                                                        ),
-                                                                      if (FFAppState()
-                                                                          .atmInfoState)
-                                                                        InkWell(
-                                                                          splashColor:
-                                                                              Colors.transparent,
-                                                                          focusColor:
-                                                                              Colors.transparent,
-                                                                          hoverColor:
-                                                                              Colors.transparent,
-                                                                          highlightColor:
-                                                                              Colors.transparent,
-                                                                          onTap:
-                                                                              () async {
-                                                                            setState(() {
-                                                                              FFAppState().atmInfoState = false;
-                                                                            });
-                                                                          },
-                                                                          child:
-                                                                              Icon(
-                                                                            Icons.keyboard_arrow_left,
-                                                                            color:
-                                                                                Color(0xFFFF0026),
-                                                                            size:
-                                                                                24.0,
-                                                                          ),
-                                                                        ),
-                                                                    ],
-                                                                  ),
-                                                                ),
-                                                                Expanded(
-                                                                  child:
-                                                                      Container(
-                                                                    width: MediaQuery.sizeOf(context)
-                                                                            .width *
-                                                                        1.0,
-                                                                    height:
-                                                                        46.0,
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                      gradient:
-                                                                          LinearGradient(
-                                                                        colors: [
-                                                                          Color(
-                                                                              0xFF3B3B3C),
-                                                                          Colors
-                                                                              .black
-                                                                        ],
-                                                                        stops: [
-                                                                          0.0,
-                                                                          1.0
-                                                                        ],
-                                                                        begin: AlignmentDirectional(
-                                                                            0.0,
-                                                                            -1.0),
-                                                                        end: AlignmentDirectional(
-                                                                            0,
-                                                                            1.0),
-                                                                      ),
+                                                              child: Text(
+                                                                'Bank',
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .start,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
+                                                                      fontSize:
+                                                                          12.0,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .bold,
+                                                                      useGoogleFonts: GoogleFonts
+                                                                              .asMap()
+                                                                          .containsKey(
+                                                                              FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                     ),
-                                                                    alignment:
-                                                                        AlignmentDirectional(
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child: Text(
-                                                                      'ATM Performance',
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).primaryBackground,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                          ),
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                            Expanded(
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .spaceEvenly,
-                                                                children: [
-                                                                  Expanded(
-                                                                    child:
-                                                                        Container(
-                                                                      width: MediaQuery.sizeOf(context)
-                                                                              .width *
-                                                                          1.0,
-                                                                      height:
-                                                                          46.0,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: Color(
-                                                                            0xFFF5F5F5),
-                                                                      ),
-                                                                      alignment:
-                                                                          AlignmentDirectional(
-                                                                              0.0,
-                                                                              0.0),
-                                                                      child:
-                                                                          Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            5.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                        child:
-                                                                            Text(
-                                                                          'ATM ID',
-                                                                          textAlign:
-                                                                              TextAlign.start,
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .override(
-                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                fontSize: 12.0,
-                                                                                fontWeight: FontWeight.bold,
-                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                              ),
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                  Expanded(
-                                                                    child:
-                                                                        Container(
-                                                                      width: MediaQuery.sizeOf(context)
-                                                                              .width *
-                                                                          1.0,
-                                                                      height:
-                                                                          46.0,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: Color(
-                                                                            0xFFF5F5F5),
-                                                                      ),
-                                                                      alignment:
-                                                                          AlignmentDirectional(
-                                                                              0.0,
-                                                                              0.0),
-                                                                      child:
-                                                                          Text(
-                                                                        'Grade',
-                                                                        textAlign:
-                                                                            TextAlign.center,
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                              fontSize: 12.0,
-                                                                              fontWeight: FontWeight.bold,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                            ),
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                  if (FFAppState()
-                                                                      .atmInfoState)
-                                                                    Expanded(
-                                                                      child:
-                                                                          Container(
-                                                                        width: MediaQuery.sizeOf(context).width *
-                                                                            1.0,
-                                                                        height:
-                                                                            46.0,
-                                                                        decoration:
-                                                                            BoxDecoration(
-                                                                          color:
-                                                                              Color(0xFFF5F5F5),
-                                                                        ),
-                                                                        alignment: AlignmentDirectional(
-                                                                            0.0,
-                                                                            0.0),
-                                                                        child:
-                                                                            Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              5.0,
-                                                                              0.0,
-                                                                              0.0,
-                                                                              0.0),
-                                                                          child:
-                                                                              Text(
-                                                                            'Bank',
-                                                                            textAlign:
-                                                                                TextAlign.start,
-                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                  fontSize: 12.0,
-                                                                                  fontWeight: FontWeight.bold,
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                ),
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                  if (FFAppState()
-                                                                      .atmInfoState)
-                                                                    Expanded(
-                                                                      child:
-                                                                          Container(
-                                                                        width: MediaQuery.sizeOf(context).width *
-                                                                            1.0,
-                                                                        height:
-                                                                            46.0,
-                                                                        decoration:
-                                                                            BoxDecoration(
-                                                                          color:
-                                                                              Color(0xFFF5F5F5),
-                                                                        ),
-                                                                        alignment: AlignmentDirectional(
-                                                                            0.0,
-                                                                            0.0),
-                                                                        child:
-                                                                            Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              5.0,
-                                                                              0.0,
-                                                                              0.0,
-                                                                              0.0),
-                                                                          child:
-                                                                              Text(
-                                                                            'Location',
-                                                                            textAlign:
-                                                                                TextAlign.start,
-                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                  fontSize: 12.0,
-                                                                                  fontWeight: FontWeight.bold,
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                ),
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                  Expanded(
-                                                                    child:
-                                                                        Container(
-                                                                      width: MediaQuery.sizeOf(context)
-                                                                              .width *
-                                                                          1.0,
-                                                                      height:
-                                                                          46.0,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: Color(
-                                                                            0xFFF5F5F5),
-                                                                      ),
-                                                                      alignment:
-                                                                          AlignmentDirectional(
-                                                                              0.0,
-                                                                              0.0),
-                                                                      child:
-                                                                          Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            5.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                        child:
-                                                                            Text(
-                                                                          'Transaction Trend',
-                                                                          textAlign:
-                                                                              TextAlign.center,
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .override(
-                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                fontSize: 12.0,
-                                                                                fontWeight: FontWeight.bold,
-                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                              ),
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                  Expanded(
-                                                                    child:
-                                                                        Container(
-                                                                      width: MediaQuery.sizeOf(context)
-                                                                              .width *
-                                                                          1.0,
-                                                                      height:
-                                                                          46.0,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: Color(
-                                                                            0xFFF5F5F5),
-                                                                      ),
-                                                                      alignment:
-                                                                          AlignmentDirectional(
-                                                                              0.0,
-                                                                              0.0),
-                                                                      child:
-                                                                          Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            5.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                        child:
-                                                                            Text(
-                                                                          'Uptime Trend',
-                                                                          textAlign:
-                                                                              TextAlign.center,
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .override(
-                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                fontSize: 12.0,
-                                                                                fontWeight: FontWeight.bold,
-                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                              ),
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                ],
                                                               ),
                                                             ),
-                                                          ],
-                                                        ),
-                                                      ),
-                                                      fixedWidth: 600.0,
-                                                    ),
-                                                  ],
-                                                  rows: (dipData as Iterable)
-                                                      .mapIndexed((dipDataIndex,
-                                                              dipDataItem) =>
-                                                          [
-                                                            Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              mainAxisAlignment:
-                                                                  MainAxisAlignment
-                                                                      .spaceBetween,
-                                                              children: [
-                                                                Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                          ),
+                                                        if (FFAppState()
+                                                            .atmInfoState)
+                                                          Container(
+                                                            width: 140.0,
+                                                            height: 46.0,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: Color(
+                                                                  0xFFF5F5F5),
+                                                            ),
+                                                            alignment:
+                                                                AlignmentDirectional(
+                                                                    -1.0, 0.0),
+                                                            child: Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
+                                                                          16.0,
                                                                           0.0,
-                                                                          15.0,
                                                                           0.0,
                                                                           0.0),
-                                                                  child: Row(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    mainAxisAlignment:
-                                                                        MainAxisAlignment
-                                                                            .spaceBetween,
-                                                                    crossAxisAlignment:
-                                                                        CrossAxisAlignment
-                                                                            .start,
-                                                                    children: [
-                                                                      Expanded(
-                                                                        child:
-                                                                            Container(
+                                                              child: Text(
+                                                                'Location',
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .start,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
+                                                                      fontSize:
+                                                                          12.0,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .bold,
+                                                                      useGoogleFonts: GoogleFonts
+                                                                              .asMap()
+                                                                          .containsKey(
+                                                                              FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                    ),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        Container(
+                                                          width: 100.0,
+                                                          height: 46.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: Color(
+                                                                0xFFF5F5F5),
+                                                          ),
+                                                          alignment:
+                                                              AlignmentDirectional(
+                                                                  -1.0, 0.0),
+                                                          child: Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        16.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
+                                                            child: Text(
+                                                              'Transaction Trend',
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .start,
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily,
+                                                                    fontSize:
+                                                                        12.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .bold,
+                                                                    useGoogleFonts: GoogleFonts
+                                                                            .asMap()
+                                                                        .containsKey(
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                  ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        Container(
+                                                          width: 102.0,
+                                                          height: 46.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: Color(
+                                                                0xFFF5F5F5),
+                                                          ),
+                                                          alignment:
+                                                              AlignmentDirectional(
+                                                                  -1.0, 0.0),
+                                                          child: Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        16.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
+                                                            child: Text(
+                                                              'Uptime Trend',
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .start,
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily,
+                                                                    fontSize:
+                                                                        12.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .bold,
+                                                                    useGoogleFonts: GoogleFonts
+                                                                            .asMap()
+                                                                        .containsKey(
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                  ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    Expanded(
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        crossAxisAlignment:
+                                                            CrossAxisAlignment
+                                                                .start,
+                                                        children: [
+                                                          Builder(
+                                                            builder: (context) {
+                                                              final data =
+                                                                  getJsonField(
+                                                                functions.filter(
+                                                                    FFAppState()
+                                                                        .allMachineDetails,
+                                                                    FFAppState()
+                                                                        .searchValue1,
+                                                                    FFAppState()
+                                                                        .transactionTrendFilter,
+                                                                    FFAppState()
+                                                                        .gradeFilter,
+                                                                    FFAppState()
+                                                                        .uptimeTrendFilter,
+                                                                    FFAppState()
+                                                                        .bankFilter,
+                                                                    FFAppState()
+                                                                        .locationFilter),
+                                                                r'''$.data''',
+                                                              ).toList();
+                                                              return SingleChildScrollView(
+                                                                child: Column(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  crossAxisAlignment:
+                                                                      CrossAxisAlignment
+                                                                          .start,
+                                                                  children: List
+                                                                      .generate(
+                                                                          data.length,
+                                                                          (dataIndex) {
+                                                                    final dataItem =
+                                                                        data[
+                                                                            dataIndex];
+                                                                    return Column(
+                                                                      mainAxisSize:
+                                                                          MainAxisSize
+                                                                              .max,
+                                                                      crossAxisAlignment:
+                                                                          CrossAxisAlignment
+                                                                              .start,
+                                                                      children: [
+                                                                        Container(
                                                                           decoration:
                                                                               BoxDecoration(
                                                                             color:
-                                                                                Colors.white,
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                            border:
+                                                                                Border.all(
+                                                                              color: Color(0xFFF2F2F2),
+                                                                              width: 1.0,
+                                                                            ),
                                                                           ),
                                                                           child:
                                                                               Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                5.0,
                                                                                 0.0,
+                                                                                14.0,
                                                                                 0.0,
-                                                                                0.0),
+                                                                                14.0),
                                                                             child:
-                                                                                InkWell(
-                                                                              splashColor: Colors.transparent,
-                                                                              focusColor: Colors.transparent,
-                                                                              hoverColor: Colors.transparent,
-                                                                              highlightColor: Colors.transparent,
-                                                                              onTap: () async {
-                                                                                context.pushNamed(
-                                                                                  'ATMdetails',
-                                                                                  queryParameters: {
-                                                                                    'atmId': serializeParam(
+                                                                                Row(
+                                                                              mainAxisSize: MainAxisSize.max,
+                                                                              children: [
+                                                                                Container(
+                                                                                  width: 120.0,
+                                                                                  decoration: BoxDecoration(
+                                                                                    color: Colors.white,
+                                                                                  ),
+                                                                                  alignment: AlignmentDirectional(-1.0, 0.0),
+                                                                                  child: Padding(
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                                                                                    child: Text(
                                                                                       getJsonField(
-                                                                                        dipDataItem,
+                                                                                        dataItem,
                                                                                         r'''$..atmId''',
                                                                                       ).toString(),
-                                                                                      ParamType.String,
+                                                                                      textAlign: TextAlign.start,
+                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                            fontSize: 12.0,
+                                                                                            fontWeight: FontWeight.normal,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                          ),
                                                                                     ),
-                                                                                  }.withoutNulls,
-                                                                                  extra: <String, dynamic>{
-                                                                                    kTransitionInfoKey: TransitionInfo(
-                                                                                      hasTransition: true,
-                                                                                      transitionType: PageTransitionType.fade,
-                                                                                      duration: Duration(milliseconds: 0),
-                                                                                    ),
-                                                                                  },
-                                                                                );
-                                                                              },
-                                                                              child: AutoSizeText(
-                                                                                getJsonField(
-                                                                                  dipDataItem,
-                                                                                  r'''$..atmId''',
-                                                                                ).toString(),
-                                                                                textAlign: TextAlign.start,
-                                                                                maxLines: 1,
-                                                                                style: FlutterFlowTheme.of(context).bodyMedium,
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                      if (getJsonField(
-                                                                            dipDataItem,
-                                                                            r'''$..grade''',
-                                                                          ) ==
-                                                                          'Silver')
-                                                                        Expanded(
-                                                                          child:
-                                                                              ClipRRect(
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(8.0),
-                                                                            child:
-                                                                                Image.asset(
-                                                                              'assets/images/Silver.png',
-                                                                              width: 24.0,
-                                                                              height: 24.0,
-                                                                              fit: BoxFit.contain,
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      if (getJsonField(
-                                                                            dipDataItem,
-                                                                            r'''$..grade''',
-                                                                          ) ==
-                                                                          'New')
-                                                                        Expanded(
-                                                                          child:
-                                                                              ClipRRect(
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(8.0),
-                                                                            child:
-                                                                                Image.asset(
-                                                                              'assets/images/Presidential.png',
-                                                                              width: 24.0,
-                                                                              height: 24.0,
-                                                                              fit: BoxFit.contain,
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      if (getJsonField(
-                                                                            dipDataItem,
-                                                                            r'''$..grade''',
-                                                                          ) ==
-                                                                          'Gold')
-                                                                        Expanded(
-                                                                          child:
-                                                                              ClipRRect(
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(8.0),
-                                                                            child:
-                                                                                Image.asset(
-                                                                              'assets/images/Gold.png',
-                                                                              width: 24.0,
-                                                                              height: 24.0,
-                                                                              fit: BoxFit.contain,
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      if (getJsonField(
-                                                                            dipDataItem,
-                                                                            r'''$..grade''',
-                                                                          ) ==
-                                                                          'Platinum')
-                                                                        Expanded(
-                                                                          child:
-                                                                              ClipRRect(
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(8.0),
-                                                                            child:
-                                                                                Image.asset(
-                                                                              'assets/images/Platinum.png',
-                                                                              width: 24.0,
-                                                                              height: 24.0,
-                                                                              fit: BoxFit.contain,
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      if (getJsonField(
-                                                                            dipDataItem,
-                                                                            r'''$..grade''',
-                                                                          ) ==
-                                                                          'Bronze')
-                                                                        Expanded(
-                                                                          child:
-                                                                              ClipRRect(
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(8.0),
-                                                                            child:
-                                                                                Image.asset(
-                                                                              'assets/images/Bronze.png',
-                                                                              width: 24.0,
-                                                                              height: 24.0,
-                                                                              fit: BoxFit.contain,
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      if (FFAppState()
-                                                                          .atmInfoState)
-                                                                        Expanded(
-                                                                          child:
-                                                                              Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                5.0,
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0),
-                                                                            child:
-                                                                                Text(
-                                                                              getJsonField(
-                                                                                dipDataItem,
-                                                                                r'''$..bankName''',
-                                                                              ).toString(),
-                                                                              textAlign: TextAlign.start,
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium,
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      if (FFAppState()
-                                                                          .atmInfoState)
-                                                                        Expanded(
-                                                                          child:
-                                                                              Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                5.0,
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0),
-                                                                            child:
+                                                                                  ),
+                                                                                ),
                                                                                 Container(
-                                                                              decoration: BoxDecoration(
-                                                                                color: Colors.white,
-                                                                              ),
-                                                                              child: AutoSizeText(
-                                                                                getJsonField(
-                                                                                  dipDataItem,
-                                                                                  r'''$..location''',
-                                                                                ).toString(),
-                                                                                textAlign: TextAlign.start,
-                                                                                maxLines: 3,
-                                                                                style: FlutterFlowTheme.of(context).bodyMedium,
-                                                                                minFontSize: 1.0,
-                                                                              ),
+                                                                                  width: 60.0,
+                                                                                  decoration: BoxDecoration(
+                                                                                    color: Colors.white,
+                                                                                  ),
+                                                                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                  child: Column(
+                                                                                    mainAxisSize: MainAxisSize.max,
+                                                                                    children: [
+                                                                                      if ((String grade) {
+                                                                                        return grade == "Silver" ? true : false;
+                                                                                      }(getJsonField(
+                                                                                        dataItem,
+                                                                                        r'''$..grade''',
+                                                                                      ).toString()))
+                                                                                        ClipRRect(
+                                                                                          borderRadius: BorderRadius.circular(8.0),
+                                                                                          child: Image.asset(
+                                                                                            'assets/images/Silver.png',
+                                                                                            width: 24.0,
+                                                                                            height: 24.0,
+                                                                                            fit: BoxFit.contain,
+                                                                                          ),
+                                                                                        ),
+                                                                                      if ((String grade) {
+                                                                                        return grade == "New" ? true : false;
+                                                                                      }(getJsonField(
+                                                                                        dataItem,
+                                                                                        r'''$..grade''',
+                                                                                      ).toString()))
+                                                                                        ClipRRect(
+                                                                                          borderRadius: BorderRadius.circular(8.0),
+                                                                                          child: Image.asset(
+                                                                                            'assets/images/Presidential.png',
+                                                                                            width: 24.0,
+                                                                                            height: 24.0,
+                                                                                            fit: BoxFit.contain,
+                                                                                          ),
+                                                                                        ),
+                                                                                      if ((String grade) {
+                                                                                        return grade == "Gold" ? true : false;
+                                                                                      }(getJsonField(
+                                                                                        dataItem,
+                                                                                        r'''$..grade''',
+                                                                                      ).toString()))
+                                                                                        ClipRRect(
+                                                                                          borderRadius: BorderRadius.circular(8.0),
+                                                                                          child: Image.asset(
+                                                                                            'assets/images/Gold.png',
+                                                                                            width: 24.0,
+                                                                                            height: 24.0,
+                                                                                            fit: BoxFit.contain,
+                                                                                          ),
+                                                                                        ),
+                                                                                      if ((String grade) {
+                                                                                        return grade == "Platinum" ? true : false;
+                                                                                      }(getJsonField(
+                                                                                        dataItem,
+                                                                                        r'''$..grade''',
+                                                                                      ).toString()))
+                                                                                        ClipRRect(
+                                                                                          borderRadius: BorderRadius.circular(8.0),
+                                                                                          child: Image.asset(
+                                                                                            'assets/images/Platinum.png',
+                                                                                            width: 24.0,
+                                                                                            height: 24.0,
+                                                                                            fit: BoxFit.contain,
+                                                                                          ),
+                                                                                        ),
+                                                                                      if ((String grade) {
+                                                                                        return grade == "Bronze" ? true : false;
+                                                                                      }(getJsonField(
+                                                                                        dataItem,
+                                                                                        r'''$..grade''',
+                                                                                      ).toString()))
+                                                                                        ClipRRect(
+                                                                                          borderRadius: BorderRadius.circular(8.0),
+                                                                                          child: Image.asset(
+                                                                                            'assets/images/Bronze.png',
+                                                                                            width: 24.0,
+                                                                                            height: 24.0,
+                                                                                            fit: BoxFit.contain,
+                                                                                          ),
+                                                                                        ),
+                                                                                    ],
+                                                                                  ),
+                                                                                ),
+                                                                                if (FFAppState().atmInfoState)
+                                                                                  Container(
+                                                                                    width: 120.0,
+                                                                                    decoration: BoxDecoration(
+                                                                                      color: Colors.white,
+                                                                                    ),
+                                                                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                                                                    child: Padding(
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                                                                                      child: Text(
+                                                                                        getJsonField(
+                                                                                          dataItem,
+                                                                                          r'''$..bankName''',
+                                                                                        ).toString(),
+                                                                                        textAlign: TextAlign.start,
+                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                              fontSize: 12.0,
+                                                                                              fontWeight: FontWeight.normal,
+                                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                            ),
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                if (FFAppState().atmInfoState)
+                                                                                  Container(
+                                                                                    width: 140.0,
+                                                                                    decoration: BoxDecoration(
+                                                                                      color: Colors.white,
+                                                                                    ),
+                                                                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                                                                    child: Padding(
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                                                                                      child: Text(
+                                                                                        getJsonField(
+                                                                                          dataItem,
+                                                                                          r'''$..location''',
+                                                                                        ).toString(),
+                                                                                        textAlign: TextAlign.start,
+                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                              fontSize: 12.0,
+                                                                                              fontWeight: FontWeight.normal,
+                                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                            ),
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                Container(
+                                                                                  width: 100.0,
+                                                                                  decoration: BoxDecoration(
+                                                                                    color: Colors.white,
+                                                                                  ),
+                                                                                  alignment: AlignmentDirectional(-1.0, 0.0),
+                                                                                  child: Padding(
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                                                                                    child: Text(
+                                                                                      '${getJsonField(
+                                                                                        dataItem,
+                                                                                        r'''$..transactionTrend''',
+                                                                                      ).toString()}%',
+                                                                                      textAlign: TextAlign.center,
+                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                            color: functions.colorChange(getJsonField(
+                                                                                              dataItem,
+                                                                                              r'''$..transactionTrend''',
+                                                                                            )),
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                          ),
+                                                                                    ),
+                                                                                  ),
+                                                                                ),
+                                                                                Container(
+                                                                                  width: 100.0,
+                                                                                  decoration: BoxDecoration(
+                                                                                    color: Colors.white,
+                                                                                  ),
+                                                                                  alignment: AlignmentDirectional(-1.0, 0.0),
+                                                                                  child: Padding(
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                                                                                    child: Text(
+                                                                                      '${getJsonField(
+                                                                                        dataItem,
+                                                                                        r'''$..uptimeTrend''',
+                                                                                      ).toString()}%',
+                                                                                      textAlign: TextAlign.center,
+                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                            color: functions.colorChange(getJsonField(
+                                                                                              dataItem,
+                                                                                              r'''$..uptimeTrend''',
+                                                                                            )),
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                          ),
+                                                                                    ),
+                                                                                  ),
+                                                                                ),
+                                                                              ],
                                                                             ),
                                                                           ),
                                                                         ),
-                                                                      Expanded(
-                                                                        child:
-                                                                            Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              5.0,
-                                                                              0.0,
-                                                                              0.0,
-                                                                              0.0),
-                                                                          child:
-                                                                              Text(
-                                                                            '${getJsonField(
-                                                                              dipDataItem,
-                                                                              r'''$..transactionTrend''',
-                                                                            ).toString()}%',
-                                                                            textAlign:
-                                                                                TextAlign.center,
-                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                  color: functions.colorChange(getJsonField(
-                                                                                    dipDataItem,
-                                                                                    r'''$..transactionTrend''',
-                                                                                  )),
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                ),
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                      Expanded(
-                                                                        child:
-                                                                            Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              5.0,
-                                                                              0.0,
-                                                                              0.0,
-                                                                              0.0),
-                                                                          child:
-                                                                              Text(
-                                                                            '${getJsonField(
-                                                                              dipDataItem,
-                                                                              r'''$..uptimeTrend''',
-                                                                            ).toString()}%',
-                                                                            textAlign:
-                                                                                TextAlign.center,
-                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                  color: functions.colorChange(getJsonField(
-                                                                                    dipDataItem,
-                                                                                    r'''$..uptimeTrend''',
-                                                                                  )),
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                ),
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                    ],
-                                                                  ),
+                                                                      ],
+                                                                    );
+                                                                  }),
                                                                 ),
-                                                                Align(
-                                                                  alignment:
-                                                                      AlignmentDirectional(
-                                                                          0.0,
-                                                                          1.0),
-                                                                  child:
-                                                                      Container(
-                                                                    width: MediaQuery.sizeOf(context)
-                                                                            .width *
-                                                                        5.0,
-                                                                    height: 1.0,
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                      color: Color(
-                                                                          0xFFF2F2F2),
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                          ]
-                                                              .map((c) =>
-                                                                  DataCell(c))
-                                                              .toList())
-                                                      .map((e) =>
-                                                          DataRow(cells: e))
-                                                      .toList(),
-                                                  headingRowColor:
-                                                      MaterialStateProperty.all(
-                                                    Color(0x00F1F4F8),
-                                                  ),
-                                                  headingRowHeight: 100.0,
-                                                  dataRowColor:
-                                                      MaterialStateProperty.all(
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                                  ),
-                                                  dataRowHeight: 56.0,
-                                                  border: TableBorder(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            0.0),
-                                                  ),
-                                                  dividerThickness: 0.0,
-                                                  columnSpacing: 0.0,
-                                                  showBottomBorder: true,
-                                                  minWidth: 49.0,
-                                                );
-                                              },
-                                            ),
+                                                              );
+                                                            },
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ],
                                           ),
                                         ),
                                       ),
@@ -1645,744 +1623,692 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 16.0, 0.0, 0.0),
-                                        child: Container(
-                                          width:
-                                              MediaQuery.sizeOf(context).width *
-                                                  1.0,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                          ),
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 15.0),
-                                            child: Builder(
-                                              builder: (context) {
-                                                final dipData = getJsonField(
-                                                  functions.filter(
-                                                      FFAppState()
-                                                          .allMachineDetails,
-                                                      FFAppState().searchValue2,
-                                                      FFAppState()
-                                                          .transactionTrendFilter,
-                                                      FFAppState().gradeFilter,
-                                                      FFAppState()
-                                                          .uptimeTrendFilter,
-                                                      FFAppState().bankFilter),
-                                                  r'''$.data''',
-                                                ).toList();
-                                                return DataTable2(
-                                                  columns: [
-                                                    DataColumn2(
-                                                      label: DefaultTextStyle
-                                                          .merge(
-                                                        softWrap: true,
-                                                        child: Column(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .spaceEvenly,
-                                                          children: [
-                                                            Row(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              children: [
-                                                                Container(
-                                                                  width: FFAppState()
-                                                                          .atmInfoState
-                                                                      ? 360.0
-                                                                      : 240.0,
-                                                                  height: 46.0,
-                                                                  decoration:
-                                                                      BoxDecoration(
-                                                                    gradient:
-                                                                        LinearGradient(
-                                                                      colors: [
-                                                                        Color(
-                                                                            0xFF3B3B3C),
-                                                                        Colors
-                                                                            .black
-                                                                      ],
-                                                                      stops: [
-                                                                        0.0,
-                                                                        1.0
-                                                                      ],
-                                                                      begin: AlignmentDirectional(
-                                                                          0.0,
-                                                                          -1.0),
-                                                                      end: AlignmentDirectional(
-                                                                          0,
-                                                                          1.0),
+                                        child: SingleChildScrollView(
+                                          scrollDirection: Axis.horizontal,
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        16.0, 0.0, 16.0, 16.0),
+                                                child: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      children: [
+                                                        Container(
+                                                          width: (FFAppState()
+                                                                      .atmInfoState
+                                                                  ? 440
+                                                                  : 180)
+                                                              .toDouble(),
+                                                          height: 46.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            gradient:
+                                                                LinearGradient(
+                                                              colors: [
+                                                                Color(
+                                                                    0xFF3B3B3C),
+                                                                Colors.black
+                                                              ],
+                                                              stops: [0.0, 1.0],
+                                                              begin:
+                                                                  AlignmentDirectional(
+                                                                      0.0,
+                                                                      -1.0),
+                                                              end:
+                                                                  AlignmentDirectional(
+                                                                      0, 1.0),
+                                                            ),
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .only(
+                                                              bottomLeft: Radius
+                                                                  .circular(
+                                                                      0.0),
+                                                              bottomRight:
+                                                                  Radius
+                                                                      .circular(
+                                                                          0.0),
+                                                              topLeft: Radius
+                                                                  .circular(
+                                                                      6.0),
+                                                              topRight: Radius
+                                                                  .circular(
+                                                                      0.0),
+                                                            ),
+                                                          ),
+                                                          alignment:
+                                                              AlignmentDirectional(
+                                                                  0.0, 0.0),
+                                                          child: Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .center,
+                                                            children: [
+                                                              Text(
+                                                                'ATM Information',
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryBackground,
+                                                                      useGoogleFonts: GoogleFonts
+                                                                              .asMap()
+                                                                          .containsKey(
+                                                                              FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                     ),
-                                                                    borderRadius:
-                                                                        BorderRadius
-                                                                            .only(
-                                                                      bottomLeft:
-                                                                          Radius.circular(
-                                                                              0.0),
-                                                                      bottomRight:
-                                                                          Radius.circular(
-                                                                              0.0),
-                                                                      topLeft: Radius
-                                                                          .circular(
-                                                                              6.0),
-                                                                      topRight:
-                                                                          Radius.circular(
-                                                                              0.0),
-                                                                    ),
+                                                              ),
+                                                              if (!FFAppState()
+                                                                  .atmInfoState)
+                                                                InkWell(
+                                                                  splashColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  focusColor: Colors
+                                                                      .transparent,
+                                                                  hoverColor: Colors
+                                                                      .transparent,
+                                                                  highlightColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  onTap:
+                                                                      () async {
+                                                                    setState(
+                                                                        () {
+                                                                      FFAppState()
+                                                                              .atmInfoState =
+                                                                          true;
+                                                                    });
+                                                                  },
+                                                                  child: Icon(
+                                                                    Icons
+                                                                        .keyboard_arrow_right,
+                                                                    color: Color(
+                                                                        0xFFFF0026),
+                                                                    size: 24.0,
                                                                   ),
-                                                                  alignment:
-                                                                      AlignmentDirectional(
+                                                                ),
+                                                              if (FFAppState()
+                                                                  .atmInfoState)
+                                                                InkWell(
+                                                                  splashColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  focusColor: Colors
+                                                                      .transparent,
+                                                                  hoverColor: Colors
+                                                                      .transparent,
+                                                                  highlightColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  onTap:
+                                                                      () async {
+                                                                    setState(
+                                                                        () {
+                                                                      FFAppState()
+                                                                              .atmInfoState =
+                                                                          false;
+                                                                    });
+                                                                  },
+                                                                  child: Icon(
+                                                                    Icons
+                                                                        .keyboard_arrow_left,
+                                                                    color: Color(
+                                                                        0xFFFF0026),
+                                                                    size: 24.0,
+                                                                  ),
+                                                                ),
+                                                            ],
+                                                          ),
+                                                        ),
+                                                        Container(
+                                                          width: 102.0,
+                                                          height: 46.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            gradient:
+                                                                LinearGradient(
+                                                              colors: [
+                                                                Color(
+                                                                    0xFF3B3B3C),
+                                                                Colors.black
+                                                              ],
+                                                              stops: [0.0, 1.0],
+                                                              begin:
+                                                                  AlignmentDirectional(
+                                                                      0.0,
+                                                                      -1.0),
+                                                              end:
+                                                                  AlignmentDirectional(
+                                                                      0, 1.0),
+                                                            ),
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .only(
+                                                              bottomLeft: Radius
+                                                                  .circular(
+                                                                      0.0),
+                                                              bottomRight:
+                                                                  Radius
+                                                                      .circular(
+                                                                          0.0),
+                                                              topLeft: Radius
+                                                                  .circular(
+                                                                      0.0),
+                                                              topRight: Radius
+                                                                  .circular(
+                                                                      6.0),
+                                                            ),
+                                                          ),
+                                                          alignment:
+                                                              AlignmentDirectional(
+                                                                  0.0, 0.0),
+                                                          child: Text(
+                                                            'Transaction Trend',
+                                                            textAlign: TextAlign
+                                                                .center,
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryBackground,
+                                                                  useGoogleFonts: GoogleFonts
+                                                                          .asMap()
+                                                                      .containsKey(
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily),
+                                                                ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      children: [
+                                                        Container(
+                                                          width: 120.0,
+                                                          height: 46.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: Color(
+                                                                0xFFF5F5F5),
+                                                          ),
+                                                          alignment:
+                                                              AlignmentDirectional(
+                                                                  -1.0, 0.0),
+                                                          child: Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        16.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
+                                                            child: Text(
+                                                              'ATM ID',
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .start,
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily,
+                                                                    fontSize:
+                                                                        12.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .bold,
+                                                                    useGoogleFonts: GoogleFonts
+                                                                            .asMap()
+                                                                        .containsKey(
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                  ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        Container(
+                                                          width: 60.0,
+                                                          height: 46.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: Color(
+                                                                0xFFF5F5F5),
+                                                          ),
+                                                          alignment:
+                                                              AlignmentDirectional(
+                                                                  0.0, 0.0),
+                                                          child: Text(
+                                                            'Grade',
+                                                            textAlign:
+                                                                TextAlign.start,
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily,
+                                                                  fontSize:
+                                                                      12.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
+                                                                  useGoogleFonts: GoogleFonts
+                                                                          .asMap()
+                                                                      .containsKey(
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily),
+                                                                ),
+                                                          ),
+                                                        ),
+                                                        if (FFAppState()
+                                                            .atmInfoState)
+                                                          Container(
+                                                            width: 120.0,
+                                                            height: 46.0,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: Color(
+                                                                  0xFFF5F5F5),
+                                                            ),
+                                                            alignment:
+                                                                AlignmentDirectional(
+                                                                    -1.0, 0.0),
+                                                            child: Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          16.0,
+                                                                          0.0,
                                                                           0.0,
                                                                           0.0),
-                                                                  child: Row(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    mainAxisAlignment:
-                                                                        MainAxisAlignment
-                                                                            .center,
-                                                                    children: [
-                                                                      Text(
-                                                                        'ATM Information',
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                              color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                            ),
-                                                                      ),
-                                                                      if (!FFAppState()
-                                                                          .atmInfoState)
-                                                                        InkWell(
-                                                                          splashColor:
-                                                                              Colors.transparent,
-                                                                          focusColor:
-                                                                              Colors.transparent,
-                                                                          hoverColor:
-                                                                              Colors.transparent,
-                                                                          highlightColor:
-                                                                              Colors.transparent,
-                                                                          onTap:
-                                                                              () async {
-                                                                            setState(() {
-                                                                              FFAppState().atmInfoState = true;
-                                                                            });
-                                                                          },
-                                                                          child:
-                                                                              Icon(
-                                                                            Icons.keyboard_arrow_right,
-                                                                            color:
-                                                                                Color(0xFFFF0026),
-                                                                            size:
-                                                                                24.0,
-                                                                          ),
-                                                                        ),
-                                                                      if (FFAppState()
-                                                                          .atmInfoState)
-                                                                        InkWell(
-                                                                          splashColor:
-                                                                              Colors.transparent,
-                                                                          focusColor:
-                                                                              Colors.transparent,
-                                                                          hoverColor:
-                                                                              Colors.transparent,
-                                                                          highlightColor:
-                                                                              Colors.transparent,
-                                                                          onTap:
-                                                                              () async {
-                                                                            setState(() {
-                                                                              FFAppState().atmInfoState = false;
-                                                                            });
-                                                                          },
-                                                                          child:
-                                                                              Icon(
-                                                                            Icons.keyboard_arrow_left,
-                                                                            color:
-                                                                                Color(0xFFFF0026),
-                                                                            size:
-                                                                                24.0,
-                                                                          ),
-                                                                        ),
-                                                                    ],
-                                                                  ),
-                                                                ),
-                                                                Expanded(
-                                                                  child:
-                                                                      Container(
-                                                                    width: MediaQuery.sizeOf(context)
-                                                                            .width *
-                                                                        1.0,
-                                                                    height:
-                                                                        46.0,
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                      gradient:
-                                                                          LinearGradient(
-                                                                        colors: [
-                                                                          Color(
-                                                                              0xFF3B3B3C),
-                                                                          Colors
-                                                                              .black
-                                                                        ],
-                                                                        stops: [
-                                                                          0.0,
-                                                                          1.0
-                                                                        ],
-                                                                        begin: AlignmentDirectional(
-                                                                            0.0,
-                                                                            -1.0),
-                                                                        end: AlignmentDirectional(
-                                                                            0,
-                                                                            1.0),
-                                                                      ),
+                                                              child: Text(
+                                                                'Bank',
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .start,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
+                                                                      fontSize:
+                                                                          12.0,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .bold,
+                                                                      useGoogleFonts: GoogleFonts
+                                                                              .asMap()
+                                                                          .containsKey(
+                                                                              FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                     ),
-                                                                    alignment:
-                                                                        AlignmentDirectional(
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child: Text(
-                                                                      'ATM Performance',
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).primaryBackground,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                          ),
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                            Expanded(
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .spaceEvenly,
-                                                                children: [
-                                                                  Expanded(
-                                                                    child:
-                                                                        Container(
-                                                                      width: MediaQuery.sizeOf(context)
-                                                                              .width *
-                                                                          1.0,
-                                                                      height:
-                                                                          46.0,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: Color(
-                                                                            0xFFF5F5F5),
-                                                                      ),
-                                                                      alignment:
-                                                                          AlignmentDirectional(
-                                                                              0.0,
-                                                                              0.0),
-                                                                      child:
-                                                                          Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            5.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                        child:
-                                                                            Text(
-                                                                          'ATM ID',
-                                                                          textAlign:
-                                                                              TextAlign.start,
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .override(
-                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                fontSize: 12.0,
-                                                                                fontWeight: FontWeight.bold,
-                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                              ),
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                  Expanded(
-                                                                    child:
-                                                                        Container(
-                                                                      width: MediaQuery.sizeOf(context)
-                                                                              .width *
-                                                                          1.0,
-                                                                      height:
-                                                                          46.0,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: Color(
-                                                                            0xFFF5F5F5),
-                                                                      ),
-                                                                      alignment:
-                                                                          AlignmentDirectional(
-                                                                              0.0,
-                                                                              0.0),
-                                                                      child:
-                                                                          Text(
-                                                                        'Grade',
-                                                                        textAlign:
-                                                                            TextAlign.center,
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                              fontSize: 12.0,
-                                                                              fontWeight: FontWeight.bold,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                            ),
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                  if (FFAppState()
-                                                                      .atmInfoState)
-                                                                    Expanded(
-                                                                      child:
-                                                                          Container(
-                                                                        width: MediaQuery.sizeOf(context).width *
-                                                                            1.0,
-                                                                        height:
-                                                                            46.0,
-                                                                        decoration:
-                                                                            BoxDecoration(
-                                                                          color:
-                                                                              Color(0xFFF5F5F5),
-                                                                        ),
-                                                                        alignment: AlignmentDirectional(
-                                                                            0.0,
-                                                                            0.0),
-                                                                        child:
-                                                                            Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              5.0,
-                                                                              0.0,
-                                                                              0.0,
-                                                                              0.0),
-                                                                          child:
-                                                                              Text(
-                                                                            'Bank',
-                                                                            textAlign:
-                                                                                TextAlign.start,
-                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                  fontSize: 12.0,
-                                                                                  fontWeight: FontWeight.bold,
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                ),
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                  if (FFAppState()
-                                                                      .atmInfoState)
-                                                                    Expanded(
-                                                                      child:
-                                                                          Container(
-                                                                        width: MediaQuery.sizeOf(context).width *
-                                                                            1.0,
-                                                                        height:
-                                                                            46.0,
-                                                                        decoration:
-                                                                            BoxDecoration(
-                                                                          color:
-                                                                              Color(0xFFF5F5F5),
-                                                                        ),
-                                                                        alignment: AlignmentDirectional(
-                                                                            0.0,
-                                                                            0.0),
-                                                                        child:
-                                                                            Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              5.0,
-                                                                              0.0,
-                                                                              0.0,
-                                                                              0.0),
-                                                                          child:
-                                                                              Text(
-                                                                            'Location',
-                                                                            textAlign:
-                                                                                TextAlign.start,
-                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                  fontSize: 12.0,
-                                                                                  fontWeight: FontWeight.bold,
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                ),
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                  Expanded(
-                                                                    child:
-                                                                        Container(
-                                                                      width: MediaQuery.sizeOf(context)
-                                                                              .width *
-                                                                          1.0,
-                                                                      height:
-                                                                          46.0,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: Color(
-                                                                            0xFFF5F5F5),
-                                                                      ),
-                                                                      alignment:
-                                                                          AlignmentDirectional(
-                                                                              0.0,
-                                                                              0.0),
-                                                                      child:
-                                                                          Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            5.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                        child:
-                                                                            Text(
-                                                                          'Transaction Trend',
-                                                                          textAlign:
-                                                                              TextAlign.center,
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .override(
-                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                fontSize: 12.0,
-                                                                                fontWeight: FontWeight.bold,
-                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                              ),
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                ],
                                                               ),
                                                             ),
-                                                          ],
-                                                        ),
-                                                      ),
-                                                      fixedWidth: 600.0,
-                                                    ),
-                                                  ],
-                                                  rows: (dipData as Iterable)
-                                                      .mapIndexed((dipDataIndex,
-                                                              dipDataItem) =>
-                                                          [
-                                                            Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              mainAxisAlignment:
-                                                                  MainAxisAlignment
-                                                                      .spaceBetween,
-                                                              children: [
-                                                                Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                          ),
+                                                        if (FFAppState()
+                                                            .atmInfoState)
+                                                          Container(
+                                                            width: 140.0,
+                                                            height: 46.0,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: Color(
+                                                                  0xFFF5F5F5),
+                                                            ),
+                                                            alignment:
+                                                                AlignmentDirectional(
+                                                                    -1.0, 0.0),
+                                                            child: Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
+                                                                          16.0,
                                                                           0.0,
-                                                                          15.0,
                                                                           0.0,
                                                                           0.0),
-                                                                  child: Row(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    mainAxisAlignment:
-                                                                        MainAxisAlignment
-                                                                            .spaceBetween,
-                                                                    crossAxisAlignment:
-                                                                        CrossAxisAlignment
-                                                                            .start,
-                                                                    children: [
-                                                                      Expanded(
-                                                                        child:
-                                                                            Container(
+                                                              child: Text(
+                                                                'Location',
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .start,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
+                                                                      fontSize:
+                                                                          12.0,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .bold,
+                                                                      useGoogleFonts: GoogleFonts
+                                                                              .asMap()
+                                                                          .containsKey(
+                                                                              FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                    ),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        Container(
+                                                          width: 102.0,
+                                                          height: 46.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: Color(
+                                                                0xFFF5F5F5),
+                                                          ),
+                                                          alignment:
+                                                              AlignmentDirectional(
+                                                                  -1.0, 0.0),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    Expanded(
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        crossAxisAlignment:
+                                                            CrossAxisAlignment
+                                                                .start,
+                                                        children: [
+                                                          Builder(
+                                                            builder: (context) {
+                                                              final data =
+                                                                  getJsonField(
+                                                                functions.filter(
+                                                                    FFAppState()
+                                                                        .allMachineDetails,
+                                                                    FFAppState()
+                                                                        .searchValue2,
+                                                                    FFAppState()
+                                                                        .transactionTrendFilter,
+                                                                    FFAppState()
+                                                                        .gradeFilter,
+                                                                    FFAppState()
+                                                                        .uptimeTrendFilter,
+                                                                    FFAppState()
+                                                                        .bankFilter,
+                                                                    FFAppState()
+                                                                        .locationFilter),
+                                                                r'''$.data''',
+                                                              ).toList();
+                                                              return SingleChildScrollView(
+                                                                child: Column(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  crossAxisAlignment:
+                                                                      CrossAxisAlignment
+                                                                          .start,
+                                                                  children: List
+                                                                      .generate(
+                                                                          data.length,
+                                                                          (dataIndex) {
+                                                                    final dataItem =
+                                                                        data[
+                                                                            dataIndex];
+                                                                    return Column(
+                                                                      mainAxisSize:
+                                                                          MainAxisSize
+                                                                              .max,
+                                                                      crossAxisAlignment:
+                                                                          CrossAxisAlignment
+                                                                              .start,
+                                                                      children: [
+                                                                        Container(
                                                                           decoration:
                                                                               BoxDecoration(
                                                                             color:
-                                                                                Colors.white,
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                            border:
+                                                                                Border.all(
+                                                                              color: Color(0xFFF2F2F2),
+                                                                              width: 1.0,
+                                                                            ),
                                                                           ),
                                                                           child:
                                                                               Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                5.0,
                                                                                 0.0,
+                                                                                14.0,
                                                                                 0.0,
-                                                                                0.0),
+                                                                                14.0),
                                                                             child:
-                                                                                InkWell(
-                                                                              splashColor: Colors.transparent,
-                                                                              focusColor: Colors.transparent,
-                                                                              hoverColor: Colors.transparent,
-                                                                              highlightColor: Colors.transparent,
-                                                                              onTap: () async {
-                                                                                context.pushNamed(
-                                                                                  'ATMdetails',
-                                                                                  queryParameters: {
-                                                                                    'atmId': serializeParam(
+                                                                                Row(
+                                                                              mainAxisSize: MainAxisSize.max,
+                                                                              children: [
+                                                                                Container(
+                                                                                  width: 120.0,
+                                                                                  decoration: BoxDecoration(
+                                                                                    color: Colors.white,
+                                                                                  ),
+                                                                                  alignment: AlignmentDirectional(-1.0, 0.0),
+                                                                                  child: Padding(
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                                                                                    child: Text(
                                                                                       getJsonField(
-                                                                                        dipDataItem,
+                                                                                        dataItem,
                                                                                         r'''$..atmId''',
                                                                                       ).toString(),
-                                                                                      ParamType.String,
+                                                                                      textAlign: TextAlign.start,
+                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                            fontSize: 12.0,
+                                                                                            fontWeight: FontWeight.normal,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                          ),
                                                                                     ),
-                                                                                  }.withoutNulls,
-                                                                                  extra: <String, dynamic>{
-                                                                                    kTransitionInfoKey: TransitionInfo(
-                                                                                      hasTransition: true,
-                                                                                      transitionType: PageTransitionType.fade,
-                                                                                      duration: Duration(milliseconds: 0),
-                                                                                    ),
-                                                                                  },
-                                                                                );
-                                                                              },
-                                                                              child: AutoSizeText(
-                                                                                getJsonField(
-                                                                                  dipDataItem,
-                                                                                  r'''$..atmId''',
-                                                                                ).toString(),
-                                                                                textAlign: TextAlign.start,
-                                                                                maxLines: 1,
-                                                                                style: FlutterFlowTheme.of(context).bodyMedium,
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                      if (getJsonField(
-                                                                            dipDataItem,
-                                                                            r'''$..grade''',
-                                                                          ) ==
-                                                                          'Silver')
-                                                                        Expanded(
-                                                                          child:
-                                                                              ClipRRect(
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(8.0),
-                                                                            child:
-                                                                                Image.asset(
-                                                                              'assets/images/Silver.png',
-                                                                              width: 24.0,
-                                                                              height: 24.0,
-                                                                              fit: BoxFit.contain,
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      if (getJsonField(
-                                                                            dipDataItem,
-                                                                            r'''$..grade''',
-                                                                          ) ==
-                                                                          'New')
-                                                                        Expanded(
-                                                                          child:
-                                                                              ClipRRect(
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(8.0),
-                                                                            child:
-                                                                                Image.asset(
-                                                                              'assets/images/Presidential.png',
-                                                                              width: 24.0,
-                                                                              height: 24.0,
-                                                                              fit: BoxFit.contain,
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      if (getJsonField(
-                                                                            dipDataItem,
-                                                                            r'''$..grade''',
-                                                                          ) ==
-                                                                          'Gold')
-                                                                        Expanded(
-                                                                          child:
-                                                                              ClipRRect(
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(8.0),
-                                                                            child:
-                                                                                Image.asset(
-                                                                              'assets/images/Gold.png',
-                                                                              width: 24.0,
-                                                                              height: 24.0,
-                                                                              fit: BoxFit.contain,
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      if (getJsonField(
-                                                                            dipDataItem,
-                                                                            r'''$..grade''',
-                                                                          ) ==
-                                                                          'Platinum')
-                                                                        Expanded(
-                                                                          child:
-                                                                              ClipRRect(
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(8.0),
-                                                                            child:
-                                                                                Image.asset(
-                                                                              'assets/images/Platinum.png',
-                                                                              width: 24.0,
-                                                                              height: 24.0,
-                                                                              fit: BoxFit.contain,
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      if (getJsonField(
-                                                                            dipDataItem,
-                                                                            r'''$..grade''',
-                                                                          ) ==
-                                                                          'Bronze')
-                                                                        Expanded(
-                                                                          child:
-                                                                              ClipRRect(
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(8.0),
-                                                                            child:
-                                                                                Image.asset(
-                                                                              'assets/images/Bronze.png',
-                                                                              width: 24.0,
-                                                                              height: 24.0,
-                                                                              fit: BoxFit.contain,
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      if (FFAppState()
-                                                                          .atmInfoState)
-                                                                        Expanded(
-                                                                          child:
-                                                                              Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                5.0,
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0),
-                                                                            child:
-                                                                                Text(
-                                                                              getJsonField(
-                                                                                dipDataItem,
-                                                                                r'''$..bankName''',
-                                                                              ).toString(),
-                                                                              textAlign: TextAlign.start,
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium,
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      if (FFAppState()
-                                                                          .atmInfoState)
-                                                                        Expanded(
-                                                                          child:
-                                                                              Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                5.0,
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0),
-                                                                            child:
-                                                                                Container(
-                                                                              decoration: BoxDecoration(
-                                                                                color: Colors.white,
-                                                                              ),
-                                                                              child: AutoSizeText(
-                                                                                getJsonField(
-                                                                                  dipDataItem,
-                                                                                  r'''$..location''',
-                                                                                ).toString(),
-                                                                                textAlign: TextAlign.start,
-                                                                                maxLines: 3,
-                                                                                style: FlutterFlowTheme.of(context).bodyMedium,
-                                                                                minFontSize: 1.0,
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      Expanded(
-                                                                        child:
-                                                                            Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              5.0,
-                                                                              0.0,
-                                                                              0.0,
-                                                                              0.0),
-                                                                          child:
-                                                                              Text(
-                                                                            '${getJsonField(
-                                                                              dipDataItem,
-                                                                              r'''$..transactionTrend''',
-                                                                            ).toString()}%',
-                                                                            textAlign:
-                                                                                TextAlign.center,
-                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                  color: functions.colorChange(getJsonField(
-                                                                                    dipDataItem,
-                                                                                    r'''$..transactionTrend''',
-                                                                                  )),
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                  ),
                                                                                 ),
+                                                                                Container(
+                                                                                  width: 60.0,
+                                                                                  decoration: BoxDecoration(
+                                                                                    color: Colors.white,
+                                                                                  ),
+                                                                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                  child: Column(
+                                                                                    mainAxisSize: MainAxisSize.max,
+                                                                                    children: [
+                                                                                      if ((String grade) {
+                                                                                        return grade == "Silver" ? true : false;
+                                                                                      }(getJsonField(
+                                                                                        dataItem,
+                                                                                        r'''$..grade''',
+                                                                                      ).toString()))
+                                                                                        ClipRRect(
+                                                                                          borderRadius: BorderRadius.circular(8.0),
+                                                                                          child: Image.asset(
+                                                                                            'assets/images/Silver.png',
+                                                                                            width: 24.0,
+                                                                                            height: 24.0,
+                                                                                            fit: BoxFit.contain,
+                                                                                          ),
+                                                                                        ),
+                                                                                      if ((String grade) {
+                                                                                        return grade == "New" ? true : false;
+                                                                                      }(getJsonField(
+                                                                                        dataItem,
+                                                                                        r'''$..grade''',
+                                                                                      ).toString()))
+                                                                                        ClipRRect(
+                                                                                          borderRadius: BorderRadius.circular(8.0),
+                                                                                          child: Image.asset(
+                                                                                            'assets/images/Presidential.png',
+                                                                                            width: 24.0,
+                                                                                            height: 24.0,
+                                                                                            fit: BoxFit.contain,
+                                                                                          ),
+                                                                                        ),
+                                                                                      if ((String grade) {
+                                                                                        return grade == "Gold" ? true : false;
+                                                                                      }(getJsonField(
+                                                                                        dataItem,
+                                                                                        r'''$..grade''',
+                                                                                      ).toString()))
+                                                                                        ClipRRect(
+                                                                                          borderRadius: BorderRadius.circular(8.0),
+                                                                                          child: Image.asset(
+                                                                                            'assets/images/Gold.png',
+                                                                                            width: 24.0,
+                                                                                            height: 24.0,
+                                                                                            fit: BoxFit.contain,
+                                                                                          ),
+                                                                                        ),
+                                                                                      if ((String grade) {
+                                                                                        return grade == "Platinum" ? true : false;
+                                                                                      }(getJsonField(
+                                                                                        dataItem,
+                                                                                        r'''$..grade''',
+                                                                                      ).toString()))
+                                                                                        ClipRRect(
+                                                                                          borderRadius: BorderRadius.circular(8.0),
+                                                                                          child: Image.asset(
+                                                                                            'assets/images/Platinum.png',
+                                                                                            width: 24.0,
+                                                                                            height: 24.0,
+                                                                                            fit: BoxFit.contain,
+                                                                                          ),
+                                                                                        ),
+                                                                                      if ((String grade) {
+                                                                                        return grade == "Bronze" ? true : false;
+                                                                                      }(getJsonField(
+                                                                                        dataItem,
+                                                                                        r'''$..grade''',
+                                                                                      ).toString()))
+                                                                                        ClipRRect(
+                                                                                          borderRadius: BorderRadius.circular(8.0),
+                                                                                          child: Image.asset(
+                                                                                            'assets/images/Bronze.png',
+                                                                                            width: 24.0,
+                                                                                            height: 24.0,
+                                                                                            fit: BoxFit.contain,
+                                                                                          ),
+                                                                                        ),
+                                                                                    ],
+                                                                                  ),
+                                                                                ),
+                                                                                if (FFAppState().atmInfoState)
+                                                                                  Container(
+                                                                                    width: 120.0,
+                                                                                    decoration: BoxDecoration(
+                                                                                      color: Colors.white,
+                                                                                    ),
+                                                                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                                                                    child: Padding(
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                                                                                      child: Text(
+                                                                                        getJsonField(
+                                                                                          dataItem,
+                                                                                          r'''$..bankName''',
+                                                                                        ).toString(),
+                                                                                        textAlign: TextAlign.start,
+                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                              fontSize: 12.0,
+                                                                                              fontWeight: FontWeight.normal,
+                                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                            ),
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                if (FFAppState().atmInfoState)
+                                                                                  Container(
+                                                                                    width: 140.0,
+                                                                                    decoration: BoxDecoration(
+                                                                                      color: Colors.white,
+                                                                                    ),
+                                                                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                                                                    child: Padding(
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                                                                                      child: Text(
+                                                                                        getJsonField(
+                                                                                          dataItem,
+                                                                                          r'''$..location''',
+                                                                                        ).toString(),
+                                                                                        textAlign: TextAlign.start,
+                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                              fontSize: 12.0,
+                                                                                              fontWeight: FontWeight.normal,
+                                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                            ),
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                Container(
+                                                                                  width: 100.0,
+                                                                                  decoration: BoxDecoration(
+                                                                                    color: Colors.white,
+                                                                                  ),
+                                                                                  alignment: AlignmentDirectional(-1.0, 0.0),
+                                                                                  child: Padding(
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                                                                                    child: Text(
+                                                                                      '${getJsonField(
+                                                                                        dataItem,
+                                                                                        r'''$..transactionTrend''',
+                                                                                      ).toString()}%',
+                                                                                      textAlign: TextAlign.center,
+                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                            color: functions.colorChange(getJsonField(
+                                                                                              dataItem,
+                                                                                              r'''$..transactionTrend''',
+                                                                                            )),
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                          ),
+                                                                                    ),
+                                                                                  ),
+                                                                                ),
+                                                                              ],
+                                                                            ),
                                                                           ),
                                                                         ),
-                                                                      ),
-                                                                    ],
-                                                                  ),
+                                                                      ],
+                                                                    );
+                                                                  }),
                                                                 ),
-                                                                Align(
-                                                                  alignment:
-                                                                      AlignmentDirectional(
-                                                                          0.0,
-                                                                          1.0),
-                                                                  child:
-                                                                      Container(
-                                                                    width: MediaQuery.sizeOf(context)
-                                                                            .width *
-                                                                        5.0,
-                                                                    height: 1.0,
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                      color: Color(
-                                                                          0xFFF2F2F2),
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                          ]
-                                                              .map((c) =>
-                                                                  DataCell(c))
-                                                              .toList())
-                                                      .map((e) =>
-                                                          DataRow(cells: e))
-                                                      .toList(),
-                                                  headingRowColor:
-                                                      MaterialStateProperty.all(
-                                                    Color(0x00F1F4F8),
-                                                  ),
-                                                  headingRowHeight: 100.0,
-                                                  dataRowColor:
-                                                      MaterialStateProperty.all(
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                                  ),
-                                                  dataRowHeight: 56.0,
-                                                  border: TableBorder(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            0.0),
-                                                  ),
-                                                  dividerThickness: 0.0,
-                                                  columnSpacing: 0.0,
-                                                  showBottomBorder: true,
-                                                  minWidth: 49.0,
-                                                );
-                                              },
-                                            ),
+                                                              );
+                                                            },
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ],
                                           ),
                                         ),
                                       ),
@@ -2608,744 +2534,690 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 16.0, 0.0, 0.0),
-                                        child: Container(
-                                          width:
-                                              MediaQuery.sizeOf(context).width *
-                                                  1.0,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                          ),
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 15.0),
-                                            child: Builder(
-                                              builder: (context) {
-                                                final dipData = getJsonField(
-                                                  functions.filter(
-                                                      FFAppState()
-                                                          .allMachineDetails,
-                                                      FFAppState().searchValue3,
-                                                      FFAppState()
-                                                          .transactionTrendFilter,
-                                                      FFAppState().gradeFilter,
-                                                      FFAppState()
-                                                          .uptimeTrendFilter,
-                                                      FFAppState().bankFilter),
-                                                  r'''$.data''',
-                                                ).toList();
-                                                return DataTable2(
-                                                  columns: [
-                                                    DataColumn2(
-                                                      label: DefaultTextStyle
-                                                          .merge(
-                                                        softWrap: true,
-                                                        child: Column(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .spaceEvenly,
-                                                          children: [
-                                                            Row(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              children: [
-                                                                Container(
-                                                                  width: FFAppState()
-                                                                          .atmInfoState
-                                                                      ? 360.0
-                                                                      : 240.0,
-                                                                  height: 46.0,
-                                                                  decoration:
-                                                                      BoxDecoration(
-                                                                    gradient:
-                                                                        LinearGradient(
-                                                                      colors: [
-                                                                        Color(
-                                                                            0xFF3B3B3C),
-                                                                        Colors
-                                                                            .black
-                                                                      ],
-                                                                      stops: [
-                                                                        0.0,
-                                                                        1.0
-                                                                      ],
-                                                                      begin: AlignmentDirectional(
-                                                                          0.0,
-                                                                          -1.0),
-                                                                      end: AlignmentDirectional(
-                                                                          0,
-                                                                          1.0),
+                                        child: SingleChildScrollView(
+                                          scrollDirection: Axis.horizontal,
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        16.0, 0.0, 16.0, 16.0),
+                                                child: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      children: [
+                                                        Container(
+                                                          width: (FFAppState()
+                                                                      .atmInfoState
+                                                                  ? 440
+                                                                  : 180)
+                                                              .toDouble(),
+                                                          height: 46.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            gradient:
+                                                                LinearGradient(
+                                                              colors: [
+                                                                Color(
+                                                                    0xFF3B3B3C),
+                                                                Colors.black
+                                                              ],
+                                                              stops: [0.0, 1.0],
+                                                              begin:
+                                                                  AlignmentDirectional(
+                                                                      0.0,
+                                                                      -1.0),
+                                                              end:
+                                                                  AlignmentDirectional(
+                                                                      0, 1.0),
+                                                            ),
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .only(
+                                                              bottomLeft: Radius
+                                                                  .circular(
+                                                                      0.0),
+                                                              bottomRight:
+                                                                  Radius
+                                                                      .circular(
+                                                                          0.0),
+                                                              topLeft: Radius
+                                                                  .circular(
+                                                                      6.0),
+                                                              topRight: Radius
+                                                                  .circular(
+                                                                      0.0),
+                                                            ),
+                                                          ),
+                                                          alignment:
+                                                              AlignmentDirectional(
+                                                                  0.0, 0.0),
+                                                          child: Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .center,
+                                                            children: [
+                                                              Text(
+                                                                'ATM Information',
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryBackground,
+                                                                      useGoogleFonts: GoogleFonts
+                                                                              .asMap()
+                                                                          .containsKey(
+                                                                              FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                     ),
-                                                                    borderRadius:
-                                                                        BorderRadius
-                                                                            .only(
-                                                                      bottomLeft:
-                                                                          Radius.circular(
-                                                                              0.0),
-                                                                      bottomRight:
-                                                                          Radius.circular(
-                                                                              0.0),
-                                                                      topLeft: Radius
-                                                                          .circular(
-                                                                              6.0),
-                                                                      topRight:
-                                                                          Radius.circular(
-                                                                              0.0),
-                                                                    ),
+                                                              ),
+                                                              if (!FFAppState()
+                                                                  .atmInfoState)
+                                                                InkWell(
+                                                                  splashColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  focusColor: Colors
+                                                                      .transparent,
+                                                                  hoverColor: Colors
+                                                                      .transparent,
+                                                                  highlightColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  onTap:
+                                                                      () async {
+                                                                    setState(
+                                                                        () {
+                                                                      FFAppState()
+                                                                              .atmInfoState =
+                                                                          true;
+                                                                    });
+                                                                  },
+                                                                  child: Icon(
+                                                                    Icons
+                                                                        .keyboard_arrow_right,
+                                                                    color: Color(
+                                                                        0xFFFF0026),
+                                                                    size: 24.0,
                                                                   ),
-                                                                  alignment:
-                                                                      AlignmentDirectional(
+                                                                ),
+                                                              if (FFAppState()
+                                                                  .atmInfoState)
+                                                                InkWell(
+                                                                  splashColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  focusColor: Colors
+                                                                      .transparent,
+                                                                  hoverColor: Colors
+                                                                      .transparent,
+                                                                  highlightColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  onTap:
+                                                                      () async {
+                                                                    setState(
+                                                                        () {
+                                                                      FFAppState()
+                                                                              .atmInfoState =
+                                                                          false;
+                                                                    });
+                                                                  },
+                                                                  child: Icon(
+                                                                    Icons
+                                                                        .keyboard_arrow_left,
+                                                                    color: Color(
+                                                                        0xFFFF0026),
+                                                                    size: 24.0,
+                                                                  ),
+                                                                ),
+                                                            ],
+                                                          ),
+                                                        ),
+                                                        Container(
+                                                          width: 102.0,
+                                                          height: 46.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            gradient:
+                                                                LinearGradient(
+                                                              colors: [
+                                                                Color(
+                                                                    0xFF3B3B3C),
+                                                                Colors.black
+                                                              ],
+                                                              stops: [0.0, 1.0],
+                                                              begin:
+                                                                  AlignmentDirectional(
+                                                                      0.0,
+                                                                      -1.0),
+                                                              end:
+                                                                  AlignmentDirectional(
+                                                                      0, 1.0),
+                                                            ),
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .only(
+                                                              bottomLeft: Radius
+                                                                  .circular(
+                                                                      0.0),
+                                                              bottomRight:
+                                                                  Radius
+                                                                      .circular(
+                                                                          0.0),
+                                                              topLeft: Radius
+                                                                  .circular(
+                                                                      0.0),
+                                                              topRight: Radius
+                                                                  .circular(
+                                                                      6.0),
+                                                            ),
+                                                          ),
+                                                          alignment:
+                                                              AlignmentDirectional(
+                                                                  0.0, 0.0),
+                                                          child: Text(
+                                                            'Uptime Trend',
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryBackground,
+                                                                  useGoogleFonts: GoogleFonts
+                                                                          .asMap()
+                                                                      .containsKey(
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily),
+                                                                ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      children: [
+                                                        Container(
+                                                          width: 120.0,
+                                                          height: 46.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: Color(
+                                                                0xFFF5F5F5),
+                                                          ),
+                                                          alignment:
+                                                              AlignmentDirectional(
+                                                                  -1.0, 0.0),
+                                                          child: Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        16.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
+                                                            child: Text(
+                                                              'ATM ID',
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .start,
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily,
+                                                                    fontSize:
+                                                                        12.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .bold,
+                                                                    useGoogleFonts: GoogleFonts
+                                                                            .asMap()
+                                                                        .containsKey(
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                  ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        Container(
+                                                          width: 60.0,
+                                                          height: 46.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: Color(
+                                                                0xFFF5F5F5),
+                                                          ),
+                                                          alignment:
+                                                              AlignmentDirectional(
+                                                                  0.0, 0.0),
+                                                          child: Text(
+                                                            'Grade',
+                                                            textAlign:
+                                                                TextAlign.start,
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily,
+                                                                  fontSize:
+                                                                      12.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
+                                                                  useGoogleFonts: GoogleFonts
+                                                                          .asMap()
+                                                                      .containsKey(
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily),
+                                                                ),
+                                                          ),
+                                                        ),
+                                                        if (FFAppState()
+                                                            .atmInfoState)
+                                                          Container(
+                                                            width: 120.0,
+                                                            height: 46.0,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: Color(
+                                                                  0xFFF5F5F5),
+                                                            ),
+                                                            alignment:
+                                                                AlignmentDirectional(
+                                                                    -1.0, 0.0),
+                                                            child: Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          16.0,
+                                                                          0.0,
                                                                           0.0,
                                                                           0.0),
-                                                                  child: Row(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    mainAxisAlignment:
-                                                                        MainAxisAlignment
-                                                                            .center,
-                                                                    children: [
-                                                                      Text(
-                                                                        'ATM Information',
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                              color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                            ),
-                                                                      ),
-                                                                      if (!FFAppState()
-                                                                          .atmInfoState)
-                                                                        InkWell(
-                                                                          splashColor:
-                                                                              Colors.transparent,
-                                                                          focusColor:
-                                                                              Colors.transparent,
-                                                                          hoverColor:
-                                                                              Colors.transparent,
-                                                                          highlightColor:
-                                                                              Colors.transparent,
-                                                                          onTap:
-                                                                              () async {
-                                                                            setState(() {
-                                                                              FFAppState().atmInfoState = true;
-                                                                            });
-                                                                          },
-                                                                          child:
-                                                                              Icon(
-                                                                            Icons.keyboard_arrow_right,
-                                                                            color:
-                                                                                Color(0xFFFF0026),
-                                                                            size:
-                                                                                24.0,
-                                                                          ),
-                                                                        ),
-                                                                      if (FFAppState()
-                                                                          .atmInfoState)
-                                                                        InkWell(
-                                                                          splashColor:
-                                                                              Colors.transparent,
-                                                                          focusColor:
-                                                                              Colors.transparent,
-                                                                          hoverColor:
-                                                                              Colors.transparent,
-                                                                          highlightColor:
-                                                                              Colors.transparent,
-                                                                          onTap:
-                                                                              () async {
-                                                                            setState(() {
-                                                                              FFAppState().atmInfoState = false;
-                                                                            });
-                                                                          },
-                                                                          child:
-                                                                              Icon(
-                                                                            Icons.keyboard_arrow_left,
-                                                                            color:
-                                                                                Color(0xFFFF0026),
-                                                                            size:
-                                                                                24.0,
-                                                                          ),
-                                                                        ),
-                                                                    ],
-                                                                  ),
-                                                                ),
-                                                                Expanded(
-                                                                  child:
-                                                                      Container(
-                                                                    width: MediaQuery.sizeOf(context)
-                                                                            .width *
-                                                                        1.0,
-                                                                    height:
-                                                                        46.0,
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                      gradient:
-                                                                          LinearGradient(
-                                                                        colors: [
-                                                                          Color(
-                                                                              0xFF3B3B3C),
-                                                                          Colors
-                                                                              .black
-                                                                        ],
-                                                                        stops: [
-                                                                          0.0,
-                                                                          1.0
-                                                                        ],
-                                                                        begin: AlignmentDirectional(
-                                                                            0.0,
-                                                                            -1.0),
-                                                                        end: AlignmentDirectional(
-                                                                            0,
-                                                                            1.0),
-                                                                      ),
+                                                              child: Text(
+                                                                'Bank',
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .start,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
+                                                                      fontSize:
+                                                                          12.0,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .bold,
+                                                                      useGoogleFonts: GoogleFonts
+                                                                              .asMap()
+                                                                          .containsKey(
+                                                                              FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                     ),
-                                                                    alignment:
-                                                                        AlignmentDirectional(
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child: Text(
-                                                                      'ATM Performance',
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).primaryBackground,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                          ),
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                            Expanded(
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .spaceEvenly,
-                                                                children: [
-                                                                  Expanded(
-                                                                    child:
-                                                                        Container(
-                                                                      width: MediaQuery.sizeOf(context)
-                                                                              .width *
-                                                                          1.0,
-                                                                      height:
-                                                                          46.0,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: Color(
-                                                                            0xFFF5F5F5),
-                                                                      ),
-                                                                      alignment:
-                                                                          AlignmentDirectional(
-                                                                              0.0,
-                                                                              0.0),
-                                                                      child:
-                                                                          Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            5.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                        child:
-                                                                            Text(
-                                                                          'ATM ID',
-                                                                          textAlign:
-                                                                              TextAlign.start,
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .override(
-                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                fontSize: 12.0,
-                                                                                fontWeight: FontWeight.bold,
-                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                              ),
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                  Expanded(
-                                                                    child:
-                                                                        Container(
-                                                                      width: MediaQuery.sizeOf(context)
-                                                                              .width *
-                                                                          1.0,
-                                                                      height:
-                                                                          46.0,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: Color(
-                                                                            0xFFF5F5F5),
-                                                                      ),
-                                                                      alignment:
-                                                                          AlignmentDirectional(
-                                                                              0.0,
-                                                                              0.0),
-                                                                      child:
-                                                                          Text(
-                                                                        'Grade',
-                                                                        textAlign:
-                                                                            TextAlign.center,
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                              fontSize: 12.0,
-                                                                              fontWeight: FontWeight.bold,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                            ),
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                  if (FFAppState()
-                                                                      .atmInfoState)
-                                                                    Expanded(
-                                                                      child:
-                                                                          Container(
-                                                                        width: MediaQuery.sizeOf(context).width *
-                                                                            1.0,
-                                                                        height:
-                                                                            46.0,
-                                                                        decoration:
-                                                                            BoxDecoration(
-                                                                          color:
-                                                                              Color(0xFFF5F5F5),
-                                                                        ),
-                                                                        alignment: AlignmentDirectional(
-                                                                            0.0,
-                                                                            0.0),
-                                                                        child:
-                                                                            Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              5.0,
-                                                                              0.0,
-                                                                              0.0,
-                                                                              0.0),
-                                                                          child:
-                                                                              Text(
-                                                                            'Bank',
-                                                                            textAlign:
-                                                                                TextAlign.start,
-                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                  fontSize: 12.0,
-                                                                                  fontWeight: FontWeight.bold,
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                ),
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                  if (FFAppState()
-                                                                      .atmInfoState)
-                                                                    Expanded(
-                                                                      child:
-                                                                          Container(
-                                                                        width: MediaQuery.sizeOf(context).width *
-                                                                            1.0,
-                                                                        height:
-                                                                            46.0,
-                                                                        decoration:
-                                                                            BoxDecoration(
-                                                                          color:
-                                                                              Color(0xFFF5F5F5),
-                                                                        ),
-                                                                        alignment: AlignmentDirectional(
-                                                                            0.0,
-                                                                            0.0),
-                                                                        child:
-                                                                            Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              5.0,
-                                                                              0.0,
-                                                                              0.0,
-                                                                              0.0),
-                                                                          child:
-                                                                              Text(
-                                                                            'Location',
-                                                                            textAlign:
-                                                                                TextAlign.start,
-                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                  fontSize: 12.0,
-                                                                                  fontWeight: FontWeight.bold,
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                ),
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                  Expanded(
-                                                                    child:
-                                                                        Container(
-                                                                      width: MediaQuery.sizeOf(context)
-                                                                              .width *
-                                                                          1.0,
-                                                                      height:
-                                                                          46.0,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: Color(
-                                                                            0xFFF5F5F5),
-                                                                      ),
-                                                                      alignment:
-                                                                          AlignmentDirectional(
-                                                                              0.0,
-                                                                              0.0),
-                                                                      child:
-                                                                          Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            5.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                        child:
-                                                                            Text(
-                                                                          'Uptime Trend',
-                                                                          textAlign:
-                                                                              TextAlign.center,
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .override(
-                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                fontSize: 12.0,
-                                                                                fontWeight: FontWeight.bold,
-                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                              ),
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                ],
                                                               ),
                                                             ),
-                                                          ],
-                                                        ),
-                                                      ),
-                                                      fixedWidth: 600.0,
-                                                    ),
-                                                  ],
-                                                  rows: (dipData as Iterable)
-                                                      .mapIndexed((dipDataIndex,
-                                                              dipDataItem) =>
-                                                          [
-                                                            Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              mainAxisAlignment:
-                                                                  MainAxisAlignment
-                                                                      .spaceBetween,
-                                                              children: [
-                                                                Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                          ),
+                                                        if (FFAppState()
+                                                            .atmInfoState)
+                                                          Container(
+                                                            width: 140.0,
+                                                            height: 46.0,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: Color(
+                                                                  0xFFF5F5F5),
+                                                            ),
+                                                            alignment:
+                                                                AlignmentDirectional(
+                                                                    -1.0, 0.0),
+                                                            child: Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
+                                                                          16.0,
                                                                           0.0,
-                                                                          15.0,
                                                                           0.0,
                                                                           0.0),
-                                                                  child: Row(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    mainAxisAlignment:
-                                                                        MainAxisAlignment
-                                                                            .spaceBetween,
-                                                                    crossAxisAlignment:
-                                                                        CrossAxisAlignment
-                                                                            .start,
-                                                                    children: [
-                                                                      Expanded(
-                                                                        child:
-                                                                            Container(
+                                                              child: Text(
+                                                                'Location',
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .start,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
+                                                                      fontSize:
+                                                                          12.0,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .bold,
+                                                                      useGoogleFonts: GoogleFonts
+                                                                              .asMap()
+                                                                          .containsKey(
+                                                                              FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                    ),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        Container(
+                                                          width: 102.0,
+                                                          height: 46.0,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: Color(
+                                                                0xFFF5F5F5),
+                                                          ),
+                                                          alignment:
+                                                              AlignmentDirectional(
+                                                                  -1.0, 0.0),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    Expanded(
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        crossAxisAlignment:
+                                                            CrossAxisAlignment
+                                                                .start,
+                                                        children: [
+                                                          Builder(
+                                                            builder: (context) {
+                                                              final data =
+                                                                  getJsonField(
+                                                                functions.filter(
+                                                                    FFAppState()
+                                                                        .allMachineDetails,
+                                                                    FFAppState()
+                                                                        .searchValue2,
+                                                                    FFAppState()
+                                                                        .transactionTrendFilter,
+                                                                    FFAppState()
+                                                                        .gradeFilter,
+                                                                    FFAppState()
+                                                                        .uptimeTrendFilter,
+                                                                    FFAppState()
+                                                                        .bankFilter,
+                                                                    FFAppState()
+                                                                        .locationFilter),
+                                                                r'''$.data''',
+                                                              ).toList();
+                                                              return SingleChildScrollView(
+                                                                child: Column(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  crossAxisAlignment:
+                                                                      CrossAxisAlignment
+                                                                          .start,
+                                                                  children: List
+                                                                      .generate(
+                                                                          data.length,
+                                                                          (dataIndex) {
+                                                                    final dataItem =
+                                                                        data[
+                                                                            dataIndex];
+                                                                    return Column(
+                                                                      mainAxisSize:
+                                                                          MainAxisSize
+                                                                              .max,
+                                                                      crossAxisAlignment:
+                                                                          CrossAxisAlignment
+                                                                              .start,
+                                                                      children: [
+                                                                        Container(
                                                                           decoration:
                                                                               BoxDecoration(
                                                                             color:
-                                                                                Colors.white,
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                            border:
+                                                                                Border.all(
+                                                                              color: Color(0xFFF2F2F2),
+                                                                              width: 1.0,
+                                                                            ),
                                                                           ),
                                                                           child:
                                                                               Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                5.0,
                                                                                 0.0,
+                                                                                14.0,
                                                                                 0.0,
-                                                                                0.0),
+                                                                                14.0),
                                                                             child:
-                                                                                InkWell(
-                                                                              splashColor: Colors.transparent,
-                                                                              focusColor: Colors.transparent,
-                                                                              hoverColor: Colors.transparent,
-                                                                              highlightColor: Colors.transparent,
-                                                                              onTap: () async {
-                                                                                context.pushNamed(
-                                                                                  'ATMdetails',
-                                                                                  queryParameters: {
-                                                                                    'atmId': serializeParam(
+                                                                                Row(
+                                                                              mainAxisSize: MainAxisSize.max,
+                                                                              children: [
+                                                                                Container(
+                                                                                  width: 120.0,
+                                                                                  decoration: BoxDecoration(
+                                                                                    color: Colors.white,
+                                                                                  ),
+                                                                                  alignment: AlignmentDirectional(-1.0, 0.0),
+                                                                                  child: Padding(
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                                                                                    child: Text(
                                                                                       getJsonField(
-                                                                                        dipDataItem,
+                                                                                        dataItem,
                                                                                         r'''$..atmId''',
                                                                                       ).toString(),
-                                                                                      ParamType.String,
+                                                                                      textAlign: TextAlign.start,
+                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                            fontSize: 12.0,
+                                                                                            fontWeight: FontWeight.normal,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                          ),
                                                                                     ),
-                                                                                  }.withoutNulls,
-                                                                                  extra: <String, dynamic>{
-                                                                                    kTransitionInfoKey: TransitionInfo(
-                                                                                      hasTransition: true,
-                                                                                      transitionType: PageTransitionType.fade,
-                                                                                      duration: Duration(milliseconds: 0),
-                                                                                    ),
-                                                                                  },
-                                                                                );
-                                                                              },
-                                                                              child: AutoSizeText(
-                                                                                getJsonField(
-                                                                                  dipDataItem,
-                                                                                  r'''$..atmId''',
-                                                                                ).toString(),
-                                                                                textAlign: TextAlign.start,
-                                                                                maxLines: 1,
-                                                                                style: FlutterFlowTheme.of(context).bodyMedium,
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                      if (getJsonField(
-                                                                            dipDataItem,
-                                                                            r'''$..grade''',
-                                                                          ) ==
-                                                                          'Silver')
-                                                                        Expanded(
-                                                                          child:
-                                                                              ClipRRect(
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(8.0),
-                                                                            child:
-                                                                                Image.asset(
-                                                                              'assets/images/Silver.png',
-                                                                              width: 24.0,
-                                                                              height: 24.0,
-                                                                              fit: BoxFit.contain,
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      if (getJsonField(
-                                                                            dipDataItem,
-                                                                            r'''$..grade''',
-                                                                          ) ==
-                                                                          'New')
-                                                                        Expanded(
-                                                                          child:
-                                                                              ClipRRect(
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(8.0),
-                                                                            child:
-                                                                                Image.asset(
-                                                                              'assets/images/Presidential.png',
-                                                                              width: 24.0,
-                                                                              height: 24.0,
-                                                                              fit: BoxFit.contain,
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      if (getJsonField(
-                                                                            dipDataItem,
-                                                                            r'''$..grade''',
-                                                                          ) ==
-                                                                          'Gold')
-                                                                        Expanded(
-                                                                          child:
-                                                                              ClipRRect(
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(8.0),
-                                                                            child:
-                                                                                Image.asset(
-                                                                              'assets/images/Gold.png',
-                                                                              width: 24.0,
-                                                                              height: 24.0,
-                                                                              fit: BoxFit.contain,
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      if (getJsonField(
-                                                                            dipDataItem,
-                                                                            r'''$..grade''',
-                                                                          ) ==
-                                                                          'Platinum')
-                                                                        Expanded(
-                                                                          child:
-                                                                              ClipRRect(
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(8.0),
-                                                                            child:
-                                                                                Image.asset(
-                                                                              'assets/images/Platinum.png',
-                                                                              width: 24.0,
-                                                                              height: 24.0,
-                                                                              fit: BoxFit.contain,
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      if (getJsonField(
-                                                                            dipDataItem,
-                                                                            r'''$..grade''',
-                                                                          ) ==
-                                                                          'Bronze')
-                                                                        Expanded(
-                                                                          child:
-                                                                              ClipRRect(
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(8.0),
-                                                                            child:
-                                                                                Image.asset(
-                                                                              'assets/images/Bronze.png',
-                                                                              width: 24.0,
-                                                                              height: 24.0,
-                                                                              fit: BoxFit.contain,
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      if (FFAppState()
-                                                                          .atmInfoState)
-                                                                        Expanded(
-                                                                          child:
-                                                                              Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                5.0,
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0),
-                                                                            child:
-                                                                                Text(
-                                                                              getJsonField(
-                                                                                dipDataItem,
-                                                                                r'''$..bankName''',
-                                                                              ).toString(),
-                                                                              textAlign: TextAlign.start,
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium,
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      if (FFAppState()
-                                                                          .atmInfoState)
-                                                                        Expanded(
-                                                                          child:
-                                                                              Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                5.0,
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0),
-                                                                            child:
-                                                                                Container(
-                                                                              decoration: BoxDecoration(
-                                                                                color: Colors.white,
-                                                                              ),
-                                                                              child: AutoSizeText(
-                                                                                getJsonField(
-                                                                                  dipDataItem,
-                                                                                  r'''$..location''',
-                                                                                ).toString(),
-                                                                                textAlign: TextAlign.start,
-                                                                                maxLines: 3,
-                                                                                style: FlutterFlowTheme.of(context).bodyMedium,
-                                                                                minFontSize: 1.0,
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      Expanded(
-                                                                        child:
-                                                                            Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              5.0,
-                                                                              0.0,
-                                                                              0.0,
-                                                                              0.0),
-                                                                          child:
-                                                                              Text(
-                                                                            '${getJsonField(
-                                                                              dipDataItem,
-                                                                              r'''$..uptimeTrend''',
-                                                                            ).toString()}%',
-                                                                            textAlign:
-                                                                                TextAlign.center,
-                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                  color: functions.colorChange(getJsonField(
-                                                                                    dipDataItem,
-                                                                                    r'''$..uptimeTrend''',
-                                                                                  )),
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                  ),
                                                                                 ),
+                                                                                Container(
+                                                                                  width: 60.0,
+                                                                                  decoration: BoxDecoration(
+                                                                                    color: Colors.white,
+                                                                                  ),
+                                                                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                  child: Column(
+                                                                                    mainAxisSize: MainAxisSize.max,
+                                                                                    children: [
+                                                                                      if ((String grade) {
+                                                                                        return grade == "Silver" ? true : false;
+                                                                                      }(getJsonField(
+                                                                                        dataItem,
+                                                                                        r'''$..grade''',
+                                                                                      ).toString()))
+                                                                                        ClipRRect(
+                                                                                          borderRadius: BorderRadius.circular(8.0),
+                                                                                          child: Image.asset(
+                                                                                            'assets/images/Silver.png',
+                                                                                            width: 24.0,
+                                                                                            height: 24.0,
+                                                                                            fit: BoxFit.contain,
+                                                                                          ),
+                                                                                        ),
+                                                                                      if ((String grade) {
+                                                                                        return grade == "New" ? true : false;
+                                                                                      }(getJsonField(
+                                                                                        dataItem,
+                                                                                        r'''$..grade''',
+                                                                                      ).toString()))
+                                                                                        ClipRRect(
+                                                                                          borderRadius: BorderRadius.circular(8.0),
+                                                                                          child: Image.asset(
+                                                                                            'assets/images/Presidential.png',
+                                                                                            width: 24.0,
+                                                                                            height: 24.0,
+                                                                                            fit: BoxFit.contain,
+                                                                                          ),
+                                                                                        ),
+                                                                                      if ((String grade) {
+                                                                                        return grade == "Gold" ? true : false;
+                                                                                      }(getJsonField(
+                                                                                        dataItem,
+                                                                                        r'''$..grade''',
+                                                                                      ).toString()))
+                                                                                        ClipRRect(
+                                                                                          borderRadius: BorderRadius.circular(8.0),
+                                                                                          child: Image.asset(
+                                                                                            'assets/images/Gold.png',
+                                                                                            width: 24.0,
+                                                                                            height: 24.0,
+                                                                                            fit: BoxFit.contain,
+                                                                                          ),
+                                                                                        ),
+                                                                                      if ((String grade) {
+                                                                                        return grade == "Platinum" ? true : false;
+                                                                                      }(getJsonField(
+                                                                                        dataItem,
+                                                                                        r'''$..grade''',
+                                                                                      ).toString()))
+                                                                                        ClipRRect(
+                                                                                          borderRadius: BorderRadius.circular(8.0),
+                                                                                          child: Image.asset(
+                                                                                            'assets/images/Platinum.png',
+                                                                                            width: 24.0,
+                                                                                            height: 24.0,
+                                                                                            fit: BoxFit.contain,
+                                                                                          ),
+                                                                                        ),
+                                                                                      if ((String grade) {
+                                                                                        return grade == "Bronze" ? true : false;
+                                                                                      }(getJsonField(
+                                                                                        dataItem,
+                                                                                        r'''$..grade''',
+                                                                                      ).toString()))
+                                                                                        ClipRRect(
+                                                                                          borderRadius: BorderRadius.circular(8.0),
+                                                                                          child: Image.asset(
+                                                                                            'assets/images/Bronze.png',
+                                                                                            width: 24.0,
+                                                                                            height: 24.0,
+                                                                                            fit: BoxFit.contain,
+                                                                                          ),
+                                                                                        ),
+                                                                                    ],
+                                                                                  ),
+                                                                                ),
+                                                                                if (FFAppState().atmInfoState)
+                                                                                  Container(
+                                                                                    width: 120.0,
+                                                                                    decoration: BoxDecoration(
+                                                                                      color: Colors.white,
+                                                                                    ),
+                                                                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                                                                    child: Padding(
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                                                                                      child: Text(
+                                                                                        getJsonField(
+                                                                                          dataItem,
+                                                                                          r'''$..bankName''',
+                                                                                        ).toString(),
+                                                                                        textAlign: TextAlign.start,
+                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                              fontSize: 12.0,
+                                                                                              fontWeight: FontWeight.normal,
+                                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                            ),
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                if (FFAppState().atmInfoState)
+                                                                                  Container(
+                                                                                    width: 140.0,
+                                                                                    decoration: BoxDecoration(
+                                                                                      color: Colors.white,
+                                                                                    ),
+                                                                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                                                                    child: Padding(
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                                                                                      child: Text(
+                                                                                        getJsonField(
+                                                                                          dataItem,
+                                                                                          r'''$..location''',
+                                                                                        ).toString(),
+                                                                                        textAlign: TextAlign.start,
+                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                              fontSize: 12.0,
+                                                                                              fontWeight: FontWeight.normal,
+                                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                            ),
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                Container(
+                                                                                  width: 100.0,
+                                                                                  decoration: BoxDecoration(
+                                                                                    color: Colors.white,
+                                                                                  ),
+                                                                                  alignment: AlignmentDirectional(-1.0, 0.0),
+                                                                                  child: Padding(
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                                                                                    child: Text(
+                                                                                      '${getJsonField(
+                                                                                        dataItem,
+                                                                                        r'''$..uptimeTrend''',
+                                                                                      ).toString()}%',
+                                                                                      textAlign: TextAlign.center,
+                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                            color: functions.colorChange(getJsonField(
+                                                                                              dataItem,
+                                                                                              r'''$..uptimeTrend''',
+                                                                                            )),
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                          ),
+                                                                                    ),
+                                                                                  ),
+                                                                                ),
+                                                                              ],
+                                                                            ),
                                                                           ),
                                                                         ),
-                                                                      ),
-                                                                    ],
-                                                                  ),
+                                                                      ],
+                                                                    );
+                                                                  }),
                                                                 ),
-                                                                Align(
-                                                                  alignment:
-                                                                      AlignmentDirectional(
-                                                                          0.0,
-                                                                          1.0),
-                                                                  child:
-                                                                      Container(
-                                                                    width: MediaQuery.sizeOf(context)
-                                                                            .width *
-                                                                        5.0,
-                                                                    height: 1.0,
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                      color: Color(
-                                                                          0xFFF2F2F2),
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                          ]
-                                                              .map((c) =>
-                                                                  DataCell(c))
-                                                              .toList())
-                                                      .map((e) =>
-                                                          DataRow(cells: e))
-                                                      .toList(),
-                                                  headingRowColor:
-                                                      MaterialStateProperty.all(
-                                                    Color(0x00F1F4F8),
-                                                  ),
-                                                  headingRowHeight: 100.0,
-                                                  dataRowColor:
-                                                      MaterialStateProperty.all(
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                                  ),
-                                                  dataRowHeight: 56.0,
-                                                  border: TableBorder(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            0.0),
-                                                  ),
-                                                  dividerThickness: 0.0,
-                                                  columnSpacing: 0.0,
-                                                  showBottomBorder: true,
-                                                  minWidth: 49.0,
-                                                );
-                                              },
-                                            ),
+                                                              );
+                                                            },
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ],
                                           ),
                                         ),
                                       ),

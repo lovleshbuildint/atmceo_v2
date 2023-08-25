@@ -5,7 +5,6 @@ import '/pages/transaction_dip/transaction_dip_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:aligned_tooltip/aligned_tooltip.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:data_table_2/data_table_2.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -31,10 +30,7 @@ class DownDipModel extends FlutterFlowModel {
 
   /// Initialization and disposal methods.
 
-  void initState(BuildContext context) {
-    dataTableShowLogs = false; // Disables noisy DataTable2 debug statements.
-    dataTableShowLogs = false; // Disables noisy DataTable2 debug statements.
-  }
+  void initState(BuildContext context) {}
 
   void dispose() {
     unfocusNode.dispose();

@@ -747,9 +747,7 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                                           return FFAppState().bankFilter;
                                         } else if (FFAppState()
                                             .locationFilterTab) {
-                                          return FFAppState()
-                                              .locationFilterTab
-                                              .toString();
+                                          return FFAppState().locationFilter;
                                         } else {
                                           return FFAppState().downTimeFilter;
                                         }
