@@ -262,6 +262,8 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                     16.0, 18.0, 16.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
                                     Expanded(
                                       child: Column(
@@ -417,6 +419,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                       },
                                       child: Container(
                                         width: 130.0,
+                                        height: 90.0,
                                         decoration: BoxDecoration(
                                           color: Color(0x32000000),
                                           borderRadius:
@@ -431,6 +434,8 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                                   13.0, 0.0, 13.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.start,
                                             children: [
@@ -458,9 +463,10 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                                       ),
                                                 ),
                                               ),
-                                              Align(
-                                                alignment: AlignmentDirectional(
-                                                    -1.0, 0.0),
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 0.0, 13.0),
                                                 child: Text(
                                                   getJsonField(
                                                     stackDashboardResponse
