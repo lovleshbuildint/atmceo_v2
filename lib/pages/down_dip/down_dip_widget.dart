@@ -1678,7 +1678,9 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                         FFAppState()
                                                                             .bankFilter,
                                                                         FFAppState()
-                                                                            .locationFilter),
+                                                                            .locationFilter,
+                                                                        FFAppState()
+                                                                            .downTimeFilter),
                                                                     r'''$.data''',
                                                                   ).toList();
                                                                   return SingleChildScrollView(
@@ -2725,7 +2727,9 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                         FFAppState()
                                                                             .bankFilter,
                                                                         FFAppState()
-                                                                            .locationFilter),
+                                                                            .locationFilter,
+                                                                        FFAppState()
+                                                                            .downTimeFilter),
                                                                     r'''$.data''',
                                                                   ).toList();
                                                                   return SingleChildScrollView(

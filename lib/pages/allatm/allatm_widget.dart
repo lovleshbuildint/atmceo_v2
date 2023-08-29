@@ -1124,7 +1124,9 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                     FFAppState()
                                                                         .bankFilter,
                                                                     FFAppState()
-                                                                        .locationFilter),
+                                                                        .locationFilter,
+                                                                    FFAppState()
+                                                                        .downTimeFilter),
                                                                 r'''$.data''',
                                                               ).toList();
                                                               return SingleChildScrollView(
@@ -2060,7 +2062,9 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                     FFAppState()
                                                                         .bankFilter,
                                                                     FFAppState()
-                                                                        .locationFilter),
+                                                                        .locationFilter,
+                                                                    FFAppState()
+                                                                        .downTimeFilter),
                                                                 r'''$.data''',
                                                               ).toList();
                                                               return SingleChildScrollView(
@@ -2969,7 +2973,9 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                     FFAppState()
                                                                         .bankFilter,
                                                                     FFAppState()
-                                                                        .locationFilter),
+                                                                        .locationFilter,
+                                                                    FFAppState()
+                                                                        .downTimeFilter),
                                                                 r'''$.data''',
                                                               ).toList();
                                                               return SingleChildScrollView(

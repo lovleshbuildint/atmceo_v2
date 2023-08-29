@@ -561,6 +561,7 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                                               } else if (FFAppState()
                                                   .transactionTrendFilterTab) {
                                                 return [
+                                                  'Less Than -100%',
                                                   '-(100% - 80%)',
                                                   '-(80% - 60%)',
                                                   '-(60% - 40%)',
@@ -570,11 +571,13 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                                                   '+(80% - 60%)',
                                                   '+(60% - 40%)',
                                                   '+(40% - 20%)',
-                                                  '+(20% - 0%)'
+                                                  '+(20% - 0%)',
+                                                  'More Than +100%'
                                                 ];
                                               } else if (FFAppState()
                                                   .uptimeTrendFilterTab) {
                                                 return [
+                                                  'Less Than -100%',
                                                   '-(100% - 80%)',
                                                   '-(80% - 60%)',
                                                   '-(60% - 40%)',
@@ -584,7 +587,8 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                                                   '+(80% - 60%)',
                                                   '+(60% - 40%)',
                                                   '+(40% - 20%)',
-                                                  '+(20% - 0%)'
+                                                  '+(20% - 0%)',
+                                                  'More Than +100%'
                                                 ];
                                               } else if (FFAppState()
                                                   .bankFilterTab) {

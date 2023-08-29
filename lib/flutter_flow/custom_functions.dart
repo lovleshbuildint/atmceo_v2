@@ -34,6 +34,7 @@ dynamic filter(
   String? uptimeTrendFilter,
   String? bankFilter,
   String? locationFilter,
+  String? downTimeFilter,
 ) {
   bool isFilterMultipleEnabled = false;
   int filterCount =
@@ -82,7 +83,20 @@ dynamic filter(
             filteredData1.add(data);
           }
         }
+      } else if (transactionTrendFilter.startsWith('M')) {
+        for (dynamic data in mainData['data']) {
+          if (data['transactionTrend'] >= 100) {
+            filteredData1.add(data);
+          }
+        }
+      } else if (transactionTrendFilter.startsWith('L')) {
+        for (dynamic data in mainData['data']) {
+          if (data['transactionTrend'] <= -100) {
+            filteredData1.add(data);
+          }
+        }
       }
+
       if (!isFilterMultipleEnabled) {
         return {'userId': mainData['userId'], 'data': filteredData1};
       }
@@ -121,7 +135,45 @@ dynamic filter(
             filteredData1.add(data);
           }
         }
+      } else if (uptimeTrendFilter.startsWith('M')) {
+        for (dynamic data in mainData['data']) {
+          if (data['transactionTrend'] >= 100) {
+            filteredData1.add(data);
+          }
+        }
+      } else if (uptimeTrendFilter.startsWith('L')) {
+        for (dynamic data in mainData['data']) {
+          if (data['transactionTrend'] <= -100) {
+            filteredData1.add(data);
+          }
+        }
       }
+
+      if (!isFilterMultipleEnabled) {
+        return {'userId': mainData['userId'], 'data': filteredData1};
+      }
+    }
+
+    if (downTimeFilter != null && downTimeFilter.isNotEmpty) {
+      if (downTimeFilter.startsWith('>')) {
+        for (dynamic data in mainData['data']) {
+          if (data['downTime'] >= 72) {
+            filteredData1.add(data);
+          }
+        }
+      } else {
+        var range = downTimeFilter.substring(0, downTimeFilter.length - 3);
+        var rangeValues = range.split(' - ');
+        var lowerBound = int.tryParse(rangeValues[0]);
+        var upperBound = int.tryParse(rangeValues[1]);
+        for (dynamic data in mainData['data']) {
+          if (data['downTime'] >= lowerBound &&
+              data['downTime'] <= upperBound) {
+            filteredData1.add(data);
+          }
+        }
+      }
+
       if (!isFilterMultipleEnabled) {
         return {'userId': mainData['userId'], 'data': filteredData1};
       }
@@ -213,9 +265,4 @@ dynamic getCommon(
   }
 
   return {'userId': mainData['userId'], 'data': finalData};
-}
-
-dynamic newCustomFunction2(dynamic input) {
-  // return data with comma sepration
-  return input.join(',');
 }
