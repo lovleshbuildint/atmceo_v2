@@ -18,7 +18,7 @@ class UserTokenCall {
 ${token}''';
     return ApiManager.instance.makeApiCall(
       callName: 'User Token',
-      apiUrl: 'https://fieldtrackuat.hitachi-payments.com:8443/gettoken',
+      apiUrl: 'https://ftweb.hitachi-payments.com:8443/gettoken',
       callType: ApiCallType.POST,
       headers: {
         'Content-Type': 'application/json',
@@ -58,7 +58,7 @@ class DashboardCall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'Dashboard',
-      apiUrl: 'https://fieldtrackuat.hitachi-payments.com:8443/getdashborddata',
+      apiUrl: 'https://ftweb.hitachi-payments.com:8443/getdashborddata',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -87,8 +87,7 @@ class FilterCall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'Filter',
-      apiUrl:
-          'https://fieldtrackuat.hitachi-payments.com:8443/masterfilterdata',
+      apiUrl: 'https://ftweb.hitachi-payments.com:8443/masterfilterdata',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -118,8 +117,7 @@ class TransectionDipCall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'TransectionDip',
-      apiUrl:
-          'https://fieldtrackuat.hitachi-payments.com:8443/atm/transaction/dip',
+      apiUrl: 'https://ftweb.hitachi-payments.com:8443/atm/transaction/dip',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -195,7 +193,7 @@ class MachineDownCall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'Machine Down',
-      apiUrl: 'https://fieldtrackuat.hitachi-payments.com:8443/atm/down',
+      apiUrl: 'https://ftweb.hitachi-payments.com:8443/atm/down',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -270,7 +268,7 @@ class AllAtmCall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'ALL ATM',
-      apiUrl: 'https://fieldtrackuat.hitachi-payments.com:8443/all/atmdetails',
+      apiUrl: 'https://ftweb.hitachi-payments.com:8443/all/atmdetails',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -299,8 +297,7 @@ class LatestBankDataCall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'Latest Bank Data',
-      apiUrl:
-          'https://fieldtrackuat.hitachi-payments.com:8443/lastupdatedbankdata',
+      apiUrl: 'https://ftweb.hitachi-payments.com:8443/lastupdatedbankdata',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -331,7 +328,7 @@ class ATMDetailsCall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'ATM Details',
-      apiUrl: 'https://fieldtrackuat.hitachi-payments.com:8443/getatmdetails',
+      apiUrl: 'https://ftweb.hitachi-payments.com:8443/getatmdetails',
       callType: ApiCallType.POST,
       headers: {},
       params: {},

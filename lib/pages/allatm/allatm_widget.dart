@@ -1126,7 +1126,9 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                     FFAppState()
                                                                         .locationFilter,
                                                                     FFAppState()
-                                                                        .downTimeFilter),
+                                                                        .downTimeFilter,
+                                                                    FFAppState()
+                                                                        .sortByFilter),
                                                                 r'''$.data''',
                                                               ).toList();
                                                               return SingleChildScrollView(
@@ -1182,18 +1184,38 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                   alignment: AlignmentDirectional(-1.0, 0.0),
                                                                                   child: Padding(
                                                                                     padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
-                                                                                    child: Text(
-                                                                                      getJsonField(
-                                                                                        dataItem,
-                                                                                        r'''$..atmId''',
-                                                                                      ).toString(),
-                                                                                      textAlign: TextAlign.start,
-                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                            fontSize: 12.0,
-                                                                                            fontWeight: FontWeight.normal,
-                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                          ),
+                                                                                    child: InkWell(
+                                                                                      splashColor: Colors.transparent,
+                                                                                      focusColor: Colors.transparent,
+                                                                                      hoverColor: Colors.transparent,
+                                                                                      highlightColor: Colors.transparent,
+                                                                                      onTap: () async {
+                                                                                        context.pushNamed(
+                                                                                          'ATMdetails',
+                                                                                          queryParameters: {
+                                                                                            'atmId': serializeParam(
+                                                                                              getJsonField(
+                                                                                                dataItem,
+                                                                                                r'''$..atmId''',
+                                                                                              ).toString(),
+                                                                                              ParamType.String,
+                                                                                            ),
+                                                                                          }.withoutNulls,
+                                                                                        );
+                                                                                      },
+                                                                                      child: Text(
+                                                                                        getJsonField(
+                                                                                          dataItem,
+                                                                                          r'''$..atmId''',
+                                                                                        ).toString(),
+                                                                                        textAlign: TextAlign.start,
+                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                              fontSize: 12.0,
+                                                                                              fontWeight: FontWeight.normal,
+                                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                            ),
+                                                                                      ),
                                                                                     ),
                                                                                   ),
                                                                                 ),
@@ -2064,7 +2086,9 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                     FFAppState()
                                                                         .locationFilter,
                                                                     FFAppState()
-                                                                        .downTimeFilter),
+                                                                        .downTimeFilter,
+                                                                    FFAppState()
+                                                                        .sortByFilter),
                                                                 r'''$.data''',
                                                               ).toList();
                                                               return SingleChildScrollView(
@@ -2120,18 +2144,38 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                   alignment: AlignmentDirectional(-1.0, 0.0),
                                                                                   child: Padding(
                                                                                     padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
-                                                                                    child: Text(
-                                                                                      getJsonField(
-                                                                                        dataItem,
-                                                                                        r'''$..atmId''',
-                                                                                      ).toString(),
-                                                                                      textAlign: TextAlign.start,
-                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                            fontSize: 12.0,
-                                                                                            fontWeight: FontWeight.normal,
-                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                          ),
+                                                                                    child: InkWell(
+                                                                                      splashColor: Colors.transparent,
+                                                                                      focusColor: Colors.transparent,
+                                                                                      hoverColor: Colors.transparent,
+                                                                                      highlightColor: Colors.transparent,
+                                                                                      onTap: () async {
+                                                                                        context.pushNamed(
+                                                                                          'ATMdetails',
+                                                                                          queryParameters: {
+                                                                                            'atmId': serializeParam(
+                                                                                              getJsonField(
+                                                                                                dataItem,
+                                                                                                r'''$..atmId''',
+                                                                                              ).toString(),
+                                                                                              ParamType.String,
+                                                                                            ),
+                                                                                          }.withoutNulls,
+                                                                                        );
+                                                                                      },
+                                                                                      child: Text(
+                                                                                        getJsonField(
+                                                                                          dataItem,
+                                                                                          r'''$..atmId''',
+                                                                                        ).toString(),
+                                                                                        textAlign: TextAlign.start,
+                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                              fontSize: 12.0,
+                                                                                              fontWeight: FontWeight.normal,
+                                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                            ),
+                                                                                      ),
                                                                                     ),
                                                                                   ),
                                                                                 ),
@@ -2975,7 +3019,9 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                     FFAppState()
                                                                         .locationFilter,
                                                                     FFAppState()
-                                                                        .downTimeFilter),
+                                                                        .downTimeFilter,
+                                                                    FFAppState()
+                                                                        .sortByFilter),
                                                                 r'''$.data''',
                                                               ).toList();
                                                               return SingleChildScrollView(
@@ -3031,18 +3077,38 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                   alignment: AlignmentDirectional(-1.0, 0.0),
                                                                                   child: Padding(
                                                                                     padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
-                                                                                    child: Text(
-                                                                                      getJsonField(
-                                                                                        dataItem,
-                                                                                        r'''$..atmId''',
-                                                                                      ).toString(),
-                                                                                      textAlign: TextAlign.start,
-                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                            fontSize: 12.0,
-                                                                                            fontWeight: FontWeight.normal,
-                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                          ),
+                                                                                    child: InkWell(
+                                                                                      splashColor: Colors.transparent,
+                                                                                      focusColor: Colors.transparent,
+                                                                                      hoverColor: Colors.transparent,
+                                                                                      highlightColor: Colors.transparent,
+                                                                                      onTap: () async {
+                                                                                        context.pushNamed(
+                                                                                          'ATMdetails',
+                                                                                          queryParameters: {
+                                                                                            'atmId': serializeParam(
+                                                                                              getJsonField(
+                                                                                                dataItem,
+                                                                                                r'''$..atmId''',
+                                                                                              ).toString(),
+                                                                                              ParamType.String,
+                                                                                            ),
+                                                                                          }.withoutNulls,
+                                                                                        );
+                                                                                      },
+                                                                                      child: Text(
+                                                                                        getJsonField(
+                                                                                          dataItem,
+                                                                                          r'''$..atmId''',
+                                                                                        ).toString(),
+                                                                                        textAlign: TextAlign.start,
+                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                              fontSize: 12.0,
+                                                                                              fontWeight: FontWeight.normal,
+                                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                            ),
+                                                                                      ),
                                                                                     ),
                                                                                   ),
                                                                                 ),

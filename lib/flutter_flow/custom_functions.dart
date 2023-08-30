@@ -35,6 +35,7 @@ dynamic filter(
   String? bankFilter,
   String? locationFilter,
   String? downTimeFilter,
+  String? sortByFilter,
 ) {
   bool isFilterMultipleEnabled = false;
   int filterCount =
@@ -47,6 +48,25 @@ dynamic filter(
           (bankFilter != null && bankFilter.isNotEmpty ? 1 : 0);
 
   isFilterMultipleEnabled = filterCount > 1 ? true : false;
+
+  List<dynamic> sortBy(List<dynamic> filteredData, String sortByFilter) {
+    if (sortByFilter == "Transaction: High to Low") {
+      filteredData.sort(
+          (a, b) => b['transactionTrend'].compareTo(a['transactionTrend']));
+    } else if (sortByFilter == "Transaction: Low to High") {
+      filteredData.sort(
+          (a, b) => a['transactionTrend'].compareTo(b['transactionTrend']));
+    } else if (sortByFilter == "Uptime: High to low") {
+      filteredData.sort((a, b) => b['uptimeTrend'].compareTo(a['uptimeTrend']));
+    } else if (sortByFilter == "Uptime: Low to High") {
+      filteredData.sort((a, b) => a['uptimeTrend'].compareTo(b['uptimeTrend']));
+    } else if (sortByFilter == "Downtime: High to low") {
+      filteredData.sort((a, b) => b['downTime'].compareTo(a['downTime']));
+    } else if (sortByFilter == "Downtime: Low to High") {
+      filteredData.sort((a, b) => a['downTime'].compareTo(b['downTime']));
+    }
+    return filteredData;
+  }
 
   if (searchValue == null || searchValue.isEmpty) {
     List<dynamic> filteredData1 = [];
@@ -96,9 +116,13 @@ dynamic filter(
           }
         }
       }
-
       if (!isFilterMultipleEnabled) {
-        return {'userId': mainData['userId'], 'data': filteredData1};
+        if (sortByFilter != null && sortByFilter.isNotEmpty) {
+          dynamic result = sortBy(filteredData1, sortByFilter);
+          return {'userId': mainData['userId'], 'data': result};
+        } else {
+          return {'userId': mainData['userId'], 'data': filteredData1};
+        }
       }
     }
 
@@ -137,20 +161,25 @@ dynamic filter(
         }
       } else if (uptimeTrendFilter.startsWith('M')) {
         for (dynamic data in mainData['data']) {
-          if (data['transactionTrend'] >= 100) {
+          if (data['uptimeTrend'] >= 100) {
             filteredData1.add(data);
           }
         }
       } else if (uptimeTrendFilter.startsWith('L')) {
         for (dynamic data in mainData['data']) {
-          if (data['transactionTrend'] <= -100) {
+          if (data['uptimeTrend'] <= -100) {
             filteredData1.add(data);
           }
         }
       }
 
       if (!isFilterMultipleEnabled) {
-        return {'userId': mainData['userId'], 'data': filteredData1};
+        if (sortByFilter != null && sortByFilter.isNotEmpty) {
+          dynamic result = sortBy(filteredData1, sortByFilter);
+          return {'userId': mainData['userId'], 'data': result};
+        } else {
+          return {'userId': mainData['userId'], 'data': filteredData1};
+        }
       }
     }
 
@@ -175,7 +204,12 @@ dynamic filter(
       }
 
       if (!isFilterMultipleEnabled) {
-        return {'userId': mainData['userId'], 'data': filteredData1};
+        if (sortByFilter != null && sortByFilter.isNotEmpty) {
+          dynamic result = sortBy(filteredData1, sortByFilter);
+          return {'userId': mainData['userId'], 'data': result};
+        } else {
+          return {'userId': mainData['userId'], 'data': filteredData1};
+        }
       }
     }
 
@@ -186,7 +220,12 @@ dynamic filter(
         }
       }
       if (!isFilterMultipleEnabled) {
-        return {'userId': mainData['userId'], 'data': filteredData1};
+        if (sortByFilter != null && sortByFilter.isNotEmpty) {
+          dynamic result = sortBy(filteredData1, sortByFilter);
+          return {'userId': mainData['userId'], 'data': result};
+        } else {
+          return {'userId': mainData['userId'], 'data': filteredData1};
+        }
       }
     }
 
@@ -197,7 +236,12 @@ dynamic filter(
         }
       }
       if (!isFilterMultipleEnabled) {
-        return {'userId': mainData['userId'], 'data': filteredData1};
+        if (sortByFilter != null && sortByFilter.isNotEmpty) {
+          dynamic result = sortBy(filteredData1, sortByFilter);
+          return {'userId': mainData['userId'], 'data': result};
+        } else {
+          return {'userId': mainData['userId'], 'data': filteredData1};
+        }
       }
     }
 
@@ -208,12 +252,22 @@ dynamic filter(
         }
       }
       if (!isFilterMultipleEnabled) {
-        return {'userId': mainData['userId'], 'data': filteredData1};
+        if (sortByFilter != null && sortByFilter.isNotEmpty) {
+          dynamic result = sortBy(filteredData1, sortByFilter);
+          return {'userId': mainData['userId'], 'data': result};
+        } else {
+          return {'userId': mainData['userId'], 'data': filteredData1};
+        }
       }
     }
 
     if (filteredData1.isEmpty) {
-      return mainData;
+      if (sortByFilter != null && sortByFilter.isNotEmpty) {
+        dynamic result = sortBy(mainData['data'], sortByFilter);
+        return {'userId': mainData['userId'], 'data': result};
+      } else {
+        return mainData;
+      }
     } else if (isFilterMultipleEnabled) {
       Map<String, int> atmIdCountMap = {}; // To count occurrences of atmId
       for (dynamic data in filteredData1) {
@@ -229,7 +283,12 @@ dynamic filter(
           atmIdCountMap[atmId] = 0; // To avoid duplicate entries
         }
       }
-      return {'userId': mainData['userId'], 'data': commonAtmIdList};
+      if (sortByFilter != null && sortByFilter.isNotEmpty) {
+        dynamic result = sortBy(commonAtmIdList, sortByFilter);
+        return {'userId': mainData['userId'], 'data': result};
+      } else {
+        return {'userId': mainData['userId'], 'data': commonAtmIdList};
+      }
     }
   }
 
