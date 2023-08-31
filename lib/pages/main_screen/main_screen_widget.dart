@@ -166,7 +166,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 0.0, 0.0, 0.0),
                                           child: AutoSizeText(
-                                            'ATM CEO',
+                                            'SAMPATTI',
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
