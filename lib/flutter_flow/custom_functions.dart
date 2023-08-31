@@ -9,14 +9,6 @@ import 'lat_lng.dart';
 import 'place.dart';
 import 'uploaded_file.dart';
 
-dynamic newCustomFunction(String? userDatastr) {
-  if (userDatastr != null) {
-    dynamic json = jsonDecode(userDatastr);
-    return json;
-  }
-  return null;
-}
-
 Color? colorChange(int? transactionTrendInt) {
   // return color #B1000E if transactionTrendInt is less then 0 else return #3AB100
   if (transactionTrendInt != null && transactionTrendInt < 0) {

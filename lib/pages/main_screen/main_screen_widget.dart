@@ -141,7 +141,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
                                               context.goNamed(
-                                                'frstscreen',
+                                                'login_page',
                                                 extra: <String, dynamic>{
                                                   kTransitionInfoKey:
                                                       TransitionInfo(
@@ -291,20 +291,27 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                                               .bodyMediumFamily),
                                                 ),
                                           ),
-                                          Text(
-                                            'Channel Executive',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Helvetica',
-                                                  color: Color(0xFF737373),
-                                                  useGoogleFonts: GoogleFonts
-                                                          .asMap()
-                                                      .containsKey(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMediumFamily),
-                                                ),
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 6.0, 0.0, 0.0),
+                                            child: Text(
+                                              'Channel Executive',
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Helvetica',
+                                                        color:
+                                                            Color(0xFF737373),
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily),
+                                                      ),
+                                            ),
                                           ),
                                           Padding(
                                             padding:
@@ -481,7 +488,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                                         color: Colors.white,
                                                         fontSize: 32.0,
                                                         fontWeight:
-                                                            FontWeight.bold,
+                                                            FontWeight.w600,
                                                         useGoogleFonts: GoogleFonts
                                                                 .asMap()
                                                             .containsKey(
@@ -580,7 +587,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 12.0, 0.0, 0.0),
+                                          0.0, 6.0, 0.0, 0.0),
                                       child: Text(
                                         'The finish line is in sight, don’t give up now!',
                                         style: FlutterFlowTheme.of(context)
@@ -1517,7 +1524,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                           width:
                                               MediaQuery.sizeOf(context).width *
                                                   1.0,
-                                          height: 70.0,
+                                          height: 72.0,
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryBackground,
@@ -1586,50 +1593,26 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                                                             .bodyMediumFamily),
                                                               ),
                                                     ),
-                                                    Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .end,
-                                                      children: [
-                                                        Text(
-                                                          '${getJsonField(
-                                                            stackDashboardResponse
-                                                                .jsonBody,
-                                                            r'''$.data.actualData.actualUpTime''',
-                                                          ).toString()}%',
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMediumFamily,
-                                                                fontSize: 24.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .bold,
-                                                                useGoogleFonts: GoogleFonts
-                                                                        .asMap()
-                                                                    .containsKey(
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .bodyMediumFamily),
-                                                              ),
-                                                        ),
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      5.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
-                                                          child: Text(
-                                                            'of ${getJsonField(
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  10.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        crossAxisAlignment:
+                                                            CrossAxisAlignment
+                                                                .end,
+                                                        children: [
+                                                          Text(
+                                                            '${getJsonField(
                                                               stackDashboardResponse
                                                                   .jsonBody,
-                                                              r'''$.data.targetData.targetUptime''',
+                                                              r'''$.data.actualData.actualUpTime''',
                                                             ).toString()}%',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
@@ -1638,8 +1621,11 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                                                   fontFamily: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyMediumFamily,
-                                                                  color: Color(
-                                                                      0xFFB3B3B3),
+                                                                  fontSize:
+                                                                      24.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
                                                                   useGoogleFonts: GoogleFonts
                                                                           .asMap()
                                                                       .containsKey(
@@ -1647,8 +1633,38 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                                                               .bodyMediumFamily),
                                                                 ),
                                                           ),
-                                                        ),
-                                                      ],
+                                                          Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        5.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
+                                                            child: Text(
+                                                              'of ${getJsonField(
+                                                                stackDashboardResponse
+                                                                    .jsonBody,
+                                                                r'''$.data.targetData.targetUptime''',
+                                                              ).toString()}%',
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily,
+                                                                    color: Color(
+                                                                        0xFFB3B3B3),
+                                                                    useGoogleFonts: GoogleFonts
+                                                                            .asMap()
+                                                                        .containsKey(
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                  ),
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
                                                     ),
                                                   ],
                                                 ),
@@ -1911,51 +1927,27 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                                                             .bodyMediumFamily),
                                                               ),
                                                     ),
-                                                    Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .end,
-                                                      children: [
-                                                        Text(
-                                                          getJsonField(
-                                                            stackDashboardResponse
-                                                                .jsonBody,
-                                                            r'''$.data.actualData.actualTransaction''',
-                                                          ).toString(),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMediumFamily,
-                                                                fontSize: 24.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .bold,
-                                                                useGoogleFonts: GoogleFonts
-                                                                        .asMap()
-                                                                    .containsKey(
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .bodyMediumFamily),
-                                                              ),
-                                                        ),
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      5.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
-                                                          child: Text(
-                                                            'of ${getJsonField(
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  10.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        crossAxisAlignment:
+                                                            CrossAxisAlignment
+                                                                .end,
+                                                        children: [
+                                                          Text(
+                                                            getJsonField(
                                                               stackDashboardResponse
                                                                   .jsonBody,
-                                                              r'''$.data.targetData.targetTransaction''',
-                                                            ).toString()}',
+                                                              r'''$.data.actualData.actualTransaction''',
+                                                            ).toString(),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyMedium
@@ -1963,8 +1955,11 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                                                   fontFamily: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyMediumFamily,
-                                                                  color: Color(
-                                                                      0xFFB3B3B3),
+                                                                  fontSize:
+                                                                      24.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
                                                                   useGoogleFonts: GoogleFonts
                                                                           .asMap()
                                                                       .containsKey(
@@ -1972,8 +1967,38 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                                                               .bodyMediumFamily),
                                                                 ),
                                                           ),
-                                                        ),
-                                                      ],
+                                                          Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        5.0,
+                                                                        0.0,
+                                                                        0.0,
+                                                                        0.0),
+                                                            child: Text(
+                                                              'of ${getJsonField(
+                                                                stackDashboardResponse
+                                                                    .jsonBody,
+                                                                r'''$.data.targetData.targetTransaction''',
+                                                              ).toString()}',
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily,
+                                                                    color: Color(
+                                                                        0xFFB3B3B3),
+                                                                    useGoogleFonts: GoogleFonts
+                                                                            .asMap()
+                                                                        .containsKey(
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                  ),
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
                                                     ),
                                                   ],
                                                 ),
@@ -2219,119 +2244,126 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                 r'''$.data.targetData.targetTransaction''',
                               )) >
                           1.0))
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(
-                          25.0, 100.0, 25.0, 0.0),
-                      child: Container(
-                        width: MediaQuery.sizeOf(context).width * 1.0,
-                        height: 380.0,
-                        decoration: BoxDecoration(
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          borderRadius: BorderRadius.circular(12.0),
-                        ),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Expanded(
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 0.0, 16.0, 0.0),
-                                child: Stack(
-                                  children: [
-                                    ClipRRect(
-                                      borderRadius: BorderRadius.circular(8.0),
-                                      child: Image.asset(
-                                        'assets/images/animation_640_li00lm8w_1.gif',
-                                        width:
-                                            MediaQuery.sizeOf(context).width *
-                                                1.0,
-                                        height:
-                                            MediaQuery.sizeOf(context).height *
-                                                1.0,
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                    ClipRRect(
-                                      borderRadius: BorderRadius.circular(8.0),
-                                      child: Image.asset(
-                                        'assets/images/animation_640_lhzznwtl_1.gif',
-                                        width:
-                                            MediaQuery.sizeOf(context).width *
-                                                1.0,
-                                        height:
-                                            MediaQuery.sizeOf(context).height *
-                                                1.0,
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            Text(
-                              'Congratulations',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .bodyMediumFamily,
-                                    fontSize: 18.0,
-                                    fontWeight: FontWeight.bold,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .bodyMediumFamily),
-                                  ),
-                            ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  16.0, 16.0, 16.0, 0.0),
-                              child: Text(
-                                'Great job on achiving your target and unlocking well deserved reward!',
-                                textAlign: TextAlign.center,
-                                style: FlutterFlowTheme.of(context).bodyMedium,
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 24.0, 0.0, 29.0),
-                              child: FFButtonWidget(
-                                onPressed: () async {
-                                  setState(() {
-                                    FFAppState().awardState = false;
-                                  });
-                                },
-                                text: 'Continue',
-                                options: FFButtonOptions(
-                                  width: 90.0,
-                                  height: 40.0,
+                    Align(
+                      alignment: AlignmentDirectional(1.0, 0.0),
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            25.0, 0.0, 25.0, 0.0),
+                        child: Container(
+                          width: MediaQuery.sizeOf(context).width * 1.0,
+                          height: 380.0,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            borderRadius: BorderRadius.circular(12.0),
+                          ),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Expanded(
+                                child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
-                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
-                                  color: Color(0xFFFF0026),
-                                  textStyle: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .override(
-                                        fontFamily: FlutterFlowTheme.of(context)
-                                            .titleSmallFamily,
-                                        color: Colors.white,
-                                        useGoogleFonts: GoogleFonts.asMap()
-                                            .containsKey(
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmallFamily),
+                                      16.0, 0.0, 16.0, 0.0),
+                                  child: Stack(
+                                    children: [
+                                      ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                        child: Image.asset(
+                                          'assets/images/animation_640_li00lm8w_1.gif',
+                                          width:
+                                              MediaQuery.sizeOf(context).width *
+                                                  1.0,
+                                          height: MediaQuery.sizeOf(context)
+                                                  .height *
+                                              1.0,
+                                          fit: BoxFit.cover,
+                                        ),
                                       ),
-                                  elevation: 3.0,
-                                  borderSide: BorderSide(
-                                    color: Colors.transparent,
-                                    width: 1.0,
+                                      ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                        child: Image.asset(
+                                          'assets/images/animation_640_lhzznwtl_1.gif',
+                                          width:
+                                              MediaQuery.sizeOf(context).width *
+                                                  1.0,
+                                          height: MediaQuery.sizeOf(context)
+                                                  .height *
+                                              1.0,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                    ],
                                   ),
-                                  borderRadius: BorderRadius.circular(6.0),
                                 ),
                               ),
-                            ),
-                          ],
+                              Text(
+                                'Congratulations',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .bodyMediumFamily,
+                                      fontSize: 18.0,
+                                      fontWeight: FontWeight.bold,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily),
+                                    ),
+                              ),
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    16.0, 16.0, 16.0, 0.0),
+                                child: Text(
+                                  'Great job on achiving your target and unlocking well deserved reward!',
+                                  textAlign: TextAlign.center,
+                                  style:
+                                      FlutterFlowTheme.of(context).bodyMedium,
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 24.0, 0.0, 29.0),
+                                child: FFButtonWidget(
+                                  onPressed: () async {
+                                    setState(() {
+                                      FFAppState().awardState = false;
+                                    });
+                                  },
+                                  text: 'Continue',
+                                  options: FFButtonOptions(
+                                    width: 90.0,
+                                    height: 40.0,
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    color: Color(0xFFFF0026),
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmallFamily,
+                                          color: Colors.white,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmallFamily),
+                                        ),
+                                    elevation: 3.0,
+                                    borderSide: BorderSide(
+                                      color: Colors.transparent,
+                                      width: 1.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(6.0),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),

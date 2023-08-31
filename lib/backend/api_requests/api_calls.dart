@@ -43,6 +43,46 @@ ${token}''';
       );
 }
 
+class UserTokenMainCall {
+  static Future<ApiCallResponse> call({
+    String? userName = '',
+    int? sessionId,
+  }) {
+    final body = '''
+{
+  "userId": "${userName}",
+  "password": "${userName}",
+  "sessionID": "000",
+  "requestTimestamp": "2023-05-25 17:24:44",
+  "requestType": "GetToken"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'User Token Main',
+      apiUrl: 'https://ftweb.hitachi-payments.com:8443/gettoken',
+      callType: ApiCallType.POST,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      params: {},
+      body: body,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+    );
+  }
+
+  static dynamic atmIDDip(dynamic response) => getJsonField(
+        response,
+        r'''$..atmId''',
+      );
+  static dynamic gradeDip(dynamic response) => getJsonField(
+        response,
+        r'''$..grade''',
+      );
+}
+
 class DashboardCall {
   static Future<ApiCallResponse> call({
     String? userId = '',
@@ -329,6 +369,33 @@ class ATMDetailsCall {
     return ApiManager.instance.makeApiCall(
       callName: 'ATM Details',
       apiUrl: 'https://ftweb.hitachi-payments.com:8443/getatmdetails',
+      callType: ApiCallType.POST,
+      headers: {},
+      params: {},
+      body: body,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+    );
+  }
+}
+
+class FieldTrakLoginCall {
+  static Future<ApiCallResponse> call({
+    String? userName = '',
+    String? password = '',
+  }) {
+    final body = '''
+{
+  "user_name": "${userName}",
+  "password": "${password}"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'Field Trak Login',
+      apiUrl:
+          'https://fieldtrak.hitachi-payments.com/FieldTrak2/API/v2/ValidateLogin',
       callType: ApiCallType.POST,
       headers: {},
       params: {},

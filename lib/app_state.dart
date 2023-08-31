@@ -188,7 +188,7 @@ class FFAppState extends ChangeNotifier {
 
   late FlutterSecureStorage secureStorage;
 
-  String _userId = 'UID';
+  String _userId = '';
   String get userId => _userId;
   set userId(String _value) {
     _userId = _value;
@@ -199,7 +199,7 @@ class FFAppState extends ChangeNotifier {
     secureStorage.delete(key: 'ff_userId');
   }
 
-  String _token = 'token';
+  String _token = '';
   String get token => _token;
   set token(String _value) {
     _token = _value;

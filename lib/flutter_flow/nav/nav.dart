@@ -36,22 +36,17 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
-      errorBuilder: (context, state) => FrstscreenWidget(),
+      errorBuilder: (context, state) => LoginPageWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => FrstscreenWidget(),
+          builder: (context, _) => LoginPageWidget(),
         ),
         FFRoute(
           name: 'MainScreen',
           path: '/mainScreen',
           builder: (context, params) => MainScreenWidget(),
-        ),
-        FFRoute(
-          name: 'frstscreen',
-          path: '/frstscreen',
-          builder: (context, params) => FrstscreenWidget(),
         ),
         FFRoute(
           name: 'Allatm',
@@ -73,6 +68,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => DownDipWidget(
             tabBar: params.getParam('tabBar', ParamType.int),
           ),
+        ),
+        FFRoute(
+          name: 'login_page',
+          path: '/loginPage',
+          builder: (context, params) => LoginPageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

@@ -1,4 +1,4 @@
-package com.mycompany.atmce
+package hitachi.sampatti
 
 import io.flutter.embedding.android.FlutterActivity
 
