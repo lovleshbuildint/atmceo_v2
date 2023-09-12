@@ -23,8 +23,6 @@ class LoginPageModel extends FlutterFlowModel {
   ApiCallResponse? fieldTrackLogin;
   // Stores action output result for [Backend Call - API (User Token Main)] action in Button-Login widget.
   ApiCallResponse? ceoTokenResponse;
-  // Stores action output result for [Backend Call - API (Field Trak Login)] action in Button-Login widget.
-  ApiCallResponse? fieldTrackLogin2;
 
   /// Initialization and disposal methods.
 
