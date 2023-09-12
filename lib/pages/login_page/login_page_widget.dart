@@ -349,78 +349,23 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                 password: _model
                                                     .passwordController.text,
                                               );
-                                              if ((String
-                                                  fieldTrackLoginResponse) {
-                                                return fieldTrackLoginResponse ==
-                                                        "1"
-                                                    ? true
-                                                    : false;
-                                              }(getJsonField(
-                                                (_model.fieldTrackLogin
-                                                        ?.jsonBody ??
-                                                    ''),
-                                                r'''$.flag''',
-                                              ).toString())) {
-                                                _model.ceoTokenResponse =
-                                                    await UserTokenMainCall
-                                                        .call(
-                                                  userName: _model
-                                                      .emailAddressController
-                                                      .text,
+                                              if ((_model.fieldTrackLogin
+                                                      ?.succeeded ??
+                                                  true)) {
+                                                context.pushNamed(
+                                                  'test',
+                                                  queryParameters: {
+                                                    'test': serializeParam(
+                                                      getJsonField(
+                                                        (_model.fieldTrackLogin
+                                                                ?.jsonBody ??
+                                                            ''),
+                                                        r'''$''',
+                                                      ),
+                                                      ParamType.JSON,
+                                                    ),
+                                                  }.withoutNulls,
                                                 );
-                                                if ((_model.ceoTokenResponse
-                                                        ?.succeeded ??
-                                                    true)) {
-                                                  setState(() {
-                                                    FFAppState().userId =
-                                                        getJsonField(
-                                                      (_model.ceoTokenResponse
-                                                              ?.jsonBody ??
-                                                          ''),
-                                                      r'''$.userId''',
-                                                    ).toString();
-                                                    FFAppState().token =
-                                                        getJsonField(
-                                                      (_model.ceoTokenResponse
-                                                              ?.jsonBody ??
-                                                          ''),
-                                                      r'''$.data''',
-                                                    ).toString();
-                                                  });
-
-                                                  context
-                                                      .pushNamed('MainScreen');
-                                                } else {
-                                                  await showDialog(
-                                                    context: context,
-                                                    builder:
-                                                        (alertDialogContext) {
-                                                      return AlertDialog(
-                                                        title: Text('Alert'),
-                                                        content: Text((_model
-                                                                    .ceoTokenResponse
-                                                                    ?.jsonBody ??
-                                                                '')
-                                                            .toString()),
-                                                        actions: [
-                                                          TextButton(
-                                                            onPressed: () =>
-                                                                Navigator.pop(
-                                                                    alertDialogContext),
-                                                            child: Text('Ok'),
-                                                          ),
-                                                        ],
-                                                      );
-                                                    },
-                                                  );
-                                                  setState(() {
-                                                    _model.emailAddressController
-                                                            ?.text =
-                                                        FFAppState().userId;
-                                                    _model.passwordController
-                                                        ?.clear();
-                                                  });
-                                                }
                                               } else {
                                                 await showDialog(
                                                   context: context,
@@ -428,13 +373,11 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                       (alertDialogContext) {
                                                     return AlertDialog(
                                                       title: Text('Alert'),
-                                                      content:
-                                                          Text(getJsonField(
-                                                        (_model.fieldTrackLogin
-                                                                ?.jsonBody ??
-                                                            ''),
-                                                        r'''$.data.error_message''',
-                                                      ).toString()),
+                                                      content: Text((_model
+                                                                  .fieldTrackLogin
+                                                                  ?.jsonBody ??
+                                                              '')
+                                                          .toString()),
                                                       actions: [
                                                         TextButton(
                                                           onPressed: () =>
@@ -446,13 +389,6 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                     );
                                                   },
                                                 );
-                                                setState(() {
-                                                  _model.emailAddressController
-                                                          ?.text =
-                                                      FFAppState().userId;
-                                                  _model.passwordController
-                                                      ?.clear();
-                                                });
                                               }
                                             } else {
                                               ScaffoldMessenger.of(context)
