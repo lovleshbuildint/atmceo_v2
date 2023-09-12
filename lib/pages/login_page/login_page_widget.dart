@@ -53,7 +53,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
           child: Stack(
             children: [
               Align(
-                alignment: AlignmentDirectional(0.0, 0.0),
+                alignment: AlignmentDirectional(0.00, 0.00),
                 child: Container(
                   width: MediaQuery.sizeOf(context).width * 1.0,
                   height: MediaQuery.sizeOf(context).height * 1.0,
@@ -85,7 +85,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.00, 0.00),
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 141.0, 0.0, 0.0),
@@ -390,6 +390,36 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
 
                                                   context
                                                       .pushNamed('MainScreen');
+                                                } else {
+                                                  await showDialog(
+                                                    context: context,
+                                                    builder:
+                                                        (alertDialogContext) {
+                                                      return AlertDialog(
+                                                        title: Text('Alert'),
+                                                        content: Text((_model
+                                                                    .ceoTokenResponse
+                                                                    ?.jsonBody ??
+                                                                '')
+                                                            .toString()),
+                                                        actions: [
+                                                          TextButton(
+                                                            onPressed: () =>
+                                                                Navigator.pop(
+                                                                    alertDialogContext),
+                                                            child: Text('Ok'),
+                                                          ),
+                                                        ],
+                                                      );
+                                                    },
+                                                  );
+                                                  setState(() {
+                                                    _model.emailAddressController
+                                                            ?.text =
+                                                        FFAppState().userId;
+                                                    _model.passwordController
+                                                        ?.clear();
+                                                  });
                                                 }
                                               } else {
                                                 await showDialog(

@@ -141,7 +141,7 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                       decoration: BoxDecoration(
                         color: Color(0xFFF2F2F2),
                       ),
-                      alignment: AlignmentDirectional(0.0, -1.0),
+                      alignment: AlignmentDirectional(0.00, -1.00),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -175,7 +175,7 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                                     ? Colors.white
                                     : Color(0xFFF2F2F2),
                               ),
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.00, 0.00),
                               child: Text(
                                 'Sort By',
                                 textAlign: TextAlign.center,
@@ -223,7 +223,7 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                                     ? Colors.white
                                     : Color(0xFFF2F2F2),
                               ),
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.00, 0.00),
                               child: Text(
                                 'Grade',
                                 textAlign: TextAlign.center,
@@ -271,7 +271,7 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                                     ? Colors.white
                                     : Color(0xFFF2F2F2),
                               ),
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.00, 0.00),
                               child: Text(
                                 'Bank',
                                 textAlign: TextAlign.center,
@@ -319,7 +319,7 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                                     ? Colors.white
                                     : Color(0xFFF2F2F2),
                               ),
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.00, 0.00),
                               child: Text(
                                 'Transaction Trend',
                                 textAlign: TextAlign.center,
@@ -367,7 +367,7 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                                     ? Colors.white
                                     : Color(0xFFF2F2F2),
                               ),
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.00, 0.00),
                               child: Text(
                                 'Uptime Trend',
                                 textAlign: TextAlign.center,
@@ -415,7 +415,7 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                                     ? Colors.white
                                     : Color(0xFFF2F2F2),
                               ),
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.00, 0.00),
                               child: Text(
                                 'Location',
                                 textAlign: TextAlign.center,
@@ -758,6 +758,7 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                                                 }()
                                               ],
                                             ),
+                                            wrapped: true,
                                           ),
                                         ],
                                       ),
@@ -776,7 +777,7 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
             ],
           ),
           Align(
-            alignment: AlignmentDirectional(0.0, 1.0),
+            alignment: AlignmentDirectional(0.00, 1.00),
             child: Container(
               width: MediaQuery.sizeOf(context).width * 1.0,
               height: 70.0,

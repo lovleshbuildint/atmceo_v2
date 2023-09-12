@@ -14,7 +14,7 @@ class UserTokenCall {
     dynamic? tokenJson,
   }) {
     final token = _serializeJson(tokenJson, true);
-    final body = '''
+    final ffApiRequestBody = '''
 ${token}''';
     return ApiManager.instance.makeApiCall(
       callName: 'User Token',
@@ -24,7 +24,7 @@ ${token}''';
         'Content-Type': 'application/json',
       },
       params: {},
-      body: body,
+      body: ffApiRequestBody,
       bodyType: BodyType.JSON,
       returnBody: true,
       encodeBodyUtf8: false,
@@ -48,7 +48,7 @@ class UserTokenMainCall {
     String? userName = '',
     int? sessionId,
   }) {
-    final body = '''
+    final ffApiRequestBody = '''
 {
   "userId": "${userName}",
   "password": "${userName}",
@@ -64,7 +64,7 @@ class UserTokenMainCall {
         'Content-Type': 'application/json',
       },
       params: {},
-      body: body,
+      body: ffApiRequestBody,
       bodyType: BodyType.JSON,
       returnBody: true,
       encodeBodyUtf8: false,
@@ -88,7 +88,7 @@ class DashboardCall {
     String? userId = '',
     String? token = '',
   }) {
-    final body = '''
+    final ffApiRequestBody = '''
 {
   "userId": "${userId}",
   "token": "${token}",
@@ -102,7 +102,7 @@ class DashboardCall {
       callType: ApiCallType.POST,
       headers: {},
       params: {},
-      body: body,
+      body: ffApiRequestBody,
       bodyType: BodyType.JSON,
       returnBody: true,
       encodeBodyUtf8: false,
@@ -117,7 +117,7 @@ class FilterCall {
     String? userId = '',
     String? token = '',
   }) {
-    final body = '''
+    final ffApiRequestBody = '''
 {
   "userId": "${userId}",
   "token": "${token}",
@@ -131,7 +131,7 @@ class FilterCall {
       callType: ApiCallType.POST,
       headers: {},
       params: {},
-      body: body,
+      body: ffApiRequestBody,
       bodyType: BodyType.JSON,
       returnBody: true,
       encodeBodyUtf8: false,
@@ -146,7 +146,7 @@ class TransectionDipCall {
     String? userId = '',
     String? token = '',
   }) {
-    final body = '''
+    final ffApiRequestBody = '''
 {
   "userId": "${userId}",
   "token": "${token}",
@@ -161,7 +161,7 @@ class TransectionDipCall {
       callType: ApiCallType.POST,
       headers: {},
       params: {},
-      body: body,
+      body: ffApiRequestBody,
       bodyType: BodyType.JSON,
       returnBody: true,
       encodeBodyUtf8: false,
@@ -222,7 +222,7 @@ class MachineDownCall {
     String? userId = '',
     String? token = '',
   }) {
-    final body = '''
+    final ffApiRequestBody = '''
 {
   "userId": "${userId}",
   "token": "${token}",
@@ -237,7 +237,7 @@ class MachineDownCall {
       callType: ApiCallType.POST,
       headers: {},
       params: {},
-      body: body,
+      body: ffApiRequestBody,
       bodyType: BodyType.JSON,
       returnBody: true,
       encodeBodyUtf8: false,
@@ -298,7 +298,7 @@ class AllAtmCall {
     String? userId = '',
     String? token = '',
   }) {
-    final body = '''
+    final ffApiRequestBody = '''
 {
   "userId": "${userId}",
   "token": "${token}",
@@ -312,7 +312,7 @@ class AllAtmCall {
       callType: ApiCallType.POST,
       headers: {},
       params: {},
-      body: body,
+      body: ffApiRequestBody,
       bodyType: BodyType.JSON,
       returnBody: true,
       encodeBodyUtf8: false,
@@ -327,7 +327,7 @@ class LatestBankDataCall {
     String? userId = '',
     String? token = '',
   }) {
-    final body = '''
+    final ffApiRequestBody = '''
 {
   "userId": "${userId}",
   "token": "${token}",
@@ -341,7 +341,7 @@ class LatestBankDataCall {
       callType: ApiCallType.POST,
       headers: {},
       params: {},
-      body: body,
+      body: ffApiRequestBody,
       bodyType: BodyType.JSON,
       returnBody: true,
       encodeBodyUtf8: false,
@@ -357,7 +357,7 @@ class ATMDetailsCall {
     String? token = '',
     String? atmId = '',
   }) {
-    final body = '''
+    final ffApiRequestBody = '''
 {
   "userId": "${userId}",
   "token": "${token}",
@@ -372,7 +372,7 @@ class ATMDetailsCall {
       callType: ApiCallType.POST,
       headers: {},
       params: {},
-      body: body,
+      body: ffApiRequestBody,
       bodyType: BodyType.JSON,
       returnBody: true,
       encodeBodyUtf8: false,
@@ -387,7 +387,7 @@ class FieldTrakLoginCall {
     String? userName = '',
     String? password = '',
   }) {
-    final body = '''
+    final ffApiRequestBody = '''
 {
   "user_name": "${userName}",
   "password": "${password}"
@@ -399,7 +399,7 @@ class FieldTrakLoginCall {
       callType: ApiCallType.POST,
       headers: {},
       params: {},
-      body: body,
+      body: ffApiRequestBody,
       bodyType: BodyType.JSON,
       returnBody: true,
       encodeBodyUtf8: false,

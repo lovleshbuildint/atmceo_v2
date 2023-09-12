@@ -1,6 +1,7 @@
 import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -106,7 +107,7 @@ class _ATMdetailsWidgetState extends State<ATMdetailsWidget> {
                           decoration: BoxDecoration(
                             color: Color(0x002D2D2D),
                           ),
-                          alignment: AlignmentDirectional(0.0, -1.0),
+                          alignment: AlignmentDirectional(0.00, -1.00),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -125,7 +126,7 @@ class _ATMdetailsWidgetState extends State<ATMdetailsWidget> {
                                       children: [
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.00, 0.00),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
                                             focusColor: Colors.transparent,
@@ -188,7 +189,7 @@ class _ATMdetailsWidgetState extends State<ATMdetailsWidget> {
                                       children: [
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(1.0, 0.0),
+                                              AlignmentDirectional(1.00, 0.00),
                                           child: AutoSizeText(
                                             'Last updated: ${dateTimeFormat('yMMMd', getCurrentTimestamp)}',
                                             style: FlutterFlowTheme.of(context)
@@ -208,7 +209,7 @@ class _ATMdetailsWidgetState extends State<ATMdetailsWidget> {
                                         ),
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(1.0, 0.0),
+                                              AlignmentDirectional(1.00, 0.00),
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
@@ -706,7 +707,7 @@ class _ATMdetailsWidgetState extends State<ATMdetailsWidget> {
                                 topRight: Radius.circular(24.0),
                               ),
                             ),
-                            alignment: AlignmentDirectional(0.0, -1.0),
+                            alignment: AlignmentDirectional(0.00, -1.00),
                             child: Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   15.0, 16.0, 15.0, 0.0),

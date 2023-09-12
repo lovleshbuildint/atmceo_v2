@@ -115,7 +115,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                           decoration: BoxDecoration(
                             color: Color(0x002D2D2D),
                           ),
-                          alignment: AlignmentDirectional(0.0, -1.0),
+                          alignment: AlignmentDirectional(0.00, -1.00),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
@@ -133,7 +133,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                       children: [
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(-1.0, 0.0),
+                                              AlignmentDirectional(-1.00, 0.00),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
                                             focusColor: Colors.transparent,
@@ -190,7 +190,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                       children: [
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(1.0, 0.0),
+                                              AlignmentDirectional(1.00, 0.00),
                                           child: AutoSizeText(
                                             'Last updated: ${dateTimeFormat('yMMMd', getCurrentTimestamp)}',
                                             style: FlutterFlowTheme.of(context)
@@ -210,7 +210,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                         ),
                                         Align(
                                           alignment:
-                                              AlignmentDirectional(1.0, 0.0),
+                                              AlignmentDirectional(1.00, 0.00),
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
@@ -615,7 +615,8 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
                                     Align(
-                                      alignment: AlignmentDirectional(1.0, 0.0),
+                                      alignment:
+                                          AlignmentDirectional(1.00, 0.00),
                                       child: ClipRRect(
                                         borderRadius:
                                             BorderRadius.circular(8.0),
@@ -759,7 +760,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                 topRight: Radius.circular(24.0),
                               ),
                             ),
-                            alignment: AlignmentDirectional(0.0, -1.0),
+                            alignment: AlignmentDirectional(0.00, -1.00),
                             child: Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   15.0, 16.0, 15.0, 0.0),
@@ -2245,7 +2246,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                               )) >
                           1.0))
                     Align(
-                      alignment: AlignmentDirectional(1.0, 0.0),
+                      alignment: AlignmentDirectional(1.00, 0.00),
                       child: Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(
                             25.0, 0.0, 25.0, 0.0),

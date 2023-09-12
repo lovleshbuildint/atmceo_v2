@@ -1,6 +1,7 @@
 import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/all_a_t_m_filter/all_a_t_m_filter_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:aligned_tooltip/aligned_tooltip.dart';
@@ -96,7 +97,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
             0,
           ),
           2),
-    );
+    )..addListener(() => setState(() {}));
   }
 
   @override
@@ -128,7 +129,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                   ).image,
                 ),
               ),
-              alignment: AlignmentDirectional(0.0, -1.0),
+              alignment: AlignmentDirectional(0.00, -1.00),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
@@ -144,7 +145,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(-1.0, 0.0),
+                              alignment: AlignmentDirectional(-1.00, 0.00),
                               child: InkWell(
                                 splashColor: Colors.transparent,
                                 focusColor: Colors.transparent,
@@ -198,7 +199,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Align(
-                              alignment: AlignmentDirectional(1.0, 0.0),
+                              alignment: AlignmentDirectional(1.00, 0.00),
                               child: AutoSizeText(
                                 'Last updated: ${dateTimeFormat('yMMMd', getCurrentTimestamp)}',
                                 style: FlutterFlowTheme.of(context)
@@ -215,7 +216,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                               ),
                             ),
                             Align(
-                              alignment: AlignmentDirectional(1.0, 0.0),
+                              alignment: AlignmentDirectional(1.00, 0.00),
                               child: Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     4.0, 0.0, 0.0, 0.0),
@@ -388,7 +389,6 @@ class _AllatmWidgetState extends State<AllatmWidget>
                               ),
                             ],
                             controller: _model.tabBarController,
-                            onTap: (value) => setState(() {}),
                           ),
                         ),
                         Expanded(
@@ -685,7 +685,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                             ),
                                                             alignment:
                                                                 AlignmentDirectional(
-                                                                    0.0, 0.0),
+                                                                    0.00, 0.00),
                                                             child: Row(
                                                               mainAxisSize:
                                                                   MainAxisSize
@@ -818,7 +818,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                             ),
                                                             alignment:
                                                                 AlignmentDirectional(
-                                                                    0.0, 0.0),
+                                                                    0.00, 0.00),
                                                             child: Text(
                                                               'ATM Performance',
                                                               style: FlutterFlowTheme
@@ -854,7 +854,8 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                             ),
                                                             alignment:
                                                                 AlignmentDirectional(
-                                                                    -1.0, 0.0),
+                                                                    -1.00,
+                                                                    0.00),
                                                             child: Padding(
                                                               padding:
                                                                   EdgeInsetsDirectional
@@ -898,7 +899,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                             ),
                                                             alignment:
                                                                 AlignmentDirectional(
-                                                                    0.0, 0.0),
+                                                                    0.00, 0.00),
                                                             child: Text(
                                                               'Grade',
                                                               textAlign:
@@ -935,8 +936,8 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                               ),
                                                               alignment:
                                                                   AlignmentDirectional(
-                                                                      -1.0,
-                                                                      0.0),
+                                                                      -1.00,
+                                                                      0.00),
                                                               child: Padding(
                                                                 padding:
                                                                     EdgeInsetsDirectional
@@ -978,8 +979,8 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                               ),
                                                               alignment:
                                                                   AlignmentDirectional(
-                                                                      -1.0,
-                                                                      0.0),
+                                                                      -1.00,
+                                                                      0.00),
                                                               child: Padding(
                                                                 padding:
                                                                     EdgeInsetsDirectional
@@ -1019,7 +1020,8 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                             ),
                                                             alignment:
                                                                 AlignmentDirectional(
-                                                                    -1.0, 0.0),
+                                                                    -1.00,
+                                                                    0.00),
                                                             child: Padding(
                                                               padding:
                                                                   EdgeInsetsDirectional
@@ -1063,7 +1065,8 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                             ),
                                                             alignment:
                                                                 AlignmentDirectional(
-                                                                    -1.0, 0.0),
+                                                                    -1.00,
+                                                                    0.00),
                                                             child: Padding(
                                                               padding:
                                                                   EdgeInsetsDirectional
@@ -1173,7 +1176,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                     decoration: BoxDecoration(
                                                                                       color: Colors.white,
                                                                                     ),
-                                                                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                                                                    alignment: AlignmentDirectional(-1.00, 0.00),
                                                                                     child: Padding(
                                                                                       padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                       child: InkWell(
@@ -1216,7 +1219,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                     decoration: BoxDecoration(
                                                                                       color: Colors.white,
                                                                                     ),
-                                                                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                    alignment: AlignmentDirectional(0.00, 0.00),
                                                                                     child: Column(
                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                       children: [
@@ -1304,7 +1307,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                       decoration: BoxDecoration(
                                                                                         color: Colors.white,
                                                                                       ),
-                                                                                      alignment: AlignmentDirectional(-1.0, 0.0),
+                                                                                      alignment: AlignmentDirectional(-1.00, 0.00),
                                                                                       child: Padding(
                                                                                         padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                         child: Text(
@@ -1328,7 +1331,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                       decoration: BoxDecoration(
                                                                                         color: Colors.white,
                                                                                       ),
-                                                                                      alignment: AlignmentDirectional(-1.0, 0.0),
+                                                                                      alignment: AlignmentDirectional(-1.00, 0.00),
                                                                                       child: Padding(
                                                                                         padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                         child: Text(
@@ -1351,7 +1354,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                     decoration: BoxDecoration(
                                                                                       color: Colors.white,
                                                                                     ),
-                                                                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                                                                    alignment: AlignmentDirectional(-1.00, 0.00),
                                                                                     child: Padding(
                                                                                       padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                       child: Text(
@@ -1376,7 +1379,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                     decoration: BoxDecoration(
                                                                                       color: Colors.white,
                                                                                     ),
-                                                                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                                                                    alignment: AlignmentDirectional(-1.00, 0.00),
                                                                                     child: Padding(
                                                                                       padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                       child: Text(
@@ -1724,7 +1727,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                             ),
                                                             alignment:
                                                                 AlignmentDirectional(
-                                                                    0.0, 0.0),
+                                                                    0.00, 0.00),
                                                             child: Row(
                                                               mainAxisSize:
                                                                   MainAxisSize
@@ -1857,7 +1860,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                             ),
                                                             alignment:
                                                                 AlignmentDirectional(
-                                                                    0.0, 0.0),
+                                                                    0.00, 0.00),
                                                             child: Text(
                                                               'Transaction Trend',
                                                               textAlign:
@@ -1896,7 +1899,8 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                             ),
                                                             alignment:
                                                                 AlignmentDirectional(
-                                                                    -1.0, 0.0),
+                                                                    -1.00,
+                                                                    0.00),
                                                             child: Padding(
                                                               padding:
                                                                   EdgeInsetsDirectional
@@ -1940,7 +1944,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                             ),
                                                             alignment:
                                                                 AlignmentDirectional(
-                                                                    0.0, 0.0),
+                                                                    0.00, 0.00),
                                                             child: Text(
                                                               'Grade',
                                                               textAlign:
@@ -1977,8 +1981,8 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                               ),
                                                               alignment:
                                                                   AlignmentDirectional(
-                                                                      -1.0,
-                                                                      0.0),
+                                                                      -1.00,
+                                                                      0.00),
                                                               child: Padding(
                                                                 padding:
                                                                     EdgeInsetsDirectional
@@ -2020,8 +2024,8 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                               ),
                                                               alignment:
                                                                   AlignmentDirectional(
-                                                                      -1.0,
-                                                                      0.0),
+                                                                      -1.00,
+                                                                      0.00),
                                                               child: Padding(
                                                                 padding:
                                                                     EdgeInsetsDirectional
@@ -2061,7 +2065,8 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                             ),
                                                             alignment:
                                                                 AlignmentDirectional(
-                                                                    -1.0, 0.0),
+                                                                    -1.00,
+                                                                    0.00),
                                                           ),
                                                         ],
                                                       ),
@@ -2139,7 +2144,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                     decoration: BoxDecoration(
                                                                                       color: Colors.white,
                                                                                     ),
-                                                                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                                                                    alignment: AlignmentDirectional(-1.00, 0.00),
                                                                                     child: Padding(
                                                                                       padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                       child: InkWell(
@@ -2182,7 +2187,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                     decoration: BoxDecoration(
                                                                                       color: Colors.white,
                                                                                     ),
-                                                                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                    alignment: AlignmentDirectional(0.00, 0.00),
                                                                                     child: Column(
                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                       children: [
@@ -2270,7 +2275,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                       decoration: BoxDecoration(
                                                                                         color: Colors.white,
                                                                                       ),
-                                                                                      alignment: AlignmentDirectional(-1.0, 0.0),
+                                                                                      alignment: AlignmentDirectional(-1.00, 0.00),
                                                                                       child: Padding(
                                                                                         padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                         child: Text(
@@ -2294,7 +2299,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                       decoration: BoxDecoration(
                                                                                         color: Colors.white,
                                                                                       ),
-                                                                                      alignment: AlignmentDirectional(-1.0, 0.0),
+                                                                                      alignment: AlignmentDirectional(-1.00, 0.00),
                                                                                       child: Padding(
                                                                                         padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                         child: Text(
@@ -2317,7 +2322,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                     decoration: BoxDecoration(
                                                                                       color: Colors.white,
                                                                                     ),
-                                                                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                                                                    alignment: AlignmentDirectional(-1.00, 0.00),
                                                                                     child: Padding(
                                                                                       padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                       child: Text(
@@ -2665,7 +2670,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                             ),
                                                             alignment:
                                                                 AlignmentDirectional(
-                                                                    0.0, 0.0),
+                                                                    0.00, 0.00),
                                                             child: Row(
                                                               mainAxisSize:
                                                                   MainAxisSize
@@ -2798,7 +2803,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                             ),
                                                             alignment:
                                                                 AlignmentDirectional(
-                                                                    0.0, 0.0),
+                                                                    0.00, 0.00),
                                                             child: Text(
                                                               'Uptime Trend',
                                                               style: FlutterFlowTheme
@@ -2834,7 +2839,8 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                             ),
                                                             alignment:
                                                                 AlignmentDirectional(
-                                                                    -1.0, 0.0),
+                                                                    -1.00,
+                                                                    0.00),
                                                             child: Padding(
                                                               padding:
                                                                   EdgeInsetsDirectional
@@ -2878,7 +2884,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                             ),
                                                             alignment:
                                                                 AlignmentDirectional(
-                                                                    0.0, 0.0),
+                                                                    0.00, 0.00),
                                                             child: Text(
                                                               'Grade',
                                                               textAlign:
@@ -2915,8 +2921,8 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                               ),
                                                               alignment:
                                                                   AlignmentDirectional(
-                                                                      -1.0,
-                                                                      0.0),
+                                                                      -1.00,
+                                                                      0.00),
                                                               child: Padding(
                                                                 padding:
                                                                     EdgeInsetsDirectional
@@ -2958,8 +2964,8 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                               ),
                                                               alignment:
                                                                   AlignmentDirectional(
-                                                                      -1.0,
-                                                                      0.0),
+                                                                      -1.00,
+                                                                      0.00),
                                                               child: Padding(
                                                                 padding:
                                                                     EdgeInsetsDirectional
@@ -2999,7 +3005,8 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                             ),
                                                             alignment:
                                                                 AlignmentDirectional(
-                                                                    -1.0, 0.0),
+                                                                    -1.00,
+                                                                    0.00),
                                                           ),
                                                         ],
                                                       ),
@@ -3077,7 +3084,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                     decoration: BoxDecoration(
                                                                                       color: Colors.white,
                                                                                     ),
-                                                                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                                                                    alignment: AlignmentDirectional(-1.00, 0.00),
                                                                                     child: Padding(
                                                                                       padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                       child: InkWell(
@@ -3120,7 +3127,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                     decoration: BoxDecoration(
                                                                                       color: Colors.white,
                                                                                     ),
-                                                                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                    alignment: AlignmentDirectional(0.00, 0.00),
                                                                                     child: Column(
                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                       children: [
@@ -3208,7 +3215,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                       decoration: BoxDecoration(
                                                                                         color: Colors.white,
                                                                                       ),
-                                                                                      alignment: AlignmentDirectional(-1.0, 0.0),
+                                                                                      alignment: AlignmentDirectional(-1.00, 0.00),
                                                                                       child: Padding(
                                                                                         padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                         child: Text(
@@ -3232,7 +3239,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                       decoration: BoxDecoration(
                                                                                         color: Colors.white,
                                                                                       ),
-                                                                                      alignment: AlignmentDirectional(-1.0, 0.0),
+                                                                                      alignment: AlignmentDirectional(-1.00, 0.00),
                                                                                       child: Padding(
                                                                                         padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                         child: Text(
@@ -3255,7 +3262,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                     decoration: BoxDecoration(
                                                                                       color: Colors.white,
                                                                                     ),
-                                                                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                                                                    alignment: AlignmentDirectional(-1.00, 0.00),
                                                                                     child: Padding(
                                                                                       padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                       child: Text(

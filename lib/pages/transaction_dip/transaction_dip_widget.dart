@@ -143,7 +143,7 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                       decoration: BoxDecoration(
                         color: Color(0xFFF2F2F2),
                       ),
-                      alignment: AlignmentDirectional(0.0, -1.0),
+                      alignment: AlignmentDirectional(0.00, -1.00),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -177,7 +177,7 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                                     ? Colors.white
                                     : Color(0xFFF2F2F2),
                               ),
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.00, 0.00),
                               child: Text(
                                 'Sort By',
                                 textAlign: TextAlign.center,
@@ -225,7 +225,7 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                                     ? Colors.white
                                     : Color(0xFFF2F2F2),
                               ),
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.00, 0.00),
                               child: Text(
                                 'Grade',
                                 textAlign: TextAlign.center,
@@ -273,7 +273,7 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                                     ? Colors.white
                                     : Color(0xFFF2F2F2),
                               ),
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.00, 0.00),
                               child: Text(
                                 'Bank',
                                 textAlign: TextAlign.center,
@@ -321,7 +321,7 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                                     ? Colors.white
                                     : Color(0xFFF2F2F2),
                               ),
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.00, 0.00),
                               child: Text(
                                 'Transaction Trend',
                                 textAlign: TextAlign.center,
@@ -369,7 +369,7 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                                     ? Colors.white
                                     : Color(0xFFF2F2F2),
                               ),
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.00, 0.00),
                               child: Text(
                                 'Uptime Trend',
                                 textAlign: TextAlign.center,
@@ -417,7 +417,7 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                                     ? Colors.white
                                     : Color(0xFFF2F2F2),
                               ),
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.00, 0.00),
                               child: Text(
                                 'Down Time',
                                 textAlign: TextAlign.center,
@@ -465,7 +465,7 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                                     ? Colors.white
                                     : Color(0xFFF2F2F2),
                               ),
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.00, 0.00),
                               child: Text(
                                 'Location',
                                 textAlign: TextAlign.center,
@@ -841,6 +841,7 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                                                 }()
                                               ],
                                             ),
+                                            wrapped: true,
                                           ),
                                         ],
                                       ),
@@ -935,6 +936,7 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                                                     List<String>>(
                                               [],
                                             ),
+                                            wrapped: true,
                                           ),
                                         ],
                                       ),
@@ -953,7 +955,7 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
             ],
           ),
           Align(
-            alignment: AlignmentDirectional(0.0, 1.0),
+            alignment: AlignmentDirectional(0.00, 1.00),
             child: Container(
               width: MediaQuery.sizeOf(context).width * 1.0,
               height: 70.0,
