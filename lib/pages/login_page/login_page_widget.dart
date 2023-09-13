@@ -531,6 +531,22 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                           ),
                         ),
                       ),
+                      Align(
+                        alignment: AlignmentDirectional(0.91, -0.95),
+                        child: Text(
+                          'V 1.1',
+                          style: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .bodyMediumFamily,
+                                fontWeight: FontWeight.bold,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .bodyMediumFamily),
+                              ),
+                        ),
+                      ),
                     ],
                   ),
                 ),
