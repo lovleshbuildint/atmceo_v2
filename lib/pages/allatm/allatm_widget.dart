@@ -543,7 +543,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                       );
                                                     },
                                                   ).then((value) =>
-                                                      setState(() {}));
+                                                      safeSetState(() {}));
                                                 },
                                                 child: Container(
                                                   width: 87.0,
@@ -1585,7 +1585,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                       );
                                                     },
                                                   ).then((value) =>
-                                                      setState(() {}));
+                                                      safeSetState(() {}));
                                                 },
                                                 child: Container(
                                                   width: 87.0,
@@ -2528,7 +2528,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                       );
                                                     },
                                                   ).then((value) =>
-                                                      setState(() {}));
+                                                      safeSetState(() {}));
                                                 },
                                                 child: Container(
                                                   width: 87.0,

@@ -460,7 +460,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                       );
                                                     },
                                                   ).then((value) =>
-                                                      setState(() {}));
+                                                      safeSetState(() {}));
                                                 },
                                                 child: Container(
                                                   width: 87.0,
@@ -2175,7 +2175,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                           );
                                                         },
                                                       ).then((value) =>
-                                                          setState(() {}));
+                                                          safeSetState(() {}));
                                                     },
                                                     child: Container(
                                                       width: 87.0,
