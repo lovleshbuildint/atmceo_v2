@@ -1265,6 +1265,7 @@ class _MainScreenCopyWidgetState extends State<MainScreenCopyWidget> {
                                                                               fontFamily: 'Helvetica2',
                                                                               color: Color(0xFF4D4D4D),
                                                                               fontSize: 15.0,
+                                                                              fontWeight: FontWeight.w300,
                                                                               useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                             ),
                                                                       ),
