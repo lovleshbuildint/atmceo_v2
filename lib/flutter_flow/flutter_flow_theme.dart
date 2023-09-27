@@ -183,107 +183,107 @@ class MobileTypography extends Typography {
 
   final FlutterFlowTheme theme;
 
-  String get displayLargeFamily => 'Helvetica';
+  String get displayLargeFamily => 'Helvetica2';
   TextStyle get displayLarge => TextStyle(
-        fontFamily: 'Helvetica',
+        fontFamily: 'Helvetica2',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 64.0,
       );
-  String get displayMediumFamily => 'Helvetica';
+  String get displayMediumFamily => 'Helvetica2';
   TextStyle get displayMedium => TextStyle(
-        fontFamily: 'Helvetica',
+        fontFamily: 'Helvetica2',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 44.0,
       );
-  String get displaySmallFamily => 'Helvetica';
+  String get displaySmallFamily => 'Helvetica2';
   TextStyle get displaySmall => TextStyle(
-        fontFamily: 'Helvetica',
+        fontFamily: 'Helvetica2',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 36.0,
       );
-  String get headlineLargeFamily => 'Helvetica';
+  String get headlineLargeFamily => 'Helvetica2';
   TextStyle get headlineLarge => TextStyle(
-        fontFamily: 'Helvetica',
+        fontFamily: 'Helvetica2',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 32.0,
       );
-  String get headlineMediumFamily => 'Helvetica';
+  String get headlineMediumFamily => 'Helvetica2';
   TextStyle get headlineMedium => TextStyle(
-        fontFamily: 'Helvetica',
+        fontFamily: 'Helvetica2',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 24.0,
       );
-  String get headlineSmallFamily => 'Helvetica';
+  String get headlineSmallFamily => 'Helvetica2';
   TextStyle get headlineSmall => TextStyle(
-        fontFamily: 'Helvetica',
+        fontFamily: 'Helvetica2',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 24.0,
       );
-  String get titleLargeFamily => 'Helvetica';
+  String get titleLargeFamily => 'Helvetica2';
   TextStyle get titleLarge => TextStyle(
-        fontFamily: 'Helvetica',
+        fontFamily: 'Helvetica2',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 22.0,
       );
-  String get titleMediumFamily => 'Helvetica';
+  String get titleMediumFamily => 'Helvetica2';
   TextStyle get titleMedium => TextStyle(
-        fontFamily: 'Helvetica',
+        fontFamily: 'Helvetica2',
         color: theme.info,
         fontWeight: FontWeight.normal,
         fontSize: 18.0,
       );
-  String get titleSmallFamily => 'Helvetica';
+  String get titleSmallFamily => 'Helvetica2';
   TextStyle get titleSmall => TextStyle(
-        fontFamily: 'Helvetica',
+        fontFamily: 'Helvetica2',
         color: theme.info,
         fontWeight: FontWeight.w500,
         fontSize: 16.0,
       );
-  String get labelLargeFamily => 'Helvetica';
+  String get labelLargeFamily => 'Helvetica2';
   TextStyle get labelLarge => TextStyle(
-        fontFamily: 'Helvetica',
+        fontFamily: 'Helvetica2',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
         fontSize: 16.0,
       );
-  String get labelMediumFamily => 'Helvetica';
+  String get labelMediumFamily => 'Helvetica2';
   TextStyle get labelMedium => TextStyle(
-        fontFamily: 'Helvetica',
+        fontFamily: 'Helvetica2',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
         fontSize: 14.0,
       );
-  String get labelSmallFamily => 'Helvetica';
+  String get labelSmallFamily => 'Helvetica2';
   TextStyle get labelSmall => TextStyle(
-        fontFamily: 'Helvetica',
+        fontFamily: 'Helvetica2',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
         fontSize: 12.0,
       );
-  String get bodyLargeFamily => 'Helvetica';
+  String get bodyLargeFamily => 'Helvetica2';
   TextStyle get bodyLarge => TextStyle(
-        fontFamily: 'Helvetica',
+        fontFamily: 'Helvetica2',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 16.0,
       );
-  String get bodyMediumFamily => 'Helvetica';
+  String get bodyMediumFamily => 'Helvetica2';
   TextStyle get bodyMedium => TextStyle(
-        fontFamily: 'Helvetica',
+        fontFamily: 'Helvetica2',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 14.0,
       );
-  String get bodySmallFamily => 'Helvetica';
+  String get bodySmallFamily => 'Helvetica2';
   TextStyle get bodySmall => TextStyle(
-        fontFamily: 'Helvetica',
+        fontFamily: 'Helvetica2',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 12.0,
@@ -295,107 +295,107 @@ class TabletTypography extends Typography {
 
   final FlutterFlowTheme theme;
 
-  String get displayLargeFamily => 'Helvetica';
+  String get displayLargeFamily => 'Helvetica2';
   TextStyle get displayLarge => TextStyle(
-        fontFamily: 'Helvetica',
+        fontFamily: 'Helvetica2',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 64.0,
       );
-  String get displayMediumFamily => 'Helvetica';
+  String get displayMediumFamily => 'Helvetica2';
   TextStyle get displayMedium => TextStyle(
-        fontFamily: 'Helvetica',
+        fontFamily: 'Helvetica2',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 44.0,
       );
-  String get displaySmallFamily => 'Helvetica';
+  String get displaySmallFamily => 'Helvetica2';
   TextStyle get displaySmall => TextStyle(
-        fontFamily: 'Helvetica',
+        fontFamily: 'Helvetica2',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 36.0,
       );
-  String get headlineLargeFamily => 'Helvetica';
+  String get headlineLargeFamily => 'Helvetica2';
   TextStyle get headlineLarge => TextStyle(
-        fontFamily: 'Helvetica',
+        fontFamily: 'Helvetica2',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 32.0,
       );
-  String get headlineMediumFamily => 'Helvetica';
+  String get headlineMediumFamily => 'Helvetica2';
   TextStyle get headlineMedium => TextStyle(
-        fontFamily: 'Helvetica',
+        fontFamily: 'Helvetica2',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 24.0,
       );
-  String get headlineSmallFamily => 'Helvetica';
+  String get headlineSmallFamily => 'Helvetica2';
   TextStyle get headlineSmall => TextStyle(
-        fontFamily: 'Helvetica',
+        fontFamily: 'Helvetica2',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 24.0,
       );
-  String get titleLargeFamily => 'Helvetica';
+  String get titleLargeFamily => 'Helvetica2';
   TextStyle get titleLarge => TextStyle(
-        fontFamily: 'Helvetica',
+        fontFamily: 'Helvetica2',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 22.0,
       );
-  String get titleMediumFamily => 'Helvetica';
+  String get titleMediumFamily => 'Helvetica2';
   TextStyle get titleMedium => TextStyle(
-        fontFamily: 'Helvetica',
+        fontFamily: 'Helvetica2',
         color: theme.info,
         fontWeight: FontWeight.normal,
         fontSize: 18.0,
       );
-  String get titleSmallFamily => 'Helvetica';
+  String get titleSmallFamily => 'Helvetica2';
   TextStyle get titleSmall => TextStyle(
-        fontFamily: 'Helvetica',
+        fontFamily: 'Helvetica2',
         color: theme.info,
         fontWeight: FontWeight.w500,
         fontSize: 16.0,
       );
-  String get labelLargeFamily => 'Helvetica';
+  String get labelLargeFamily => 'Helvetica2';
   TextStyle get labelLarge => TextStyle(
-        fontFamily: 'Helvetica',
+        fontFamily: 'Helvetica2',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
         fontSize: 16.0,
       );
-  String get labelMediumFamily => 'Helvetica';
+  String get labelMediumFamily => 'Helvetica2';
   TextStyle get labelMedium => TextStyle(
-        fontFamily: 'Helvetica',
+        fontFamily: 'Helvetica2',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
         fontSize: 14.0,
       );
-  String get labelSmallFamily => 'Helvetica';
+  String get labelSmallFamily => 'Helvetica2';
   TextStyle get labelSmall => TextStyle(
-        fontFamily: 'Helvetica',
+        fontFamily: 'Helvetica2',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
         fontSize: 12.0,
       );
-  String get bodyLargeFamily => 'Helvetica';
+  String get bodyLargeFamily => 'Helvetica2';
   TextStyle get bodyLarge => TextStyle(
-        fontFamily: 'Helvetica',
+        fontFamily: 'Helvetica2',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 16.0,
       );
-  String get bodyMediumFamily => 'Helvetica';
+  String get bodyMediumFamily => 'Helvetica2';
   TextStyle get bodyMedium => TextStyle(
-        fontFamily: 'Helvetica',
+        fontFamily: 'Helvetica2',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 14.0,
       );
-  String get bodySmallFamily => 'Helvetica';
+  String get bodySmallFamily => 'Helvetica2';
   TextStyle get bodySmall => TextStyle(
-        fontFamily: 'Helvetica',
+        fontFamily: 'Helvetica2',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 12.0,
@@ -407,107 +407,107 @@ class DesktopTypography extends Typography {
 
   final FlutterFlowTheme theme;
 
-  String get displayLargeFamily => 'Helvetica';
+  String get displayLargeFamily => 'Helvetica2';
   TextStyle get displayLarge => TextStyle(
-        fontFamily: 'Helvetica',
+        fontFamily: 'Helvetica2',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 64.0,
       );
-  String get displayMediumFamily => 'Helvetica';
+  String get displayMediumFamily => 'Helvetica2';
   TextStyle get displayMedium => TextStyle(
-        fontFamily: 'Helvetica',
+        fontFamily: 'Helvetica2',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 44.0,
       );
-  String get displaySmallFamily => 'Helvetica';
+  String get displaySmallFamily => 'Helvetica2';
   TextStyle get displaySmall => TextStyle(
-        fontFamily: 'Helvetica',
+        fontFamily: 'Helvetica2',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 36.0,
       );
-  String get headlineLargeFamily => 'Helvetica';
+  String get headlineLargeFamily => 'Helvetica2';
   TextStyle get headlineLarge => TextStyle(
-        fontFamily: 'Helvetica',
+        fontFamily: 'Helvetica2',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 32.0,
       );
-  String get headlineMediumFamily => 'Helvetica';
+  String get headlineMediumFamily => 'Helvetica2';
   TextStyle get headlineMedium => TextStyle(
-        fontFamily: 'Helvetica',
+        fontFamily: 'Helvetica2',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 24.0,
       );
-  String get headlineSmallFamily => 'Helvetica';
+  String get headlineSmallFamily => 'Helvetica2';
   TextStyle get headlineSmall => TextStyle(
-        fontFamily: 'Helvetica',
+        fontFamily: 'Helvetica2',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 24.0,
       );
-  String get titleLargeFamily => 'Helvetica';
+  String get titleLargeFamily => 'Helvetica2';
   TextStyle get titleLarge => TextStyle(
-        fontFamily: 'Helvetica',
+        fontFamily: 'Helvetica2',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 22.0,
       );
-  String get titleMediumFamily => 'Helvetica';
+  String get titleMediumFamily => 'Helvetica2';
   TextStyle get titleMedium => TextStyle(
-        fontFamily: 'Helvetica',
+        fontFamily: 'Helvetica2',
         color: theme.info,
         fontWeight: FontWeight.normal,
         fontSize: 18.0,
       );
-  String get titleSmallFamily => 'Helvetica';
+  String get titleSmallFamily => 'Helvetica2';
   TextStyle get titleSmall => TextStyle(
-        fontFamily: 'Helvetica',
+        fontFamily: 'Helvetica2',
         color: theme.info,
         fontWeight: FontWeight.w500,
         fontSize: 16.0,
       );
-  String get labelLargeFamily => 'Helvetica';
+  String get labelLargeFamily => 'Helvetica2';
   TextStyle get labelLarge => TextStyle(
-        fontFamily: 'Helvetica',
+        fontFamily: 'Helvetica2',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
         fontSize: 16.0,
       );
-  String get labelMediumFamily => 'Helvetica';
+  String get labelMediumFamily => 'Helvetica2';
   TextStyle get labelMedium => TextStyle(
-        fontFamily: 'Helvetica',
+        fontFamily: 'Helvetica2',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
         fontSize: 14.0,
       );
-  String get labelSmallFamily => 'Helvetica';
+  String get labelSmallFamily => 'Helvetica2';
   TextStyle get labelSmall => TextStyle(
-        fontFamily: 'Helvetica',
+        fontFamily: 'Helvetica2',
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
         fontSize: 12.0,
       );
-  String get bodyLargeFamily => 'Helvetica';
+  String get bodyLargeFamily => 'Helvetica2';
   TextStyle get bodyLarge => TextStyle(
-        fontFamily: 'Helvetica',
+        fontFamily: 'Helvetica2',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 16.0,
       );
-  String get bodyMediumFamily => 'Helvetica';
+  String get bodyMediumFamily => 'Helvetica2';
   TextStyle get bodyMedium => TextStyle(
-        fontFamily: 'Helvetica',
+        fontFamily: 'Helvetica2',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 14.0,
       );
-  String get bodySmallFamily => 'Helvetica';
+  String get bodySmallFamily => 'Helvetica2';
   TextStyle get bodySmall => TextStyle(
-        fontFamily: 'Helvetica',
+        fontFamily: 'Helvetica2',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 12.0,

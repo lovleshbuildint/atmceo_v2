@@ -73,6 +73,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'login_page',
           path: '/loginPage',
           builder: (context, params) => LoginPageWidget(),
+        ),
+        FFRoute(
+          name: 'MainScreenCopy',
+          path: '/mainScreenCopy',
+          builder: (context, params) => MainScreenCopyWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

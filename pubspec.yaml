@@ -72,6 +72,7 @@ dependencies:
 
 dev_dependencies:
   flutter_launcher_icons: 0.12.0
+  image: 4.0.17
 
   flutter_test:
     sdk: flutter
@@ -110,6 +111,13 @@ flutter:
       fonts:
         - asset: assets/fonts/HelveticaLTStd-Roman.otf
           style: italic
+    - family: 'Helvetica2'
+      fonts:
+        - asset: assets/fonts/HelveticaLTStd-Light.otf
+          weight: 300
+        - asset: assets/fonts/HelveticaLTStd-Roman.otf
+        - asset: assets/fonts/HelveticaLTStd-Bold.otf
+          weight: 700
 
 
     - family: MyFlutterApp

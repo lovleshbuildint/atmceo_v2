@@ -116,7 +116,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                         .bodyMediumFamily,
                                     color: Color(0xFF2D2D2D),
                                     fontSize: 24.0,
-                                    fontWeight: FontWeight.bold,
+                                    fontWeight: FontWeight.w800,
                                     useGoogleFonts: GoogleFonts.asMap()
                                         .containsKey(
                                             FlutterFlowTheme.of(context)
@@ -311,8 +311,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                           .bodyMedium
                                           .override(
                                             fontFamily: 'Poppins',
-                                            color: Colors.white,
-                                            fontSize: 14.0,
+                                            color: Color(0xFFB3B3B3),
+                                            fontSize: 16.0,
                                             fontWeight: FontWeight.bold,
                                             useGoogleFonts: GoogleFonts.asMap()
                                                 .containsKey(
