@@ -212,7 +212,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                           .bodyMedium
                                           .override(
                                             fontFamily: 'Helvetica2',
-                                            color: Color(0xFFB3B3B3),
+                                            color: Color(0xFF2D2D2D),
                                             fontSize: 16.0,
                                             fontWeight: FontWeight.normal,
                                             useGoogleFonts: GoogleFonts.asMap()
@@ -312,7 +312,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                           .bodyMedium
                                           .override(
                                             fontFamily: 'Helvetica2',
-                                            color: Color(0xFFB3B3B3),
+                                            color: Color(0xFF2D2D2D),
                                             fontSize: 16.0,
                                             fontWeight: FontWeight.bold,
                                             useGoogleFonts: GoogleFonts.asMap()
