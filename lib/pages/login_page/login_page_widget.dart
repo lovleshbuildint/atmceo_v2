@@ -303,7 +303,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                             _model.passwordVisibility
                                                 ? Icons.visibility_outlined
                                                 : Icons.visibility_off_outlined,
-                                            color: Color(0xFFB3B3B3),
+                                            color: Color(0xFF2D2D2D),
                                             size: 22.0,
                                           ),
                                         ),
