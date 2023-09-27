@@ -1264,6 +1264,7 @@ class _MainScreenCopyWidgetState extends State<MainScreenCopyWidget> {
                                                                             .override(
                                                                               fontFamily: 'Helvetica2',
                                                                               color: Color(0xFF4D4D4D),
+                                                                              fontSize: 15.0,
                                                                               useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                             ),
                                                                       ),
@@ -1514,6 +1515,7 @@ class _MainScreenCopyWidgetState extends State<MainScreenCopyWidget> {
                                                                             .override(
                                                                               fontFamily: 'Helvetica2',
                                                                               color: Color(0xFF4D4D4D),
+                                                                              fontSize: 14.0,
                                                                               useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                             ),
                                                                       ),
@@ -1820,7 +1822,7 @@ class _MainScreenCopyWidgetState extends State<MainScreenCopyWidget> {
                                                       MediaQuery.sizeOf(context)
                                                               .width *
                                                           1.0,
-                                                  height: 72.0,
+                                                  height: 80.0,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
@@ -1856,7 +1858,7 @@ class _MainScreenCopyWidgetState extends State<MainScreenCopyWidget> {
                                                                     .max,
                                                             crossAxisAlignment:
                                                                 CrossAxisAlignment
-                                                                    .end,
+                                                                    .center,
                                                             children: [
                                                               Padding(
                                                                 padding:
@@ -2126,7 +2128,7 @@ class _MainScreenCopyWidgetState extends State<MainScreenCopyWidget> {
                                             Padding(
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(
-                                                      0.0, 12.0, 0.0, 0.0),
+                                                      0.0, 16.0, 0.0, 0.0),
                                               child: InkWell(
                                                 splashColor: Colors.transparent,
                                                 focusColor: Colors.transparent,
