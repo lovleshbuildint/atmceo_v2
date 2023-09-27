@@ -112,11 +112,10 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .bodyMediumFamily,
+                                    fontFamily: 'Helvetica2',
                                     color: Color(0xFF2D2D2D),
                                     fontSize: 24.0,
-                                    fontWeight: FontWeight.w800,
+                                    fontWeight: FontWeight.bold,
                                     useGoogleFonts: GoogleFonts.asMap()
                                         .containsKey(
                                             FlutterFlowTheme.of(context)
@@ -125,7 +124,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                             ),
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 12.0, 0.0, 0.0),
+                                  0.0, 6.0, 0.0, 0.0),
                               child: Text(
                                 'Please enter your credentials to proceed',
                                 style: FlutterFlowTheme.of(context)
@@ -134,7 +133,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                       fontFamily: FlutterFlowTheme.of(context)
                                           .bodyMediumFamily,
                                       color: Color(0xFF4D4D4D),
-                                      fontSize: 15.0,
+                                      fontSize: 14.0,
                                       fontWeight: FontWeight.normal,
                                       useGoogleFonts: GoogleFonts.asMap()
                                           .containsKey(
@@ -153,13 +152,15 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                   Expanded(
                                     child: TextFormField(
                                       controller: _model.emailAddressController,
+                                      textCapitalization:
+                                          TextCapitalization.none,
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         hintText: 'User ID',
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .bodySmall
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              fontFamily: 'Helvetica2',
                                               color: Color(0xFFB3B3B3),
                                               fontWeight: FontWeight.bold,
                                               useGoogleFonts:
@@ -179,7 +180,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                         ),
                                         focusedBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
-                                            color: Color(0x00000000),
+                                            color: Color(0xFFFF0026),
                                             width: 2.0,
                                           ),
                                           borderRadius:
@@ -210,7 +211,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            fontFamily: 'Helvetica2',
                                             color: Color(0xFFB3B3B3),
                                             fontSize: 16.0,
                                             fontWeight: FontWeight.normal,
@@ -243,7 +244,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              fontFamily: 'Helvetica2',
                                               color: Color(0xFFB3B3B3),
                                               fontSize: 16.0,
                                               fontWeight: FontWeight.normal,
@@ -264,7 +265,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                         ),
                                         focusedBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
-                                            color: Color(0x00000000),
+                                            color: Color(0xFFFF0026),
                                             width: 2.0,
                                           ),
                                           borderRadius:
@@ -310,7 +311,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            fontFamily: 'Helvetica2',
                                             color: Color(0xFFB3B3B3),
                                             fontSize: 16.0,
                                             fontWeight: FontWeight.bold,
@@ -390,7 +391,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                 ).toString();
                                               });
 
-                                              context.pushNamed('MainScreen');
+                                              context
+                                                  .pushNamed('MainScreenCopy');
                                             } else {
                                               await showDialog(
                                                 context: context,
@@ -496,7 +498,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .titleMedium
                                             .override(
-                                              fontFamily: 'Lexend Deca',
+                                              fontFamily: 'Helvetica2',
                                               color: Colors.white,
                                               fontSize: 18.0,
                                               fontWeight: FontWeight.bold,
