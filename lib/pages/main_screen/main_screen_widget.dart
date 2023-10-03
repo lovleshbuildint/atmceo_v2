@@ -57,7 +57,9 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
+      onTap: () => _model.unfocusNode.canRequestFocus
+          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+          : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: Color(0xFF2D2D2D),
@@ -660,6 +662,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                             )),
                                         lineHeight: 12.0,
                                         animation: true,
+                                        animateFromLastPercent: true,
                                         progressColor: Color(0xFF3AB100),
                                         backgroundColor: Color(0xFF737373),
                                         barRadius: Radius.circular(100.0),
@@ -2280,7 +2283,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                         borderRadius:
                                             BorderRadius.circular(8.0),
                                         child: Image.asset(
-                                          'assets/images/animation_640_li00lm8w_1.gif',
+                                          'assets/images/animation_640_li00lm8w_1_(1).gif',
                                           width:
                                               MediaQuery.sizeOf(context).width *
                                                   1.0,

@@ -514,6 +514,7 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                                                           .allMachineDetails,
                                                       'grade'),
                                                   r'''$..grade''',
+                                                  true,
                                                 ) as List)
                                                     .map<String>(
                                                         (s) => s.toString())
@@ -558,6 +559,7 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                                                           .allMachineDetails,
                                                       'bankName'),
                                                   r'''$..bankName''',
+                                                  true,
                                                 ) as List)
                                                     .map<String>(
                                                         (s) => s.toString())
@@ -570,6 +572,7 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                                                           .allMachineDetails,
                                                       'location'),
                                                   r'''$..location''',
+                                                  true,
                                                 ) as List)
                                                     .map<String>(
                                                         (s) => s.toString())

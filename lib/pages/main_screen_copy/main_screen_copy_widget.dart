@@ -58,7 +58,9 @@ class _MainScreenCopyWidgetState extends State<MainScreenCopyWidget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
+      onTap: () => _model.unfocusNode.canRequestFocus
+          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+          : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: Color(0xFF2D2D2D),
@@ -96,270 +98,6 @@ class _MainScreenCopyWidgetState extends State<MainScreenCopyWidget> {
               final stackDashboardResponse = snapshot.data!;
               return Stack(
                 children: [
-                  if (FFAppState().visibilityState == true)
-                    Align(
-                      alignment: AlignmentDirectional(0.71, -0.76),
-                      child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            70.0, 0.0, 15.0, 0.0),
-                        child: Container(
-                          height: MediaQuery.sizeOf(context).height * 0.2,
-                          decoration: BoxDecoration(
-                            color: Color(0xFF4D4D4D),
-                            borderRadius: BorderRadius.circular(6.0),
-                          ),
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                8.0, 15.0, 20.0, 10.0),
-                            child: Builder(
-                              builder: (context) {
-                                final latestBankData = getJsonField(
-                                  FFAppState().LastUpdatedBankDataJson,
-                                  r'''$.data''',
-                                ).toList();
-                                return ListView.builder(
-                                  padding: EdgeInsets.zero,
-                                  scrollDirection: Axis.vertical,
-                                  itemCount: latestBankData.length,
-                                  itemBuilder: (context, latestBankDataIndex) {
-                                    final latestBankDataItem =
-                                        latestBankData[latestBankDataIndex];
-                                    return Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        RichText(
-                                          textScaleFactor:
-                                              MediaQuery.of(context)
-                                                  .textScaleFactor,
-                                          text: TextSpan(
-                                            children: [
-                                              TextSpan(
-                                                text: getJsonField(
-                                                  latestBankDataItem,
-                                                  r'''$..bankName''',
-                                                ).toString(),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              'Helvetica2',
-                                                          color: Colors.white,
-                                                          fontWeight:
-                                                              FontWeight.normal,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMediumFamily),
-                                                        ),
-                                              ),
-                                              TextSpan(
-                                                text: ' - ',
-                                                style: TextStyle(
-                                                  fontFamily: 'Helvetica2',
-                                                  color: Colors.white,
-                                                  fontSize: 14.0,
-                                                ),
-                                              ),
-                                              TextSpan(
-                                                text: getJsonField(
-                                                  latestBankDataItem,
-                                                  r'''$..date''',
-                                                ).toString(),
-                                                style: TextStyle(
-                                                  fontFamily: 'Helvetica2',
-                                                  color: Color(0xFFB3B3B3),
-                                                  fontSize: 12.0,
-                                                ),
-                                              ),
-                                              TextSpan(
-                                                text: ', ',
-                                                style: TextStyle(
-                                                  fontFamily: 'Helvetica2',
-                                                  color: Color(0xFFB3B3B3),
-                                                  fontSize: 12.0,
-                                                ),
-                                              ),
-                                              TextSpan(
-                                                text: getJsonField(
-                                                  latestBankDataItem,
-                                                  r'''$..time''',
-                                                ).toString(),
-                                                style: TextStyle(
-                                                  fontFamily: 'Helvetica2',
-                                                  color: Color(0xFFB3B3B3),
-                                                  fontSize: 12.0,
-                                                ),
-                                              )
-                                            ],
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMediumFamily,
-                                                  color: Colors.white,
-                                                  useGoogleFonts: GoogleFonts
-                                                          .asMap()
-                                                      .containsKey(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMediumFamily),
-                                                ),
-                                          ),
-                                        ),
-                                        Divider(
-                                          thickness: 0.1,
-                                          color: Color(0x83FFFFFF),
-                                        ),
-                                      ],
-                                    );
-                                  },
-                                );
-                              },
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  if (FFAppState().awardState &&
-                      ((getJsonField(
-                                stackDashboardResponse.jsonBody,
-                                r'''$.data.actualData.actualTransaction''',
-                              ) /
-                              getJsonField(
-                                stackDashboardResponse.jsonBody,
-                                r'''$.data.targetData.targetTransaction''',
-                              )) >
-                          1.0))
-                    Align(
-                      alignment: AlignmentDirectional(1.00, 0.00),
-                      child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            25.0, 0.0, 25.0, 0.0),
-                        child: Container(
-                          width: MediaQuery.sizeOf(context).width * 1.0,
-                          height: 380.0,
-                          decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                            borderRadius: BorderRadius.circular(12.0),
-                          ),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Expanded(
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      16.0, 0.0, 16.0, 0.0),
-                                  child: Stack(
-                                    children: [
-                                      ClipRRect(
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                        child: Image.asset(
-                                          'assets/images/animation_640_li00lm8w_1.gif',
-                                          width:
-                                              MediaQuery.sizeOf(context).width *
-                                                  1.0,
-                                          height: MediaQuery.sizeOf(context)
-                                                  .height *
-                                              1.0,
-                                          fit: BoxFit.cover,
-                                        ),
-                                      ),
-                                      ClipRRect(
-                                        borderRadius:
-                                            BorderRadius.circular(8.0),
-                                        child: Image.asset(
-                                          'assets/images/animation_640_lhzznwtl_1.gif',
-                                          width:
-                                              MediaQuery.sizeOf(context).width *
-                                                  1.0,
-                                          height: MediaQuery.sizeOf(context)
-                                                  .height *
-                                              1.0,
-                                          fit: BoxFit.cover,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              Text(
-                                'Congratulations',
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: FlutterFlowTheme.of(context)
-                                          .bodyMediumFamily,
-                                      fontSize: 18.0,
-                                      fontWeight: FontWeight.bold,
-                                      useGoogleFonts: GoogleFonts.asMap()
-                                          .containsKey(
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMediumFamily),
-                                    ),
-                              ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 16.0, 16.0, 0.0),
-                                child: Text(
-                                  'Great job on achiving your target and unlocking well deserved reward!',
-                                  textAlign: TextAlign.center,
-                                  style:
-                                      FlutterFlowTheme.of(context).bodyMedium,
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 24.0, 0.0, 29.0),
-                                child: FFButtonWidget(
-                                  onPressed: () async {
-                                    setState(() {
-                                      FFAppState().awardState = false;
-                                    });
-                                  },
-                                  text: 'Continue',
-                                  options: FFButtonOptions(
-                                    width: 90.0,
-                                    height: 40.0,
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    color: Color(0xFFFF0026),
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .override(
-                                          fontFamily:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleSmallFamily,
-                                          color: Colors.white,
-                                          useGoogleFonts: GoogleFonts.asMap()
-                                              .containsKey(
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmallFamily),
-                                        ),
-                                    elevation: 3.0,
-                                    borderSide: BorderSide(
-                                      color: Colors.transparent,
-                                      width: 1.0,
-                                    ),
-                                    borderRadius: BorderRadius.circular(6.0),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
                   InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -870,6 +608,7 @@ class _MainScreenCopyWidgetState extends State<MainScreenCopyWidget> {
                                         )),
                                     lineHeight: 12.0,
                                     animation: true,
+                                    animateFromLastPercent: true,
                                     progressColor: Color(0xFF3AB100),
                                     backgroundColor: Color(0xFF737373),
                                     barRadius: Radius.circular(100.0),
@@ -956,7 +695,7 @@ class _MainScreenCopyWidgetState extends State<MainScreenCopyWidget> {
                                 0.0, 340.0, 0.0, 0.0),
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
-                              height: 456.0,
+                              height: MediaQuery.sizeOf(context).height * 1.0,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
@@ -1137,7 +876,7 @@ class _MainScreenCopyWidgetState extends State<MainScreenCopyWidget> {
                                                   );
                                                 },
                                                 child: Container(
-                                                  height: 125.0,
+                                                  height: 146.0,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
@@ -1262,7 +1001,7 @@ class _MainScreenCopyWidgetState extends State<MainScreenCopyWidget> {
                                                               EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
-                                                                      15.0,
+                                                                      16.0,
                                                                       0.0,
                                                                       0.0),
                                                           child: Row(
@@ -1392,7 +1131,7 @@ class _MainScreenCopyWidgetState extends State<MainScreenCopyWidget> {
                                                   );
                                                 },
                                                 child: Container(
-                                                  height: 125.0,
+                                                  height: 146.0,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
@@ -1514,7 +1253,7 @@ class _MainScreenCopyWidgetState extends State<MainScreenCopyWidget> {
                                                               EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
-                                                                      15.0,
+                                                                      13.0,
                                                                       0.0,
                                                                       0.0),
                                                           child: Row(
@@ -1668,7 +1407,7 @@ class _MainScreenCopyWidgetState extends State<MainScreenCopyWidget> {
                                                       FlutterFlowTheme.of(
                                                               context)
                                                           .bodyMediumFamily),
-                                              lineHeight: 1.34,
+                                              lineHeight: 1.36,
                                             ),
                                       ),
                                     ),
@@ -2451,6 +2190,270 @@ class _MainScreenCopyWidgetState extends State<MainScreenCopyWidget> {
                       ],
                     ),
                   ),
+                  if (FFAppState().visibilityState == true)
+                    Align(
+                      alignment: AlignmentDirectional(0.71, -0.76),
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            70.0, 0.0, 15.0, 0.0),
+                        child: Container(
+                          height: MediaQuery.sizeOf(context).height * 0.2,
+                          decoration: BoxDecoration(
+                            color: Color(0xFF4D4D4D),
+                            borderRadius: BorderRadius.circular(6.0),
+                          ),
+                          child: Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                8.0, 15.0, 20.0, 10.0),
+                            child: Builder(
+                              builder: (context) {
+                                final latestBankData = getJsonField(
+                                  FFAppState().LastUpdatedBankDataJson,
+                                  r'''$.data''',
+                                ).toList();
+                                return ListView.builder(
+                                  padding: EdgeInsets.zero,
+                                  scrollDirection: Axis.vertical,
+                                  itemCount: latestBankData.length,
+                                  itemBuilder: (context, latestBankDataIndex) {
+                                    final latestBankDataItem =
+                                        latestBankData[latestBankDataIndex];
+                                    return Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        RichText(
+                                          textScaleFactor:
+                                              MediaQuery.of(context)
+                                                  .textScaleFactor,
+                                          text: TextSpan(
+                                            children: [
+                                              TextSpan(
+                                                text: getJsonField(
+                                                  latestBankDataItem,
+                                                  r'''$..bankName''',
+                                                ).toString(),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Helvetica2',
+                                                          color: Colors.white,
+                                                          fontWeight:
+                                                              FontWeight.normal,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily),
+                                                        ),
+                                              ),
+                                              TextSpan(
+                                                text: ' - ',
+                                                style: TextStyle(
+                                                  fontFamily: 'Helvetica2',
+                                                  color: Colors.white,
+                                                  fontSize: 14.0,
+                                                ),
+                                              ),
+                                              TextSpan(
+                                                text: getJsonField(
+                                                  latestBankDataItem,
+                                                  r'''$..date''',
+                                                ).toString(),
+                                                style: TextStyle(
+                                                  fontFamily: 'Helvetica2',
+                                                  color: Color(0xFFB3B3B3),
+                                                  fontSize: 12.0,
+                                                ),
+                                              ),
+                                              TextSpan(
+                                                text: ', ',
+                                                style: TextStyle(
+                                                  fontFamily: 'Helvetica2',
+                                                  color: Color(0xFFB3B3B3),
+                                                  fontSize: 12.0,
+                                                ),
+                                              ),
+                                              TextSpan(
+                                                text: getJsonField(
+                                                  latestBankDataItem,
+                                                  r'''$..time''',
+                                                ).toString(),
+                                                style: TextStyle(
+                                                  fontFamily: 'Helvetica2',
+                                                  color: Color(0xFFB3B3B3),
+                                                  fontSize: 12.0,
+                                                ),
+                                              )
+                                            ],
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMediumFamily,
+                                                  color: Colors.white,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMediumFamily),
+                                                ),
+                                          ),
+                                        ),
+                                        Divider(
+                                          thickness: 0.1,
+                                          color: Color(0x83FFFFFF),
+                                        ),
+                                      ],
+                                    );
+                                  },
+                                );
+                              },
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  if (FFAppState().awardState &&
+                      ((getJsonField(
+                                stackDashboardResponse.jsonBody,
+                                r'''$.data.actualData.actualTransaction''',
+                              ) /
+                              getJsonField(
+                                stackDashboardResponse.jsonBody,
+                                r'''$.data.targetData.targetTransaction''',
+                              )) >
+                          1.0))
+                    Align(
+                      alignment: AlignmentDirectional(1.00, 0.00),
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            25.0, 0.0, 25.0, 0.0),
+                        child: Container(
+                          width: MediaQuery.sizeOf(context).width * 1.0,
+                          height: 380.0,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            borderRadius: BorderRadius.circular(12.0),
+                          ),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Expanded(
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      16.0, 0.0, 16.0, 0.0),
+                                  child: Stack(
+                                    children: [
+                                      ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                        child: Image.asset(
+                                          'assets/images/animation_640_li00lm8w_1_(1).gif',
+                                          width:
+                                              MediaQuery.sizeOf(context).width *
+                                                  1.0,
+                                          height: MediaQuery.sizeOf(context)
+                                                  .height *
+                                              1.0,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                      ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                        child: Image.asset(
+                                          'assets/images/animation_640_lhzznwtl_1.gif',
+                                          width:
+                                              MediaQuery.sizeOf(context).width *
+                                                  1.0,
+                                          height: MediaQuery.sizeOf(context)
+                                                  .height *
+                                              1.0,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              Text(
+                                'Congratulations',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .bodyMediumFamily,
+                                      fontSize: 18.0,
+                                      fontWeight: FontWeight.bold,
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily),
+                                    ),
+                              ),
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    16.0, 16.0, 16.0, 0.0),
+                                child: Text(
+                                  'Great job on achiving your target and unlocking well deserved reward!',
+                                  textAlign: TextAlign.center,
+                                  style:
+                                      FlutterFlowTheme.of(context).bodyMedium,
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 24.0, 0.0, 29.0),
+                                child: FFButtonWidget(
+                                  onPressed: () async {
+                                    setState(() {
+                                      FFAppState().awardState = false;
+                                    });
+                                  },
+                                  text: 'Continue',
+                                  options: FFButtonOptions(
+                                    width: 90.0,
+                                    height: 40.0,
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    color: Color(0xFFFF0026),
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmallFamily,
+                                          color: Colors.white,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmallFamily),
+                                        ),
+                                    elevation: 3.0,
+                                    borderSide: BorderSide(
+                                      color: Colors.transparent,
+                                      width: 1.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(6.0),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
                 ],
               );
             },

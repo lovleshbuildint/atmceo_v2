@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/all_a_t_m_filter/all_a_t_m_filter_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'allatm_widget.dart' show AllatmWidget;
 import 'package:aligned_tooltip/aligned_tooltip.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:easy_debounce/easy_debounce.dart';
@@ -14,7 +15,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 
-class AllatmModel extends FlutterFlowModel {
+class AllatmModel extends FlutterFlowModel<AllatmWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

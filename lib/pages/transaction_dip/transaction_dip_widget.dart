@@ -565,6 +565,7 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                                                                 .machineDownJson,
                                                             'grade'),
                                                         r'''$..grade''',
+                                                        true,
                                                       ) as List)
                                                         .map<String>(
                                                             (s) => s.toString())
@@ -575,6 +576,7 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                                                                 .transactionDipJson,
                                                             'grade'),
                                                         r'''$..grade''',
+                                                        true,
                                                       ) as List)
                                                         .map<String>(
                                                             (s) => s.toString())
@@ -620,6 +622,7 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                                                                 .machineDownJson,
                                                             'bankName'),
                                                         r'''$..bankName''',
+                                                        true,
                                                       ) as List)
                                                         .map<String>(
                                                             (s) => s.toString())
@@ -630,6 +633,7 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                                                                 .transactionDipJson,
                                                             'bankName'),
                                                         r'''$..bankName''',
+                                                        true,
                                                       ) as List)
                                                         .map<String>(
                                                             (s) => s.toString())
@@ -643,6 +647,7 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                                                                 .machineDownJson,
                                                             'location'),
                                                         r'''$..location''',
+                                                        true,
                                                       ) as List)
                                                         .map<String>(
                                                             (s) => s.toString())
@@ -653,6 +658,7 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                                                                 .transactionDipJson,
                                                             'location'),
                                                         r'''$..location''',
+                                                        true,
                                                       ) as List)
                                                         .map<String>(
                                                             (s) => s.toString())
