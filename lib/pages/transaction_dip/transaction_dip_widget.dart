@@ -164,7 +164,7 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                                 FFAppState().locationFilterTab = false;
                               });
                               setState(() {
-                                _model.shortCCValueController1?.value = [
+                                _model.shortCCValueController?.value = [
                                   FFAppState().sortByFilter
                                 ];
                               });
@@ -216,7 +216,7 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                                 FFAppState().locationFilterTab = false;
                               });
                               setState(() {
-                                _model.shortCCValueController1?.value = [
+                                _model.shortCCValueController?.value = [
                                   FFAppState().gradeFilter
                                 ];
                               });
@@ -268,7 +268,7 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                                 FFAppState().locationFilterTab = false;
                               });
                               setState(() {
-                                _model.shortCCValueController1?.value = [
+                                _model.shortCCValueController?.value = [
                                   FFAppState().bankFilter
                                 ];
                               });
@@ -320,7 +320,7 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                                 FFAppState().locationFilterTab = false;
                               });
                               setState(() {
-                                _model.shortCCValueController1?.value = [
+                                _model.shortCCValueController?.value = [
                                   FFAppState().transactionTrendFilter
                                 ];
                               });
@@ -372,7 +372,7 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                                 FFAppState().locationFilterTab = false;
                               });
                               setState(() {
-                                _model.shortCCValueController1?.value = [
+                                _model.shortCCValueController?.value = [
                                   FFAppState().uptimeTrendFilter
                                 ];
                               });
@@ -424,7 +424,7 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                                 FFAppState().locationFilterTab = false;
                               });
                               setState(() {
-                                _model.shortCCValueController1?.value = [
+                                _model.shortCCValueController?.value = [
                                   FFAppState().downTimeFilter
                                 ];
                               });
@@ -476,7 +476,7 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                                 FFAppState().locationFilterTab = true;
                               });
                               setState(() {
-                                _model.shortCCValueController1?.value = [
+                                _model.shortCCValueController?.value = [
                                   FFAppState().locationFilter
                                 ];
                               });
@@ -521,11 +521,11 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                         children: [
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                16.0, 15.0, 0.0, 0.0),
+                                14.0, 15.0, 0.0, 0.0),
                             child: Text(
                               () {
                                 if (FFAppState().sortByFilterTab) {
-                                  return 'Short By';
+                                  return 'Sort By';
                                 } else if (FFAppState().gradeFilterTab) {
                                   return 'Grade';
                                 } else if (FFAppState()
@@ -705,19 +705,19 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                                                 .toList(),
                                             onChanged: (val) async {
                                               setState(() => _model
-                                                  .shortCCValue1 = val?.first);
+                                                  .shortCCValue = val?.first);
                                               if (FFAppState()
                                                   .sortByFilterTab) {
                                                 FFAppState().update(() {
                                                   FFAppState().sortByFilter =
-                                                      _model.shortCCValue1!;
+                                                      _model.shortCCValue!;
                                                 });
                                               } else {
                                                 if (FFAppState()
                                                     .gradeFilterTab) {
                                                   FFAppState().update(() {
                                                     FFAppState().gradeFilter =
-                                                        _model.shortCCValue1!;
+                                                        _model.shortCCValue!;
                                                   });
                                                 } else {
                                                   if (FFAppState()
@@ -725,7 +725,7 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                                                     FFAppState().update(() {
                                                       FFAppState()
                                                               .transactionTrendFilter =
-                                                          _model.shortCCValue1!;
+                                                          _model.shortCCValue!;
                                                     });
                                                   } else {
                                                     if (FFAppState()
@@ -734,7 +734,7 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                                                         FFAppState()
                                                                 .uptimeTrendFilter =
                                                             _model
-                                                                .shortCCValue1!;
+                                                                .shortCCValue!;
                                                       });
                                                     } else {
                                                       if (FFAppState()
@@ -743,7 +743,7 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                                                           FFAppState()
                                                                   .downTimeFilter =
                                                               _model
-                                                                  .shortCCValue1!;
+                                                                  .shortCCValue!;
                                                         });
                                                       } else {
                                                         if (FFAppState()
@@ -753,7 +753,7 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                                                             FFAppState()
                                                                     .bankFilter =
                                                                 _model
-                                                                    .shortCCValue1!;
+                                                                    .shortCCValue!;
                                                           });
                                                         } else {
                                                           if (FFAppState()
@@ -763,7 +763,7 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                                                               FFAppState()
                                                                       .locationFilter =
                                                                   _model
-                                                                      .shortCCValue1!;
+                                                                      .shortCCValue!;
                                                             });
                                                           }
                                                         }
@@ -836,10 +836,10 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                                             rowSpacing: 12.0,
                                             multiselect: false,
                                             initialized:
-                                                _model.shortCCValue1 != null,
+                                                _model.shortCCValue != null,
                                             alignment: WrapAlignment.start,
                                             controller: _model
-                                                    .shortCCValueController1 ??=
+                                                    .shortCCValueController ??=
                                                 FormFieldController<
                                                     List<String>>(
                                               [
@@ -874,101 +874,6 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                                                   }
                                                 }()
                                               ],
-                                            ),
-                                            wrapped: true,
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 16.0, 0.0, 0.0),
-                                      child: Wrap(
-                                        spacing: 0.0,
-                                        runSpacing: 0.0,
-                                        alignment: WrapAlignment.start,
-                                        crossAxisAlignment:
-                                            WrapCrossAlignment.start,
-                                        direction: Axis.horizontal,
-                                        runAlignment: WrapAlignment.start,
-                                        verticalDirection:
-                                            VerticalDirection.down,
-                                        clipBehavior: Clip.none,
-                                        children: [
-                                          FlutterFlowChoiceChips(
-                                            options: [],
-                                            onChanged: (val) => setState(() =>
-                                                _model.shortCCValue2 =
-                                                    val?.first),
-                                            selectedChipStyle: ChipStyle(
-                                              backgroundColor:
-                                                  Color(0xFFFF0026),
-                                              textStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMediumFamily,
-                                                        color:
-                                                            Color(0xFF4D4D4D),
-                                                        fontSize: 16.0,
-                                                        useGoogleFonts: GoogleFonts
-                                                                .asMap()
-                                                            .containsKey(
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMediumFamily),
-                                                      ),
-                                              iconColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryText,
-                                              iconSize: 18.0,
-                                              elevation: 1.0,
-                                              borderRadius:
-                                                  BorderRadius.circular(4.0),
-                                            ),
-                                            unselectedChipStyle: ChipStyle(
-                                              backgroundColor: Colors.white,
-                                              textStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMediumFamily,
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .secondaryText,
-                                                        useGoogleFonts: GoogleFonts
-                                                                .asMap()
-                                                            .containsKey(
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMediumFamily),
-                                                      ),
-                                              iconColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryText,
-                                              iconSize: 18.0,
-                                              elevation: 0.0,
-                                              borderColor: Color(0xFFF2F2F2),
-                                              borderWidth: 2.0,
-                                              borderRadius:
-                                                  BorderRadius.circular(4.0),
-                                            ),
-                                            chipSpacing: 12.0,
-                                            rowSpacing: 12.0,
-                                            multiselect: false,
-                                            alignment: WrapAlignment.start,
-                                            controller: _model
-                                                    .shortCCValueController2 ??=
-                                                FormFieldController<
-                                                    List<String>>(
-                                              [],
                                             ),
                                             wrapped: true,
                                           ),
@@ -1041,7 +946,7 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                       child: FFButtonWidget(
                         onPressed: () async {
                           setState(() {
-                            _model.shortCCValueController1?.reset();
+                            _model.shortCCValueController?.reset();
                           });
                           setState(() {
                             FFAppState().deleteSortByFilter();

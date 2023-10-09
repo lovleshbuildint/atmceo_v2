@@ -14,11 +14,8 @@ class TransactionDipModel extends FlutterFlowModel<TransactionDipWidget> {
   ///  State fields for stateful widgets in this component.
 
   // State field(s) for ShortCC widget.
-  String? shortCCValue1;
-  FormFieldController<List<String>>? shortCCValueController1;
-  // State field(s) for ShortCC widget.
-  String? shortCCValue2;
-  FormFieldController<List<String>>? shortCCValueController2;
+  String? shortCCValue;
+  FormFieldController<List<String>>? shortCCValueController;
 
   /// Initialization and disposal methods.
 
