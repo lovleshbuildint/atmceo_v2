@@ -45,11 +45,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, _) => LoginPageWidget(),
         ),
         FFRoute(
-          name: 'MainScreen',
-          path: '/mainScreen',
-          builder: (context, params) => MainScreenWidget(),
-        ),
-        FFRoute(
           name: 'Allatm',
           path: '/allatm',
           builder: (context, params) => AllatmWidget(
@@ -76,9 +71,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => LoginPageWidget(),
         ),
         FFRoute(
-          name: 'MainScreenCopy',
-          path: '/mainScreenCopy',
-          builder: (context, params) => MainScreenCopyWidget(),
+          name: 'MainScreen',
+          path: '/mainScreen',
+          builder: (context, params) => MainScreenWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

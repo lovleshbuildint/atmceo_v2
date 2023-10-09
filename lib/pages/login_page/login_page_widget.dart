@@ -363,7 +363,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                               ).toString();
                                             });
 
-                                            context.pushNamed('MainScreenCopy');
+                                            context.pushNamed('MainScreen');
                                           } else {
                                             await showDialog(
                                               context: context,
