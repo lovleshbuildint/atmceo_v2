@@ -2425,7 +2425,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                 ),
                                                               ),
                                                               Container(
-                                                                width: 202.0,
+                                                                width: 182.0,
                                                                 height: 46.0,
                                                                 decoration:
                                                                     BoxDecoration(
