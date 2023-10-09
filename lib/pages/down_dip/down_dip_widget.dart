@@ -2213,9 +2213,14 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                         mainAxisAlignment:
                                                             MainAxisAlignment
                                                                 .center,
+                                                        crossAxisAlignment:
+                                                            CrossAxisAlignment
+                                                                .center,
                                                         children: [
                                                           Text(
                                                             'Filter',
+                                                            textAlign: TextAlign
+                                                                .center,
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyMedium
@@ -2295,7 +2300,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                               Container(
                                                                 width: (FFAppState()
                                                                             .atmInfoState
-                                                                        ? 440
+                                                                        ? 420
                                                                         : 180)
                                                                     .toDouble(),
                                                                 height: 46.0,
