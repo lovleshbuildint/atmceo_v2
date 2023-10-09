@@ -138,7 +138,7 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      width: 100.0,
+                      width: 110.0,
                       height: MediaQuery.sizeOf(context).height * 1.0,
                       decoration: BoxDecoration(
                         color: Color(0xFFF2F2F2),
@@ -390,7 +390,7 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     20.0, 0.0, 0.0, 0.0),
                                 child: Text(
-                                  'Uptime Trend',
+                                  'Uptime\nTrend',
                                   textAlign: TextAlign.start,
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
