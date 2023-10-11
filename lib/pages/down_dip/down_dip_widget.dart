@@ -2717,10 +2717,6 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                   color: Color(
                                                                       0xFFF5F5F5),
                                                                 ),
-                                                                alignment:
-                                                                    AlignmentDirectional(
-                                                                        -1.00,
-                                                                        0.00),
                                                                 child: Align(
                                                                   alignment:
                                                                       AlignmentDirectional(
@@ -3007,6 +3003,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                                         decoration: BoxDecoration(
                                                                                           color: Colors.white,
                                                                                         ),
+                                                                                        alignment: AlignmentDirectional(0.00, 0.00),
                                                                                         child: Padding(
                                                                                           padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                           child: Text(
@@ -3031,23 +3028,25 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                                         decoration: BoxDecoration(
                                                                                           color: Colors.white,
                                                                                         ),
-                                                                                        alignment: AlignmentDirectional(-1.00, 0.00),
                                                                                         child: Align(
                                                                                           alignment: AlignmentDirectional(0.00, 0.00),
-                                                                                          child: Text(
-                                                                                            '${getJsonField(
-                                                                                              dataItem,
-                                                                                              r'''$..uptimeTrend''',
-                                                                                            ).toString()}%',
-                                                                                            textAlign: TextAlign.center,
-                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                                  color: functions.colorChange(getJsonField(
-                                                                                                    dataItem,
-                                                                                                    r'''$..uptimeTrend''',
-                                                                                                  )),
-                                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                                ),
+                                                                                          child: Padding(
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
+                                                                                            child: Text(
+                                                                                              '${getJsonField(
+                                                                                                dataItem,
+                                                                                                r'''$..uptimeTrend''',
+                                                                                              ).toString()}%',
+                                                                                              textAlign: TextAlign.center,
+                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                    fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                    color: functions.colorChange(getJsonField(
+                                                                                                      dataItem,
+                                                                                                      r'''$..uptimeTrend''',
+                                                                                                    )),
+                                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                                  ),
+                                                                                            ),
                                                                                           ),
                                                                                         ),
                                                                                       ),
