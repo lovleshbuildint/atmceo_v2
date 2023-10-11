@@ -1362,23 +1362,20 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                       color: Colors.white,
                                                                                     ),
                                                                                     alignment: AlignmentDirectional(0.00, 0.00),
-                                                                                    child: Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
-                                                                                      child: Text(
-                                                                                        '${getJsonField(
-                                                                                          dataItem,
-                                                                                          r'''$..transactionTrend''',
-                                                                                        ).toString()}%',
-                                                                                        textAlign: TextAlign.center,
-                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                              color: functions.colorChange(getJsonField(
-                                                                                                dataItem,
-                                                                                                r'''$..transactionTrend''',
-                                                                                              )),
-                                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                            ),
-                                                                                      ),
+                                                                                    child: Text(
+                                                                                      '${getJsonField(
+                                                                                        dataItem,
+                                                                                        r'''$..transactionTrend''',
+                                                                                      ).toString()}%',
+                                                                                      textAlign: TextAlign.center,
+                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                            color: functions.colorChange(getJsonField(
+                                                                                              dataItem,
+                                                                                              r'''$..transactionTrend''',
+                                                                                            )),
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                          ),
                                                                                     ),
                                                                                   ),
                                                                                   Container(
@@ -1387,23 +1384,20 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                       color: Colors.white,
                                                                                     ),
                                                                                     alignment: AlignmentDirectional(0.00, 0.00),
-                                                                                    child: Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
-                                                                                      child: Text(
-                                                                                        '${getJsonField(
-                                                                                          dataItem,
-                                                                                          r'''$..uptimeTrend''',
-                                                                                        ).toString()}%',
-                                                                                        textAlign: TextAlign.center,
-                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                              color: functions.colorChange(getJsonField(
-                                                                                                dataItem,
-                                                                                                r'''$..uptimeTrend''',
-                                                                                              )),
-                                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                            ),
-                                                                                      ),
+                                                                                    child: Text(
+                                                                                      '${getJsonField(
+                                                                                        dataItem,
+                                                                                        r'''$..uptimeTrend''',
+                                                                                      ).toString()}%',
+                                                                                      textAlign: TextAlign.center,
+                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                            color: functions.colorChange(getJsonField(
+                                                                                              dataItem,
+                                                                                              r'''$..uptimeTrend''',
+                                                                                            )),
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                          ),
                                                                                     ),
                                                                                   ),
                                                                                 ],
@@ -2830,23 +2824,32 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                             alignment:
                                                                 AlignmentDirectional(
                                                                     0.00, 0.00),
-                                                            child: Text(
-                                                              'Uptime Trend',
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .bodyMediumFamily,
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryBackground,
-                                                                    useGoogleFonts: GoogleFonts
-                                                                            .asMap()
-                                                                        .containsKey(
-                                                                            FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                  ),
+                                                            child: Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          8.0,
+                                                                          0.0),
+                                                              child: Text(
+                                                                'Uptime Trend',
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryBackground,
+                                                                      useGoogleFonts: GoogleFonts
+                                                                              .asMap()
+                                                                          .containsKey(
+                                                                              FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                    ),
+                                                              ),
                                                             ),
                                                           ),
                                                         ],
@@ -3289,24 +3292,21 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                     decoration: BoxDecoration(
                                                                                       color: Colors.white,
                                                                                     ),
-                                                                                    alignment: AlignmentDirectional(-1.00, 0.00),
-                                                                                    child: Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
-                                                                                      child: Text(
-                                                                                        '${getJsonField(
-                                                                                          dataItem,
-                                                                                          r'''$..uptimeTrend''',
-                                                                                        ).toString()}%',
-                                                                                        textAlign: TextAlign.center,
-                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                              color: functions.colorChange(getJsonField(
-                                                                                                dataItem,
-                                                                                                r'''$..uptimeTrend''',
-                                                                                              )),
-                                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                            ),
-                                                                                      ),
+                                                                                    alignment: AlignmentDirectional(0.00, 0.00),
+                                                                                    child: Text(
+                                                                                      '${getJsonField(
+                                                                                        dataItem,
+                                                                                        r'''$..uptimeTrend''',
+                                                                                      ).toString()}%',
+                                                                                      textAlign: TextAlign.center,
+                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                            color: functions.colorChange(getJsonField(
+                                                                                              dataItem,
+                                                                                              r'''$..uptimeTrend''',
+                                                                                            )),
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                          ),
                                                                                     ),
                                                                                   ),
                                                                                 ],
