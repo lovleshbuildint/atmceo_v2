@@ -38,10 +38,66 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
         token: FFAppState().token,
       );
       if ((_model.latestBankDataResponse?.succeeded ?? true)) {
+        if ((String responseDescription) {
+          return responseDescription == "Invalid Token !" ? true : false;
+        }(getJsonField(
+          (_model.latestBankDataResponse?.jsonBody ?? ''),
+          r'''$.responseDescription''',
+        ).toString().toString())) {
+          await showDialog(
+            context: context,
+            builder: (alertDialogContext) {
+              return AlertDialog(
+                title: Text('Alert'),
+                content: Text('Session Expired - Please Log in again.'),
+                actions: [
+                  TextButton(
+                    onPressed: () => Navigator.pop(alertDialogContext),
+                    child: Text('Ok'),
+                  ),
+                ],
+              );
+            },
+          );
+
+          context.goNamed('login_page');
+
+          setState(() {
+            FFAppState().deleteToken();
+            FFAppState().token = '';
+          });
+          return;
+        } else {
+          setState(() {
+            FFAppState().LastUpdatedBankDataJson =
+                (_model.latestBankDataResponse?.jsonBody ?? '');
+          });
+          return;
+        }
+      } else {
+        await showDialog(
+          context: context,
+          builder: (alertDialogContext) {
+            return AlertDialog(
+              title: Text('Alert'),
+              content: Text('Session Expired - Please Log in again.'),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(alertDialogContext),
+                  child: Text('Ok'),
+                ),
+              ],
+            );
+          },
+        );
+
+        context.goNamed('login_page');
+
         setState(() {
-          FFAppState().LastUpdatedBankDataJson =
-              (_model.latestBankDataResponse?.jsonBody ?? '');
+          FFAppState().deleteToken();
+          FFAppState().token = '';
         });
+        return;
       }
     });
   }
@@ -98,212 +154,167 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
               final stackDashboardResponse = snapshot.data!;
               return Stack(
                 children: [
-                  InkWell(
-                    splashColor: Colors.transparent,
-                    focusColor: Colors.transparent,
-                    hoverColor: Colors.transparent,
-                    highlightColor: Colors.transparent,
-                    onTap: () async {
-                      if (FFAppState().visibilityState) {
-                        setState(() {
-                          FFAppState().visibilityState = false;
-                        });
-                      }
-                    },
-                    child: Container(
-                      width: MediaQuery.sizeOf(context).width * 1.0,
-                      height: 340.0,
-                      decoration: BoxDecoration(
-                        color: Colors.transparent,
-                      ),
-                      alignment: AlignmentDirectional(0.00, -1.00),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                16.0, 55.0, 16.0, 0.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    ClipRRect(
-                                      borderRadius: BorderRadius.circular(8.0),
-                                      child: Image.asset(
-                                        'assets/images/S_Logo.png',
-                                        height: 24.0,
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Align(
-                                      alignment:
-                                          AlignmentDirectional(1.00, 0.00),
-                                      child: AutoSizeText(
-                                        'Last updated: ${dateTimeFormat('yMMMd', getCurrentTimestamp)}',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Helvetica2',
-                                              color: Colors.white,
-                                              fontSize: 12.0,
-                                              useGoogleFonts: GoogleFonts
-                                                      .asMap()
-                                                  .containsKey(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMediumFamily),
-                                            ),
-                                      ),
-                                    ),
-                                    Align(
-                                      alignment:
-                                          AlignmentDirectional(1.00, 0.00),
-                                      child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            6.0, 0.0, 0.0, 0.0),
-                                        child: InkWell(
-                                          splashColor: Colors.transparent,
-                                          focusColor: Colors.transparent,
-                                          hoverColor: Colors.transparent,
-                                          highlightColor: Colors.transparent,
-                                          onTap: () async {
-                                            if (FFAppState().visibilityState) {
-                                              setState(() {
-                                                FFAppState().visibilityState =
-                                                    false;
-                                              });
-                                            } else {
-                                              setState(() {
-                                                FFAppState().visibilityState =
-                                                    true;
-                                              });
-                                              await Future.delayed(
-                                                  const Duration(
-                                                      milliseconds: 10000));
-                                              setState(() {
-                                                FFAppState().visibilityState =
-                                                    false;
-                                              });
-                                            }
-                                          },
-                                          child: Icon(
-                                            Icons.info_outline,
-                                            color: Color(0xFFB3B3B3),
-                                            size: 18.0,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ],
+                  SingleChildScrollView(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            if (FFAppState().visibilityState) {
+                              setState(() {
+                                FFAppState().visibilityState = false;
+                              });
+                            }
+                          },
+                          child: Container(
+                            width: MediaQuery.sizeOf(context).width * 1.0,
+                            height: 340.0,
+                            decoration: BoxDecoration(
+                              color: Colors.transparent,
                             ),
-                          ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                16.0, 24.0, 16.0, 0.0),
-                            child: Container(
-                              width: MediaQuery.sizeOf(context).width * 1.0,
-                              height: 76.0,
-                              constraints: BoxConstraints(
-                                minHeight: 76.0,
-                                maxHeight: 86.0,
-                              ),
-                              decoration: BoxDecoration(
-                                color: Color(0x00FFFFFF),
-                              ),
-                              alignment: AlignmentDirectional(0.00, 0.00),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Expanded(
-                                    child: Column(
+                            alignment: AlignmentDirectional(0.00, -1.00),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      16.0, 55.0, 16.0, 0.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                            child: Image.asset(
+                                              'assets/images/S_Logo.png',
+                                              height: 24.0,
+                                              fit: BoxFit.cover,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Align(
+                                            alignment: AlignmentDirectional(
+                                                1.00, 0.00),
+                                            child: AutoSizeText(
+                                              'Last updated: ${dateTimeFormat('yMMMd', getCurrentTimestamp)}',
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Helvetica2',
+                                                        color: Colors.white,
+                                                        fontSize: 12.0,
+                                                        useGoogleFonts: GoogleFonts
+                                                                .asMap()
+                                                            .containsKey(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMediumFamily),
+                                                      ),
+                                            ),
+                                          ),
+                                          Align(
+                                            alignment: AlignmentDirectional(
+                                                1.00, 0.00),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(6.0, 0.0, 0.0, 0.0),
+                                              child: InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  if (FFAppState()
+                                                      .visibilityState) {
+                                                    setState(() {
+                                                      FFAppState()
+                                                              .visibilityState =
+                                                          false;
+                                                    });
+                                                  } else {
+                                                    setState(() {
+                                                      FFAppState()
+                                                              .visibilityState =
+                                                          true;
+                                                    });
+                                                    await Future.delayed(
+                                                        const Duration(
+                                                            milliseconds:
+                                                                10000));
+                                                    setState(() {
+                                                      FFAppState()
+                                                              .visibilityState =
+                                                          false;
+                                                    });
+                                                  }
+                                                },
+                                                child: Icon(
+                                                  Icons.info_outline,
+                                                  color: Color(0xFFB3B3B3),
+                                                  size: 18.0,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      16.0, 24.0, 16.0, 0.0),
+                                  child: Container(
+                                    width:
+                                        MediaQuery.sizeOf(context).width * 1.0,
+                                    height: 76.0,
+                                    constraints: BoxConstraints(
+                                      minHeight: 76.0,
+                                      maxHeight: 86.0,
+                                    ),
+                                    decoration: BoxDecoration(
+                                      color: Color(0x00FFFFFF),
+                                    ),
+                                    alignment: AlignmentDirectional(0.00, 0.00),
+                                    child: Row(
                                       mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        Flexible(
-                                          child: Text(
-                                            getJsonField(
-                                              stackDashboardResponse.jsonBody,
-                                              r'''$.data.userDetails.userFullName''',
-                                            ).toString(),
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Helvetica2',
-                                                  color: Colors.white,
-                                                  fontSize: 18.0,
-                                                  fontWeight: FontWeight.bold,
-                                                  useGoogleFonts: GoogleFonts
-                                                          .asMap()
-                                                      .containsKey(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMediumFamily),
-                                                ),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 3.0, 0.0, 0.0),
-                                          child: Text(
-                                            'Channel Executive',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Helvetica2',
-                                                  color: Color(0xFF737373),
-                                                  useGoogleFonts: GoogleFonts
-                                                          .asMap()
-                                                      .containsKey(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMediumFamily),
-                                                ),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 13.0, 0.0, 0.0),
-                                          child: Row(
+                                        Expanded(
+                                          child: Column(
                                             mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.start,
                                             children: [
-                                              ClipRRect(
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                                child: Image.asset(
-                                                  'assets/images/Subtract.png',
-                                                  width: 14.0,
-                                                  height: 14.0,
-                                                  fit: BoxFit.contain,
-                                                ),
-                                              ),
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        6.0, 1.0, 0.0, 0.0),
+                                              Flexible(
                                                 child: Text(
                                                   getJsonField(
                                                     stackDashboardResponse
                                                         .jsonBody,
-                                                    r'''$.data.userDetails.city''',
+                                                    r'''$.data.userDetails.userFullName''',
                                                   ).toString(),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -311,8 +322,10 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                                       .override(
                                                         fontFamily:
                                                             'Helvetica2',
-                                                        color:
-                                                            Color(0xFFB3B3B3),
+                                                        color: Colors.white,
+                                                        fontSize: 18.0,
+                                                        fontWeight:
+                                                            FontWeight.bold,
                                                         useGoogleFonts: GoogleFonts
                                                                 .asMap()
                                                             .containsKey(
@@ -322,373 +335,479 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                                       ),
                                                 ),
                                               ),
-                                            ],
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  InkWell(
-                                    splashColor: Colors.transparent,
-                                    focusColor: Colors.transparent,
-                                    hoverColor: Colors.transparent,
-                                    highlightColor: Colors.transparent,
-                                    onTap: () async {
-                                      context.pushNamed(
-                                        'Allatm',
-                                        queryParameters: {
-                                          'tabBar': serializeParam(
-                                            0,
-                                            ParamType.int,
-                                          ),
-                                        }.withoutNulls,
-                                        extra: <String, dynamic>{
-                                          kTransitionInfoKey: TransitionInfo(
-                                            hasTransition: true,
-                                            transitionType:
-                                                PageTransitionType.fade,
-                                            duration: Duration(milliseconds: 0),
-                                          ),
-                                        },
-                                      );
-
-                                      setState(() {
-                                        FFAppState().noOfMachinesDown =
-                                            getJsonField(
-                                          stackDashboardResponse.jsonBody,
-                                          r'''$.data.actionsRequired.noOfMachinesDown''',
-                                        ).toString();
-                                        FFAppState().noOfMachineTransactionDip =
-                                            getJsonField(
-                                          stackDashboardResponse.jsonBody,
-                                          r'''$.data.actionsRequired.noOfMachineTransactionDip''',
-                                        ).toString();
-                                        FFAppState().totalMachinesManaged =
-                                            getJsonField(
-                                          stackDashboardResponse.jsonBody,
-                                          r'''$.data.targetData.totalMachinesManaged''',
-                                        ).toString();
-                                        FFAppState().visibilityState = false;
-                                        FFAppState().deleteSearchValue1();
-                                        FFAppState().searchValue1 = '';
-
-                                        FFAppState().deleteSearchValue2();
-                                        FFAppState().searchValue2 = '';
-
-                                        FFAppState().deleteMachineDownJson();
-                                        FFAppState().machineDownJson = null;
-
-                                        FFAppState().deleteTransactionDipJson();
-                                        FFAppState().transactionDipJson = null;
-
-                                        FFAppState().atmInfoState = false;
-                                        FFAppState().deleteSearchValue3();
-                                        FFAppState().searchValue3 = '';
-
-                                        FFAppState().deleteAllMachineDetails();
-                                        FFAppState().allMachineDetails = null;
-                                      });
-                                    },
-                                    child: Container(
-                                      width: 140.0,
-                                      height:
-                                          MediaQuery.sizeOf(context).height *
-                                              1.0,
-                                      decoration: BoxDecoration(
-                                        color: Color(0xFF212121),
-                                        borderRadius:
-                                            BorderRadius.circular(6.0),
-                                        border: Border.all(
-                                          color: Color(0xFF4D4D4D),
-                                        ),
-                                      ),
-                                      child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            13.0, 0.0, 13.0, 0.0),
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.start,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 10.0, 0.0, 0.0),
-                                              child: Text(
-                                                'Assigned ATM’s',
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .bodyMedium
-                                                    .override(
-                                                      fontFamily: 'Helvetica2',
-                                                      color: Color(0xFFD9D9D9),
-                                                      fontWeight:
-                                                          FontWeight.normal,
-                                                      useGoogleFonts: GoogleFonts
-                                                              .asMap()
-                                                          .containsKey(
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMediumFamily),
-                                                    ),
-                                              ),
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 6.0, 0.0, 0.0),
-                                              child: Text(
-                                                getJsonField(
-                                                  stackDashboardResponse
-                                                      .jsonBody,
-                                                  r'''$.data.targetData.totalMachinesManaged''',
-                                                ).toString(),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              'Helvetica2',
-                                                          color: Colors.white,
-                                                          fontSize: 32.0,
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMediumFamily),
-                                                        ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                16.0, 22.0, 0.0, 0.0),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Text(
-                                      'Monthly Target',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Helvetica2',
-                                            color: Colors.white,
-                                            fontSize: 16.0,
-                                            fontWeight: FontWeight.bold,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMediumFamily),
-                                          ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          8.0, 0.0, 0.0, 0.0),
-                                      child: AlignedTooltip(
-                                        content: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 16.0, 16.0, 16.0),
-                                            child: Text(
-                                              'The progress bar below indicates your monthly target and displays how close you are to earning the reward. Keep pushing forward!',
-                                              textAlign: TextAlign.justify,
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyLarge
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 3.0, 0.0, 0.0),
+                                                child: Text(
+                                                  'Channel Executive',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Helvetica',
-                                                        color: Colors.white,
-                                                        fontSize: 12.0,
-                                                        fontWeight:
-                                                            FontWeight.normal,
+                                                        fontFamily:
+                                                            'Helvetica2',
+                                                        color:
+                                                            Color(0xFF737373),
                                                         useGoogleFonts: GoogleFonts
                                                                 .asMap()
                                                             .containsKey(
                                                                 FlutterFlowTheme.of(
                                                                         context)
-                                                                    .bodyLargeFamily),
+                                                                    .bodyMediumFamily),
                                                       ),
-                                            )),
-                                        offset: 4.0,
-                                        preferredDirection: AxisDirection.down,
-                                        borderRadius:
-                                            BorderRadius.circular(4.0),
-                                        backgroundColor: Color(0xFF4D4D4D),
-                                        elevation: 4.0,
-                                        tailBaseWidth: 20.0,
-                                        tailLength: 18.0,
-                                        waitDuration:
-                                            Duration(milliseconds: 100),
-                                        showDuration:
-                                            Duration(milliseconds: 1500),
-                                        triggerMode: TooltipTriggerMode.tap,
-                                        child: Icon(
-                                          Icons.info_outline,
-                                          color: Color(0xFFB3B3B3),
-                                          size: 20.0,
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 13.0, 0.0, 0.0),
+                                                child: Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8.0),
+                                                      child: Image.asset(
+                                                        'assets/images/Subtract.png',
+                                                        width: 14.0,
+                                                        height: 14.0,
+                                                        fit: BoxFit.contain,
+                                                      ),
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  6.0,
+                                                                  1.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                      child: Text(
+                                                        getJsonField(
+                                                          stackDashboardResponse
+                                                              .jsonBody,
+                                                          r'''$.data.userDetails.city''',
+                                                        ).toString(),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Helvetica2',
+                                                                  color: Color(
+                                                                      0xFFB3B3B3),
+                                                                  useGoogleFonts: GoogleFonts
+                                                                          .asMap()
+                                                                      .containsKey(
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily),
+                                                                ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ],
+                                          ),
                                         ),
-                                      ),
+                                        InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            context.pushNamed(
+                                              'Allatm',
+                                              queryParameters: {
+                                                'tabBar': serializeParam(
+                                                  0,
+                                                  ParamType.int,
+                                                ),
+                                              }.withoutNulls,
+                                              extra: <String, dynamic>{
+                                                kTransitionInfoKey:
+                                                    TransitionInfo(
+                                                  hasTransition: true,
+                                                  transitionType:
+                                                      PageTransitionType.fade,
+                                                  duration:
+                                                      Duration(milliseconds: 0),
+                                                ),
+                                              },
+                                            );
+
+                                            setState(() {
+                                              FFAppState().noOfMachinesDown =
+                                                  getJsonField(
+                                                stackDashboardResponse.jsonBody,
+                                                r'''$.data.actionsRequired.noOfMachinesDown''',
+                                              ).toString();
+                                              FFAppState()
+                                                      .noOfMachineTransactionDip =
+                                                  getJsonField(
+                                                stackDashboardResponse.jsonBody,
+                                                r'''$.data.actionsRequired.noOfMachineTransactionDip''',
+                                              ).toString();
+                                              FFAppState()
+                                                      .totalMachinesManaged =
+                                                  getJsonField(
+                                                stackDashboardResponse.jsonBody,
+                                                r'''$.data.targetData.totalMachinesManaged''',
+                                              ).toString();
+                                              FFAppState().visibilityState =
+                                                  false;
+                                              FFAppState().deleteSearchValue1();
+                                              FFAppState().searchValue1 = '';
+
+                                              FFAppState().deleteSearchValue2();
+                                              FFAppState().searchValue2 = '';
+
+                                              FFAppState()
+                                                  .deleteMachineDownJson();
+                                              FFAppState().machineDownJson =
+                                                  null;
+
+                                              FFAppState()
+                                                  .deleteTransactionDipJson();
+                                              FFAppState().transactionDipJson =
+                                                  null;
+
+                                              FFAppState().atmInfoState = false;
+                                              FFAppState().deleteSearchValue3();
+                                              FFAppState().searchValue3 = '';
+
+                                              FFAppState()
+                                                  .deleteAllMachineDetails();
+                                              FFAppState().allMachineDetails =
+                                                  null;
+                                            });
+                                          },
+                                          child: Container(
+                                            width: 140.0,
+                                            height: MediaQuery.sizeOf(context)
+                                                    .height *
+                                                1.0,
+                                            decoration: BoxDecoration(
+                                              color: Color(0xFF212121),
+                                              borderRadius:
+                                                  BorderRadius.circular(6.0),
+                                              border: Border.all(
+                                                color: Color(0xFF4D4D4D),
+                                              ),
+                                            ),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      13.0, 0.0, 13.0, 0.0),
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.start,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 10.0,
+                                                                0.0, 0.0),
+                                                    child: Text(
+                                                      'Assigned ATM’s',
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Helvetica2',
+                                                                color: Color(
+                                                                    0xFFD9D9D9),
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .normal,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily),
+                                                              ),
+                                                    ),
+                                                  ),
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 6.0,
+                                                                0.0, 0.0),
+                                                    child: Text(
+                                                      getJsonField(
+                                                        stackDashboardResponse
+                                                            .jsonBody,
+                                                        r'''$.data.targetData.totalMachinesManaged''',
+                                                      ).toString(),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Helvetica2',
+                                                            color: Colors.white,
+                                                            fontSize: 32.0,
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                            useGoogleFonts: GoogleFonts
+                                                                    .asMap()
+                                                                .containsKey(
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMediumFamily),
+                                                          ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
                                     ),
-                                  ],
+                                  ),
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 8.0, 0.0, 0.0),
-                                  child: Text(
-                                    'The finish line is in sight, don’t give up now!',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Helvetica2',
-                                          color: Color(0xFFFFBC00),
-                                          useGoogleFonts: GoogleFonts.asMap()
-                                              .containsKey(
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMediumFamily),
+                                      16.0, 22.0, 0.0, 0.0),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Text(
+                                            'Monthly Target',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Helvetica2',
+                                                  color: Colors.white,
+                                                  fontSize: 16.0,
+                                                  fontWeight: FontWeight.bold,
+                                                  useGoogleFonts: GoogleFonts
+                                                          .asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMediumFamily),
+                                                ),
+                                          ),
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    8.0, 0.0, 0.0, 0.0),
+                                            child: AlignedTooltip(
+                                              content: Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(16.0, 16.0,
+                                                          16.0, 16.0),
+                                                  child: Text(
+                                                    'The progress bar below indicates your monthly target and displays how close you are to earning the reward. Keep pushing forward!',
+                                                    textAlign:
+                                                        TextAlign.justify,
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyLarge
+                                                        .override(
+                                                          fontFamily:
+                                                              'Helvetica',
+                                                          color: Colors.white,
+                                                          fontSize: 12.0,
+                                                          fontWeight:
+                                                              FontWeight.normal,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyLargeFamily),
+                                                        ),
+                                                  )),
+                                              offset: 4.0,
+                                              preferredDirection:
+                                                  AxisDirection.down,
+                                              borderRadius:
+                                                  BorderRadius.circular(4.0),
+                                              backgroundColor:
+                                                  Color(0xFF4D4D4D),
+                                              elevation: 4.0,
+                                              tailBaseWidth: 20.0,
+                                              tailLength: 18.0,
+                                              waitDuration:
+                                                  Duration(milliseconds: 100),
+                                              showDuration:
+                                                  Duration(milliseconds: 1500),
+                                              triggerMode:
+                                                  TooltipTriggerMode.tap,
+                                              child: Icon(
+                                                Icons.info_outline,
+                                                color: Color(0xFFB3B3B3),
+                                                size: 20.0,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 8.0, 0.0, 0.0),
+                                        child: Text(
+                                          'The finish line is in sight, don’t give up now!',
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Helvetica2',
+                                                color: Color(0xFFFFBC00),
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMediumFamily),
+                                              ),
                                         ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      16.0, 4.0, 16.0, 18.0),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Align(
+                                        alignment:
+                                            AlignmentDirectional(1.00, 0.00),
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                          child: Image.asset(
+                                            'assets/images/favourites_1.png',
+                                            width: 24.0,
+                                            height: 24.0,
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 5.0, 0.0, 0.0),
+                                        child: LinearPercentIndicator(
+                                          percent: (int targetTransaction,
+                                                  int actualTransaction) {
+                                            return (actualTransaction /
+                                                        targetTransaction) >
+                                                    1.0
+                                                ? 0.99
+                                                : (actualTransaction /
+                                                    targetTransaction);
+                                          }(
+                                              getJsonField(
+                                                stackDashboardResponse.jsonBody,
+                                                r'''$.data.targetData.targetTransaction''',
+                                              ),
+                                              getJsonField(
+                                                stackDashboardResponse.jsonBody,
+                                                r'''$.data.actualData.actualTransaction''',
+                                              )),
+                                          lineHeight: 12.0,
+                                          animation: true,
+                                          animateFromLastPercent: true,
+                                          progressColor: Color(0xFF3AB100),
+                                          backgroundColor: Color(0xFF737373),
+                                          barRadius: Radius.circular(100.0),
+                                          padding: EdgeInsets.zero,
+                                        ),
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 6.0, 0.0, 0.0),
+                                            child: Text(
+                                              '0',
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Helvetica2',
+                                                    color: Color(0xFF737373),
+                                                    useGoogleFonts: GoogleFonts
+                                                            .asMap()
+                                                        .containsKey(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMediumFamily),
+                                                  ),
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 6.0, 0.0, 0.0),
+                                            child: Text(
+                                              ((int targetTransaction,
+                                                      int actualTransaction) {
+                                                return (actualTransaction /
+                                                            targetTransaction) >
+                                                        1.0
+                                                    ? (actualTransaction + 1)
+                                                    : targetTransaction;
+                                              }(
+                                                  getJsonField(
+                                                    stackDashboardResponse
+                                                        .jsonBody,
+                                                    r'''$.data.targetData.targetTransaction''',
+                                                  ),
+                                                  getJsonField(
+                                                    stackDashboardResponse
+                                                        .jsonBody,
+                                                    r'''$.data.actualData.actualTransaction''',
+                                                  ))).toString(),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Helvetica2',
+                                                    color: Color(0xFF737373),
+                                                    useGoogleFonts: GoogleFonts
+                                                            .asMap()
+                                                        .containsKey(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMediumFamily),
+                                                  ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ],
                             ),
                           ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                16.0, 4.0, 16.0, 18.0),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Align(
-                                  alignment: AlignmentDirectional(1.00, 0.00),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(8.0),
-                                    child: Image.asset(
-                                      'assets/images/favourites_1.png',
-                                      width: 24.0,
-                                      height: 24.0,
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 5.0, 0.0, 0.0),
-                                  child: LinearPercentIndicator(
-                                    percent: (int targetTransaction,
-                                            int actualTransaction) {
-                                      return (actualTransaction /
-                                                  targetTransaction) >
-                                              1.0
-                                          ? 0.99
-                                          : (actualTransaction /
-                                              targetTransaction);
-                                    }(
-                                        getJsonField(
-                                          stackDashboardResponse.jsonBody,
-                                          r'''$.data.targetData.targetTransaction''',
-                                        ),
-                                        getJsonField(
-                                          stackDashboardResponse.jsonBody,
-                                          r'''$.data.actualData.actualTransaction''',
-                                        )),
-                                    lineHeight: 12.0,
-                                    animation: true,
-                                    animateFromLastPercent: true,
-                                    progressColor: Color(0xFF3AB100),
-                                    backgroundColor: Color(0xFF737373),
-                                    barRadius: Radius.circular(100.0),
-                                    padding: EdgeInsets.zero,
-                                  ),
-                                ),
-                                Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 6.0, 0.0, 0.0),
-                                      child: Text(
-                                        '0',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Helvetica2',
-                                              color: Color(0xFF737373),
-                                              useGoogleFonts: GoogleFonts
-                                                      .asMap()
-                                                  .containsKey(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMediumFamily),
-                                            ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 6.0, 0.0, 0.0),
-                                      child: Text(
-                                        ((int targetTransaction,
-                                                int actualTransaction) {
-                                          return (actualTransaction /
-                                                      targetTransaction) >
-                                                  1.0
-                                              ? (actualTransaction + 1)
-                                              : targetTransaction;
-                                        }(
-                                            getJsonField(
-                                              stackDashboardResponse.jsonBody,
-                                              r'''$.data.targetData.targetTransaction''',
-                                            ),
-                                            getJsonField(
-                                              stackDashboardResponse.jsonBody,
-                                              r'''$.data.actualData.actualTransaction''',
-                                            ))).toString(),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Helvetica2',
-                                              color: Color(0xFF737373),
-                                              useGoogleFonts: GoogleFonts
-                                                      .asMap()
-                                                  .containsKey(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMediumFamily),
-                                            ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  SingleChildScrollView(
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
+                        ),
                         Align(
                           alignment: AlignmentDirectional(0.00, 1.00),
                           child: Container(
@@ -2142,7 +2261,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                             ),
                           ),
                         ),
-                      ].addToStart(SizedBox(height: 340.0)),
+                      ],
                     ),
                   ),
                   if (FFAppState().visibilityState == true)
