@@ -171,7 +171,7 @@ class _ATMdetailsWidgetState extends State<ATMdetailsWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Helvetica',
+                                                  fontFamily: 'Helvetica2',
                                                   color: Colors.white,
                                                   fontSize: 16.0,
                                                   fontWeight: FontWeight.normal,
@@ -197,7 +197,7 @@ class _ATMdetailsWidgetState extends State<ATMdetailsWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Helvetica',
+                                                  fontFamily: 'Helvetica2',
                                                   color: Colors.white,
                                                   fontSize: 12.0,
                                                   useGoogleFonts: GoogleFonts
@@ -276,7 +276,7 @@ class _ATMdetailsWidgetState extends State<ATMdetailsWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Helvetica',
+                                                  fontFamily: 'Helvetica2',
                                                   color: Color(0xFF737373),
                                                   useGoogleFonts: GoogleFonts
                                                           .asMap()
@@ -289,29 +289,28 @@ class _ATMdetailsWidgetState extends State<ATMdetailsWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 12.0, 0.0, 0.0),
+                                                    0.0, 8.0, 0.0, 0.0),
                                             child: Text(
                                               getJsonField(
                                                 aTMdetailsATMDetailsResponse
                                                     .jsonBody,
                                                 r'''$.data.atmId''',
                                               ).toString(),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Helvetica',
-                                                        color: Colors.white,
-                                                        fontSize: 18.0,
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                        useGoogleFonts: GoogleFonts
-                                                                .asMap()
-                                                            .containsKey(
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMediumFamily),
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Helvetica2',
+                                                    color: Colors.white,
+                                                    fontSize: 20.0,
+                                                    fontWeight: FontWeight.bold,
+                                                    useGoogleFonts: GoogleFonts
+                                                            .asMap()
+                                                        .containsKey(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMediumFamily),
+                                                  ),
                                             ),
                                           ),
                                           Padding(
@@ -320,48 +319,46 @@ class _ATMdetailsWidgetState extends State<ATMdetailsWidget> {
                                                     0.0, 24.0, 0.0, 0.0),
                                             child: Text(
                                               'Bank',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Helvetica',
-                                                        color:
-                                                            Color(0xFF737373),
-                                                        useGoogleFonts: GoogleFonts
-                                                                .asMap()
-                                                            .containsKey(
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMediumFamily),
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Helvetica2',
+                                                    color: Color(0xFF737373),
+                                                    useGoogleFonts: GoogleFonts
+                                                            .asMap()
+                                                        .containsKey(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMediumFamily),
+                                                  ),
                                             ),
                                           ),
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 12.0, 0.0, 0.0),
+                                                    0.0, 8.0, 0.0, 0.0),
                                             child: Text(
                                               getJsonField(
                                                 aTMdetailsATMDetailsResponse
                                                     .jsonBody,
                                                 r'''$.data.bankName''',
                                               ).toString(),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Helvetica',
-                                                        color: Colors.white,
-                                                        fontSize: 18.0,
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                        useGoogleFonts: GoogleFonts
-                                                                .asMap()
-                                                            .containsKey(
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMediumFamily),
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Helvetica2',
+                                                    color: Colors.white,
+                                                    fontSize: 16.0,
+                                                    fontWeight: FontWeight.bold,
+                                                    useGoogleFonts: GoogleFonts
+                                                            .asMap()
+                                                        .containsKey(
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMediumFamily),
+                                                  ),
                                             ),
                                           ),
                                         ],
@@ -371,11 +368,11 @@ class _ATMdetailsWidgetState extends State<ATMdetailsWidget> {
                                       width: 130.0,
                                       height: 90.0,
                                       decoration: BoxDecoration(
-                                        color: Color(0x32000000),
+                                        color: Color(0xFF212121),
                                         borderRadius:
                                             BorderRadius.circular(6.0),
                                         border: Border.all(
-                                          color: Colors.white,
+                                          color: Color(0xFF4D4D4D),
                                         ),
                                       ),
                                       child: Padding(
@@ -505,7 +502,7 @@ class _ATMdetailsWidgetState extends State<ATMdetailsWidget> {
                                                         context)
                                                     .bodyMedium
                                                     .override(
-                                                      fontFamily: 'Helvetica',
+                                                      fontFamily: 'Helvetica2',
                                                       color: Color(0xFFD9D9D9),
                                                       fontWeight:
                                                           FontWeight.normal,
@@ -537,7 +534,7 @@ class _ATMdetailsWidgetState extends State<ATMdetailsWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Helvetica',
+                                            fontFamily: 'Helvetica2',
                                             color: Color(0xFF737373),
                                             useGoogleFonts: GoogleFonts.asMap()
                                                 .containsKey(
@@ -547,7 +544,7 @@ class _ATMdetailsWidgetState extends State<ATMdetailsWidget> {
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 12.0, 0.0, 0.0),
+                                          0.0, 8.0, 0.0, 0.0),
                                       child: Text(
                                         getJsonField(
                                           aTMdetailsATMDetailsResponse.jsonBody,
@@ -556,10 +553,10 @@ class _ATMdetailsWidgetState extends State<ATMdetailsWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Helvetica',
+                                              fontFamily: 'Helvetica2',
                                               color: Colors.white,
-                                              fontSize: 18.0,
-                                              fontWeight: FontWeight.bold,
+                                              fontSize: 16.0,
+                                              fontWeight: FontWeight.normal,
                                               useGoogleFonts: GoogleFonts
                                                       .asMap()
                                                   .containsKey(
@@ -590,7 +587,7 @@ class _ATMdetailsWidgetState extends State<ATMdetailsWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Helvetica',
+                                                fontFamily: 'Helvetica2',
                                                 color: Color(0xFF737373),
                                                 useGoogleFonts: GoogleFonts
                                                         .asMap()
@@ -603,7 +600,7 @@ class _ATMdetailsWidgetState extends State<ATMdetailsWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 12.0, 0.0, 0.0),
+                                                  0.0, 8.0, 0.0, 0.0),
                                           child: Text(
                                             getJsonField(
                                               aTMdetailsATMDetailsResponse
@@ -613,10 +610,10 @@ class _ATMdetailsWidgetState extends State<ATMdetailsWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Helvetica',
+                                                  fontFamily: 'Helvetica2',
                                                   color: Colors.white,
-                                                  fontSize: 18.0,
-                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 16.0,
+                                                  fontWeight: FontWeight.normal,
                                                   useGoogleFonts: GoogleFonts
                                                           .asMap()
                                                       .containsKey(
@@ -638,7 +635,7 @@ class _ATMdetailsWidgetState extends State<ATMdetailsWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Helvetica',
+                                                fontFamily: 'Helvetica2',
                                                 color: Color(0xFF737373),
                                                 useGoogleFonts: GoogleFonts
                                                         .asMap()
@@ -651,7 +648,7 @@ class _ATMdetailsWidgetState extends State<ATMdetailsWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 12.0, 0.0, 0.0),
+                                                  0.0, 8.0, 0.0, 0.0),
                                           child: Text(
                                             getJsonField(
                                               aTMdetailsATMDetailsResponse
@@ -661,10 +658,10 @@ class _ATMdetailsWidgetState extends State<ATMdetailsWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Helvetica',
+                                                  fontFamily: 'Helvetica2',
                                                   color: Colors.white,
-                                                  fontSize: 18.0,
-                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 16.0,
+                                                  fontWeight: FontWeight.normal,
                                                   useGoogleFonts: GoogleFonts
                                                           .asMap()
                                                       .containsKey(
@@ -1187,7 +1184,7 @@ class _ATMdetailsWidgetState extends State<ATMdetailsWidget> {
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Helvetica',
+                                                                        'Helvetica2',
                                                                     color: Color(
                                                                         0xFF4D4D4D),
                                                                     useGoogleFonts: GoogleFonts
@@ -1218,7 +1215,7 @@ class _ATMdetailsWidgetState extends State<ATMdetailsWidget> {
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Helvetica',
+                                                                    'Helvetica2',
                                                                 color: Color(
                                                                     0xFF2D2D2D),
                                                                 fontSize: 40.0,

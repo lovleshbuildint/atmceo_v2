@@ -784,7 +784,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                             ),
                                                           ),
                                                           Container(
-                                                            width: 202.0,
+                                                            width: 182.0,
                                                             height: 46.0,
                                                             decoration:
                                                                 BoxDecoration(
@@ -1042,7 +1042,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                 'Transaction Trend',
                                                                 textAlign:
                                                                     TextAlign
-                                                                        .start,
+                                                                        .center,
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodyMedium
@@ -1064,7 +1064,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                             ),
                                                           ),
                                                           Container(
-                                                            width: 102.0,
+                                                            width: 82.0,
                                                             height: 46.0,
                                                             decoration:
                                                                 BoxDecoration(
@@ -1073,21 +1073,20 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                             ),
                                                             alignment:
                                                                 AlignmentDirectional(
-                                                                    -1.00,
-                                                                    0.00),
+                                                                    0.00, 0.00),
                                                             child: Padding(
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
                                                                           16.0,
-                                                                          0.0,
-                                                                          0.0,
                                                                           0.0),
                                                               child: Text(
                                                                 'Uptime Trend',
                                                                 textAlign:
                                                                     TextAlign
-                                                                        .start,
+                                                                        .center,
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodyMedium
@@ -1362,7 +1361,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                     decoration: BoxDecoration(
                                                                                       color: Colors.white,
                                                                                     ),
-                                                                                    alignment: AlignmentDirectional(-1.00, 0.00),
+                                                                                    alignment: AlignmentDirectional(0.00, 0.00),
                                                                                     child: Padding(
                                                                                       padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                       child: Text(
@@ -1383,11 +1382,11 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                     ),
                                                                                   ),
                                                                                   Container(
-                                                                                    width: 100.0,
+                                                                                    width: 82.0,
                                                                                     decoration: BoxDecoration(
                                                                                       color: Colors.white,
                                                                                     ),
-                                                                                    alignment: AlignmentDirectional(-1.00, 0.00),
+                                                                                    alignment: AlignmentDirectional(0.00, 0.00),
                                                                                     child: Padding(
                                                                                       padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                       child: Text(
@@ -1875,26 +1874,35 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                             alignment:
                                                                 AlignmentDirectional(
                                                                     0.00, 0.00),
-                                                            child: Text(
-                                                              'Transaction Trend',
-                                                              textAlign:
-                                                                  TextAlign
-                                                                      .center,
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .bodyMediumFamily,
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryBackground,
-                                                                    useGoogleFonts: GoogleFonts
-                                                                            .asMap()
-                                                                        .containsKey(
-                                                                            FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                  ),
+                                                            child: Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          8.0,
+                                                                          0.0),
+                                                              child: Text(
+                                                                'Transaction Trend',
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .center,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryBackground,
+                                                                      useGoogleFonts: GoogleFonts
+                                                                              .asMap()
+                                                                          .containsKey(
+                                                                              FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                    ),
+                                                              ),
                                                             ),
                                                           ),
                                                         ],
@@ -2337,24 +2345,21 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                     decoration: BoxDecoration(
                                                                                       color: Colors.white,
                                                                                     ),
-                                                                                    alignment: AlignmentDirectional(-1.00, 0.00),
-                                                                                    child: Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
-                                                                                      child: Text(
-                                                                                        '${getJsonField(
-                                                                                          dataItem,
-                                                                                          r'''$..transactionTrend''',
-                                                                                        ).toString()}%',
-                                                                                        textAlign: TextAlign.center,
-                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                              color: functions.colorChange(getJsonField(
-                                                                                                dataItem,
-                                                                                                r'''$..transactionTrend''',
-                                                                                              )),
-                                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                            ),
-                                                                                      ),
+                                                                                    alignment: AlignmentDirectional(0.00, 0.00),
+                                                                                    child: Text(
+                                                                                      '${getJsonField(
+                                                                                        dataItem,
+                                                                                        r'''$..transactionTrend''',
+                                                                                      ).toString()}%',
+                                                                                      textAlign: TextAlign.center,
+                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                            color: functions.colorChange(getJsonField(
+                                                                                              dataItem,
+                                                                                              r'''$..transactionTrend''',
+                                                                                            )),
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                          ),
                                                                                     ),
                                                                                   ),
                                                                                 ],
@@ -2648,7 +2653,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                             width: (FFAppState()
                                                                         .atmInfoState
                                                                     ? 440
-                                                                    : 180)
+                                                                    : 300)
                                                                 .toDouble(),
                                                             height: 46.0,
                                                             decoration:
@@ -2930,49 +2935,51 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                   ),
                                                             ),
                                                           ),
-                                                          if (FFAppState()
-                                                              .atmInfoState)
-                                                            Container(
-                                                              width: 120.0,
-                                                              height: 46.0,
-                                                              decoration:
-                                                                  BoxDecoration(
-                                                                color: Color(
-                                                                    0xFFF5F5F5),
-                                                              ),
-                                                              alignment:
-                                                                  AlignmentDirectional(
-                                                                      -1.00,
-                                                                      0.00),
-                                                              child: Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            16.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                child: Text(
-                                                                  'Bank',
-                                                                  textAlign:
-                                                                      TextAlign
-                                                                          .start,
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                        fontSize:
-                                                                            12.0,
-                                                                        fontWeight:
-                                                                            FontWeight.bold,
-                                                                        useGoogleFonts:
-                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                      ),
-                                                                ),
+                                                          Container(
+                                                            width: 120.0,
+                                                            height: 46.0,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: Color(
+                                                                  0xFFF5F5F5),
+                                                            ),
+                                                            alignment:
+                                                                AlignmentDirectional(
+                                                                    -1.00,
+                                                                    0.00),
+                                                            child: Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          16.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              child: Text(
+                                                                'Bank',
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .start,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily,
+                                                                      fontSize:
+                                                                          12.0,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .bold,
+                                                                      useGoogleFonts: GoogleFonts
+                                                                              .asMap()
+                                                                          .containsKey(
+                                                                              FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                    ),
                                                               ),
                                                             ),
+                                                          ),
                                                           if (FFAppState()
                                                               .atmInfoState)
                                                             Container(
@@ -3230,30 +3237,29 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                       ],
                                                                                     ),
                                                                                   ),
-                                                                                  if (FFAppState().atmInfoState)
-                                                                                    Container(
-                                                                                      width: 120.0,
-                                                                                      decoration: BoxDecoration(
-                                                                                        color: Colors.white,
-                                                                                      ),
-                                                                                      alignment: AlignmentDirectional(-1.00, 0.00),
-                                                                                      child: Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
-                                                                                        child: Text(
-                                                                                          getJsonField(
-                                                                                            dataItem,
-                                                                                            r'''$..bankName''',
-                                                                                          ).toString(),
-                                                                                          textAlign: TextAlign.start,
-                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                                fontSize: 12.0,
-                                                                                                fontWeight: FontWeight.normal,
-                                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                              ),
-                                                                                        ),
+                                                                                  Container(
+                                                                                    width: 120.0,
+                                                                                    decoration: BoxDecoration(
+                                                                                      color: Colors.white,
+                                                                                    ),
+                                                                                    alignment: AlignmentDirectional(-1.00, 0.00),
+                                                                                    child: Padding(
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                                                                                      child: Text(
+                                                                                        getJsonField(
+                                                                                          dataItem,
+                                                                                          r'''$..bankName''',
+                                                                                        ).toString(),
+                                                                                        textAlign: TextAlign.start,
+                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                              fontSize: 12.0,
+                                                                                              fontWeight: FontWeight.normal,
+                                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                            ),
                                                                                       ),
                                                                                     ),
+                                                                                  ),
                                                                                   if (FFAppState().atmInfoState)
                                                                                     Container(
                                                                                       width: 140.0,

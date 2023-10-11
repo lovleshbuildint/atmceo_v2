@@ -136,7 +136,7 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      width: 100.0,
+                      width: 110.0,
                       height: MediaQuery.sizeOf(context).height * 1.0,
                       decoration: BoxDecoration(
                         color: Color(0xFFF2F2F2),
@@ -175,21 +175,25 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                                     ? Colors.white
                                     : Color(0xFFF2F2F2),
                               ),
-                              alignment: AlignmentDirectional(0.00, 0.00),
-                              child: Text(
-                                'Sort By',
-                                textAlign: TextAlign.center,
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: FlutterFlowTheme.of(context)
-                                          .bodyMediumFamily,
-                                      color: Color(0xBACD737373),
-                                      useGoogleFonts: GoogleFonts.asMap()
-                                          .containsKey(
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMediumFamily),
-                                    ),
+                              alignment: AlignmentDirectional(-1.00, 0.00),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    20.0, 0.0, 0.0, 0.0),
+                                child: Text(
+                                  'Sort By',
+                                  textAlign: TextAlign.center,
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .bodyMediumFamily,
+                                        color: Color(0xBACD737373),
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMediumFamily),
+                                      ),
+                                ),
                               ),
                             ),
                           ),
@@ -223,21 +227,25 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                                     ? Colors.white
                                     : Color(0xFFF2F2F2),
                               ),
-                              alignment: AlignmentDirectional(0.00, 0.00),
-                              child: Text(
-                                'Grade',
-                                textAlign: TextAlign.center,
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: FlutterFlowTheme.of(context)
-                                          .bodyMediumFamily,
-                                      color: Color(0xBACD737373),
-                                      useGoogleFonts: GoogleFonts.asMap()
-                                          .containsKey(
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMediumFamily),
-                                    ),
+                              alignment: AlignmentDirectional(-1.00, 0.00),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    20.0, 0.0, 0.0, 0.0),
+                                child: Text(
+                                  'Grade',
+                                  textAlign: TextAlign.center,
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .bodyMediumFamily,
+                                        color: Color(0xBACD737373),
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMediumFamily),
+                                      ),
+                                ),
                               ),
                             ),
                           ),
@@ -271,21 +279,25 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                                     ? Colors.white
                                     : Color(0xFFF2F2F2),
                               ),
-                              alignment: AlignmentDirectional(0.00, 0.00),
-                              child: Text(
-                                'Bank',
-                                textAlign: TextAlign.center,
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: FlutterFlowTheme.of(context)
-                                          .bodyMediumFamily,
-                                      color: Color(0xBACD737373),
-                                      useGoogleFonts: GoogleFonts.asMap()
-                                          .containsKey(
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMediumFamily),
-                                    ),
+                              alignment: AlignmentDirectional(-1.00, 0.00),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    20.0, 0.0, 0.0, 0.0),
+                                child: Text(
+                                  'Bank',
+                                  textAlign: TextAlign.center,
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .bodyMediumFamily,
+                                        color: Color(0xBACD737373),
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMediumFamily),
+                                      ),
+                                ),
                               ),
                             ),
                           ),
@@ -319,21 +331,25 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                                     ? Colors.white
                                     : Color(0xFFF2F2F2),
                               ),
-                              alignment: AlignmentDirectional(0.00, 0.00),
-                              child: Text(
-                                'Transaction Trend',
-                                textAlign: TextAlign.center,
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: FlutterFlowTheme.of(context)
-                                          .bodyMediumFamily,
-                                      color: Color(0xBACD737373),
-                                      useGoogleFonts: GoogleFonts.asMap()
-                                          .containsKey(
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMediumFamily),
-                                    ),
+                              alignment: AlignmentDirectional(-1.00, 0.00),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    20.0, 0.0, 0.0, 0.0),
+                                child: Text(
+                                  'Transaction Trend',
+                                  textAlign: TextAlign.start,
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .bodyMediumFamily,
+                                        color: Color(0xBACD737373),
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMediumFamily),
+                                      ),
+                                ),
                               ),
                             ),
                           ),
@@ -367,21 +383,25 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                                     ? Colors.white
                                     : Color(0xFFF2F2F2),
                               ),
-                              alignment: AlignmentDirectional(0.00, 0.00),
-                              child: Text(
-                                'Uptime Trend',
-                                textAlign: TextAlign.center,
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: FlutterFlowTheme.of(context)
-                                          .bodyMediumFamily,
-                                      color: Color(0xBACD737373),
-                                      useGoogleFonts: GoogleFonts.asMap()
-                                          .containsKey(
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMediumFamily),
-                                    ),
+                              alignment: AlignmentDirectional(-1.00, 0.00),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    20.0, 0.0, 0.0, 0.0),
+                                child: Text(
+                                  'Uptime\nTrend',
+                                  textAlign: TextAlign.start,
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .bodyMediumFamily,
+                                        color: Color(0xBACD737373),
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMediumFamily),
+                                      ),
+                                ),
                               ),
                             ),
                           ),
@@ -415,21 +435,25 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                                     ? Colors.white
                                     : Color(0xFFF2F2F2),
                               ),
-                              alignment: AlignmentDirectional(0.00, 0.00),
-                              child: Text(
-                                'Location',
-                                textAlign: TextAlign.center,
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: FlutterFlowTheme.of(context)
-                                          .bodyMediumFamily,
-                                      color: Color(0xBACD737373),
-                                      useGoogleFonts: GoogleFonts.asMap()
-                                          .containsKey(
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMediumFamily),
-                                    ),
+                              alignment: AlignmentDirectional(-1.00, 0.00),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    20.0, 0.0, 0.0, 0.0),
+                                child: Text(
+                                  'Location',
+                                  textAlign: TextAlign.start,
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .bodyMediumFamily,
+                                        color: Color(0xBACD737373),
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMediumFamily),
+                                      ),
+                                ),
                               ),
                             ),
                           ),
@@ -443,7 +467,7 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                         children: [
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                16.0, 15.0, 0.0, 0.0),
+                                14.0, 15.0, 0.0, 0.0),
                             child: Text(
                               () {
                                 if (FFAppState().sortByFilterTab) {
