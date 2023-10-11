@@ -317,3 +317,22 @@ dynamic getCommon(
 
   return {'userId': mainData['userId'], 'data': finalData};
 }
+
+bool? newCustomFunction(
+  DateTime? currentDateTime,
+  DateTime? tokenDateTime,
+) {
+  // if difference of current datetime and stored datetime is grater then 24hr return true
+  if (currentDateTime == null || tokenDateTime == null) {
+    return true;
+  }
+
+  final difference = currentDateTime.difference(tokenDateTime);
+  final differenceInHours = difference.inHours;
+
+  if (differenceInHours > 1) {
+    return true;
+  } else {
+    return false;
+  }
+}

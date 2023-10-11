@@ -183,6 +183,12 @@ class FFAppState extends ChangeNotifier {
           await secureStorage.getBool('ff_locationFilterTab') ??
               _locationFilterTab;
     });
+    await _safeInitAsync(() async {
+      _tokenTime = await secureStorage.read(key: 'ff_tokenTime') != null
+          ? DateTime.fromMillisecondsSinceEpoch(
+              (await secureStorage.getInt('ff_tokenTime'))!)
+          : _tokenTime;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -553,6 +559,19 @@ class FFAppState extends ChangeNotifier {
 
   void deleteLocationFilterTab() {
     secureStorage.delete(key: 'ff_locationFilterTab');
+  }
+
+  DateTime? _tokenTime;
+  DateTime? get tokenTime => _tokenTime;
+  set tokenTime(DateTime? _value) {
+    _tokenTime = _value;
+    _value != null
+        ? secureStorage.setInt('ff_tokenTime', _value.millisecondsSinceEpoch)
+        : secureStorage.remove('ff_tokenTime');
+  }
+
+  void deleteTokenTime() {
+    secureStorage.delete(key: 'ff_tokenTime');
   }
 }
 
