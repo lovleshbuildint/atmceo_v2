@@ -80,10 +80,66 @@ class _AllatmWidgetState extends State<AllatmWidget>
         token: FFAppState().token,
       );
       if ((_model.allBankDataResponse?.succeeded ?? true)) {
+        if ((String responseDescription) {
+          return responseDescription == "Invalid Token !" ? true : false;
+        }(getJsonField(
+          (_model.allBankDataResponse?.jsonBody ?? ''),
+          r'''$.responseDescription''',
+        ).toString().toString())) {
+          await showDialog(
+            context: context,
+            builder: (alertDialogContext) {
+              return AlertDialog(
+                title: Text('Alert'),
+                content: Text('Session Expired - Please Log in again.'),
+                actions: [
+                  TextButton(
+                    onPressed: () => Navigator.pop(alertDialogContext),
+                    child: Text('Ok'),
+                  ),
+                ],
+              );
+            },
+          );
+
+          context.goNamed('login_page');
+
+          setState(() {
+            FFAppState().deleteToken();
+            FFAppState().token = '';
+          });
+          return;
+        } else {
+          setState(() {
+            FFAppState().allMachineDetails =
+                (_model.allBankDataResponse?.jsonBody ?? '');
+          });
+          return;
+        }
+      } else {
+        await showDialog(
+          context: context,
+          builder: (alertDialogContext) {
+            return AlertDialog(
+              title: Text('Alert'),
+              content: Text('Session Expired - Please Log in again.'),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(alertDialogContext),
+                  child: Text('Ok'),
+                ),
+              ],
+            );
+          },
+        );
+
+        context.goNamed('login_page');
+
         setState(() {
-          FFAppState().allMachineDetails =
-              (_model.allBankDataResponse?.jsonBody ?? '');
+          FFAppState().deleteToken();
+          FFAppState().token = '';
         });
+        return;
       }
     });
 

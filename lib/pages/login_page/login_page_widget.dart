@@ -376,29 +376,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                               ).toString();
                                             });
 
-                                            context.pushNamed('MainScreen');
+                                            context.goNamed('MainScreen');
                                           } else {
-                                            await showDialog(
-                                              context: context,
-                                              builder: (alertDialogContext) {
-                                                return AlertDialog(
-                                                  title: Text('Alert'),
-                                                  content: Text((_model
-                                                              .ceoTokenResponse
-                                                              ?.jsonBody ??
-                                                          '')
-                                                      .toString()),
-                                                  actions: [
-                                                    TextButton(
-                                                      onPressed: () =>
-                                                          Navigator.pop(
-                                                              alertDialogContext),
-                                                      child: Text('Ok'),
-                                                    ),
-                                                  ],
-                                                );
-                                              },
-                                            );
                                             setState(() {
                                               _model.emailAddressController
                                                   ?.text = FFAppState().userId;

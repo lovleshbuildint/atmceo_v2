@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'a_t_mdetails_widget.dart' show ATMdetailsWidget;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -13,6 +14,8 @@ class ATMdetailsModel extends FlutterFlowModel<ATMdetailsWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
+  // Stores action output result for [Backend Call - API (ATM Details)] action in ATMdetails widget.
+  ApiCallResponse? aTMDetailsResponse;
 
   /// Initialization and disposal methods.
 
