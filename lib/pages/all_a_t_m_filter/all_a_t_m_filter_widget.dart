@@ -60,54 +60,33 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
           Column(
             mainAxisSize: MainAxisSize.max,
             children: [
-              Container(
-                width: MediaQuery.sizeOf(context).width * 1.0,
-                height: 45.0,
-                decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
-                ),
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Expanded(
-                      child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            16.0, 0.0, 16.0, 0.0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Filter',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .bodyMediumFamily,
-                                    color: Colors.black,
-                                    fontSize: 16.0,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .bodyMediumFamily),
-                                  ),
-                            ),
-                            InkWell(
-                              splashColor: Colors.transparent,
-                              focusColor: Colors.transparent,
-                              hoverColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () async {
-                                Navigator.pop(context);
-                              },
-                              child: Text(
-                                'Close',
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                child: Container(
+                  width: MediaQuery.sizeOf(context).width * 1.0,
+                  height: 45.0,
+                  decoration: BoxDecoration(
+                    color: FlutterFlowTheme.of(context).secondaryBackground,
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Expanded(
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              16.0, 0.0, 16.0, 0.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'Filter',
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
                                       fontFamily: FlutterFlowTheme.of(context)
                                           .bodyMediumFamily,
-                                      color: Color(0xFFFF0026),
+                                      color: Colors.black,
                                       fontSize: 16.0,
                                       useGoogleFonts: GoogleFonts.asMap()
                                           .containsKey(
@@ -115,19 +94,43 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                                                   .bodyMediumFamily),
                                     ),
                               ),
-                            ),
-                          ],
+                              InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  Navigator.pop(context);
+                                },
+                                child: Text(
+                                  'Close',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .bodyMediumFamily,
+                                        color: Color(0xFFFF0026),
+                                        fontSize: 16.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMediumFamily),
+                                      ),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                    Container(
-                      width: MediaQuery.sizeOf(context).width * 1.0,
-                      height: 1.0,
-                      decoration: BoxDecoration(
-                        color: Color(0xFFF2F2F2),
+                      Container(
+                        width: MediaQuery.sizeOf(context).width * 1.0,
+                        height: 1.0,
+                        decoration: BoxDecoration(
+                          color: Color(0xFFF2F2F2),
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
               Expanded(
@@ -471,7 +474,7 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                             child: Text(
                               () {
                                 if (FFAppState().sortByFilterTab) {
-                                  return 'Short By';
+                                  return 'Sort By';
                                 } else if (FFAppState().gradeFilterTab) {
                                   return 'Grade';
                                 } else if (FFAppState()
@@ -707,6 +710,10 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
                                               iconSize: 18.0,
+                                              labelPadding:
+                                                  EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          8.0, 0.0, 8.0, 0.0),
                                               elevation: 1.0,
                                               borderRadius:
                                                   BorderRadius.circular(4.0),
@@ -736,6 +743,10 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryText,
                                               iconSize: 18.0,
+                                              labelPadding:
+                                                  EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          8.0, 0.0, 8.0, 0.0),
                                               elevation: 0.0,
                                               borderColor: Color(0xFFF2F2F2),
                                               borderWidth: 2.0,

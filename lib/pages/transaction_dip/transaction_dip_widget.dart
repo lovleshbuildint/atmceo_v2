@@ -797,6 +797,10 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
                                               iconSize: 18.0,
+                                              labelPadding:
+                                                  EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 2.0, 0.0, 0.0),
                                               elevation: 1.0,
                                               borderRadius:
                                                   BorderRadius.circular(4.0),
@@ -826,6 +830,10 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryText,
                                               iconSize: 18.0,
+                                              labelPadding:
+                                                  EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 2.0, 0.0, 0.0),
                                               elevation: 0.0,
                                               borderColor: Color(0xFFF2F2F2),
                                               borderWidth: 2.0,

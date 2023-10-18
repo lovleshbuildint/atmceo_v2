@@ -285,7 +285,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      12.0, 0.0, 0.0, 0.0),
+                                      12.0, 4.0, 0.0, 0.0),
                                   child: AutoSizeText(
                                     'Action Required',
                                     style: FlutterFlowTheme.of(context)
@@ -309,19 +309,23 @@ class _DownDipWidgetState extends State<DownDipWidget>
                               children: [
                                 Align(
                                   alignment: AlignmentDirectional(1.00, 0.00),
-                                  child: AutoSizeText(
-                                    'Last updated: ${dateTimeFormat('yMMMd', getCurrentTimestamp)}',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Helvetica2',
-                                          color: Colors.white,
-                                          fontSize: 12.0,
-                                          useGoogleFonts: GoogleFonts.asMap()
-                                              .containsKey(
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMediumFamily),
-                                        ),
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 2.0, 0.0, 0.0),
+                                    child: AutoSizeText(
+                                      'Last updated: ${dateTimeFormat('yMMMd', getCurrentTimestamp)}',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Helvetica2',
+                                            color: Colors.white,
+                                            fontSize: 12.0,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMediumFamily),
+                                          ),
+                                    ),
                                   ),
                                 ),
                                 Align(
@@ -2142,26 +2146,33 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                               Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
-                                                  Text(
-                                                    '${FFAppState().noOfMachineTransactionDip} Transaction Dip',
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              'Helvetica2',
-                                                          color:
-                                                              Color(0xFF2D2D2D),
-                                                          fontSize: 16.0,
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                          useGoogleFonts: GoogleFonts
-                                                                  .asMap()
-                                                              .containsKey(
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMediumFamily),
-                                                        ),
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 6.0,
+                                                                0.0, 0.0),
+                                                    child: Text(
+                                                      '${FFAppState().noOfMachineTransactionDip} Transaction Dip',
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Helvetica2',
+                                                                color: Color(
+                                                                    0xFF2D2D2D),
+                                                                fontSize: 16.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold,
+                                                                useGoogleFonts: GoogleFonts
+                                                                        .asMap()
+                                                                    .containsKey(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .bodyMediumFamily),
+                                                              ),
+                                                    ),
                                                   ),
                                                   Padding(
                                                     padding:
