@@ -172,7 +172,7 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                             },
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
-                              height: 50.0,
+                              height: 60.0,
                               decoration: BoxDecoration(
                                 color: FFAppState().sortByFilterTab
                                     ? Colors.white
@@ -224,7 +224,7 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                             },
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
-                              height: 50.0,
+                              height: 60.0,
                               decoration: BoxDecoration(
                                 color: FFAppState().gradeFilterTab
                                     ? Colors.white
@@ -276,7 +276,7 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                             },
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
-                              height: 50.0,
+                              height: 60.0,
                               decoration: BoxDecoration(
                                 color: FFAppState().bankFilterTab
                                     ? Colors.white
@@ -328,7 +328,7 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                             },
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
-                              height: 50.0,
+                              height: 60.0,
                               decoration: BoxDecoration(
                                 color: FFAppState().transactionTrendFilterTab
                                     ? Colors.white
@@ -380,7 +380,7 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                             },
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
-                              height: 50.0,
+                              height: 60.0,
                               decoration: BoxDecoration(
                                 color: FFAppState().uptimeTrendFilterTab
                                     ? Colors.white
@@ -432,7 +432,7 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                             },
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
-                              height: 50.0,
+                              height: 60.0,
                               decoration: BoxDecoration(
                                 color: FFAppState().locationFilterTab
                                     ? Colors.white
@@ -506,7 +506,7 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                                   children: [
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 16.0, 0.0, 0.0),
+                                          16.0, 16.0, 6.0, 0.0),
                                       child: Wrap(
                                         spacing: 0.0,
                                         runSpacing: 0.0,
@@ -713,7 +713,7 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                                               labelPadding:
                                                   EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          8.0, 0.0, 8.0, 0.0),
+                                                          4.0, 0.0, 4.0, 0.0),
                                               elevation: 1.0,
                                               borderRadius:
                                                   BorderRadius.circular(4.0),
@@ -746,7 +746,7 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                                               labelPadding:
                                                   EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          8.0, 0.0, 8.0, 0.0),
+                                                          4.0, 0.0, 4.0, 0.0),
                                               elevation: 0.0,
                                               borderColor: Color(0xFFF2F2F2),
                                               borderWidth: 2.0,
