@@ -201,7 +201,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                       fillColor: Colors.white,
                                       contentPadding:
                                           EdgeInsetsDirectional.fromSTEB(
-                                              16.0, 0.0, 0.0, 14.0),
+                                              16.0, 0.0, 0.0, 1.0),
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
