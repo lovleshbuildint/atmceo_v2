@@ -837,7 +837,7 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                         options: FFButtonOptions(
                           height: double.infinity,
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              24.0, 0.0, 24.0, 0.0),
+                              24.0, 2.0, 24.0, 0.0),
                           iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: Color(0xFFFF0026),
@@ -908,7 +908,7 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                         options: FFButtonOptions(
                           height: double.infinity,
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              24.0, 0.0, 24.0, 0.0),
+                              24.0, 2.0, 24.0, 0.0),
                           iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: Colors.white,
