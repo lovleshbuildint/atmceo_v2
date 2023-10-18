@@ -158,6 +158,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                           .override(
                                             fontFamily: 'Helvetica2',
                                             color: Color(0xFFB3B3B3),
+                                            fontSize: 16.0,
                                             fontWeight: FontWeight.normal,
                                             useGoogleFonts: GoogleFonts.asMap()
                                                 .containsKey(
@@ -200,7 +201,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                       fillColor: Colors.white,
                                       contentPadding:
                                           EdgeInsetsDirectional.fromSTEB(
-                                              16.0, 17.0, 0.0, 17.0),
+                                              16.0, 20.0, 0.0, 17.0),
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
