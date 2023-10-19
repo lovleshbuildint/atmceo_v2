@@ -440,7 +440,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                   ),
                               unselectedLabelStyle: TextStyle(),
                               indicatorColor: Color(0xFFFF0026),
-                              indicatorWeight: 3.0,
+                              indicatorWeight: 4.0,
                               tabs: [
                                 Tab(
                                   text: 'All',
