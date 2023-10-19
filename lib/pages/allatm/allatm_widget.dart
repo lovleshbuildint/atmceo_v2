@@ -279,40 +279,6 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                 ),
                               ),
                             ),
-                            Align(
-                              alignment: AlignmentDirectional(1.00, 0.00),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    4.0, 0.0, 0.0, 0.0),
-                                child: InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    if (FFAppState().visibilityState) {
-                                      setState(() {
-                                        FFAppState().visibilityState = false;
-                                      });
-                                    } else {
-                                      setState(() {
-                                        FFAppState().visibilityState = true;
-                                      });
-                                      await Future.delayed(
-                                          const Duration(milliseconds: 10000));
-                                      setState(() {
-                                        FFAppState().visibilityState = false;
-                                      });
-                                    }
-                                  },
-                                  child: Icon(
-                                    Icons.info_outline,
-                                    color: Color(0xFFB3B3B3),
-                                    size: 24.0,
-                                  ),
-                                ),
-                              ),
-                            ),
                           ],
                         ),
                       ],

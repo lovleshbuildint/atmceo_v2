@@ -470,7 +470,7 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                         children: [
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                14.0, 15.0, 0.0, 0.0),
+                                16.0, 15.0, 0.0, 0.0),
                             child: Text(
                               () {
                                 if (FFAppState().sortByFilterTab) {
@@ -506,7 +506,7 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                                   children: [
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 16.0, 6.0, 0.0),
+                                          16.0, 12.0, 6.0, 0.0),
                                       child: Wrap(
                                         spacing: 0.0,
                                         runSpacing: 0.0,
