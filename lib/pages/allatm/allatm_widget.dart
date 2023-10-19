@@ -493,7 +493,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                               Color(0xFF2D2D2D),
                                                           fontSize: 16.0,
                                                           fontWeight:
-                                                              FontWeight.w500,
+                                                              FontWeight.bold,
                                                           useGoogleFonts: GoogleFonts
                                                                   .asMap()
                                                               .containsKey(
@@ -1542,7 +1542,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                               Color(0xFF2D2D2D),
                                                           fontSize: 16.0,
                                                           fontWeight:
-                                                              FontWeight.w500,
+                                                              FontWeight.bold,
                                                           useGoogleFonts: GoogleFonts
                                                                   .asMap()
                                                               .containsKey(
@@ -2510,7 +2510,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                             Color(0xFF2D2D2D),
                                                         fontSize: 16.0,
                                                         fontWeight:
-                                                            FontWeight.w500,
+                                                            FontWeight.bold,
                                                         useGoogleFonts: GoogleFonts
                                                                 .asMap()
                                                             .containsKey(

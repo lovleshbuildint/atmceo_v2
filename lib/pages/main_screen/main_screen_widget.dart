@@ -2211,6 +2211,17 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                       ),
                                     ),
                                   ),
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      SelectionArea(
+                                          child: Text(
+                                        FFAppState().token,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium,
+                                      )),
+                                    ],
+                                  ),
                                 ],
                               ),
                             ),
