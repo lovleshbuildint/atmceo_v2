@@ -309,7 +309,7 @@ class _ATMdetailsWidgetState extends State<ATMdetailsWidget> {
                                             alignment: AlignmentDirectional(
                                                 1.00, 0.00),
                                             child: AutoSizeText(
-                                              'Last trx updated: ${dateTimeFormat('yMMMd', getCurrentTimestamp)}',
+                                              'Last updated: ${dateTimeFormat('yMMMd', getCurrentTimestamp)}',
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
@@ -325,6 +325,16 @@ class _ATMdetailsWidgetState extends State<ATMdetailsWidget> {
                                                                         context)
                                                                     .bodyMediumFamily),
                                                       ),
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    4.0, 0.0, 0.0, 0.0),
+                                            child: Icon(
+                                              Icons.autorenew_sharp,
+                                              color: Color(0xFFFF0026),
+                                              size: 20.0,
                                             ),
                                           ),
                                         ],
@@ -353,7 +363,7 @@ class _ATMdetailsWidgetState extends State<ATMdetailsWidget> {
                                                   .bodyMedium
                                                   .override(
                                                     fontFamily: 'Helvetica2',
-                                                    color: Color(0xFF737373),
+                                                    color: Color(0xFFB3B3B3),
                                                     useGoogleFonts: GoogleFonts
                                                             .asMap()
                                                         .containsKey(
@@ -401,7 +411,7 @@ class _ATMdetailsWidgetState extends State<ATMdetailsWidget> {
                                                     .bodyMedium
                                                     .override(
                                                       fontFamily: 'Helvetica2',
-                                                      color: Color(0xFF737373),
+                                                      color: Color(0xFFB3B3B3),
                                                       useGoogleFonts: GoogleFonts
                                                               .asMap()
                                                           .containsKey(
@@ -617,7 +627,7 @@ class _ATMdetailsWidgetState extends State<ATMdetailsWidget> {
                                             .bodyMedium
                                             .override(
                                               fontFamily: 'Helvetica2',
-                                              color: Color(0xFF737373),
+                                              color: Color(0xFFB3B3B3),
                                               useGoogleFonts: GoogleFonts
                                                       .asMap()
                                                   .containsKey(
@@ -673,7 +683,7 @@ class _ATMdetailsWidgetState extends State<ATMdetailsWidget> {
                                                 .bodyMedium
                                                 .override(
                                                   fontFamily: 'Helvetica2',
-                                                  color: Color(0xFF737373),
+                                                  color: Color(0xFFB3B3B3),
                                                   useGoogleFonts: GoogleFonts
                                                           .asMap()
                                                       .containsKey(
@@ -724,7 +734,7 @@ class _ATMdetailsWidgetState extends State<ATMdetailsWidget> {
                                                 .bodyMedium
                                                 .override(
                                                   fontFamily: 'Helvetica2',
-                                                  color: Color(0xFF737373),
+                                                  color: Color(0xFFB3B3B3),
                                                   useGoogleFonts: GoogleFonts
                                                           .asMap()
                                                       .containsKey(
@@ -1068,43 +1078,52 @@ class _ATMdetailsWidgetState extends State<ATMdetailsWidget> {
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.end,
                                             children: [
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        9.0, 0.0, 0.0, 10.0),
-                                                child: Container(
-                                                  width: 50.0,
-                                                  height: 50.0,
-                                                  decoration: BoxDecoration(
-                                                    color: Color(0x15FF0026),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            6.0),
+                                              Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.end,
+                                                children: [
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(9.0, 0.0,
+                                                                0.0, 10.0),
+                                                    child: Container(
+                                                      width: 50.0,
+                                                      height: 50.0,
+                                                      decoration: BoxDecoration(
+                                                        color:
+                                                            Color(0x15FF0026),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(6.0),
+                                                      ),
+                                                      child: Icon(
+                                                        Icons.update_rounded,
+                                                        color:
+                                                            Color(0xFFFF0026),
+                                                        size: 24.0,
+                                                      ),
+                                                    ),
                                                   ),
-                                                  child: Icon(
-                                                    Icons.update_rounded,
-                                                    color: Color(0xFFFF0026),
-                                                    size: 24.0,
-                                                  ),
-                                                ),
-                                              ),
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        16.0, 0.0, 0.0, 10.0),
-                                                child: Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.end,
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment.start,
-                                                  children: [
-                                                    Text(
-                                                      'Current Uptime',
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(16.0, 0.0,
+                                                                0.0, 10.0),
+                                                    child: Column(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment.end,
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .start,
+                                                      children: [
+                                                        Text(
+                                                          'Current Uptime',
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily: FlutterFlowTheme.of(
@@ -1119,66 +1138,82 @@ class _ATMdetailsWidgetState extends State<ATMdetailsWidget> {
                                                                         FlutterFlowTheme.of(context)
                                                                             .bodyMediumFamily),
                                                               ),
-                                                    ),
-                                                    Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .end,
-                                                      children: [
-                                                        Text(
-                                                          '0%',
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMediumFamily,
-                                                                fontSize: 24.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .bold,
-                                                                useGoogleFonts: GoogleFonts
-                                                                        .asMap()
-                                                                    .containsKey(
+                                                        ),
+                                                        Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .end,
+                                                          children: [
+                                                            Text(
+                                                              '0%',
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
                                                                         FlutterFlowTheme.of(context)
-                                                                            .bodyMediumFamily),
-                                                              ),
+                                                                            .bodyMediumFamily,
+                                                                    fontSize:
+                                                                        24.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .bold,
+                                                                    useGoogleFonts: GoogleFonts
+                                                                            .asMap()
+                                                                        .containsKey(
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                  ),
+                                                            ),
+                                                          ],
                                                         ),
                                                       ],
                                                     ),
-                                                  ],
-                                                ),
+                                                  ),
+                                                ],
                                               ),
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        15.0, 0.0, 0.0, 0.0),
-                                                child: Container(
-                                                  width: 20.0,
-                                                  height: 100.0,
-                                                  decoration: BoxDecoration(
-                                                    color: Color(0xFFFF0026),
-                                                    borderRadius:
-                                                        BorderRadius.only(
-                                                      bottomLeft:
-                                                          Radius.circular(0.0),
-                                                      bottomRight:
-                                                          Radius.circular(6.0),
-                                                      topLeft:
-                                                          Radius.circular(0.0),
-                                                      topRight:
-                                                          Radius.circular(6.0),
+                                              Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.stretch,
+                                                children: [
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(15.0, 0.0,
+                                                                0.0, 0.0),
+                                                    child: Container(
+                                                      width: 20.0,
+                                                      height: 100.0,
+                                                      decoration: BoxDecoration(
+                                                        color:
+                                                            Color(0xFFFF0026),
+                                                        borderRadius:
+                                                            BorderRadius.only(
+                                                          bottomLeft:
+                                                              Radius.circular(
+                                                                  0.0),
+                                                          bottomRight:
+                                                              Radius.circular(
+                                                                  6.0),
+                                                          topLeft:
+                                                              Radius.circular(
+                                                                  0.0),
+                                                          topRight:
+                                                              Radius.circular(
+                                                                  6.0),
+                                                        ),
+                                                      ),
+                                                      child: Icon(
+                                                        Icons
+                                                            .keyboard_arrow_right,
+                                                        color: Colors.white,
+                                                        size: 15.0,
+                                                      ),
                                                     ),
                                                   ),
-                                                  child: Icon(
-                                                    Icons.keyboard_arrow_right,
-                                                    color: Colors.white,
-                                                    size: 15.0,
-                                                  ),
-                                                ),
+                                                ],
                                               ),
                                             ],
                                           ),
