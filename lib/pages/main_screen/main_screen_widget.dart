@@ -231,51 +231,6 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                                       ),
                                             ),
                                           ),
-                                          Align(
-                                            alignment: AlignmentDirectional(
-                                                1.00, 0.00),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(6.0, 0.0, 0.0, 0.0),
-                                              child: InkWell(
-                                                splashColor: Colors.transparent,
-                                                focusColor: Colors.transparent,
-                                                hoverColor: Colors.transparent,
-                                                highlightColor:
-                                                    Colors.transparent,
-                                                onTap: () async {
-                                                  if (FFAppState()
-                                                      .visibilityState) {
-                                                    setState(() {
-                                                      FFAppState()
-                                                              .visibilityState =
-                                                          false;
-                                                    });
-                                                  } else {
-                                                    setState(() {
-                                                      FFAppState()
-                                                              .visibilityState =
-                                                          true;
-                                                    });
-                                                    await Future.delayed(
-                                                        const Duration(
-                                                            milliseconds:
-                                                                10000));
-                                                    setState(() {
-                                                      FFAppState()
-                                                              .visibilityState =
-                                                          false;
-                                                    });
-                                                  }
-                                                },
-                                                child: Icon(
-                                                  Icons.info_outline,
-                                                  color: Color(0xFFB3B3B3),
-                                                  size: 18.0,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
                                         ],
                                       ),
                                     ],
@@ -1616,7 +1571,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                                         BorderRadius.circular(
                                                             8.0),
                                                     child: Image.asset(
-                                                      'assets/images/clo.png',
+                                                      'assets/images/clock.png',
                                                       width: 56.0,
                                                       height: 56.0,
                                                       fit: BoxFit.scaleDown,
@@ -2006,7 +1961,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                                           BorderRadius.circular(
                                                               8.0),
                                                       child: Image.asset(
-                                                        'assets/images/tran.png',
+                                                        'assets/images/transaction.png',
                                                         width: 56.0,
                                                         height: 56.0,
                                                         fit: BoxFit.scaleDown,
