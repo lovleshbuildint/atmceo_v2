@@ -201,7 +201,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                       children: [
                         Row(
                           mainAxisSize: MainAxisSize.max,
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Align(
                               alignment: AlignmentDirectional(-1.00, 0.00),
@@ -256,7 +256,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                         ),
                         Row(
                           mainAxisSize: MainAxisSize.max,
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Align(
                               alignment: AlignmentDirectional(1.00, 0.00),
