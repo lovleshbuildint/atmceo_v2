@@ -481,117 +481,72 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
-                                                  InkWell(
-                                                    splashColor:
-                                                        Colors.transparent,
-                                                    focusColor:
-                                                        Colors.transparent,
-                                                    hoverColor:
-                                                        Colors.transparent,
-                                                    highlightColor:
-                                                        Colors.transparent,
-                                                    onTap: () async {
-                                                      await showModalBottomSheet(
-                                                        isScrollControlled:
-                                                            true,
-                                                        backgroundColor:
-                                                            Colors.white,
-                                                        enableDrag: false,
-                                                        useSafeArea: true,
-                                                        context: context,
-                                                        builder: (context) {
-                                                          return GestureDetector(
-                                                            onTap: () => _model
-                                                                    .unfocusNode
-                                                                    .canRequestFocus
-                                                                ? FocusScope.of(
-                                                                        context)
-                                                                    .requestFocus(
-                                                                        _model
-                                                                            .unfocusNode)
-                                                                : FocusScope.of(
-                                                                        context)
-                                                                    .unfocus(),
-                                                            child: Padding(
-                                                              padding: MediaQuery
-                                                                  .viewInsetsOf(
-                                                                      context),
-                                                              child:
-                                                                  TransactionDipWidget(
-                                                                tabBar: 0,
-                                                              ),
-                                                            ),
-                                                          );
-                                                        },
-                                                      ).then((value) =>
-                                                          safeSetState(() {}));
-                                                    },
-                                                    child: Container(
-                                                      width: 87.0,
-                                                      height: 38.0,
-                                                      decoration: BoxDecoration(
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .secondaryBackground,
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(6.0),
-                                                        border: Border.all(
-                                                          color:
-                                                              Color(0xFFF2F2F2),
-                                                          width: 2.0,
+                                                  Container(
+                                                    width: 87.0,
+                                                    height: 38.0,
+                                                    decoration: BoxDecoration(
+                                                      color: FlutterFlowTheme
+                                                              .of(context)
+                                                          .secondaryBackground,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              6.0),
+                                                      border: Border.all(
+                                                        color:
+                                                            Color(0xFFF2F2F2),
+                                                        width: 2.0,
+                                                      ),
+                                                    ),
+                                                    child: Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .center,
+                                                      children: [
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      4.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          child: Text(
+                                                            'Filter',
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily,
+                                                                  color: Colors
+                                                                      .black,
+                                                                  useGoogleFonts: GoogleFonts
+                                                                          .asMap()
+                                                                      .containsKey(
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .bodyMediumFamily),
+                                                                ),
+                                                          ),
                                                         ),
-                                                      ),
-                                                      child: Row(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .center,
-                                                        children: [
-                                                          Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        4.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            child: Text(
-                                                              'Filter',
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .bodyMediumFamily,
-                                                                    color: Colors
-                                                                        .black,
-                                                                    useGoogleFonts: GoogleFonts
-                                                                            .asMap()
-                                                                        .containsKey(
-                                                                            FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                  ),
-                                                            ),
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      8.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          child: Icon(
+                                                            FFIcons.ksliders,
+                                                            color: Color(
+                                                                0xFF959595),
+                                                            size: 20.0,
                                                           ),
-                                                          Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        8.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            child: Icon(
-                                                              FFIcons.ksliders,
-                                                              color: Color(
-                                                                  0xFF959595),
-                                                              size: 20.0,
-                                                            ),
-                                                          ),
-                                                        ],
-                                                      ),
+                                                        ),
+                                                      ],
                                                     ),
                                                   ),
                                                   Expanded(
@@ -3041,24 +2996,43 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                   ),
                                                 ),
                                               ),
-                                            if (FFAppState()
-                                                    .transactionDipJson ==
-                                                null)
-                                              Expanded(
-                                                child: Lottie.asset(
-                                                  'assets/lottie_animations/preLoader.json',
-                                                  width:
-                                                      MediaQuery.sizeOf(context)
-                                                              .width *
-                                                          1.0,
-                                                  height:
-                                                      MediaQuery.sizeOf(context)
-                                                              .height *
-                                                          0.15,
-                                                  fit: BoxFit.scaleDown,
-                                                  animate: true,
+                                            Expanded(
+                                              child: Container(
+                                                width:
+                                                    MediaQuery.sizeOf(context)
+                                                            .width *
+                                                        1.0,
+                                                height:
+                                                    MediaQuery.sizeOf(context)
+                                                            .height *
+                                                        1.0,
+                                                decoration: BoxDecoration(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                ),
+                                                alignment: AlignmentDirectional(
+                                                    0.00, 0.00),
+                                                child: Visibility(
+                                                  visible: FFAppState()
+                                                          .transactionDipJson ==
+                                                      null,
+                                                  child: Lottie.asset(
+                                                    'assets/lottie_animations/preLoader.json',
+                                                    width: MediaQuery.sizeOf(
+                                                                context)
+                                                            .width *
+                                                        1.0,
+                                                    height: MediaQuery.sizeOf(
+                                                                context)
+                                                            .height *
+                                                        0.15,
+                                                    fit: BoxFit.none,
+                                                    animate: true,
+                                                  ),
                                                 ),
                                               ),
+                                            ),
                                           ],
                                         ),
                                       ),
