@@ -713,7 +713,7 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                                               labelPadding:
                                                   EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          4.0, 0.0, 4.0, 0.0),
+                                                          4.0, 2.0, 4.0, 0.0),
                                               elevation: 1.0,
                                               borderRadius:
                                                   BorderRadius.circular(4.0),
@@ -746,7 +746,7 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                                               labelPadding:
                                                   EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          4.0, 0.0, 4.0, 0.0),
+                                                          4.0, 2.0, 4.0, 0.0),
                                               elevation: 0.0,
                                               borderColor: Color(0xFFF2F2F2),
                                               borderWidth: 2.0,
