@@ -2996,27 +2996,27 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                   ),
                                                 ),
                                               ),
-                                            Expanded(
-                                              child: Container(
-                                                width:
-                                                    MediaQuery.sizeOf(context)
-                                                            .width *
-                                                        1.0,
-                                                height:
-                                                    MediaQuery.sizeOf(context)
-                                                            .height *
-                                                        1.0,
-                                                decoration: BoxDecoration(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryBackground,
-                                                ),
-                                                alignment: AlignmentDirectional(
-                                                    0.00, 0.00),
-                                                child: Visibility(
-                                                  visible: FFAppState()
-                                                          .transactionDipJson ==
-                                                      null,
+                                            if (FFAppState()
+                                                    .transactionDipJson ==
+                                                null)
+                                              Expanded(
+                                                child: Container(
+                                                  width:
+                                                      MediaQuery.sizeOf(context)
+                                                              .width *
+                                                          1.0,
+                                                  height:
+                                                      MediaQuery.sizeOf(context)
+                                                              .height *
+                                                          1.0,
+                                                  decoration: BoxDecoration(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryBackground,
+                                                  ),
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          0.00, 0.00),
                                                   child: Lottie.asset(
                                                     'assets/lottie_animations/preLoader.json',
                                                     width: MediaQuery.sizeOf(
@@ -3032,7 +3032,6 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                   ),
                                                 ),
                                               ),
-                                            ),
                                           ],
                                         ),
                                       ),
