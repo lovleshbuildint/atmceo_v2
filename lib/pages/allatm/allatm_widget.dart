@@ -1468,16 +1468,31 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                       if (FFAppState().allMachineDetails ==
                                           null)
                                         Expanded(
-                                          child: Lottie.asset(
-                                            'assets/lottie_animations/preLoader.json',
+                                          child: Container(
                                             width: MediaQuery.sizeOf(context)
                                                     .width *
                                                 1.0,
                                             height: MediaQuery.sizeOf(context)
                                                     .height *
-                                                0.15,
-                                            fit: BoxFit.scaleDown,
-                                            animate: true,
+                                                1.0,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                            ),
+                                            alignment: AlignmentDirectional(
+                                                0.00, 0.00),
+                                            child: Lottie.asset(
+                                              'assets/lottie_animations/preLoader.json',
+                                              width: MediaQuery.sizeOf(context)
+                                                      .width *
+                                                  1.0,
+                                              height: MediaQuery.sizeOf(context)
+                                                      .height *
+                                                  0.15,
+                                              fit: BoxFit.fitHeight,
+                                              animate: true,
+                                            ),
                                           ),
                                         ),
                                     ],
@@ -2439,16 +2454,31 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                       if (FFAppState().allMachineDetails ==
                                           null)
                                         Expanded(
-                                          child: Lottie.asset(
-                                            'assets/lottie_animations/preLoader.json',
+                                          child: Container(
                                             width: MediaQuery.sizeOf(context)
                                                     .width *
                                                 1.0,
                                             height: MediaQuery.sizeOf(context)
                                                     .height *
-                                                0.15,
-                                            fit: BoxFit.scaleDown,
-                                            animate: true,
+                                                1.0,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                            ),
+                                            alignment: AlignmentDirectional(
+                                                0.00, 0.00),
+                                            child: Lottie.asset(
+                                              'assets/lottie_animations/preLoader.json',
+                                              width: MediaQuery.sizeOf(context)
+                                                      .width *
+                                                  1.0,
+                                              height: MediaQuery.sizeOf(context)
+                                                      .height *
+                                                  0.15,
+                                              fit: BoxFit.fitHeight,
+                                              animate: true,
+                                            ),
                                           ),
                                         ),
                                     ],
@@ -3406,16 +3436,31 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                       if (FFAppState().allMachineDetails ==
                                           null)
                                         Expanded(
-                                          child: Lottie.asset(
-                                            'assets/lottie_animations/preLoader.json',
+                                          child: Container(
                                             width: MediaQuery.sizeOf(context)
                                                     .width *
                                                 1.0,
                                             height: MediaQuery.sizeOf(context)
                                                     .height *
-                                                0.15,
-                                            fit: BoxFit.scaleDown,
-                                            animate: true,
+                                                1.0,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                            ),
+                                            alignment: AlignmentDirectional(
+                                                0.00, 0.00),
+                                            child: Lottie.asset(
+                                              'assets/lottie_animations/preLoader.json',
+                                              width: MediaQuery.sizeOf(context)
+                                                      .width *
+                                                  1.0,
+                                              height: MediaQuery.sizeOf(context)
+                                                      .height *
+                                                  0.15,
+                                              fit: BoxFit.fitHeight,
+                                              animate: true,
+                                            ),
                                           ),
                                         ),
                                     ],

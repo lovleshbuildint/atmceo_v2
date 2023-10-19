@@ -3027,7 +3027,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                 context)
                                                             .height *
                                                         0.15,
-                                                    fit: BoxFit.none,
+                                                    fit: BoxFit.fitHeight,
                                                     animate: true,
                                                   ),
                                                 ),
