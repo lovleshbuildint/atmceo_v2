@@ -235,7 +235,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                             ),
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  12.0, 4.0, 0.0, 0.0),
+                                  6.0, 4.0, 0.0, 0.0),
                               child: AutoSizeText(
                                 'Assigned ATM’s',
                                 style: FlutterFlowTheme.of(context)
