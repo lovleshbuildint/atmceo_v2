@@ -171,7 +171,7 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                             },
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
-                              height: 50.0,
+                              height: 60.0,
                               decoration: BoxDecoration(
                                 color: FFAppState().sortByFilterTab
                                     ? Colors.white
@@ -223,7 +223,7 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                             },
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
-                              height: 50.0,
+                              height: 60.0,
                               decoration: BoxDecoration(
                                 color: FFAppState().gradeFilterTab
                                     ? Colors.white
@@ -275,7 +275,7 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                             },
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
-                              height: 50.0,
+                              height: 60.0,
                               decoration: BoxDecoration(
                                 color: FFAppState().bankFilterTab
                                     ? Colors.white
@@ -327,7 +327,7 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                             },
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
-                              height: 50.0,
+                              height: 60.0,
                               decoration: BoxDecoration(
                                 color: FFAppState().transactionTrendFilterTab
                                     ? Colors.white
@@ -379,7 +379,7 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                             },
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
-                              height: 50.0,
+                              height: 60.0,
                               decoration: BoxDecoration(
                                 color: FFAppState().uptimeTrendFilterTab
                                     ? Colors.white
@@ -431,7 +431,7 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                             },
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
-                              height: 50.0,
+                              height: 60.0,
                               decoration: BoxDecoration(
                                 color: FFAppState().downTimeFilterTab
                                     ? Colors.white
@@ -483,7 +483,7 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                             },
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
-                              height: 50.0,
+                              height: 60.0,
                               decoration: BoxDecoration(
                                 color: FFAppState().locationFilterTab
                                     ? Colors.white
@@ -521,7 +521,7 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                         children: [
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                14.0, 15.0, 0.0, 0.0),
+                                16.0, 15.0, 0.0, 0.0),
                             child: Text(
                               () {
                                 if (FFAppState().sortByFilterTab) {
@@ -557,7 +557,7 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                                   children: [
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 16.0, 0.0, 0.0),
+                                          16.0, 12.0, 0.0, 0.0),
                                       child: Wrap(
                                         spacing: 0.0,
                                         runSpacing: 0.0,
