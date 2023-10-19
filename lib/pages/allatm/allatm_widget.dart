@@ -262,7 +262,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 4.0, 0.0, 0.0),
                                 child: AutoSizeText(
-                                  'Last updated: ${dateTimeFormat('yMMMd', getCurrentTimestamp)}',
+                                  'Last trx updated: ${dateTimeFormat('yMMMd', getCurrentTimestamp)}',
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
@@ -306,7 +306,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                   child: Icon(
                                     Icons.info_outline,
                                     color: Color(0xFFB3B3B3),
-                                    size: 14.0,
+                                    size: 24.0,
                                   ),
                                 ),
                               ),
@@ -1287,8 +1287,8 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                             ).toString(),
                                                                                             textAlign: TextAlign.start,
                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                                  fontSize: 12.0,
+                                                                                                  fontFamily: 'Helvetica2',
+                                                                                                  fontSize: 14.0,
                                                                                                   fontWeight: FontWeight.normal,
                                                                                                   useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                                 ),
@@ -1400,7 +1400,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                             textAlign: TextAlign.start,
                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                   fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                                  fontSize: 12.0,
+                                                                                                  fontSize: 14.0,
                                                                                                   fontWeight: FontWeight.normal,
                                                                                                   useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                                 ),
@@ -1424,7 +1424,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                             textAlign: TextAlign.start,
                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                   fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                                  fontSize: 12.0,
+                                                                                                  fontSize: 14.0,
                                                                                                   fontWeight: FontWeight.normal,
                                                                                                   useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                                 ),
