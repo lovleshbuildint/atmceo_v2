@@ -330,7 +330,7 @@ bool? newCustomFunction(
   final difference = currentDateTime.difference(tokenDateTime);
   final differenceInHours = difference.inHours;
 
-  if (differenceInHours > 1) {
+  if (differenceInHours > 24) {
     return true;
   } else {
     return false;
