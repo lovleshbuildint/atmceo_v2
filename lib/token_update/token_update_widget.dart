@@ -100,6 +100,8 @@ class _TokenUpdateWidgetState extends State<TokenUpdateWidget> {
                   setState(() {
                     FFAppState().token = _model.textController.text;
                   });
+
+                  context.goNamed('login_page');
                 },
                 text: 'Button',
                 options: FFButtonOptions(

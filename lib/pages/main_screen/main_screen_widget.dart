@@ -213,7 +213,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                             alignment: AlignmentDirectional(
                                                 1.00, 0.00),
                                             child: AutoSizeText(
-                                              'Last updated: ${dateTimeFormat('yMMMd', getCurrentTimestamp)}',
+                                              'Last trx updated: ${dateTimeFormat('yMMMd', getCurrentTimestamp)}',
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium

@@ -278,7 +278,7 @@ class _ATMdetailsWidgetState extends State<ATMdetailsWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    12.0, 0.0, 0.0, 0.0),
+                                                    6.0, 4.0, 0.0, 0.0),
                                             child: AutoSizeText(
                                               'Machine Details',
                                               style:
@@ -309,7 +309,7 @@ class _ATMdetailsWidgetState extends State<ATMdetailsWidget> {
                                             alignment: AlignmentDirectional(
                                                 1.00, 0.00),
                                             child: AutoSizeText(
-                                              'Last updated: ${dateTimeFormat('yMMMd', getCurrentTimestamp)}',
+                                              'Last trx updated: ${dateTimeFormat('yMMMd', getCurrentTimestamp)}',
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
