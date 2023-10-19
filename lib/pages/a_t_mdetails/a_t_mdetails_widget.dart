@@ -331,10 +331,33 @@ class _ATMdetailsWidgetState extends State<ATMdetailsWidget> {
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     4.0, 0.0, 0.0, 0.0),
-                                            child: Icon(
-                                              Icons.autorenew_sharp,
-                                              color: Color(0xFFFF0026),
-                                              size: 20.0,
+                                            child: InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                context.pushNamed(
+                                                  'ATMdetails',
+                                                  queryParameters: {
+                                                    'atmId': serializeParam(
+                                                      getJsonField(
+                                                        (_model.aTMDetailsResponse
+                                                                ?.jsonBody ??
+                                                            ''),
+                                                        r'''$.data.atmId''',
+                                                      ).toString(),
+                                                      ParamType.String,
+                                                    ),
+                                                  }.withoutNulls,
+                                                );
+                                              },
+                                              child: Icon(
+                                                Icons.autorenew_sharp,
+                                                color: Color(0xFFFF0026),
+                                                size: 20.0,
+                                              ),
                                             ),
                                           ),
                                         ],
