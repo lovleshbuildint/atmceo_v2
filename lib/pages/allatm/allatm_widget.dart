@@ -353,6 +353,8 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                     }
                                   },
                                 ),
+                                textCapitalization:
+                                    TextCapitalization.characters,
                                 obscureText: false,
                                 decoration: InputDecoration(
                                   labelStyle:
