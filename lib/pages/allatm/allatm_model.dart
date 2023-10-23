@@ -17,6 +17,10 @@ import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 
 class AllatmModel extends FlutterFlowModel<AllatmWidget> {
+  ///  Local state fields for this page.
+
+  bool autosearch = false;
+
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

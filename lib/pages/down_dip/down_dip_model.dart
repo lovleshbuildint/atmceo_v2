@@ -17,6 +17,10 @@ import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 
 class DownDipModel extends FlutterFlowModel<DownDipWidget> {
+  ///  Local state fields for this page.
+
+  bool autosearch = false;
+
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
@@ -24,10 +28,10 @@ class DownDipModel extends FlutterFlowModel<DownDipWidget> {
   ApiCallResponse? transactionDipResponse;
   // Stores action output result for [Backend Call - API (Machine Down)] action in Down_Dip widget.
   ApiCallResponse? machineDownResponse;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode;
-  TextEditingController? textController;
-  String? Function(BuildContext, String?)? textControllerValidator;
+  // State field(s) for searchfield widget.
+  FocusNode? searchfieldFocusNode;
+  TextEditingController? searchfieldController;
+  String? Function(BuildContext, String?)? searchfieldControllerValidator;
   // State field(s) for TabBar widget.
   TabController? tabBarController;
   int get tabBarCurrentIndex =>
@@ -39,8 +43,8 @@ class DownDipModel extends FlutterFlowModel<DownDipWidget> {
 
   void dispose() {
     unfocusNode.dispose();
-    textFieldFocusNode?.dispose();
-    textController?.dispose();
+    searchfieldFocusNode?.dispose();
+    searchfieldController?.dispose();
 
     tabBarController?.dispose();
   }

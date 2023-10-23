@@ -339,6 +339,9 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                         FFAppState().deleteSearchValue3();
                                         FFAppState().searchValue3 = '';
                                       });
+                                      setState(() {
+                                        _model.autosearch = true;
+                                      });
                                     } else {
                                       if (_model.tabBarCurrentIndex == 1) {
                                         setState(() {
@@ -350,6 +353,9 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                           FFAppState().deleteSearchValue3();
                                           FFAppState().searchValue3 = '';
                                         });
+                                        setState(() {
+                                          _model.autosearch = true;
+                                        });
                                       } else {
                                         setState(() {
                                           FFAppState().deleteSearchValue1();
@@ -360,6 +366,9 @@ class _AllatmWidgetState extends State<AllatmWidget>
 
                                           FFAppState().searchValue3 =
                                               _model.searchFieldController.text;
+                                        });
+                                        setState(() {
+                                          _model.autosearch = true;
                                         });
                                       }
                                     }
@@ -404,6 +413,9 @@ class _AllatmWidgetState extends State<AllatmWidget>
                               onTap: () async {
                                 setState(() {
                                   _model.searchFieldController?.clear();
+                                });
+                                setState(() {
+                                  _model.autosearch = false;
                                 });
                               },
                               child: Icon(
@@ -3614,8 +3626,9 @@ class _AllatmWidgetState extends State<AllatmWidget>
                   ),
                 ),
               ),
-            if (_model.searchFieldController.text != null &&
-                _model.searchFieldController.text != '')
+            if ((_model.searchFieldController.text != null &&
+                    _model.searchFieldController.text != '') &&
+                _model.autosearch)
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 200.0, 0.0, 0.0),
                 child: Container(
@@ -3624,103 +3637,113 @@ class _AllatmWidgetState extends State<AllatmWidget>
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).secondaryBackground,
                   ),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Builder(
-                        builder: (context) {
-                          final data2 = getJsonField(
-                            functions.filter(
-                                FFAppState().allMachineDetails,
-                                FFAppState().searchValue1,
-                                FFAppState().transactionTrendFilter,
-                                FFAppState().gradeFilter,
-                                FFAppState().uptimeTrendFilter,
-                                FFAppState().bankFilter,
-                                FFAppState().locationFilter,
-                                FFAppState().downTimeFilter,
-                                FFAppState().sortByFilter),
-                            r'''$.data''',
-                          ).toList();
-                          return ListView.builder(
-                            padding: EdgeInsets.zero,
-                            shrinkWrap: true,
-                            scrollDirection: Axis.vertical,
-                            itemCount: data2.length,
-                            itemBuilder: (context, data2Index) {
-                              final data2Item = data2[data2Index];
-                              return Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 32.0, 16.0, 0.0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        setState(() {
-                                          _model.searchFieldController?.text =
-                                              getJsonField(
-                                            data2Item,
-                                            r'''$..atmId''',
-                                          ).toString();
-                                        });
-                                      },
-                                      child: Text(
-                                        getJsonField(
-                                          data2Item,
-                                          r'''$..atmId''',
-                                        ).toString(),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMediumFamily,
-                                              color: Color(0xFF2D2D2D),
-                                              fontSize: 16.0,
-                                              fontWeight: FontWeight.bold,
-                                              useGoogleFonts: GoogleFonts
-                                                      .asMap()
-                                                  .containsKey(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMediumFamily),
-                                            ),
-                                      ),
-                                    ),
-                                    Text(
-                                      getJsonField(
+                  child: Builder(
+                    builder: (context) {
+                      final data2 = getJsonField(
+                        functions.filter(
+                            FFAppState().allMachineDetails,
+                            FFAppState().searchValue1,
+                            FFAppState().transactionTrendFilter,
+                            FFAppState().gradeFilter,
+                            FFAppState().uptimeTrendFilter,
+                            FFAppState().bankFilter,
+                            FFAppState().locationFilter,
+                            FFAppState().downTimeFilter,
+                            FFAppState().sortByFilter),
+                        r'''$.data''',
+                      ).toList();
+                      return ListView.builder(
+                        padding: EdgeInsets.zero,
+                        shrinkWrap: true,
+                        scrollDirection: Axis.vertical,
+                        itemCount: data2.length,
+                        itemBuilder: (context, data2Index) {
+                          final data2Item = data2[data2Index];
+                          return Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                16.0, 32.0, 16.0, 0.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    setState(() {
+                                      _model.searchFieldController?.text =
+                                          getJsonField(
                                         data2Item,
-                                        r'''$..location''',
-                                      ).toString(),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMediumFamily,
-                                            color: Color(0xFF737373),
-                                            fontSize: 16.0,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMediumFamily),
-                                          ),
-                                    ),
-                                  ],
+                                        r'''$..atmId''',
+                                      ).toString();
+                                    });
+                                    setState(() {
+                                      _model.autosearch = false;
+                                    });
+                                    if (_model.tabBarCurrentIndex == 0) {
+                                      setState(() {
+                                        FFAppState().searchValue1 =
+                                            _model.searchFieldController.text;
+                                        FFAppState().deleteSearchValue2();
+                                        FFAppState().searchValue2 = '';
+
+                                        FFAppState().deleteSearchValue3();
+                                        FFAppState().searchValue3 = '';
+                                      });
+                                    } else {
+                                      if (_model.tabBarCurrentIndex == 1) {
+                                        setState(() {
+                                          FFAppState().deleteSearchValue1();
+                                          FFAppState().searchValue1 = '';
+
+                                          FFAppState().searchValue2 =
+                                              _model.searchFieldController.text;
+                                          FFAppState().deleteSearchValue3();
+                                          FFAppState().searchValue3 = '';
+                                        });
+                                      } else {
+                                        setState(() {
+                                          FFAppState().deleteSearchValue1();
+                                          FFAppState().searchValue1 = '';
+
+                                          FFAppState().deleteSearchValue2();
+                                          FFAppState().searchValue2 = '';
+
+                                          FFAppState().searchValue3 =
+                                              _model.searchFieldController.text;
+                                        });
+                                      }
+                                    }
+                                  },
+                                  child: Text(
+                                    getJsonField(
+                                      data2Item,
+                                      r'''$..atmId''',
+                                    ).toString(),
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily,
+                                          color: Color(0xFF2D2D2D),
+                                          fontSize: 16.0,
+                                          fontWeight: FontWeight.bold,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMediumFamily),
+                                        ),
+                                  ),
                                 ),
-                              );
-                            },
+                              ],
+                            ),
                           );
                         },
-                      ),
-                    ],
+                      );
+                    },
                   ),
                 ),
               ),
