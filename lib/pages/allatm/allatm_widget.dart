@@ -9,6 +9,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
@@ -144,6 +145,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
     });
 
     _model.textController ??= TextEditingController();
+    _model.textFieldFocusNode ??= FocusNode();
     _model.tabBarController = TabController(
       vsync: this,
       length: 3,
@@ -165,6 +167,15 @@ class _AllatmWidgetState extends State<AllatmWidget>
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return GestureDetector(
@@ -313,6 +324,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                   8.0, 0.0, 8.0, 0.0),
                               child: TextFormField(
                                 controller: _model.textController,
+                                focusNode: _model.textFieldFocusNode,
                                 onChanged: (_) => EasyDebounce.debounce(
                                   '_model.textController',
                                   Duration(milliseconds: 2000),
@@ -3579,6 +3591,86 @@ class _AllatmWidgetState extends State<AllatmWidget>
                         },
                       ),
                     ),
+                  ),
+                ),
+              ),
+            if ((_model.textFieldFocusNode?.hasFocus ?? false))
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 200.0, 0.0, 0.0),
+                child: Container(
+                  width: MediaQuery.sizeOf(context).width * 1.0,
+                  height: MediaQuery.sizeOf(context).height * 1.0,
+                  decoration: BoxDecoration(
+                    color: FlutterFlowTheme.of(context).secondaryBackground,
+                  ),
+                  child: Builder(
+                    builder: (context) {
+                      final data2 = getJsonField(
+                        functions.filter(
+                            FFAppState().allMachineDetails,
+                            FFAppState().searchValue1,
+                            FFAppState().transactionTrendFilter,
+                            FFAppState().gradeFilter,
+                            FFAppState().uptimeTrendFilter,
+                            FFAppState().bankFilter,
+                            FFAppState().locationFilter,
+                            FFAppState().downTimeFilter,
+                            FFAppState().sortByFilter),
+                        r'''$.data''',
+                      ).toList();
+                      return ListView.builder(
+                        padding: EdgeInsets.zero,
+                        scrollDirection: Axis.vertical,
+                        itemCount: data2.length,
+                        itemBuilder: (context, data2Index) {
+                          final data2Item = data2[data2Index];
+                          return Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                16.0, 0.0, 16.0, 0.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  getJsonField(
+                                    data2Item,
+                                    r'''$..atmId''',
+                                  ).toString(),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .bodyMediumFamily,
+                                        color: Color(0xFF2D2D2D),
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.bold,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMediumFamily),
+                                      ),
+                                ),
+                                Text(
+                                  'Hello World',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .bodyMediumFamily,
+                                        color: Color(0xFF737373),
+                                        fontSize: 16.0,
+                                        useGoogleFonts: GoogleFonts.asMap()
+                                            .containsKey(
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMediumFamily),
+                                      ),
+                                ),
+                              ],
+                            ),
+                          );
+                        },
+                      );
+                    },
                   ),
                 ),
               ),

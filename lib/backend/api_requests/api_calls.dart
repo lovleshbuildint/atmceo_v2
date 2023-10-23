@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
-import '../../flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_util.dart';
 import 'api_manager.dart';
 
 export 'api_manager.dart' show ApiCallResponse;
@@ -11,7 +11,7 @@ const _kPrivateApiFunctionName = 'ffPrivateApiCall';
 class UserTokenCall {
   static Future<ApiCallResponse> call({
     dynamic? tokenJson,
-  }) {
+  }) async {
     final token = _serializeJson(tokenJson, true);
     final ffApiRequestBody = '''
 ${token}''';
@@ -46,7 +46,7 @@ class UserTokenMainCall {
   static Future<ApiCallResponse> call({
     String? userName = '',
     int? sessionId,
-  }) {
+  }) async {
     final ffApiRequestBody = '''
 {
   "userId": "${userName}",
@@ -86,7 +86,7 @@ class DashboardCall {
   static Future<ApiCallResponse> call({
     String? userId = '',
     String? token = '',
-  }) {
+  }) async {
     final ffApiRequestBody = '''
 {
   "userId": "${userId}",
@@ -115,7 +115,7 @@ class FilterCall {
   static Future<ApiCallResponse> call({
     String? userId = '',
     String? token = '',
-  }) {
+  }) async {
     final ffApiRequestBody = '''
 {
   "userId": "${userId}",
@@ -144,7 +144,7 @@ class TransectionDipCall {
   static Future<ApiCallResponse> call({
     String? userId = '',
     String? token = '',
-  }) {
+  }) async {
     final ffApiRequestBody = '''
 {
   "userId": "${userId}",
@@ -220,7 +220,7 @@ class MachineDownCall {
   static Future<ApiCallResponse> call({
     String? userId = '',
     String? token = '',
-  }) {
+  }) async {
     final ffApiRequestBody = '''
 {
   "userId": "${userId}",
@@ -296,7 +296,7 @@ class AllAtmCall {
   static Future<ApiCallResponse> call({
     String? userId = '',
     String? token = '',
-  }) {
+  }) async {
     final ffApiRequestBody = '''
 {
   "userId": "${userId}",
@@ -325,7 +325,7 @@ class LatestBankDataCall {
   static Future<ApiCallResponse> call({
     String? userId = '',
     String? token = '',
-  }) {
+  }) async {
     final ffApiRequestBody = '''
 {
   "userId": "${userId}",
@@ -355,7 +355,7 @@ class ATMDetailsCall {
     String? userId = '',
     String? token = '',
     String? atmId = '',
-  }) {
+  }) async {
     final ffApiRequestBody = '''
 {
   "userId": "${userId}",
@@ -385,7 +385,7 @@ class FieldTrakLoginCall {
   static Future<ApiCallResponse> call({
     String? userName = '',
     String? password = '',
-  }) {
+  }) async {
     final ffApiRequestBody = '''
 {
   "user_name": "${userName}",

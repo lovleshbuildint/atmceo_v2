@@ -10,6 +10,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
@@ -22,6 +23,7 @@ class AllatmModel extends FlutterFlowModel<AllatmWidget> {
   // Stores action output result for [Backend Call - API (ALL ATM)] action in Allatm widget.
   ApiCallResponse? allBankDataResponse;
   // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode;
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
   // State field(s) for TabBar widget.
@@ -35,7 +37,9 @@ class AllatmModel extends FlutterFlowModel<AllatmWidget> {
 
   void dispose() {
     unfocusNode.dispose();
+    textFieldFocusNode?.dispose();
     textController?.dispose();
+
     tabBarController?.dispose();
   }
 
