@@ -22,10 +22,10 @@ class AllatmModel extends FlutterFlowModel<AllatmWidget> {
   final unfocusNode = FocusNode();
   // Stores action output result for [Backend Call - API (ALL ATM)] action in Allatm widget.
   ApiCallResponse? allBankDataResponse;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode;
-  TextEditingController? textController;
-  String? Function(BuildContext, String?)? textControllerValidator;
+  // State field(s) for searchField widget.
+  FocusNode? searchFieldFocusNode;
+  TextEditingController? searchFieldController;
+  String? Function(BuildContext, String?)? searchFieldControllerValidator;
   // State field(s) for TabBar widget.
   TabController? tabBarController;
   int get tabBarCurrentIndex =>
@@ -37,8 +37,8 @@ class AllatmModel extends FlutterFlowModel<AllatmWidget> {
 
   void dispose() {
     unfocusNode.dispose();
-    textFieldFocusNode?.dispose();
-    textController?.dispose();
+    searchFieldFocusNode?.dispose();
+    searchFieldController?.dispose();
 
     tabBarController?.dispose();
   }
