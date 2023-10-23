@@ -673,31 +673,61 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 5.0, 0.0, 0.0),
-                                        child: LinearPercentIndicator(
-                                          percent: (int targetTransaction,
-                                                  int actualTransaction) {
-                                            return (actualTransaction /
-                                                        targetTransaction) >
-                                                    1.0
-                                                ? 0.99
-                                                : (actualTransaction /
-                                                    targetTransaction);
-                                          }(
-                                              getJsonField(
-                                                stackDashboardResponse.jsonBody,
-                                                r'''$.data.targetData.targetTransaction''',
+                                        child: Transform.rotate(
+                                          angle: 3.1416,
+                                          child: Container(
+                                            width: MediaQuery.sizeOf(context)
+                                                    .width *
+                                                1.0,
+                                            height: 10.0,
+                                            decoration: BoxDecoration(
+                                              gradient: LinearGradient(
+                                                colors: [
+                                                  Color(0xFFB1000E),
+                                                  Color(0xFFFFC400),
+                                                  Color(0xFFFF9900),
+                                                  Color(0xFF3AB100)
+                                                ],
+                                                stops: [0.0, 0.2, 0.4, 1.0],
+                                                begin: AlignmentDirectional(
+                                                    1.0, 0.0),
+                                                end: AlignmentDirectional(
+                                                    -1.0, 0),
                                               ),
-                                              getJsonField(
-                                                stackDashboardResponse.jsonBody,
-                                                r'''$.data.actualData.actualTransaction''',
-                                              )),
-                                          lineHeight: 12.0,
-                                          animation: true,
-                                          animateFromLastPercent: true,
-                                          progressColor: Color(0xFF3AB100),
-                                          backgroundColor: Color(0xFF737373),
-                                          barRadius: Radius.circular(100.0),
-                                          padding: EdgeInsets.zero,
+                                              borderRadius:
+                                                  BorderRadius.circular(100.0),
+                                            ),
+                                            child: LinearPercentIndicator(
+                                              percent: (int targetTransaction,
+                                                      int actualTransaction) {
+                                                return (actualTransaction /
+                                                            targetTransaction) >
+                                                        1.0
+                                                    ? (1 - 0.99)
+                                                    : (1 -
+                                                        (actualTransaction /
+                                                            targetTransaction));
+                                              }(
+                                                  getJsonField(
+                                                    stackDashboardResponse
+                                                        .jsonBody,
+                                                    r'''$.data.targetData.targetTransaction''',
+                                                  ),
+                                                  getJsonField(
+                                                    stackDashboardResponse
+                                                        .jsonBody,
+                                                    r'''$.data.actualData.actualTransaction''',
+                                                  )),
+                                              lineHeight: 12.0,
+                                              animation: true,
+                                              animateFromLastPercent: true,
+                                              progressColor: Color(0xFF737373),
+                                              backgroundColor:
+                                                  Colors.transparent,
+                                              barRadius: Radius.circular(100.0),
+                                              padding: EdgeInsets.zero,
+                                            ),
+                                          ),
                                         ),
                                       ),
                                       Row(
