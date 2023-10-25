@@ -165,11 +165,22 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                                 FFAppState().bankFilterTab = false;
                                 FFAppState().locationFilterTab = false;
                               });
-                              setState(() {
-                                _model.shortCCValueController?.value = [
-                                  FFAppState().sortByFilter
-                                ];
-                              });
+                              Navigator.pop(context);
+                              await showModalBottomSheet(
+                                isScrollControlled: true,
+                                backgroundColor: Colors.white,
+                                enableDrag: false,
+                                useSafeArea: true,
+                                context: context,
+                                builder: (context) {
+                                  return Padding(
+                                    padding: MediaQuery.viewInsetsOf(context),
+                                    child: AllATMFilterWidget(
+                                      tabBar: 0,
+                                    ),
+                                  );
+                                },
+                              ).then((value) => safeSetState(() {}));
                             },
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
@@ -217,11 +228,22 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                                 FFAppState().bankFilterTab = false;
                                 FFAppState().locationFilterTab = false;
                               });
-                              setState(() {
-                                _model.shortCCValueController?.value = [
-                                  FFAppState().gradeFilter
-                                ];
-                              });
+                              Navigator.pop(context);
+                              await showModalBottomSheet(
+                                isScrollControlled: true,
+                                backgroundColor: Colors.white,
+                                enableDrag: false,
+                                useSafeArea: true,
+                                context: context,
+                                builder: (context) {
+                                  return Padding(
+                                    padding: MediaQuery.viewInsetsOf(context),
+                                    child: AllATMFilterWidget(
+                                      tabBar: 0,
+                                    ),
+                                  );
+                                },
+                              ).then((value) => safeSetState(() {}));
                             },
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
@@ -259,7 +281,7 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              FFAppState().update(() {
+                              setState(() {
                                 FFAppState().sortByFilterTab = false;
                                 FFAppState().reasonFilterTab = false;
                                 FFAppState().gradeFilterTab = false;
@@ -269,11 +291,22 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                                 FFAppState().bankFilterTab = true;
                                 FFAppState().locationFilterTab = false;
                               });
-                              setState(() {
-                                _model.shortCCValueController?.value = [
-                                  FFAppState().bankFilter
-                                ];
-                              });
+                              Navigator.pop(context);
+                              await showModalBottomSheet(
+                                isScrollControlled: true,
+                                backgroundColor: Colors.white,
+                                enableDrag: false,
+                                useSafeArea: true,
+                                context: context,
+                                builder: (context) {
+                                  return Padding(
+                                    padding: MediaQuery.viewInsetsOf(context),
+                                    child: AllATMFilterWidget(
+                                      tabBar: 0,
+                                    ),
+                                  );
+                                },
+                              ).then((value) => safeSetState(() {}));
                             },
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
@@ -321,11 +354,22 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                                 FFAppState().bankFilterTab = false;
                                 FFAppState().locationFilterTab = false;
                               });
-                              setState(() {
-                                _model.shortCCValueController?.value = [
-                                  FFAppState().transactionTrendFilter
-                                ];
-                              });
+                              Navigator.pop(context);
+                              await showModalBottomSheet(
+                                isScrollControlled: true,
+                                backgroundColor: Colors.white,
+                                enableDrag: false,
+                                useSafeArea: true,
+                                context: context,
+                                builder: (context) {
+                                  return Padding(
+                                    padding: MediaQuery.viewInsetsOf(context),
+                                    child: AllATMFilterWidget(
+                                      tabBar: 0,
+                                    ),
+                                  );
+                                },
+                              ).then((value) => safeSetState(() {}));
                             },
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
@@ -373,11 +417,22 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                                 FFAppState().bankFilterTab = false;
                                 FFAppState().locationFilterTab = false;
                               });
-                              setState(() {
-                                _model.shortCCValueController?.value = [
-                                  FFAppState().uptimeTrendFilter
-                                ];
-                              });
+                              Navigator.pop(context);
+                              await showModalBottomSheet(
+                                isScrollControlled: true,
+                                backgroundColor: Colors.white,
+                                enableDrag: false,
+                                useSafeArea: true,
+                                context: context,
+                                builder: (context) {
+                                  return Padding(
+                                    padding: MediaQuery.viewInsetsOf(context),
+                                    child: AllATMFilterWidget(
+                                      tabBar: 0,
+                                    ),
+                                  );
+                                },
+                              ).then((value) => safeSetState(() {}));
                             },
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
@@ -425,11 +480,22 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                                 FFAppState().bankFilterTab = false;
                                 FFAppState().locationFilterTab = true;
                               });
-                              setState(() {
-                                _model.shortCCValueController?.value = [
-                                  FFAppState().locationFilter
-                                ];
-                              });
+                              Navigator.pop(context);
+                              await showModalBottomSheet(
+                                isScrollControlled: true,
+                                backgroundColor: Colors.white,
+                                enableDrag: false,
+                                useSafeArea: true,
+                                context: context,
+                                builder: (context) {
+                                  return Padding(
+                                    padding: MediaQuery.viewInsetsOf(context),
+                                    child: AllATMFilterWidget(
+                                      tabBar: 0,
+                                    ),
+                                  );
+                                },
+                              ).then((value) => safeSetState(() {}));
                             },
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
@@ -622,63 +688,46 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                                                   .shortCCValue = val?.first);
                                               if (FFAppState()
                                                   .sortByFilterTab) {
-                                                FFAppState().update(() {
-                                                  FFAppState().sortByFilter =
-                                                      _model.shortCCValue!;
-                                                });
+                                                FFAppState().sortByFilter =
+                                                    _model.shortCCValue!;
                                               } else {
                                                 if (FFAppState()
                                                     .gradeFilterTab) {
-                                                  FFAppState().update(() {
-                                                    FFAppState().gradeFilter =
-                                                        _model.shortCCValue!;
-                                                  });
+                                                  FFAppState().gradeFilter =
+                                                      _model.shortCCValue!;
                                                 } else {
                                                   if (FFAppState()
                                                       .transactionTrendFilterTab) {
-                                                    FFAppState().update(() {
-                                                      FFAppState()
-                                                              .transactionTrendFilter =
-                                                          _model.shortCCValue!;
-                                                    });
+                                                    FFAppState()
+                                                            .transactionTrendFilter =
+                                                        _model.shortCCValue!;
                                                   } else {
                                                     if (FFAppState()
                                                         .uptimeTrendFilterTab) {
-                                                      FFAppState().update(() {
-                                                        FFAppState()
-                                                                .uptimeTrendFilter =
-                                                            _model
-                                                                .shortCCValue!;
-                                                      });
+                                                      FFAppState()
+                                                              .uptimeTrendFilter =
+                                                          _model.shortCCValue!;
                                                     } else {
                                                       if (FFAppState()
                                                           .downTimeFilterTab) {
-                                                        FFAppState().update(() {
-                                                          FFAppState()
-                                                                  .downTimeFilter =
-                                                              _model
-                                                                  .shortCCValue!;
-                                                        });
+                                                        FFAppState()
+                                                                .downTimeFilter =
+                                                            _model
+                                                                .shortCCValue!;
                                                       } else {
                                                         if (FFAppState()
                                                             .bankFilterTab) {
                                                           FFAppState()
-                                                              .update(() {
-                                                            FFAppState()
-                                                                    .bankFilter =
-                                                                _model
-                                                                    .shortCCValue!;
-                                                          });
+                                                                  .bankFilter =
+                                                              _model
+                                                                  .shortCCValue!;
                                                         } else {
                                                           if (FFAppState()
                                                               .locationFilterTab) {
                                                             FFAppState()
-                                                                .update(() {
-                                                              FFAppState()
-                                                                      .locationFilter =
-                                                                  _model
-                                                                      .shortCCValue!;
-                                                            });
+                                                                    .locationFilter =
+                                                                _model
+                                                                    .shortCCValue!;
                                                           }
                                                         }
                                                       }
@@ -715,7 +764,7 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                                                   EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           4.0, 2.0, 4.0, 0.0),
-                                              elevation: 1.0,
+                                              elevation: 0.0,
                                               borderRadius:
                                                   BorderRadius.circular(4.0),
                                             ),

@@ -451,6 +451,36 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                                   .deleteAllMachineDetails();
                                               FFAppState().allMachineDetails =
                                                   null;
+
+                                              FFAppState().deleteSortByFilter();
+                                              FFAppState().sortByFilter = '';
+
+                                              FFAppState().deleteGradeFilter();
+                                              FFAppState().gradeFilter = '';
+
+                                              FFAppState().deleteReasonFilter();
+                                              FFAppState().reasonFilter = '';
+
+                                              FFAppState()
+                                                  .deleteTransactionTrendFilter();
+                                              FFAppState()
+                                                  .transactionTrendFilter = '';
+
+                                              FFAppState()
+                                                  .deleteUptimeTrendFilter();
+                                              FFAppState().uptimeTrendFilter =
+                                                  '';
+
+                                              FFAppState()
+                                                  .deleteDownTimeFilter();
+                                              FFAppState().downTimeFilter = '';
+
+                                              FFAppState().deleteBankFilter();
+                                              FFAppState().bankFilter = '';
+
+                                              FFAppState()
+                                                  .deleteLocationFilter();
+                                              FFAppState().locationFilter = '';
                                             });
                                           },
                                           child: Container(
@@ -582,8 +612,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                                           16.0, 16.0),
                                                   child: Text(
                                                     'The progress bar below indicates your monthly target and displays how close you are to earning the reward. Keep pushing forward!',
-                                                    textAlign:
-                                                        TextAlign.justify,
+                                                    textAlign: TextAlign.start,
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyLarge
@@ -855,7 +884,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                                       16.0, 16.0, 16.0, 16.0),
                                               child: Text(
                                                 'This information highlights underperforming ATMs those experiencing technical issues. Please take necessary actions to resolve the problems promptly.',
-                                                textAlign: TextAlign.justify,
+                                                textAlign: TextAlign.start,
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyLarge
@@ -1443,7 +1472,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                                         16.0, 16.0, 16.0, 16.0),
                                                 child: Text(
                                                   'The information below represents the desired transaction volume and uptime goal for the ATM. Monitor progress to meet or exceed there targets.',
-                                                  textAlign: TextAlign.justify,
+                                                  textAlign: TextAlign.start,
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyLarge
@@ -2251,17 +2280,6 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                       ),
                                     ),
                                   ),
-                                  Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      SelectionArea(
-                                          child: Text(
-                                        FFAppState().token,
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium,
-                                      )),
-                                    ],
-                                  ),
                                 ],
                               ),
                             ),
@@ -2402,15 +2420,19 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                       ),
                     ),
                   if (FFAppState().awardState &&
-                      ((getJsonField(
-                                stackDashboardResponse.jsonBody,
-                                r'''$.data.actualData.actualTransaction''',
-                              ) /
-                              getJsonField(
-                                stackDashboardResponse.jsonBody,
-                                r'''$.data.targetData.targetTransaction''',
-                              )) >
-                          1.0))
+                      ((int targetTransaction, int actualTransaction) {
+                        return (actualTransaction / targetTransaction) > 1.0
+                            ? true
+                            : false;
+                      }(
+                          getJsonField(
+                            stackDashboardResponse.jsonBody,
+                            r'''$.data.targetData.targetTransaction''',
+                          ),
+                          getJsonField(
+                            stackDashboardResponse.jsonBody,
+                            r'''$.data.actualData.actualTransaction''',
+                          ))))
                     Container(
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       height: MediaQuery.sizeOf(context).height * 1.0,

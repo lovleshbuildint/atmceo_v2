@@ -515,7 +515,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
-                                    context.goNamed('tokenUpdate');
+                                    context.pushNamed('test');
                                   },
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(8.0),

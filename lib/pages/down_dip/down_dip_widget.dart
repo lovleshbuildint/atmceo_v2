@@ -447,6 +447,16 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                     setState(() {
                                       _model.autosearch = false;
                                     });
+                                    setState(() {
+                                      FFAppState().deleteSearchValue1();
+                                      FFAppState().searchValue1 = '';
+
+                                      FFAppState().deleteSearchValue2();
+                                      FFAppState().searchValue2 = '';
+
+                                      FFAppState().deleteSearchValue3();
+                                      FFAppState().searchValue3 = '';
+                                    });
                                   },
                                   child: Icon(
                                     Icons.clear,

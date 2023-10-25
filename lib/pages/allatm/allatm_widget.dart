@@ -417,6 +417,16 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                 setState(() {
                                   _model.autosearch = false;
                                 });
+                                setState(() {
+                                  FFAppState().deleteSearchValue1();
+                                  FFAppState().searchValue1 = '';
+
+                                  FFAppState().deleteSearchValue2();
+                                  FFAppState().searchValue2 = '';
+
+                                  FFAppState().deleteSearchValue3();
+                                  FFAppState().searchValue3 = '';
+                                });
                               },
                               child: Icon(
                                 Icons.clear,
@@ -3630,7 +3640,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                     _model.searchFieldController.text != '') &&
                 _model.autosearch)
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 200.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 160.0, 0.0, 0.0),
                 child: Container(
                   width: MediaQuery.sizeOf(context).width * 1.0,
                   height: MediaQuery.sizeOf(context).height * 1.0,
@@ -3661,81 +3671,112 @@ class _AllatmWidgetState extends State<AllatmWidget>
                           final data2Item = data2[data2Index];
                           return Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                16.0, 32.0, 16.0, 0.0),
+                                16.0, 24.0, 16.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    setState(() {
-                                      _model.searchFieldController?.text =
-                                          getJsonField(
-                                        data2Item,
-                                        r'''$..atmId''',
-                                      ).toString();
-                                    });
-                                    setState(() {
-                                      _model.autosearch = false;
-                                    });
-                                    if (_model.tabBarCurrentIndex == 0) {
+                                Expanded(
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
                                       setState(() {
-                                        FFAppState().searchValue1 =
-                                            _model.searchFieldController.text;
-                                        FFAppState().deleteSearchValue2();
-                                        FFAppState().searchValue2 = '';
-
-                                        FFAppState().deleteSearchValue3();
-                                        FFAppState().searchValue3 = '';
+                                        _model.searchFieldController?.text =
+                                            getJsonField(
+                                          data2Item,
+                                          r'''$..atmId''',
+                                        ).toString();
                                       });
-                                    } else {
-                                      if (_model.tabBarCurrentIndex == 1) {
+                                      setState(() {
+                                        _model.autosearch = false;
+                                      });
+                                      if (_model.tabBarCurrentIndex == 0) {
                                         setState(() {
-                                          FFAppState().deleteSearchValue1();
-                                          FFAppState().searchValue1 = '';
-
-                                          FFAppState().searchValue2 =
+                                          FFAppState().searchValue1 =
                                               _model.searchFieldController.text;
+                                          FFAppState().deleteSearchValue2();
+                                          FFAppState().searchValue2 = '';
+
                                           FFAppState().deleteSearchValue3();
                                           FFAppState().searchValue3 = '';
                                         });
                                       } else {
-                                        setState(() {
-                                          FFAppState().deleteSearchValue1();
-                                          FFAppState().searchValue1 = '';
+                                        if (_model.tabBarCurrentIndex == 1) {
+                                          setState(() {
+                                            FFAppState().deleteSearchValue1();
+                                            FFAppState().searchValue1 = '';
 
-                                          FFAppState().deleteSearchValue2();
-                                          FFAppState().searchValue2 = '';
+                                            FFAppState().searchValue2 = _model
+                                                .searchFieldController.text;
+                                            FFAppState().deleteSearchValue3();
+                                            FFAppState().searchValue3 = '';
+                                          });
+                                        } else {
+                                          setState(() {
+                                            FFAppState().deleteSearchValue1();
+                                            FFAppState().searchValue1 = '';
 
-                                          FFAppState().searchValue3 =
-                                              _model.searchFieldController.text;
-                                        });
+                                            FFAppState().deleteSearchValue2();
+                                            FFAppState().searchValue2 = '';
+
+                                            FFAppState().searchValue3 = _model
+                                                .searchFieldController.text;
+                                          });
+                                        }
                                       }
-                                    }
-                                  },
-                                  child: Text(
-                                    getJsonField(
-                                      data2Item,
-                                      r'''$..atmId''',
-                                    ).toString(),
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMediumFamily,
-                                          color: Color(0xFF2D2D2D),
-                                          fontSize: 16.0,
-                                          fontWeight: FontWeight.bold,
-                                          useGoogleFonts: GoogleFonts.asMap()
-                                              .containsKey(
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMediumFamily),
-                                        ),
+                                    },
+                                    child: Text(
+                                      getJsonField(
+                                        data2Item,
+                                        r'''$..atmId''',
+                                      ).toString(),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMediumFamily,
+                                            color: Color(0xFF2D2D2D),
+                                            fontSize: 16.0,
+                                            fontWeight: FontWeight.bold,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMediumFamily),
+                                          ),
+                                    ),
+                                  ),
+                                ),
+                                Expanded(
+                                  child: Container(
+                                    width: 100.0,
+                                    decoration: BoxDecoration(
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                    ),
+                                    alignment: AlignmentDirectional(1.00, 0.00),
+                                    child: Text(
+                                      getJsonField(
+                                        data2Item,
+                                        r'''$..location''',
+                                      ).toString(),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMediumFamily,
+                                            color: Color(0xFF737373),
+                                            fontSize: 12.0,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMediumFamily),
+                                          ),
+                                    ),
                                   ),
                                 ),
                               ],

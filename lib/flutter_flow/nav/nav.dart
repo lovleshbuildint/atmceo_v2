@@ -76,9 +76,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => MainScreenWidget(),
         ),
         FFRoute(
-          name: 'tokenUpdate',
-          path: '/tokenUpdate',
-          builder: (context, params) => TokenUpdateWidget(),
+          name: 'test',
+          path: '/test',
+          builder: (context, params) => TestWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
