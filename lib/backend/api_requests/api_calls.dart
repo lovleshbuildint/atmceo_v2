@@ -82,7 +82,37 @@ class UserTokenMainCall {
       );
 }
 
-class DashboardCall {
+class ProfileCall {
+  static Future<ApiCallResponse> call({
+    String? userId = '',
+    String? token = '',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "userId": "${userId}",
+  "token": "${token}",
+  "sessionID": "4456",
+  "requestTimestamp": "2023-05-25 17:24:44",
+  "requestType": "getUserProfileDetails"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'Profile',
+      apiUrl:
+          'https://ftweb .hitachi-payments.com:8443/uattest/profile/profiledetails',
+      callType: ApiCallType.POST,
+      headers: {},
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+    );
+  }
+}
+
+class DashboardCopyCall {
   static Future<ApiCallResponse> call({
     String? userId = '',
     String? token = '',
@@ -96,7 +126,7 @@ class DashboardCall {
   "requestType": "GetDashbordData"
 }''';
     return ApiManager.instance.makeApiCall(
-      callName: 'Dashboard',
+      callName: 'Dashboard Copy',
       apiUrl: 'https://ftweb.hitachi-payments.com:8443/getdashborddata',
       callType: ApiCallType.POST,
       headers: {},
@@ -394,7 +424,7 @@ class FieldTrakLoginCall {
     return ApiManager.instance.makeApiCall(
       callName: 'Field Trak Login',
       apiUrl:
-          'https://fieldtrak.hitachi-payments.com/FieldTrak2/API/v2/ValidateLogin',
+          'https://fieldtrak.hitachi-payments.com/FieldTrak2/API/v2/ValidateLogin_atmceo',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
