@@ -76,9 +76,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => MainScreenWidget(),
         ),
         FFRoute(
-          name: 'test',
-          path: '/test',
-          builder: (context, params) => TestWidget(),
+          name: 'profile',
+          path: '/profile',
+          builder: (context, params) => ProfileWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

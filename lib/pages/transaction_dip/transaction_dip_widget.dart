@@ -164,11 +164,22 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                                 FFAppState().bankFilterTab = false;
                                 FFAppState().locationFilterTab = false;
                               });
-                              setState(() {
-                                _model.shortCCValueController?.value = [
-                                  FFAppState().sortByFilter
-                                ];
-                              });
+                              Navigator.pop(context);
+                              await showModalBottomSheet(
+                                isScrollControlled: true,
+                                backgroundColor: Colors.white,
+                                enableDrag: false,
+                                useSafeArea: true,
+                                context: context,
+                                builder: (context) {
+                                  return Padding(
+                                    padding: MediaQuery.viewInsetsOf(context),
+                                    child: TransactionDipWidget(
+                                      tabBar: 1,
+                                    ),
+                                  );
+                                },
+                              ).then((value) => safeSetState(() {}));
                             },
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
@@ -216,11 +227,22 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                                 FFAppState().bankFilterTab = false;
                                 FFAppState().locationFilterTab = false;
                               });
-                              setState(() {
-                                _model.shortCCValueController?.value = [
-                                  FFAppState().gradeFilter
-                                ];
-                              });
+                              Navigator.pop(context);
+                              await showModalBottomSheet(
+                                isScrollControlled: true,
+                                backgroundColor: Colors.white,
+                                enableDrag: false,
+                                useSafeArea: true,
+                                context: context,
+                                builder: (context) {
+                                  return Padding(
+                                    padding: MediaQuery.viewInsetsOf(context),
+                                    child: TransactionDipWidget(
+                                      tabBar: 1,
+                                    ),
+                                  );
+                                },
+                              ).then((value) => safeSetState(() {}));
                             },
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
@@ -268,11 +290,22 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                                 FFAppState().bankFilterTab = true;
                                 FFAppState().locationFilterTab = false;
                               });
-                              setState(() {
-                                _model.shortCCValueController?.value = [
-                                  FFAppState().bankFilter
-                                ];
-                              });
+                              Navigator.pop(context);
+                              await showModalBottomSheet(
+                                isScrollControlled: true,
+                                backgroundColor: Colors.white,
+                                enableDrag: false,
+                                useSafeArea: true,
+                                context: context,
+                                builder: (context) {
+                                  return Padding(
+                                    padding: MediaQuery.viewInsetsOf(context),
+                                    child: TransactionDipWidget(
+                                      tabBar: 1,
+                                    ),
+                                  );
+                                },
+                              ).then((value) => safeSetState(() {}));
                             },
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
@@ -320,11 +353,22 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                                 FFAppState().bankFilterTab = false;
                                 FFAppState().locationFilterTab = false;
                               });
-                              setState(() {
-                                _model.shortCCValueController?.value = [
-                                  FFAppState().transactionTrendFilter
-                                ];
-                              });
+                              Navigator.pop(context);
+                              await showModalBottomSheet(
+                                isScrollControlled: true,
+                                backgroundColor: Colors.white,
+                                enableDrag: false,
+                                useSafeArea: true,
+                                context: context,
+                                builder: (context) {
+                                  return Padding(
+                                    padding: MediaQuery.viewInsetsOf(context),
+                                    child: TransactionDipWidget(
+                                      tabBar: 1,
+                                    ),
+                                  );
+                                },
+                              ).then((value) => safeSetState(() {}));
                             },
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
@@ -372,11 +416,22 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                                 FFAppState().bankFilterTab = false;
                                 FFAppState().locationFilterTab = false;
                               });
-                              setState(() {
-                                _model.shortCCValueController?.value = [
-                                  FFAppState().uptimeTrendFilter
-                                ];
-                              });
+                              Navigator.pop(context);
+                              await showModalBottomSheet(
+                                isScrollControlled: true,
+                                backgroundColor: Colors.white,
+                                enableDrag: false,
+                                useSafeArea: true,
+                                context: context,
+                                builder: (context) {
+                                  return Padding(
+                                    padding: MediaQuery.viewInsetsOf(context),
+                                    child: TransactionDipWidget(
+                                      tabBar: 1,
+                                    ),
+                                  );
+                                },
+                              ).then((value) => safeSetState(() {}));
                             },
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
@@ -424,11 +479,22 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                                 FFAppState().bankFilterTab = false;
                                 FFAppState().locationFilterTab = false;
                               });
-                              setState(() {
-                                _model.shortCCValueController?.value = [
-                                  FFAppState().downTimeFilter
-                                ];
-                              });
+                              Navigator.pop(context);
+                              await showModalBottomSheet(
+                                isScrollControlled: true,
+                                backgroundColor: Colors.white,
+                                enableDrag: false,
+                                useSafeArea: true,
+                                context: context,
+                                builder: (context) {
+                                  return Padding(
+                                    padding: MediaQuery.viewInsetsOf(context),
+                                    child: TransactionDipWidget(
+                                      tabBar: 1,
+                                    ),
+                                  );
+                                },
+                              ).then((value) => safeSetState(() {}));
                             },
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
@@ -476,11 +542,22 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                                 FFAppState().bankFilterTab = false;
                                 FFAppState().locationFilterTab = true;
                               });
-                              setState(() {
-                                _model.shortCCValueController?.value = [
-                                  FFAppState().locationFilter
-                                ];
-                              });
+                              Navigator.pop(context);
+                              await showModalBottomSheet(
+                                isScrollControlled: true,
+                                backgroundColor: Colors.white,
+                                enableDrag: false,
+                                useSafeArea: true,
+                                context: context,
+                                builder: (context) {
+                                  return Padding(
+                                    padding: MediaQuery.viewInsetsOf(context),
+                                    child: TransactionDipWidget(
+                                      tabBar: 1,
+                                    ),
+                                  );
+                                },
+                              ).then((value) => safeSetState(() {}));
                             },
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
@@ -801,8 +878,10 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                                               labelPadding:
                                                   EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          0.0, 2.0, 0.0, 0.0),
-                                              elevation: 1.0,
+                                                          4.0, 2.0, 4.0, 0.0),
+                                              elevation: 0.0,
+                                              borderColor: Color(0xFFFF0026),
+                                              borderWidth: 2.0,
                                               borderRadius:
                                                   BorderRadius.circular(4.0),
                                             ),
@@ -834,7 +913,7 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                                               labelPadding:
                                                   EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          0.0, 2.0, 0.0, 0.0),
+                                                          4.0, 2.0, 4.0, 0.0),
                                               elevation: 0.0,
                                               borderColor: Color(0xFFF2F2F2),
                                               borderWidth: 2.0,

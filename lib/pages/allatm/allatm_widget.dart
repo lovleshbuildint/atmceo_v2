@@ -338,6 +338,21 @@ class _AllatmWidgetState extends State<AllatmWidget>
 
                                         FFAppState().deleteSearchValue3();
                                         FFAppState().searchValue3 = '';
+
+                                        FFAppState().countFilter = getJsonField(
+                                          functions.filter(
+                                              FFAppState().allMachineDetails,
+                                              FFAppState().searchValue1,
+                                              FFAppState()
+                                                  .transactionTrendFilter,
+                                              FFAppState().gradeFilter,
+                                              FFAppState().uptimeTrendFilter,
+                                              FFAppState().bankFilter,
+                                              FFAppState().locationFilter,
+                                              FFAppState().downTimeFilter,
+                                              FFAppState().sortByFilter),
+                                          r'''$.itemCount''',
+                                        );
                                       });
                                       setState(() {
                                         _model.autosearch = true;
@@ -352,6 +367,40 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                               _model.searchFieldController.text;
                                           FFAppState().deleteSearchValue3();
                                           FFAppState().searchValue3 = '';
+
+                                          FFAppState().countFilter =
+                                              getJsonField(
+                                            functions.filter(
+                                                FFAppState().allMachineDetails,
+                                                () {
+                                              if (_model.tabBarCurrentIndex ==
+                                                  0) {
+                                                return FFAppState()
+                                                    .searchValue1;
+                                              } else if (_model
+                                                      .tabBarCurrentIndex ==
+                                                  1) {
+                                                return FFAppState()
+                                                    .searchValue2;
+                                              } else if (_model
+                                                      .tabBarCurrentIndex ==
+                                                  2) {
+                                                return FFAppState()
+                                                    .searchValue3;
+                                              } else {
+                                                return null;
+                                              }
+                                            }(),
+                                                FFAppState()
+                                                    .transactionTrendFilter,
+                                                FFAppState().gradeFilter,
+                                                FFAppState().uptimeTrendFilter,
+                                                FFAppState().bankFilter,
+                                                FFAppState().locationFilter,
+                                                FFAppState().downTimeFilter,
+                                                FFAppState().sortByFilter),
+                                            r'''$.itemCount''',
+                                          );
                                         });
                                         setState(() {
                                           _model.autosearch = true;
@@ -366,6 +415,39 @@ class _AllatmWidgetState extends State<AllatmWidget>
 
                                           FFAppState().searchValue3 =
                                               _model.searchFieldController.text;
+                                          FFAppState().countFilter =
+                                              getJsonField(
+                                            functions.filter(
+                                                FFAppState().allMachineDetails,
+                                                () {
+                                              if (_model.tabBarCurrentIndex ==
+                                                  0) {
+                                                return FFAppState()
+                                                    .searchValue1;
+                                              } else if (_model
+                                                      .tabBarCurrentIndex ==
+                                                  1) {
+                                                return FFAppState()
+                                                    .searchValue2;
+                                              } else if (_model
+                                                      .tabBarCurrentIndex ==
+                                                  2) {
+                                                return FFAppState()
+                                                    .searchValue3;
+                                              } else {
+                                                return null;
+                                              }
+                                            }(),
+                                                FFAppState()
+                                                    .transactionTrendFilter,
+                                                FFAppState().gradeFilter,
+                                                FFAppState().uptimeTrendFilter,
+                                                FFAppState().bankFilter,
+                                                FFAppState().locationFilter,
+                                                FFAppState().downTimeFilter,
+                                                FFAppState().sortByFilter),
+                                            r'''$.itemCount''',
+                                          );
                                         });
                                         setState(() {
                                           _model.autosearch = true;
@@ -641,6 +723,13 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                             child:
                                                                 AllATMFilterWidget(
                                                               tabBar: 0,
+                                                              filterCount:
+                                                                  getJsonField(
+                                                                (_model.allBankDataResponse
+                                                                        ?.jsonBody ??
+                                                                    ''),
+                                                                r'''$.filterCount''',
+                                                              ),
                                                             ),
                                                           ),
                                                         );
@@ -893,69 +982,73 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                 ],
                                                               ),
                                                             ),
-                                                            Container(
-                                                              width: 182.0,
-                                                              height: 46.0,
-                                                              decoration:
-                                                                  BoxDecoration(
-                                                                gradient:
-                                                                    LinearGradient(
-                                                                  colors: [
-                                                                    Color(
-                                                                        0xFF3B3B3C),
-                                                                    Colors.black
-                                                                  ],
-                                                                  stops: [
-                                                                    0.0,
-                                                                    1.0
-                                                                  ],
-                                                                  begin:
-                                                                      AlignmentDirectional(
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.5,
                                                                           0.0,
-                                                                          -1.0),
-                                                                  end:
-                                                                      AlignmentDirectional(
-                                                                          0,
-                                                                          1.0),
+                                                                          0.0,
+                                                                          0.0),
+                                                              child: Container(
+                                                                width: 282.0,
+                                                                height: 46.0,
+                                                                decoration:
+                                                                    BoxDecoration(
+                                                                  gradient:
+                                                                      LinearGradient(
+                                                                    colors: [
+                                                                      Color(
+                                                                          0xFF3B3B3C),
+                                                                      Colors
+                                                                          .black
+                                                                    ],
+                                                                    stops: [
+                                                                      0.0,
+                                                                      1.0
+                                                                    ],
+                                                                    begin:
+                                                                        AlignmentDirectional(
+                                                                            0.0,
+                                                                            -1.0),
+                                                                    end: AlignmentDirectional(
+                                                                        0, 1.0),
+                                                                  ),
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .only(
+                                                                    bottomLeft:
+                                                                        Radius.circular(
+                                                                            0.0),
+                                                                    bottomRight:
+                                                                        Radius.circular(
+                                                                            0.0),
+                                                                    topLeft: Radius
+                                                                        .circular(
+                                                                            0.0),
+                                                                    topRight: Radius
+                                                                        .circular(
+                                                                            6.0),
+                                                                  ),
                                                                 ),
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .only(
-                                                                  bottomLeft: Radius
-                                                                      .circular(
-                                                                          0.0),
-                                                                  bottomRight: Radius
-                                                                      .circular(
-                                                                          0.0),
-                                                                  topLeft: Radius
-                                                                      .circular(
-                                                                          0.0),
-                                                                  topRight: Radius
-                                                                      .circular(
-                                                                          6.0),
+                                                                alignment:
+                                                                    AlignmentDirectional(
+                                                                        0.00,
+                                                                        0.00),
+                                                                child: Text(
+                                                                  'ATM Performance',
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primaryBackground,
+                                                                        useGoogleFonts:
+                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                      ),
                                                                 ),
-                                                              ),
-                                                              alignment:
-                                                                  AlignmentDirectional(
-                                                                      0.00,
-                                                                      0.00),
-                                                              child: Text(
-                                                                'ATM Performance',
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .bodyMediumFamily,
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryBackground,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                    ),
                                                               ),
                                                             ),
                                                           ],
@@ -1125,6 +1218,47 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                   ),
                                                                 ),
                                                               ),
+                                                            Container(
+                                                              width: 100.0,
+                                                              height: 46.0,
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                color: Color(
+                                                                    0xFFF5F5F5),
+                                                              ),
+                                                              alignment:
+                                                                  AlignmentDirectional(
+                                                                      -1.00,
+                                                                      0.00),
+                                                              child: Padding(
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            16.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                child: Text(
+                                                                  'MTD Performance',
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                        fontSize:
+                                                                            12.0,
+                                                                        fontWeight:
+                                                                            FontWeight.bold,
+                                                                        useGoogleFonts:
+                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                      ),
+                                                                ),
+                                                              ),
+                                                            ),
                                                             Container(
                                                               width: 100.0,
                                                               height: 46.0,
@@ -1345,7 +1479,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                               ),
                                                                                             ),
                                                                                           if ((String grade) {
-                                                                                            return grade == "New" ? true : false;
+                                                                                            return grade == "Presidential" ? true : false;
                                                                                           }(getJsonField(
                                                                                             dataItem,
                                                                                             r'''$..grade''',
@@ -1404,6 +1538,21 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                                 fit: BoxFit.contain,
                                                                                               ),
                                                                                             ),
+                                                                                          if ((String grade) {
+                                                                                            return grade == "New" ? true : false;
+                                                                                          }(getJsonField(
+                                                                                            dataItem,
+                                                                                            r'''$..grade''',
+                                                                                          ).toString()))
+                                                                                            ClipRRect(
+                                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                                              child: Image.asset(
+                                                                                                'assets/images/New.png',
+                                                                                                width: 24.0,
+                                                                                                height: 24.0,
+                                                                                                fit: BoxFit.contain,
+                                                                                              ),
+                                                                                            ),
                                                                                         ],
                                                                                       ),
                                                                                     ),
@@ -1455,6 +1604,107 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                           ),
                                                                                         ),
                                                                                       ),
+                                                                                    Container(
+                                                                                      width: 100.0,
+                                                                                      decoration: BoxDecoration(
+                                                                                        color: Colors.white,
+                                                                                      ),
+                                                                                      child: Row(
+                                                                                        mainAxisSize: MainAxisSize.max,
+                                                                                        mainAxisAlignment: MainAxisAlignment.center,
+                                                                                        children: [
+                                                                                          Expanded(
+                                                                                            child: Align(
+                                                                                              alignment: AlignmentDirectional(1.00, 0.00),
+                                                                                              child: Text(
+                                                                                                '${getJsonField(
+                                                                                                  dataItem,
+                                                                                                  r'''$..mtdperformance''',
+                                                                                                ).toString()}%',
+                                                                                                textAlign: TextAlign.center,
+                                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                      color: functions.colorChange(getJsonField(
+                                                                                                        dataItem,
+                                                                                                        r'''$..transactionTrend''',
+                                                                                                      )),
+                                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                                    ),
+                                                                                              ),
+                                                                                            ),
+                                                                                          ),
+                                                                                          if ((int transactionTrend) {
+                                                                                            return transactionTrend < 100 ? true : false;
+                                                                                          }(getJsonField(
+                                                                                            dataItem,
+                                                                                            r'''$..mtdperformance''',
+                                                                                          )))
+                                                                                            Expanded(
+                                                                                              child: Align(
+                                                                                                alignment: AlignmentDirectional(-1.00, 0.00),
+                                                                                                child: Padding(
+                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                                                                                                  child: ClipRRect(
+                                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                                    child: Image.asset(
+                                                                                                      'assets/images/MTD_Down.png',
+                                                                                                      width: 24.0,
+                                                                                                      height: 24.0,
+                                                                                                      fit: BoxFit.contain,
+                                                                                                    ),
+                                                                                                  ),
+                                                                                                ),
+                                                                                              ),
+                                                                                            ),
+                                                                                          if ((int transactionTrend) {
+                                                                                            return transactionTrend > 100 ? true : false;
+                                                                                          }(getJsonField(
+                                                                                            dataItem,
+                                                                                            r'''$..mtdperformance''',
+                                                                                          )))
+                                                                                            Expanded(
+                                                                                              child: Align(
+                                                                                                alignment: AlignmentDirectional(-1.00, 0.00),
+                                                                                                child: Padding(
+                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                                                                                                  child: ClipRRect(
+                                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                                    child: Image.asset(
+                                                                                                      'assets/images/MTD_Up.png',
+                                                                                                      width: 24.0,
+                                                                                                      height: 24.0,
+                                                                                                      fit: BoxFit.contain,
+                                                                                                    ),
+                                                                                                  ),
+                                                                                                ),
+                                                                                              ),
+                                                                                            ),
+                                                                                          if ((int transactionTrend) {
+                                                                                            return (transactionTrend == 100) ? true : false;
+                                                                                          }(getJsonField(
+                                                                                            dataItem,
+                                                                                            r'''$..mtdperformance''',
+                                                                                          )))
+                                                                                            Expanded(
+                                                                                              child: Align(
+                                                                                                alignment: AlignmentDirectional(-1.00, 0.00),
+                                                                                                child: Padding(
+                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                                                                                                  child: ClipRRect(
+                                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                                    child: Image.asset(
+                                                                                                      'assets/images/MTD_Achive.png',
+                                                                                                      width: 24.0,
+                                                                                                      height: 24.0,
+                                                                                                      fit: BoxFit.contain,
+                                                                                                    ),
+                                                                                                  ),
+                                                                                                ),
+                                                                                              ),
+                                                                                            ),
+                                                                                        ],
+                                                                                      ),
+                                                                                    ),
                                                                                     Container(
                                                                                       width: 100.0,
                                                                                       decoration: BoxDecoration(
@@ -1711,6 +1961,13 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                             child:
                                                                 AllATMFilterWidget(
                                                               tabBar: 0,
+                                                              filterCount:
+                                                                  getJsonField(
+                                                                (_model.allBankDataResponse
+                                                                        ?.jsonBody ??
+                                                                    ''),
+                                                                r'''$.filterCount''',
+                                                              ),
                                                             ),
                                                           ),
                                                         );
@@ -1963,60 +2220,119 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                 ],
                                                               ),
                                                             ),
-                                                            Container(
-                                                              width: 102.0,
-                                                              height: 46.0,
-                                                              decoration:
-                                                                  BoxDecoration(
-                                                                gradient:
-                                                                    LinearGradient(
-                                                                  colors: [
-                                                                    Color(
-                                                                        0xFF3B3B3C),
-                                                                    Colors.black
-                                                                  ],
-                                                                  stops: [
-                                                                    0.0,
-                                                                    1.0
-                                                                  ],
-                                                                  begin:
-                                                                      AlignmentDirectional(
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.5,
                                                                           0.0,
-                                                                          -1.0),
-                                                                  end:
-                                                                      AlignmentDirectional(
-                                                                          0,
-                                                                          1.0),
+                                                                          0.0,
+                                                                          0.0),
+                                                              child: Container(
+                                                                width: 100.0,
+                                                                height: 46.0,
+                                                                decoration:
+                                                                    BoxDecoration(
+                                                                  gradient:
+                                                                      LinearGradient(
+                                                                    colors: [
+                                                                      Color(
+                                                                          0xFF3B3B3C),
+                                                                      Colors
+                                                                          .black
+                                                                    ],
+                                                                    stops: [
+                                                                      0.0,
+                                                                      1.0
+                                                                    ],
+                                                                    begin:
+                                                                        AlignmentDirectional(
+                                                                            0.0,
+                                                                            -1.0),
+                                                                    end: AlignmentDirectional(
+                                                                        0, 1.0),
+                                                                  ),
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              0.0),
                                                                 ),
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .only(
-                                                                  bottomLeft: Radius
-                                                                      .circular(
-                                                                          0.0),
-                                                                  bottomRight: Radius
-                                                                      .circular(
-                                                                          0.0),
-                                                                  topLeft: Radius
-                                                                      .circular(
-                                                                          0.0),
-                                                                  topRight: Radius
-                                                                      .circular(
-                                                                          6.0),
+                                                                alignment:
+                                                                    AlignmentDirectional(
+                                                                        0.00,
+                                                                        0.00),
+                                                                child: Text(
+                                                                  'MTD Performance',
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primaryBackground,
+                                                                        useGoogleFonts:
+                                                                            GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                      ),
                                                                 ),
                                                               ),
-                                                              alignment:
-                                                                  AlignmentDirectional(
-                                                                      0.00,
-                                                                      0.00),
-                                                              child: Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
+                                                            ),
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.5,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              child: Container(
+                                                                width: 102.0,
+                                                                height: 46.0,
+                                                                decoration:
+                                                                    BoxDecoration(
+                                                                  gradient:
+                                                                      LinearGradient(
+                                                                    colors: [
+                                                                      Color(
+                                                                          0xFF3B3B3C),
+                                                                      Colors
+                                                                          .black
+                                                                    ],
+                                                                    stops: [
+                                                                      0.0,
+                                                                      1.0
+                                                                    ],
+                                                                    begin:
+                                                                        AlignmentDirectional(
                                                                             0.0,
-                                                                            0.0,
-                                                                            8.0,
+                                                                            -1.0),
+                                                                    end: AlignmentDirectional(
+                                                                        0, 1.0),
+                                                                  ),
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .only(
+                                                                    bottomLeft:
+                                                                        Radius.circular(
                                                                             0.0),
+                                                                    bottomRight:
+                                                                        Radius.circular(
+                                                                            0.0),
+                                                                    topLeft: Radius
+                                                                        .circular(
+                                                                            0.0),
+                                                                    topRight: Radius
+                                                                        .circular(
+                                                                            6.0),
+                                                                  ),
+                                                                ),
+                                                                alignment:
+                                                                    AlignmentDirectional(
+                                                                        0.00,
+                                                                        0.00),
                                                                 child: Text(
                                                                   'Transaction Trend',
                                                                   textAlign:
@@ -2203,6 +2519,19 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                 ),
                                                               ),
                                                             Container(
+                                                              width: 100.0,
+                                                              height: 46.0,
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                color: Color(
+                                                                    0xFFF5F5F5),
+                                                              ),
+                                                              alignment:
+                                                                  AlignmentDirectional(
+                                                                      -1.00,
+                                                                      0.00),
+                                                            ),
+                                                            Container(
                                                               width: 102.0,
                                                               height: 46.0,
                                                               decoration:
@@ -2353,7 +2682,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                               ),
                                                                                             ),
                                                                                           if ((String grade) {
-                                                                                            return grade == "New" ? true : false;
+                                                                                            return grade == "Presidential" ? true : false;
                                                                                           }(getJsonField(
                                                                                             dataItem,
                                                                                             r'''$..grade''',
@@ -2412,6 +2741,21 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                                 fit: BoxFit.contain,
                                                                                               ),
                                                                                             ),
+                                                                                          if ((String grade) {
+                                                                                            return grade == "New" ? true : false;
+                                                                                          }(getJsonField(
+                                                                                            dataItem,
+                                                                                            r'''$..grade''',
+                                                                                          ).toString()))
+                                                                                            ClipRRect(
+                                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                                              child: Image.asset(
+                                                                                                'assets/images/New.png',
+                                                                                                width: 24.0,
+                                                                                                height: 24.0,
+                                                                                                fit: BoxFit.contain,
+                                                                                              ),
+                                                                                            ),
                                                                                         ],
                                                                                       ),
                                                                                     ),
@@ -2462,6 +2806,107 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                           ),
                                                                                         ),
                                                                                       ),
+                                                                                    Container(
+                                                                                      width: 100.0,
+                                                                                      decoration: BoxDecoration(
+                                                                                        color: Colors.white,
+                                                                                      ),
+                                                                                      child: Row(
+                                                                                        mainAxisSize: MainAxisSize.max,
+                                                                                        mainAxisAlignment: MainAxisAlignment.center,
+                                                                                        children: [
+                                                                                          Expanded(
+                                                                                            child: Align(
+                                                                                              alignment: AlignmentDirectional(1.00, 0.00),
+                                                                                              child: Text(
+                                                                                                '${getJsonField(
+                                                                                                  dataItem,
+                                                                                                  r'''$..mtdperformance''',
+                                                                                                ).toString()}%',
+                                                                                                textAlign: TextAlign.center,
+                                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                      color: functions.colorChange(getJsonField(
+                                                                                                        dataItem,
+                                                                                                        r'''$..mtdperformance''',
+                                                                                                      )),
+                                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                                    ),
+                                                                                              ),
+                                                                                            ),
+                                                                                          ),
+                                                                                          if ((int transactionTrend) {
+                                                                                            return transactionTrend < 100 ? true : false;
+                                                                                          }(getJsonField(
+                                                                                            dataItem,
+                                                                                            r'''$..mtdperformance''',
+                                                                                          )))
+                                                                                            Expanded(
+                                                                                              child: Align(
+                                                                                                alignment: AlignmentDirectional(-1.00, 0.00),
+                                                                                                child: Padding(
+                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                                                                                                  child: ClipRRect(
+                                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                                    child: Image.asset(
+                                                                                                      'assets/images/MTD_Down.png',
+                                                                                                      width: 24.0,
+                                                                                                      height: 24.0,
+                                                                                                      fit: BoxFit.contain,
+                                                                                                    ),
+                                                                                                  ),
+                                                                                                ),
+                                                                                              ),
+                                                                                            ),
+                                                                                          if ((int transactionTrend) {
+                                                                                            return transactionTrend > 100 ? true : false;
+                                                                                          }(getJsonField(
+                                                                                            dataItem,
+                                                                                            r'''$..mtdperformance''',
+                                                                                          )))
+                                                                                            Expanded(
+                                                                                              child: Align(
+                                                                                                alignment: AlignmentDirectional(-1.00, 0.00),
+                                                                                                child: Padding(
+                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                                                                                                  child: ClipRRect(
+                                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                                    child: Image.asset(
+                                                                                                      'assets/images/MTD_Up.png',
+                                                                                                      width: 24.0,
+                                                                                                      height: 24.0,
+                                                                                                      fit: BoxFit.contain,
+                                                                                                    ),
+                                                                                                  ),
+                                                                                                ),
+                                                                                              ),
+                                                                                            ),
+                                                                                          if ((int transactionTrend) {
+                                                                                            return transactionTrend == 100 ? true : false;
+                                                                                          }(getJsonField(
+                                                                                            dataItem,
+                                                                                            r'''$..mtdperformance''',
+                                                                                          )))
+                                                                                            Expanded(
+                                                                                              child: Align(
+                                                                                                alignment: AlignmentDirectional(-1.00, 0.00),
+                                                                                                child: Padding(
+                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                                                                                                  child: ClipRRect(
+                                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                                    child: Image.asset(
+                                                                                                      'assets/images/MTD_Achive.png',
+                                                                                                      width: 24.0,
+                                                                                                      height: 24.0,
+                                                                                                      fit: BoxFit.contain,
+                                                                                                    ),
+                                                                                                  ),
+                                                                                                ),
+                                                                                              ),
+                                                                                            ),
+                                                                                        ],
+                                                                                      ),
+                                                                                    ),
                                                                                     Container(
                                                                                       width: 100.0,
                                                                                       decoration: BoxDecoration(
@@ -2697,6 +3142,13 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                             child:
                                                                 AllATMFilterWidget(
                                                               tabBar: 0,
+                                                              filterCount:
+                                                                  getJsonField(
+                                                                (_model.allBankDataResponse
+                                                                        ?.jsonBody ??
+                                                                    ''),
+                                                                r'''$.filterCount''',
+                                                              ),
                                                             ),
                                                           ),
                                                         );
@@ -2949,60 +3401,59 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                 ],
                                                               ),
                                                             ),
-                                                            Container(
-                                                              width: 102.0,
-                                                              height: 46.0,
-                                                              decoration:
-                                                                  BoxDecoration(
-                                                                gradient:
-                                                                    LinearGradient(
-                                                                  colors: [
-                                                                    Color(
-                                                                        0xFF3B3B3C),
-                                                                    Colors.black
-                                                                  ],
-                                                                  stops: [
-                                                                    0.0,
-                                                                    1.0
-                                                                  ],
-                                                                  begin:
-                                                                      AlignmentDirectional(
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.5,
                                                                           0.0,
-                                                                          -1.0),
-                                                                  end:
-                                                                      AlignmentDirectional(
-                                                                          0,
-                                                                          1.0),
-                                                                ),
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .only(
-                                                                  bottomLeft: Radius
-                                                                      .circular(
+                                                                          0.0,
                                                                           0.0),
-                                                                  bottomRight: Radius
-                                                                      .circular(
-                                                                          0.0),
-                                                                  topLeft: Radius
-                                                                      .circular(
-                                                                          0.0),
-                                                                  topRight: Radius
-                                                                      .circular(
-                                                                          6.0),
-                                                                ),
-                                                              ),
-                                                              alignment:
-                                                                  AlignmentDirectional(
-                                                                      0.00,
-                                                                      0.00),
-                                                              child: Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
+                                                              child: Container(
+                                                                width: 102.0,
+                                                                height: 46.0,
+                                                                decoration:
+                                                                    BoxDecoration(
+                                                                  gradient:
+                                                                      LinearGradient(
+                                                                    colors: [
+                                                                      Color(
+                                                                          0xFF3B3B3C),
+                                                                      Colors
+                                                                          .black
+                                                                    ],
+                                                                    stops: [
+                                                                      0.0,
+                                                                      1.0
+                                                                    ],
+                                                                    begin:
+                                                                        AlignmentDirectional(
                                                                             0.0,
-                                                                            0.0,
-                                                                            8.0,
+                                                                            -1.0),
+                                                                    end: AlignmentDirectional(
+                                                                        0, 1.0),
+                                                                  ),
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .only(
+                                                                    bottomLeft:
+                                                                        Radius.circular(
                                                                             0.0),
+                                                                    bottomRight:
+                                                                        Radius.circular(
+                                                                            0.0),
+                                                                    topLeft: Radius
+                                                                        .circular(
+                                                                            0.0),
+                                                                    topRight: Radius
+                                                                        .circular(
+                                                                            6.0),
+                                                                  ),
+                                                                ),
+                                                                alignment:
+                                                                    AlignmentDirectional(
+                                                                        0.00,
+                                                                        0.00),
                                                                 child: Text(
                                                                   'Uptime Trend',
                                                                   style: FlutterFlowTheme.of(
@@ -3336,7 +3787,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                               ),
                                                                                             ),
                                                                                           if ((String grade) {
-                                                                                            return grade == "New" ? true : false;
+                                                                                            return grade == "Presidential" ? true : false;
                                                                                           }(getJsonField(
                                                                                             dataItem,
                                                                                             r'''$..grade''',
@@ -3390,6 +3841,21 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                               borderRadius: BorderRadius.circular(8.0),
                                                                                               child: Image.asset(
                                                                                                 'assets/images/Bronze.png',
+                                                                                                width: 24.0,
+                                                                                                height: 24.0,
+                                                                                                fit: BoxFit.contain,
+                                                                                              ),
+                                                                                            ),
+                                                                                          if ((String grade) {
+                                                                                            return grade == "New" ? true : false;
+                                                                                          }(getJsonField(
+                                                                                            dataItem,
+                                                                                            r'''$..grade''',
+                                                                                          ).toString()))
+                                                                                            ClipRRect(
+                                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                                              child: Image.asset(
+                                                                                                'assets/images/New.png',
                                                                                                 width: 24.0,
                                                                                                 height: 24.0,
                                                                                                 fit: BoxFit.contain,
@@ -3647,144 +4113,226 @@ class _AllatmWidgetState extends State<AllatmWidget>
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).secondaryBackground,
                   ),
-                  child: Builder(
-                    builder: (context) {
-                      final data2 = getJsonField(
-                        functions.filter(
-                            FFAppState().allMachineDetails,
-                            FFAppState().searchValue1,
-                            FFAppState().transactionTrendFilter,
-                            FFAppState().gradeFilter,
-                            FFAppState().uptimeTrendFilter,
-                            FFAppState().bankFilter,
-                            FFAppState().locationFilter,
-                            FFAppState().downTimeFilter,
-                            FFAppState().sortByFilter),
-                        r'''$.data''',
-                      ).toList();
-                      return ListView.builder(
-                        padding: EdgeInsets.zero,
-                        shrinkWrap: true,
-                        scrollDirection: Axis.vertical,
-                        itemCount: data2.length,
-                        itemBuilder: (context, data2Index) {
-                          final data2Item = data2[data2Index];
-                          return Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                16.0, 24.0, 16.0, 0.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Expanded(
-                                  child: InkWell(
-                                    splashColor: Colors.transparent,
-                                    focusColor: Colors.transparent,
-                                    hoverColor: Colors.transparent,
-                                    highlightColor: Colors.transparent,
-                                    onTap: () async {
-                                      setState(() {
-                                        _model.searchFieldController?.text =
-                                            getJsonField(
-                                          data2Item,
-                                          r'''$..atmId''',
-                                        ).toString();
-                                      });
-                                      setState(() {
-                                        _model.autosearch = false;
-                                      });
-                                      if (_model.tabBarCurrentIndex == 0) {
-                                        setState(() {
-                                          FFAppState().searchValue1 =
-                                              _model.searchFieldController.text;
-                                          FFAppState().deleteSearchValue2();
-                                          FFAppState().searchValue2 = '';
-
-                                          FFAppState().deleteSearchValue3();
-                                          FFAppState().searchValue3 = '';
-                                        });
-                                      } else {
-                                        if (_model.tabBarCurrentIndex == 1) {
-                                          setState(() {
-                                            FFAppState().deleteSearchValue1();
-                                            FFAppState().searchValue1 = '';
-
-                                            FFAppState().searchValue2 = _model
-                                                .searchFieldController.text;
-                                            FFAppState().deleteSearchValue3();
-                                            FFAppState().searchValue3 = '';
-                                          });
-                                        } else {
-                                          setState(() {
-                                            FFAppState().deleteSearchValue1();
-                                            FFAppState().searchValue1 = '';
-
-                                            FFAppState().deleteSearchValue2();
-                                            FFAppState().searchValue2 = '';
-
-                                            FFAppState().searchValue3 = _model
-                                                .searchFieldController.text;
-                                          });
-                                        }
-                                      }
-                                    },
-                                    child: Text(
-                                      getJsonField(
-                                        data2Item,
-                                        r'''$..atmId''',
-                                      ).toString(),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMediumFamily,
-                                            color: Color(0xFF2D2D2D),
-                                            fontSize: 16.0,
-                                            fontWeight: FontWeight.bold,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMediumFamily),
-                                          ),
-                                    ),
-                                  ),
-                                ),
-                                Expanded(
-                                  child: Container(
-                                    width: 100.0,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
-                                    ),
-                                    alignment: AlignmentDirectional(1.00, 0.00),
-                                    child: Text(
-                                      getJsonField(
-                                        data2Item,
-                                        r'''$..location''',
-                                      ).toString(),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMediumFamily,
-                                            color: Color(0xFF737373),
-                                            fontSize: 12.0,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMediumFamily),
-                                          ),
-                                    ),
-                                  ),
-                                ),
-                              ],
+                  child: Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 16.0, 0.0),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          '${FFAppState().countFilter.toString()} found',
+                          style: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .bodyMediumFamily,
+                                fontSize: 16.0,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .bodyMediumFamily),
+                              ),
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 12.0, 0.0, 0.0),
+                          child: Container(
+                            width: MediaQuery.sizeOf(context).width * 1.0,
+                            height: MediaQuery.sizeOf(context).height * 1.0,
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
                             ),
-                          );
-                        },
-                      );
-                    },
+                            child: Builder(
+                              builder: (context) {
+                                final data2 = getJsonField(
+                                  functions.filter(
+                                      FFAppState().allMachineDetails, () {
+                                    if (_model.tabBarCurrentIndex == 0) {
+                                      return FFAppState().searchValue1;
+                                    } else if (_model.tabBarCurrentIndex == 1) {
+                                      return FFAppState().searchValue2;
+                                    } else if (_model.tabBarCurrentIndex == 2) {
+                                      return FFAppState().searchValue3;
+                                    } else {
+                                      return null;
+                                    }
+                                  }(),
+                                      FFAppState().transactionTrendFilter,
+                                      FFAppState().gradeFilter,
+                                      FFAppState().uptimeTrendFilter,
+                                      FFAppState().bankFilter,
+                                      FFAppState().locationFilter,
+                                      FFAppState().downTimeFilter,
+                                      FFAppState().sortByFilter),
+                                  r'''$.data''',
+                                ).toList();
+                                return ListView.builder(
+                                  padding: EdgeInsets.zero,
+                                  shrinkWrap: true,
+                                  scrollDirection: Axis.vertical,
+                                  itemCount: data2.length,
+                                  itemBuilder: (context, data2Index) {
+                                    final data2Item = data2[data2Index];
+                                    return Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 24.0, 0.0, 0.0),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Expanded(
+                                            child: InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                setState(() {
+                                                  _model.searchFieldController
+                                                      ?.text = getJsonField(
+                                                    data2Item,
+                                                    r'''$..atmId''',
+                                                  ).toString();
+                                                });
+                                                setState(() {
+                                                  _model.autosearch = false;
+                                                });
+                                                if (_model.tabBarCurrentIndex ==
+                                                    0) {
+                                                  setState(() {
+                                                    FFAppState().searchValue1 =
+                                                        _model
+                                                            .searchFieldController
+                                                            .text;
+                                                    FFAppState()
+                                                        .deleteSearchValue2();
+                                                    FFAppState().searchValue2 =
+                                                        '';
+
+                                                    FFAppState()
+                                                        .deleteSearchValue3();
+                                                    FFAppState().searchValue3 =
+                                                        '';
+                                                  });
+                                                } else {
+                                                  if (_model
+                                                          .tabBarCurrentIndex ==
+                                                      1) {
+                                                    setState(() {
+                                                      FFAppState()
+                                                          .deleteSearchValue1();
+                                                      FFAppState()
+                                                          .searchValue1 = '';
+
+                                                      FFAppState()
+                                                              .searchValue2 =
+                                                          _model
+                                                              .searchFieldController
+                                                              .text;
+                                                      FFAppState()
+                                                          .deleteSearchValue3();
+                                                      FFAppState()
+                                                          .searchValue3 = '';
+                                                    });
+                                                  } else {
+                                                    setState(() {
+                                                      FFAppState()
+                                                          .deleteSearchValue1();
+                                                      FFAppState()
+                                                          .searchValue1 = '';
+
+                                                      FFAppState()
+                                                          .deleteSearchValue2();
+                                                      FFAppState()
+                                                          .searchValue2 = '';
+
+                                                      FFAppState()
+                                                              .searchValue3 =
+                                                          _model
+                                                              .searchFieldController
+                                                              .text;
+                                                    });
+                                                  }
+                                                }
+                                              },
+                                              child: Text(
+                                                getJsonField(
+                                                  data2Item,
+                                                  r'''$..atmId''',
+                                                ).toString(),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMediumFamily,
+                                                          color:
+                                                              Color(0xFF2D2D2D),
+                                                          fontSize: 16.0,
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily),
+                                                        ),
+                                              ),
+                                            ),
+                                          ),
+                                          Expanded(
+                                            child: Container(
+                                              width: 100.0,
+                                              decoration: BoxDecoration(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryBackground,
+                                              ),
+                                              alignment: AlignmentDirectional(
+                                                  1.00, 0.00),
+                                              child: Text(
+                                                getJsonField(
+                                                  data2Item,
+                                                  r'''$..location''',
+                                                ).toString(),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMediumFamily,
+                                                          color:
+                                                              Color(0xFF737373),
+                                                          fontSize: 12.0,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily),
+                                                        ),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    );
+                                  },
+                                );
+                              },
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),

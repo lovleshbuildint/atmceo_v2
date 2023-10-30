@@ -16,9 +16,11 @@ class AllATMFilterWidget extends StatefulWidget {
   const AllATMFilterWidget({
     Key? key,
     required this.tabBar,
+    required this.filterCount,
   }) : super(key: key);
 
   final int? tabBar;
+  final int? filterCount;
 
   @override
   _AllATMFilterWidgetState createState() => _AllATMFilterWidgetState();
@@ -80,20 +82,65 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(
-                                'Filter',
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: FlutterFlowTheme.of(context)
-                                          .bodyMediumFamily,
-                                      color: Colors.black,
-                                      fontSize: 16.0,
-                                      useGoogleFonts: GoogleFonts.asMap()
-                                          .containsKey(
+                              Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Text(
+                                    'Filter',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily:
                                               FlutterFlowTheme.of(context)
-                                                  .bodyMediumFamily),
+                                                  .bodyMediumFamily,
+                                          color: Colors.black,
+                                          fontSize: 16.0,
+                                          useGoogleFonts: GoogleFonts.asMap()
+                                              .containsKey(
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMediumFamily),
+                                        ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        6.0, 0.0, 0.0, 0.0),
+                                    child: Container(
+                                      width: 20.0,
+                                      height: 20.0,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xFFFF0026),
+                                        shape: BoxShape.circle,
+                                      ),
+                                      alignment:
+                                          AlignmentDirectional(0.00, 0.00),
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            1.0, 1.0, 0.0, 0.0),
+                                        child: Text(
+                                          valueOrDefault<String>(
+                                            widget.filterCount?.toString(),
+                                            '0',
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMediumFamily,
+                                                color: Colors.white,
+                                                fontSize: 12.0,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMediumFamily),
+                                              ),
+                                        ),
+                                      ),
                                     ),
+                                  ),
+                                ],
                               ),
                               InkWell(
                                 splashColor: Colors.transparent,
@@ -165,22 +212,6 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                                 FFAppState().bankFilterTab = false;
                                 FFAppState().locationFilterTab = false;
                               });
-                              Navigator.pop(context);
-                              await showModalBottomSheet(
-                                isScrollControlled: true,
-                                backgroundColor: Colors.white,
-                                enableDrag: false,
-                                useSafeArea: true,
-                                context: context,
-                                builder: (context) {
-                                  return Padding(
-                                    padding: MediaQuery.viewInsetsOf(context),
-                                    child: AllATMFilterWidget(
-                                      tabBar: 0,
-                                    ),
-                                  );
-                                },
-                              ).then((value) => safeSetState(() {}));
                             },
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
@@ -228,22 +259,6 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                                 FFAppState().bankFilterTab = false;
                                 FFAppState().locationFilterTab = false;
                               });
-                              Navigator.pop(context);
-                              await showModalBottomSheet(
-                                isScrollControlled: true,
-                                backgroundColor: Colors.white,
-                                enableDrag: false,
-                                useSafeArea: true,
-                                context: context,
-                                builder: (context) {
-                                  return Padding(
-                                    padding: MediaQuery.viewInsetsOf(context),
-                                    child: AllATMFilterWidget(
-                                      tabBar: 0,
-                                    ),
-                                  );
-                                },
-                              ).then((value) => safeSetState(() {}));
                             },
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
@@ -291,22 +306,6 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                                 FFAppState().bankFilterTab = true;
                                 FFAppState().locationFilterTab = false;
                               });
-                              Navigator.pop(context);
-                              await showModalBottomSheet(
-                                isScrollControlled: true,
-                                backgroundColor: Colors.white,
-                                enableDrag: false,
-                                useSafeArea: true,
-                                context: context,
-                                builder: (context) {
-                                  return Padding(
-                                    padding: MediaQuery.viewInsetsOf(context),
-                                    child: AllATMFilterWidget(
-                                      tabBar: 0,
-                                    ),
-                                  );
-                                },
-                              ).then((value) => safeSetState(() {}));
                             },
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
@@ -354,22 +353,6 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                                 FFAppState().bankFilterTab = false;
                                 FFAppState().locationFilterTab = false;
                               });
-                              Navigator.pop(context);
-                              await showModalBottomSheet(
-                                isScrollControlled: true,
-                                backgroundColor: Colors.white,
-                                enableDrag: false,
-                                useSafeArea: true,
-                                context: context,
-                                builder: (context) {
-                                  return Padding(
-                                    padding: MediaQuery.viewInsetsOf(context),
-                                    child: AllATMFilterWidget(
-                                      tabBar: 0,
-                                    ),
-                                  );
-                                },
-                              ).then((value) => safeSetState(() {}));
                             },
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
@@ -417,22 +400,6 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                                 FFAppState().bankFilterTab = false;
                                 FFAppState().locationFilterTab = false;
                               });
-                              Navigator.pop(context);
-                              await showModalBottomSheet(
-                                isScrollControlled: true,
-                                backgroundColor: Colors.white,
-                                enableDrag: false,
-                                useSafeArea: true,
-                                context: context,
-                                builder: (context) {
-                                  return Padding(
-                                    padding: MediaQuery.viewInsetsOf(context),
-                                    child: AllATMFilterWidget(
-                                      tabBar: 0,
-                                    ),
-                                  );
-                                },
-                              ).then((value) => safeSetState(() {}));
                             },
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
@@ -480,22 +447,6 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                                 FFAppState().bankFilterTab = false;
                                 FFAppState().locationFilterTab = true;
                               });
-                              Navigator.pop(context);
-                              await showModalBottomSheet(
-                                isScrollControlled: true,
-                                backgroundColor: Colors.white,
-                                enableDrag: false,
-                                useSafeArea: true,
-                                context: context,
-                                builder: (context) {
-                                  return Padding(
-                                    padding: MediaQuery.viewInsetsOf(context),
-                                    child: AllATMFilterWidget(
-                                      tabBar: 0,
-                                    ),
-                                  );
-                                },
-                              ).then((value) => safeSetState(() {}));
                             },
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
@@ -765,6 +716,8 @@ class _AllATMFilterWidgetState extends State<AllATMFilterWidget> {
                                                       .fromSTEB(
                                                           4.0, 2.0, 4.0, 0.0),
                                               elevation: 0.0,
+                                              borderColor: Color(0xFFFF0026),
+                                              borderWidth: 2.0,
                                               borderRadius:
                                                   BorderRadius.circular(4.0),
                                             ),

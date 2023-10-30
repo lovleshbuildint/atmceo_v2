@@ -509,21 +509,12 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     3.0, 0.0, 0.0, 0.0),
-                                child: InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    context.pushNamed('test');
-                                  },
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(8.0),
-                                    child: Image.asset(
-                                      'assets/images/Logo.png',
-                                      height: 14.0,
-                                      fit: BoxFit.fill,
-                                    ),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(8.0),
+                                  child: Image.asset(
+                                    'assets/images/Logo.png',
+                                    height: 14.0,
+                                    fit: BoxFit.fill,
                                   ),
                                 ),
                               ),

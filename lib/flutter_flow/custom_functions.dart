@@ -292,7 +292,14 @@ dynamic filter(
     }
   }
 
-  return {'userId': mainData['userId'], 'data': filteredData};
+  int itemCount = filteredData.length;
+
+  return {
+    'userId': mainData['userId'],
+    'data': filteredData,
+    'itemCount': itemCount,
+    'filter': filterCount
+  };
 }
 
 dynamic getCommon(
@@ -314,8 +321,12 @@ dynamic getCommon(
       finalData.add(data);
     }
   }
-
-  return {'userId': mainData['userId'], 'data': finalData};
+  int itemCount = finalData.length;
+  return {
+    'userId': mainData['userId'],
+    'data': finalData,
+    'itemCount': itemCount
+  };
 }
 
 bool? newCustomFunction(

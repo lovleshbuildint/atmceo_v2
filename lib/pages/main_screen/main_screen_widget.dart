@@ -222,23 +222,64 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                           Align(
                                             alignment: AlignmentDirectional(
                                                 1.00, 0.00),
-                                            child: AutoSizeText(
-                                              'Last trx updated: ${dateTimeFormat('yMMMd', getCurrentTimestamp)}',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            'Helvetica2',
-                                                        color: Colors.white,
-                                                        fontSize: 12.0,
-                                                        useGoogleFonts: GoogleFonts
-                                                                .asMap()
-                                                            .containsKey(
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMediumFamily),
-                                                      ),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 2.0, 0.0, 0.0),
+                                              child: AutoSizeText(
+                                                'Last trx updated: ${dateTimeFormat('yMMMd', getCurrentTimestamp)}',
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Helvetica2',
+                                                          color: Colors.white,
+                                                          fontSize: 12.0,
+                                                          useGoogleFonts: GoogleFonts
+                                                                  .asMap()
+                                                              .containsKey(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMediumFamily),
+                                                        ),
+                                              ),
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    4.0, 0.0, 1.0, 0.0),
+                                            child: InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                context.goNamed(
+                                                  'profile',
+                                                  extra: <String, dynamic>{
+                                                    kTransitionInfoKey:
+                                                        TransitionInfo(
+                                                      hasTransition: true,
+                                                      transitionType:
+                                                          PageTransitionType
+                                                              .fade,
+                                                      duration: Duration(
+                                                          milliseconds: 0),
+                                                    ),
+                                                  },
+                                                );
+                                              },
+                                              child: ClipRRect(
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                                child: Image.asset(
+                                                  'assets/images/Group_1000004824.png',
+                                                  width: 24.0,
+                                                  fit: BoxFit.cover,
+                                                ),
+                                              ),
                                             ),
                                           ),
                                         ],

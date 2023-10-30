@@ -189,6 +189,10 @@ class FFAppState extends ChangeNotifier {
               (await secureStorage.getInt('ff_tokenTime'))!)
           : _tokenTime;
     });
+    await _safeInitAsync(() async {
+      _countFilter =
+          await secureStorage.getInt('ff_countFilter') ?? _countFilter;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -572,6 +576,17 @@ class FFAppState extends ChangeNotifier {
 
   void deleteTokenTime() {
     secureStorage.delete(key: 'ff_tokenTime');
+  }
+
+  int _countFilter = 0;
+  int get countFilter => _countFilter;
+  set countFilter(int _value) {
+    _countFilter = _value;
+    secureStorage.setInt('ff_countFilter', _value);
+  }
+
+  void deleteCountFilter() {
+    secureStorage.delete(key: 'ff_countFilter');
   }
 }
 
