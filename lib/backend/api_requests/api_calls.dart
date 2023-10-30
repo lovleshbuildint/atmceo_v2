@@ -98,7 +98,7 @@ class ProfileCall {
     return ApiManager.instance.makeApiCall(
       callName: 'Profile',
       apiUrl:
-          'https://ftweb .hitachi-payments.com:8443/uattest/profile/profiledetails',
+          'https://ftweb.hitachi-payments.com:8443/uattest/profile/profiledetails',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -424,7 +424,7 @@ class FieldTrakLoginCall {
     return ApiManager.instance.makeApiCall(
       callName: 'Field Trak Login',
       apiUrl:
-          'https://fieldtrak.hitachi-payments.com/FieldTrak2/API/v2/ValidateLogin_atmceo',
+          'https://fieldtrak.hitachi-payments.com/FieldTrak2/API/v2/ValidateLogin',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
