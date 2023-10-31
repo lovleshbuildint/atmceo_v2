@@ -424,7 +424,7 @@ class FieldTrakLoginCall {
     return ApiManager.instance.makeApiCall(
       callName: 'Field Trak Login',
       apiUrl:
-          'https://fieldtrak.hitachi-payments.com/FieldTrak2/API/v2/ValidateLogin_atmceo',
+          'https://fieldtrak.hitachi-payments.com/FieldTrak2/API/v2/ValidateLogin',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
