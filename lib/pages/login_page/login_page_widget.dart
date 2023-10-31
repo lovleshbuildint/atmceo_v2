@@ -527,7 +527,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 0.0),
                             child: Text(
-                              'APP VERSION 1.1',
+                              'APP VERSION 1.2',
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
