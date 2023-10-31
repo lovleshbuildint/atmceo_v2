@@ -143,7 +143,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
             ),
           ),
           child: FutureBuilder<ApiCallResponse>(
-            future: ProfileCall.call(
+            future: DashboardCopyCall.call(
               userId: FFAppState().userId,
               token: FFAppState().token,
             ),
@@ -161,7 +161,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                   ),
                 );
               }
-              final stackProfileResponse = snapshot.data!;
+              final stackDashboardCopyResponse = snapshot.data!;
               return Stack(
                 children: [
                   SingleChildScrollView(
@@ -256,7 +256,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                               highlightColor:
                                                   Colors.transparent,
                                               onTap: () async {
-                                                context.goNamed(
+                                                context.pushNamed(
                                                   'profile',
                                                   extra: <String, dynamic>{
                                                     kTransitionInfoKey:
@@ -318,7 +318,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                               Flexible(
                                                 child: Text(
                                                   getJsonField(
-                                                    stackProfileResponse
+                                                    stackDashboardCopyResponse
                                                         .jsonBody,
                                                     r'''$.data.userDetails.userFullName''',
                                                   ).toString(),
@@ -395,7 +395,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                                                   0.0),
                                                       child: Text(
                                                         getJsonField(
-                                                          stackProfileResponse
+                                                          stackDashboardCopyResponse
                                                               .jsonBody,
                                                           r'''$.data.userDetails.city''',
                                                         ).toString(),
@@ -451,19 +451,22 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                             setState(() {
                                               FFAppState().noOfMachinesDown =
                                                   getJsonField(
-                                                stackProfileResponse.jsonBody,
+                                                stackDashboardCopyResponse
+                                                    .jsonBody,
                                                 r'''$.data.actionsRequired.noOfMachinesDown''',
                                               ).toString();
                                               FFAppState()
                                                       .noOfMachineTransactionDip =
                                                   getJsonField(
-                                                stackProfileResponse.jsonBody,
+                                                stackDashboardCopyResponse
+                                                    .jsonBody,
                                                 r'''$.data.actionsRequired.noOfMachineTransactionDip''',
                                               ).toString();
                                               FFAppState()
                                                       .totalMachinesManaged =
                                                   getJsonField(
-                                                stackProfileResponse.jsonBody,
+                                                stackDashboardCopyResponse
+                                                    .jsonBody,
                                                 r'''$.data.targetData.totalMachinesManaged''',
                                               ).toString();
                                               FFAppState().visibilityState =
@@ -582,7 +585,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                                                 0.0, 0.0),
                                                     child: Text(
                                                       getJsonField(
-                                                        stackProfileResponse
+                                                        stackDashboardCopyResponse
                                                             .jsonBody,
                                                         r'''$.data.targetData.totalMachinesManaged''',
                                                       ).toString(),
@@ -779,12 +782,12 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                                             targetTransaction));
                                               }(
                                                   getJsonField(
-                                                    stackProfileResponse
+                                                    stackDashboardCopyResponse
                                                         .jsonBody,
                                                     r'''$.data.targetData.targetTransaction''',
                                                   ),
                                                   getJsonField(
-                                                    stackProfileResponse
+                                                    stackDashboardCopyResponse
                                                         .jsonBody,
                                                     r'''$.data.actualData.actualTransaction''',
                                                   )),
@@ -840,12 +843,12 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                                     : targetTransaction;
                                               }(
                                                   getJsonField(
-                                                    stackProfileResponse
+                                                    stackDashboardCopyResponse
                                                         .jsonBody,
                                                     r'''$.data.targetData.targetTransaction''',
                                                   ),
                                                   getJsonField(
-                                                    stackProfileResponse
+                                                    stackDashboardCopyResponse
                                                         .jsonBody,
                                                     r'''$.data.actualData.actualTransaction''',
                                                   ))).toString(),
@@ -989,21 +992,21 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                                   FFAppState()
                                                           .noOfMachinesDown =
                                                       getJsonField(
-                                                    stackProfileResponse
+                                                    stackDashboardCopyResponse
                                                         .jsonBody,
                                                     r'''$.data.actionsRequired.noOfMachinesDown''',
                                                   ).toString();
                                                   FFAppState()
                                                           .noOfMachineTransactionDip =
                                                       getJsonField(
-                                                    stackProfileResponse
+                                                    stackDashboardCopyResponse
                                                         .jsonBody,
                                                     r'''$.data.actionsRequired.noOfMachineTransactionDip''',
                                                   ).toString();
                                                   FFAppState()
                                                           .totalMachinesManaged =
                                                       getJsonField(
-                                                    stackProfileResponse
+                                                    stackDashboardCopyResponse
                                                         .jsonBody,
                                                     r'''$.data.targetData.totalMachinesManaged''',
                                                   ).toString();
@@ -1149,7 +1152,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                                                     0.0),
                                                         child: Text(
                                                           getJsonField(
-                                                            stackProfileResponse
+                                                            stackDashboardCopyResponse
                                                                 .jsonBody,
                                                             r'''$.data.actionsRequired.noOfMachinesDown''',
                                                           ).toString(),
@@ -1240,21 +1243,21 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                                   FFAppState()
                                                           .noOfMachinesDown =
                                                       getJsonField(
-                                                    stackProfileResponse
+                                                    stackDashboardCopyResponse
                                                         .jsonBody,
                                                     r'''$.data.actionsRequired.noOfMachinesDown''',
                                                   ).toString();
                                                   FFAppState()
                                                           .noOfMachineTransactionDip =
                                                       getJsonField(
-                                                    stackProfileResponse
+                                                    stackDashboardCopyResponse
                                                         .jsonBody,
                                                     r'''$.data.actionsRequired.noOfMachineTransactionDip''',
                                                   ).toString();
                                                   FFAppState()
                                                           .totalMachinesManaged =
                                                       getJsonField(
-                                                    stackProfileResponse
+                                                    stackDashboardCopyResponse
                                                         .jsonBody,
                                                     r'''$.data.targetData.totalMachinesManaged''',
                                                   ).toString();
@@ -1397,7 +1400,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                                                     0.0),
                                                         child: Text(
                                                           getJsonField(
-                                                            stackProfileResponse
+                                                            stackDashboardCopyResponse
                                                                 .jsonBody,
                                                             r'''$.data.actionsRequired.noOfMachineTransactionDip''',
                                                           ).toString(),
@@ -1608,18 +1611,18 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                         setState(() {
                                           FFAppState().noOfMachinesDown =
                                               getJsonField(
-                                            stackProfileResponse.jsonBody,
+                                            stackDashboardCopyResponse.jsonBody,
                                             r'''$.data.actionsRequired.noOfMachinesDown''',
                                           ).toString();
                                           FFAppState()
                                                   .noOfMachineTransactionDip =
                                               getJsonField(
-                                            stackProfileResponse.jsonBody,
+                                            stackDashboardCopyResponse.jsonBody,
                                             r'''$.data.actionsRequired.noOfMachineTransactionDip''',
                                           ).toString();
                                           FFAppState().totalMachinesManaged =
                                               getJsonField(
-                                            stackProfileResponse.jsonBody,
+                                            stackDashboardCopyResponse.jsonBody,
                                             r'''$.data.targetData.totalMachinesManaged''',
                                           ).toString();
                                           FFAppState().visibilityState = false;
@@ -1738,7 +1741,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                                                   TextSpan(
                                                                     text:
                                                                         getJsonField(
-                                                                      stackProfileResponse
+                                                                      stackDashboardCopyResponse
                                                                           .jsonBody,
                                                                       r'''$.data.actualData.actualUpTime''',
                                                                     ).toString(),
@@ -1791,7 +1794,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                                                           8.0),
                                                               child: Text(
                                                                 'of ${getJsonField(
-                                                                  stackProfileResponse
+                                                                  stackDashboardCopyResponse
                                                                       .jsonBody,
                                                                   r'''$.data.targetData.targetUptime''',
                                                                 ).toString()}%',
@@ -1866,7 +1869,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                                                             0.0),
                                                                 child: Text(
                                                                   '${getJsonField(
-                                                                    stackProfileResponse
+                                                                    stackDashboardCopyResponse
                                                                         .jsonBody,
                                                                     r'''$.data.trend.uptimeTrend''',
                                                                   ).toString()}%',
@@ -1993,18 +1996,18 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                         setState(() {
                                           FFAppState().noOfMachinesDown =
                                               getJsonField(
-                                            stackProfileResponse.jsonBody,
+                                            stackDashboardCopyResponse.jsonBody,
                                             r'''$.data.actionsRequired.noOfMachinesDown''',
                                           ).toString();
                                           FFAppState()
                                                   .noOfMachineTransactionDip =
                                               getJsonField(
-                                            stackProfileResponse.jsonBody,
+                                            stackDashboardCopyResponse.jsonBody,
                                             r'''$.data.actionsRequired.noOfMachineTransactionDip''',
                                           ).toString();
                                           FFAppState().totalMachinesManaged =
                                               getJsonField(
-                                            stackProfileResponse.jsonBody,
+                                            stackDashboardCopyResponse.jsonBody,
                                             r'''$.data.targetData.totalMachinesManaged''',
                                           ).toString();
                                           FFAppState().visibilityState = false;
@@ -2121,7 +2124,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                                           children: [
                                                             Text(
                                                               getJsonField(
-                                                                stackProfileResponse
+                                                                stackDashboardCopyResponse
                                                                     .jsonBody,
                                                                 r'''$.data.actualData.actualTransaction''',
                                                               ).toString(),
@@ -2150,7 +2153,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                                                           8.0),
                                                               child: Text(
                                                                 'of ${getJsonField(
-                                                                  stackProfileResponse
+                                                                  stackDashboardCopyResponse
                                                                       .jsonBody,
                                                                   r'''$.data.targetData.targetTransaction''',
                                                                 ).toString()}',
@@ -2225,7 +2228,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                                                             0.0),
                                                                 child: Text(
                                                                   getJsonField(
-                                                                    stackProfileResponse
+                                                                    stackDashboardCopyResponse
                                                                         .jsonBody,
                                                                     r'''$.data.trend.transactionTrend''',
                                                                   ).toString(),
@@ -2467,11 +2470,11 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                             : false;
                       }(
                           getJsonField(
-                            stackProfileResponse.jsonBody,
+                            stackDashboardCopyResponse.jsonBody,
                             r'''$.data.targetData.targetTransaction''',
                           ),
                           getJsonField(
-                            stackProfileResponse.jsonBody,
+                            stackDashboardCopyResponse.jsonBody,
                             r'''$.data.actualData.actualTransaction''',
                           ))))
                     Container(

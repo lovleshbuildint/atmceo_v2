@@ -844,8 +844,8 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                             Container(
                                                               width: (FFAppState()
                                                                           .atmInfoState
-                                                                      ? 440
-                                                                      : 180)
+                                                                      ? 450
+                                                                      : 190)
                                                                   .toDouble(),
                                                               height: 46.0,
                                                               decoration:
@@ -991,7 +991,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                           0.0,
                                                                           0.0),
                                                               child: Container(
-                                                                width: 282.0,
+                                                                width: 283.0,
                                                                 height: 46.0,
                                                                 decoration:
                                                                     BoxDecoration(
@@ -1058,7 +1058,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                               MainAxisSize.max,
                                                           children: [
                                                             Container(
-                                                              width: 120.0,
+                                                              width: 130.0,
                                                               height: 46.0,
                                                               decoration:
                                                                   BoxDecoration(
@@ -1260,7 +1260,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                               ),
                                                             ),
                                                             Container(
-                                                              width: 100.0,
+                                                              width: 102.0,
                                                               height: 46.0,
                                                               decoration:
                                                                   BoxDecoration(
@@ -1412,7 +1412,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   children: [
                                                                                     Container(
-                                                                                      width: 120.0,
+                                                                                      width: 130.0,
                                                                                       decoration: BoxDecoration(
                                                                                         color: Colors.white,
                                                                                       ),
@@ -1612,6 +1612,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                       child: Row(
                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                         mainAxisAlignment: MainAxisAlignment.center,
+                                                                                        crossAxisAlignment: CrossAxisAlignment.center,
                                                                                         children: [
                                                                                           Expanded(
                                                                                             child: Align(
@@ -1645,11 +1646,10 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                                 child: Padding(
                                                                                                   padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
                                                                                                   child: ClipRRect(
-                                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                                    borderRadius: BorderRadius.circular(0.0),
                                                                                                     child: Image.asset(
                                                                                                       'assets/images/MTD_Down.png',
                                                                                                       width: 24.0,
-                                                                                                      height: 24.0,
                                                                                                       fit: BoxFit.contain,
                                                                                                     ),
                                                                                                   ),
@@ -1668,11 +1668,10 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                                 child: Padding(
                                                                                                   padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
                                                                                                   child: ClipRRect(
-                                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                                    borderRadius: BorderRadius.circular(0.0),
                                                                                                     child: Image.asset(
                                                                                                       'assets/images/MTD_Up.png',
                                                                                                       width: 24.0,
-                                                                                                      height: 24.0,
                                                                                                       fit: BoxFit.contain,
                                                                                                     ),
                                                                                                   ),
@@ -1691,12 +1690,11 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                                 child: Padding(
                                                                                                   padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
                                                                                                   child: ClipRRect(
-                                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                                    borderRadius: BorderRadius.circular(0.0),
                                                                                                     child: Image.asset(
                                                                                                       'assets/images/MTD_Achive.png',
                                                                                                       width: 24.0,
-                                                                                                      height: 24.0,
-                                                                                                      fit: BoxFit.contain,
+                                                                                                      fit: BoxFit.scaleDown,
                                                                                                     ),
                                                                                                   ),
                                                                                                 ),
@@ -2082,8 +2080,8 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                             Container(
                                                               width: (FFAppState()
                                                                           .atmInfoState
-                                                                      ? 440
-                                                                      : 300)
+                                                                      ? 450
+                                                                      : 310)
                                                                   .toDouble(),
                                                               height: 46.0,
                                                               decoration:
@@ -2359,7 +2357,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                               MainAxisSize.max,
                                                           children: [
                                                             Container(
-                                                              width: 120.0,
+                                                              width: 130.0,
                                                               height: 46.0,
                                                               decoration:
                                                                   BoxDecoration(
@@ -2532,7 +2530,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                       0.00),
                                                             ),
                                                             Container(
-                                                              width: 102.0,
+                                                              width: 103.0,
                                                               height: 46.0,
                                                               decoration:
                                                                   BoxDecoration(
@@ -2615,7 +2613,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   children: [
                                                                                     Container(
-                                                                                      width: 120.0,
+                                                                                      width: 130.0,
                                                                                       decoration: BoxDecoration(
                                                                                         color: Colors.white,
                                                                                       ),
@@ -2847,11 +2845,10 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                                 child: Padding(
                                                                                                   padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
                                                                                                   child: ClipRRect(
-                                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                                    borderRadius: BorderRadius.circular(0.0),
                                                                                                     child: Image.asset(
                                                                                                       'assets/images/MTD_Down.png',
                                                                                                       width: 24.0,
-                                                                                                      height: 24.0,
                                                                                                       fit: BoxFit.contain,
                                                                                                     ),
                                                                                                   ),
@@ -2870,11 +2867,10 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                                 child: Padding(
                                                                                                   padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
                                                                                                   child: ClipRRect(
-                                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                                    borderRadius: BorderRadius.circular(0.0),
                                                                                                     child: Image.asset(
                                                                                                       'assets/images/MTD_Up.png',
                                                                                                       width: 24.0,
-                                                                                                      height: 24.0,
                                                                                                       fit: BoxFit.contain,
                                                                                                     ),
                                                                                                   ),
@@ -2893,11 +2889,10 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                                 child: Padding(
                                                                                                   padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
                                                                                                   child: ClipRRect(
-                                                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                                                    borderRadius: BorderRadius.circular(0.0),
                                                                                                     child: Image.asset(
                                                                                                       'assets/images/MTD_Achive.png',
                                                                                                       width: 24.0,
-                                                                                                      height: 24.0,
                                                                                                       fit: BoxFit.contain,
                                                                                                     ),
                                                                                                   ),
@@ -3263,8 +3258,8 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                             Container(
                                                               width: (FFAppState()
                                                                           .atmInfoState
-                                                                      ? 440
-                                                                      : 300)
+                                                                      ? 450
+                                                                      : 310)
                                                                   .toDouble(),
                                                               height: 46.0,
                                                               decoration:
@@ -3477,7 +3472,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                               MainAxisSize.max,
                                                           children: [
                                                             Container(
-                                                              width: 120.0,
+                                                              width: 130.0,
                                                               height: 46.0,
                                                               decoration:
                                                                   BoxDecoration(
@@ -3720,7 +3715,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   children: [
                                                                                     Container(
-                                                                                      width: 120.0,
+                                                                                      width: 130.0,
                                                                                       decoration: BoxDecoration(
                                                                                         color: Colors.white,
                                                                                       ),

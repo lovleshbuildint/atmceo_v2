@@ -2399,8 +2399,8 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                 children: [
                                                                   Container(
                                                                     width: (FFAppState().atmInfoState
-                                                                            ? 420
-                                                                            : 180)
+                                                                            ? 410
+                                                                            : 190)
                                                                         .toDouble(),
                                                                     height:
                                                                         46.0,
@@ -2580,7 +2580,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                 children: [
                                                                   Container(
                                                                     width:
-                                                                        120.0,
+                                                                        130.0,
                                                                     height:
                                                                         46.0,
                                                                     decoration:
@@ -2855,7 +2855,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                         children: [
                                                                                           Container(
-                                                                                            width: 120.0,
+                                                                                            width: 130.0,
                                                                                             decoration: BoxDecoration(
                                                                                               color: Colors.white,
                                                                                             ),
