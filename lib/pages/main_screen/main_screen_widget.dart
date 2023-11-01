@@ -226,7 +226,12 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 2.0, 0.0, 0.0),
                                               child: AutoSizeText(
-                                                'Last trx updated: ${dateTimeFormat('yMMMd', getCurrentTimestamp)}',
+                                                'Last trx updated: ${getJsonField(
+                                                  (_model.latestBankDataResponse
+                                                          ?.jsonBody ??
+                                                      ''),
+                                                  r'''$.data[0].date''',
+                                                ).toString()}',
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium

@@ -49,7 +49,5 @@ class AllatmModel extends FlutterFlowModel<AllatmWidget> {
 
   /// Action blocks are added here.
 
-  Future test(BuildContext context) async {}
-
   /// Additional helper methods are added here.
 }

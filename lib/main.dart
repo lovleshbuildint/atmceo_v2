@@ -1,4 +1,3 @@
-import '/custom_code/actions/index.dart' as actions;
 import 'package:provider/provider.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -15,10 +14,6 @@ import 'index.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   usePathUrlStrategy();
-
-  // Start initial custom actions code
-  await actions.screenshotsOff();
-  // End initial custom actions code
 
   final appState = FFAppState(); // Initialize FFAppState
   await appState.initializePersistedState();

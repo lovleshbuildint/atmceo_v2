@@ -275,7 +275,10 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 4.0, 0.0, 0.0),
                                 child: AutoSizeText(
-                                  'Last trx updated: ${dateTimeFormat('yMMMd', getCurrentTimestamp)}',
+                                  'Last trx updated: ${'Last updated: ${getJsonField(
+                                    FFAppState().LastUpdatedBankDataJson,
+                                    r'''$.data[0].date''',
+                                  ).toString()}'}',
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
