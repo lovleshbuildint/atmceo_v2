@@ -347,3 +347,15 @@ bool? newCustomFunction(
     return false;
   }
 }
+
+Color? colorChange2(int? mtdperformance) {
+  if (mtdperformance != null && mtdperformance < 100) {
+    return Color(0xFFB1000E);
+  } else if (mtdperformance != null &&
+      mtdperformance < 101 &&
+      mtdperformance > 99) {
+    return Color(0xFF9900);
+  } else if (mtdperformance != null && mtdperformance > 100) {
+    return Color(0xFF3AB100);
+  }
+}

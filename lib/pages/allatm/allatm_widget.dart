@@ -1625,9 +1625,9 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                                 textAlign: TextAlign.center,
                                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                       fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                                      color: functions.colorChange(getJsonField(
+                                                                                                      color: functions.colorChange2(getJsonField(
                                                                                                         dataItem,
-                                                                                                        r'''$..transactionTrend''',
+                                                                                                        r'''$..mtdperformance''',
                                                                                                       )),
                                                                                                       useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                                     ),
@@ -2824,7 +2824,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                                 textAlign: TextAlign.center,
                                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                       fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                                      color: functions.colorChange(getJsonField(
+                                                                                                      color: functions.colorChange2(getJsonField(
                                                                                                         dataItem,
                                                                                                         r'''$..mtdperformance''',
                                                                                                       )),
