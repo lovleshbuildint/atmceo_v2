@@ -320,7 +320,11 @@ class _ATMdetailsWidgetState extends State<ATMdetailsWidget> {
                                             alignment: AlignmentDirectional(
                                                 1.00, 0.00),
                                             child: AutoSizeText(
-                                              'Last trx updated: ${dateTimeFormat('yMMMd', getCurrentTimestamp)}',
+                                              'Last trx updated: ${getJsonField(
+                                                FFAppState()
+                                                    .LastUpdatedBankDataJson,
+                                                r'''$.data[0].date''',
+                                              ).toString()}',
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
