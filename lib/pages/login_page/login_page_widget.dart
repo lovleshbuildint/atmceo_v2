@@ -366,12 +366,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                 .ceoTokenResponse?.succeeded ??
                                             true)) {
                                           setState(() {
-                                            FFAppState().userId = getJsonField(
-                                              (_model.ceoTokenResponse
-                                                      ?.jsonBody ??
-                                                  ''),
-                                              r'''$.userId''',
-                                            ).toString();
+                                            FFAppState().userId = _model
+                                                .emailAddressController.text;
                                             FFAppState().token = getJsonField(
                                               (_model.ceoTokenResponse
                                                       ?.jsonBody ??
