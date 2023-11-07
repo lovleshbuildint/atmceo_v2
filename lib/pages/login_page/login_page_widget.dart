@@ -46,6 +46,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
     _model.emailAddressController ??=
         TextEditingController(text: FFAppState().userId);
     _model.emailAddressFocusNode ??= FocusNode();
+
     _model.passwordController ??= TextEditingController();
     _model.passwordFocusNode ??= FocusNode();
   }

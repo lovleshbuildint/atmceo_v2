@@ -322,6 +322,82 @@ class MachineDownCall {
       );
 }
 
+class MachineDownUATCall {
+  static Future<ApiCallResponse> call({
+    String? userId = '',
+    String? token = '',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "userId": "${userId}",
+  "token": "${token}",
+  "dipCount": 1,
+  "requestType": "GetTransactionDownAtmData",
+  "requestTimeStamp": "2023-05-25 10:56:35",
+  "sessionId": "3567"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'Machine Down UAT',
+      apiUrl: 'https://ftweb.hitachi-payments.com:8443/uattest/atm/down',
+      callType: ApiCallType.POST,
+      headers: {},
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+    );
+  }
+
+  static dynamic data(dynamic response) => getJsonField(
+        response,
+        r'''$.data''',
+        true,
+      );
+  static dynamic atmID(dynamic response) => getJsonField(
+        response,
+        r'''$.data[:].atmId''',
+        true,
+      );
+  static dynamic grade(dynamic response) => getJsonField(
+        response,
+        r'''$.data[:].grade''',
+        true,
+      );
+  static dynamic bank(dynamic response) => getJsonField(
+        response,
+        r'''$.data[:].bank''',
+        true,
+      );
+  static dynamic location(dynamic response) => getJsonField(
+        response,
+        r'''$.data[:].location''',
+        true,
+      );
+  static dynamic transactionTrend(dynamic response) => getJsonField(
+        response,
+        r'''$.data[:].transactionTrend''',
+        true,
+      );
+  static dynamic uptimeTrend(dynamic response) => getJsonField(
+        response,
+        r'''$.data[:].uptimeTrend''',
+        true,
+      );
+  static dynamic downTime(dynamic response) => getJsonField(
+        response,
+        r'''$.data[:].downtime''',
+        true,
+      );
+  static dynamic reason(dynamic response) => getJsonField(
+        response,
+        r'''$.data[:].reason''',
+        true,
+      );
+}
+
 class AllAtmCall {
   static Future<ApiCallResponse> call({
     String? userId = '',

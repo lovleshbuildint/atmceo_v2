@@ -178,6 +178,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
 
     _model.searchfieldController ??= TextEditingController();
     _model.searchfieldFocusNode ??= FocusNode();
+
     _model.tabBarController = TabController(
       vsync: this,
       length: 2,
