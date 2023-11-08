@@ -50,11 +50,11 @@ dynamic filter(
     } else if (sortByFilter == "Transaction: Low to High") {
       filteredData.sort(
           (a, b) => a['transactionTrend'].compareTo(b['transactionTrend']));
-    } else if (sortByFilter == "Uptime: High to low") {
+    } else if (sortByFilter == "Uptime: High to Low") {
       filteredData.sort((a, b) => b['uptimeTrend'].compareTo(a['uptimeTrend']));
     } else if (sortByFilter == "Uptime: Low to High") {
       filteredData.sort((a, b) => a['uptimeTrend'].compareTo(b['uptimeTrend']));
-    } else if (sortByFilter == "Downtime: High to low") {
+    } else if (sortByFilter == "Downtime: High to Low") {
       filteredData.sort((a, b) => b['downTime'].compareTo(a['downTime']));
     } else if (sortByFilter == "Downtime: Low to High") {
       filteredData.sort((a, b) => a['downTime'].compareTo(b['downTime']));

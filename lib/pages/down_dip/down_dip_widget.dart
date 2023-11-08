@@ -1408,7 +1408,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          150.0,
+                                                                          170.0,
                                                                       height:
                                                                           46.0,
                                                                       decoration:
@@ -1725,7 +1725,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                   ),
                                                                   Container(
                                                                     width:
-                                                                        152.0,
+                                                                        172.0,
                                                                     height:
                                                                         46.0,
                                                                     decoration:
@@ -2064,12 +2064,13 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                                             ),
                                                                                           ),
                                                                                           Container(
-                                                                                            width: 152.0,
+                                                                                            width: 172.0,
                                                                                             decoration: BoxDecoration(
                                                                                               color: Colors.white,
                                                                                             ),
                                                                                             child: Row(
                                                                                               mainAxisSize: MainAxisSize.max,
+                                                                                              crossAxisAlignment: CrossAxisAlignment.end,
                                                                                               children: [
                                                                                                 Expanded(
                                                                                                   flex: 2,
@@ -2903,7 +2904,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                               FFAppState().locationFilter,
                                                                               FFAppState().downTimeFilter,
                                                                               FFAppState().sortByFilter,
-                                                                              FFAppState().reasonFilter),
+                                                                              null),
                                                                           r'''$.data''',
                                                                         ).toList();
                                                                         return SingleChildScrollView(
