@@ -348,6 +348,33 @@ bool? newCustomFunction(
   }
 }
 
+dynamic getCommonReason(
+  dynamic mainData,
+  String? category,
+) {
+  // Map<String, dynamic> jsonDataMap = json.decode(mainData);
+  // List<dynamic> dataList = jsonDataMap['data'];
+
+  List<dynamic> commonAtmIdList = [];
+  List<dynamic> seenAtmIds = [];
+  List<dynamic> finalData = [];
+
+  for (dynamic data in mainData['data']) {
+    if (seenAtmIds.contains(data[category])) {
+      commonAtmIdList.add(data[category]);
+    } else {
+      seenAtmIds.add(data[category]);
+      finalData.add(data);
+    }
+  }
+  int itemCount = finalData.length;
+  return {
+    'userId': mainData['userId'],
+    'data': finalData,
+    'itemCount': itemCount
+  };
+}
+
 Color? colorChange2(int? mtdperformance) {
   if (mtdperformance != null && mtdperformance < 100) {
     return Color(0xFFB1000E);

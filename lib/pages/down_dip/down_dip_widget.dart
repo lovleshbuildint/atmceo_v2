@@ -81,7 +81,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
         token: FFAppState().token,
       );
       if ((_model.transactionDipResponse?.succeeded ?? true)) {
-        _model.machineDownResponse = await MachineDownCall.call(
+        _model.machineDownResponse = await MachineDownUATCall.call(
           userId: FFAppState().userId,
           token: FFAppState().token,
         );
@@ -1147,7 +1147,8 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                 ],
                                               ),
                                             ),
-                                            if (FFAppState().machineDownJson !=
+                                            if (FFAppState()
+                                                    .transactionDipJson !=
                                                 null)
                                               Expanded(
                                                 child: Padding(
@@ -1187,8 +1188,8 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                 children: [
                                                                   Container(
                                                                     width: (FFAppState().atmInfoState
-                                                                            ? 440
-                                                                            : 180)
+                                                                            ? 410
+                                                                            : 190)
                                                                         .toDouble(),
                                                                     height:
                                                                         46.0,
@@ -1299,105 +1300,107 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                       ],
                                                                     ),
                                                                   ),
-                                                                  Container(
-                                                                    width:
-                                                                        300.0,
-                                                                    height:
-                                                                        46.0,
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                      gradient:
-                                                                          LinearGradient(
-                                                                        colors: [
-                                                                          Color(
-                                                                              0xFF3B3B3C),
-                                                                          Colors
-                                                                              .black
-                                                                        ],
-                                                                        stops: [
-                                                                          0.0,
-                                                                          1.0
-                                                                        ],
-                                                                        begin: AlignmentDirectional(
+                                                                  Padding(
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.5,
                                                                             0.0,
-                                                                            -1.0),
-                                                                        end: AlignmentDirectional(
-                                                                            0,
-                                                                            1.0),
-                                                                      ),
-                                                                    ),
-                                                                    alignment:
-                                                                        AlignmentDirectional(
-                                                                            0.00,
-                                                                            0.00),
-                                                                    child: Text(
-                                                                      'ATM Performance',
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).primaryBackground,
-                                                                            useGoogleFonts:
-                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                          ),
-                                                                    ),
-                                                                  ),
-                                                                  Container(
-                                                                    width:
-                                                                        122.0,
-                                                                    height:
-                                                                        46.0,
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                      gradient:
-                                                                          LinearGradient(
-                                                                        colors: [
-                                                                          Color(
-                                                                              0xFF3B3B3C),
-                                                                          Colors
-                                                                              .black
-                                                                        ],
-                                                                        stops: [
-                                                                          0.0,
-                                                                          1.0
-                                                                        ],
-                                                                        begin: AlignmentDirectional(
                                                                             0.0,
-                                                                            -1.0),
-                                                                        end: AlignmentDirectional(
-                                                                            0,
-                                                                            1.0),
-                                                                      ),
-                                                                      borderRadius:
-                                                                          BorderRadius
-                                                                              .only(
-                                                                        bottomLeft:
-                                                                            Radius.circular(0.0),
-                                                                        bottomRight:
-                                                                            Radius.circular(0.0),
-                                                                        topLeft:
-                                                                            Radius.circular(0.0),
-                                                                        topRight:
-                                                                            Radius.circular(6.0),
-                                                                      ),
-                                                                    ),
-                                                                    alignment:
-                                                                        AlignmentDirectional(
-                                                                            -1.00,
-                                                                            0.00),
+                                                                            0.0),
                                                                     child:
-                                                                        Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          16.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                                        Container(
+                                                                      width:
+                                                                          282.0,
+                                                                      height:
+                                                                          46.0,
+                                                                      decoration:
+                                                                          BoxDecoration(
+                                                                        gradient:
+                                                                            LinearGradient(
+                                                                          colors: [
+                                                                            Color(0xFF3B3B3C),
+                                                                            Colors.black
+                                                                          ],
+                                                                          stops: [
+                                                                            0.0,
+                                                                            1.0
+                                                                          ],
+                                                                          begin: AlignmentDirectional(
+                                                                              0.0,
+                                                                              -1.0),
+                                                                          end: AlignmentDirectional(
+                                                                              0,
+                                                                              1.0),
+                                                                        ),
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(0.0),
+                                                                      ),
+                                                                      alignment: AlignmentDirectional(
+                                                                          0.00,
+                                                                          0.00),
                                                                       child:
                                                                           Text(
-                                                                        'Ticket Details',
+                                                                        'ATM Performance',
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .override(
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                              color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                            ),
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                  Padding(
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.5,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                    child:
+                                                                        Container(
+                                                                      width:
+                                                                          150.0,
+                                                                      height:
+                                                                          46.0,
+                                                                      decoration:
+                                                                          BoxDecoration(
+                                                                        gradient:
+                                                                            LinearGradient(
+                                                                          colors: [
+                                                                            Color(0xFF3B3B3C),
+                                                                            Colors.black
+                                                                          ],
+                                                                          stops: [
+                                                                            0.0,
+                                                                            1.0
+                                                                          ],
+                                                                          begin: AlignmentDirectional(
+                                                                              0.0,
+                                                                              -1.0),
+                                                                          end: AlignmentDirectional(
+                                                                              0,
+                                                                              1.0),
+                                                                        ),
+                                                                        borderRadius:
+                                                                            BorderRadius.only(
+                                                                          bottomLeft:
+                                                                              Radius.circular(0.0),
+                                                                          bottomRight:
+                                                                              Radius.circular(0.0),
+                                                                          topLeft:
+                                                                              Radius.circular(0.0),
+                                                                          topRight:
+                                                                              Radius.circular(6.0),
+                                                                        ),
+                                                                      ),
+                                                                      alignment: AlignmentDirectional(
+                                                                          0.00,
+                                                                          0.00),
+                                                                      child:
+                                                                          Text(
+                                                                        'Reasons',
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
@@ -1417,7 +1420,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                 children: [
                                                                   Container(
                                                                     width:
-                                                                        120.0,
+                                                                        130.0,
                                                                     height:
                                                                         46.0,
                                                                     decoration:
@@ -1489,7 +1492,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                       .atmInfoState)
                                                                     Container(
                                                                       width:
-                                                                          120.0,
+                                                                          100.0,
                                                                       height:
                                                                           46.0,
                                                                       decoration:
@@ -1573,6 +1576,43 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                     ),
                                                                     alignment:
                                                                         AlignmentDirectional(
+                                                                            0.00,
+                                                                            0.00),
+                                                                    child:
+                                                                        Padding(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          16.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                      child:
+                                                                          Text(
+                                                                        'Down\nTime',
+                                                                        textAlign:
+                                                                            TextAlign.center,
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .override(
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                              fontSize: 12.0,
+                                                                              fontWeight: FontWeight.bold,
+                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                            ),
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                  Container(
+                                                                    width:
+                                                                        100.0,
+                                                                    height:
+                                                                        46.0,
+                                                                    decoration:
+                                                                        BoxDecoration(
+                                                                      color: Color(
+                                                                          0xFFF5F5F5),
+                                                                    ),
+                                                                    alignment:
+                                                                        AlignmentDirectional(
                                                                             -1.00,
                                                                             0.00),
                                                                     child:
@@ -1586,7 +1626,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                           Text(
                                                                         'Transaction Trend',
                                                                         textAlign:
-                                                                            TextAlign.start,
+                                                                            TextAlign.center,
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
@@ -1599,8 +1639,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                     ),
                                                                   ),
                                                                   Container(
-                                                                    width:
-                                                                        100.0,
+                                                                    width: 82.0,
                                                                     height:
                                                                         46.0,
                                                                     decoration:
@@ -1608,105 +1647,44 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                       color: Color(
                                                                           0xFFF5F5F5),
                                                                     ),
-                                                                    alignment:
-                                                                        AlignmentDirectional(
-                                                                            -1.00,
-                                                                            0.00),
                                                                     child:
-                                                                        Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          16.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
+                                                                        Align(
+                                                                      alignment: AlignmentDirectional(
+                                                                          0.00,
+                                                                          0.00),
                                                                       child:
-                                                                          Text(
-                                                                        'Uptime Trend',
-                                                                        textAlign:
-                                                                            TextAlign.start,
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                              fontSize: 12.0,
-                                                                              fontWeight: FontWeight.bold,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                            ),
+                                                                          Padding(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            16.0,
+                                                                            0.0),
+                                                                        child:
+                                                                            Text(
+                                                                          'Uptime Trend',
+                                                                          textAlign:
+                                                                              TextAlign.center,
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .override(
+                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                fontSize: 12.0,
+                                                                                fontWeight: FontWeight.bold,
+                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                              ),
+                                                                        ),
                                                                       ),
                                                                     ),
                                                                   ),
                                                                   Container(
                                                                     width:
-                                                                        100.0,
+                                                                        152.0,
                                                                     height:
                                                                         46.0,
                                                                     decoration:
                                                                         BoxDecoration(
                                                                       color: Color(
                                                                           0xFFF5F5F5),
-                                                                    ),
-                                                                    alignment:
-                                                                        AlignmentDirectional(
-                                                                            -1.00,
-                                                                            0.00),
-                                                                    child:
-                                                                        Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          16.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                      child:
-                                                                          Text(
-                                                                        'Down Time',
-                                                                        textAlign:
-                                                                            TextAlign.start,
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                              fontSize: 12.0,
-                                                                              fontWeight: FontWeight.bold,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                            ),
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                  Container(
-                                                                    width:
-                                                                        122.0,
-                                                                    height:
-                                                                        46.0,
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                      color: Color(
-                                                                          0xFFF5F5F5),
-                                                                    ),
-                                                                    alignment:
-                                                                        AlignmentDirectional(
-                                                                            -1.00,
-                                                                            0.00),
-                                                                    child:
-                                                                        Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          16.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                      child:
-                                                                          Text(
-                                                                        'Reason',
-                                                                        textAlign:
-                                                                            TextAlign.start,
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                              fontSize: 12.0,
-                                                                              fontWeight: FontWeight.bold,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                            ),
-                                                                      ),
                                                                     ),
                                                                   ),
                                                                 ],
@@ -1765,7 +1743,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                                         mainAxisSize: MainAxisSize.max,
                                                                                         children: [
                                                                                           Container(
-                                                                                            width: 120.0,
+                                                                                            width: 130.0,
                                                                                             decoration: BoxDecoration(
                                                                                               color: Colors.white,
                                                                                             ),
@@ -1799,7 +1777,8 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                                                   textAlign: TextAlign.start,
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                         fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                                        fontSize: 12.0,
+                                                                                                        color: Color(0xFF2D2D2D),
+                                                                                                        fontSize: 14.0,
                                                                                                         fontWeight: FontWeight.normal,
                                                                                                         useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                                       ),
@@ -1911,7 +1890,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                                           ),
                                                                                           if (FFAppState().atmInfoState)
                                                                                             Container(
-                                                                                              width: 120.0,
+                                                                                              width: 100.0,
                                                                                               decoration: BoxDecoration(
                                                                                                 color: Colors.white,
                                                                                               ),
@@ -1926,7 +1905,8 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                                                   textAlign: TextAlign.start,
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                         fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                                        fontSize: 12.0,
+                                                                                                        color: Color(0xFF2D2D2D),
+                                                                                                        fontSize: 14.0,
                                                                                                         fontWeight: FontWeight.normal,
                                                                                                         useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                                       ),
@@ -1950,7 +1930,8 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                                                   textAlign: TextAlign.start,
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                         fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                                        fontSize: 12.0,
+                                                                                                        color: Color(0xFF2D2D2D),
+                                                                                                        fontSize: 14.0,
                                                                                                         fontWeight: FontWeight.normal,
                                                                                                         useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                                       ),
@@ -1962,57 +1943,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                                             decoration: BoxDecoration(
                                                                                               color: Colors.white,
                                                                                             ),
-                                                                                            alignment: AlignmentDirectional(-1.00, 0.00),
-                                                                                            child: Padding(
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
-                                                                                              child: Text(
-                                                                                                '${getJsonField(
-                                                                                                  dataItem,
-                                                                                                  r'''$..transactionTrend''',
-                                                                                                ).toString()}%',
-                                                                                                textAlign: TextAlign.center,
-                                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                                      color: functions.colorChange(getJsonField(
-                                                                                                        dataItem,
-                                                                                                        r'''$..transactionTrend''',
-                                                                                                      )),
-                                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                                    ),
-                                                                                              ),
-                                                                                            ),
-                                                                                          ),
-                                                                                          Container(
-                                                                                            width: 100.0,
-                                                                                            decoration: BoxDecoration(
-                                                                                              color: Colors.white,
-                                                                                            ),
-                                                                                            alignment: AlignmentDirectional(-1.00, 0.00),
-                                                                                            child: Padding(
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
-                                                                                              child: Text(
-                                                                                                '${getJsonField(
-                                                                                                  dataItem,
-                                                                                                  r'''$..uptimeTrend''',
-                                                                                                ).toString()}%',
-                                                                                                textAlign: TextAlign.center,
-                                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                                      color: functions.colorChange(getJsonField(
-                                                                                                        dataItem,
-                                                                                                        r'''$..uptimeTrend''',
-                                                                                                      )),
-                                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                                    ),
-                                                                                              ),
-                                                                                            ),
-                                                                                          ),
-                                                                                          Container(
-                                                                                            width: 100.0,
-                                                                                            decoration: BoxDecoration(
-                                                                                              color: Colors.white,
-                                                                                            ),
-                                                                                            alignment: AlignmentDirectional(-1.00, 0.00),
+                                                                                            alignment: AlignmentDirectional(0.00, 0.00),
                                                                                             child: Padding(
                                                                                               padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                               child: Text(
@@ -2033,26 +1964,96 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                                             ),
                                                                                           ),
                                                                                           Container(
-                                                                                            width: 120.0,
+                                                                                            width: 100.0,
                                                                                             decoration: BoxDecoration(
                                                                                               color: Colors.white,
                                                                                             ),
-                                                                                            alignment: AlignmentDirectional(-1.00, 0.00),
+                                                                                            alignment: AlignmentDirectional(0.00, 0.00),
                                                                                             child: Padding(
-                                                                                              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 10.0, 0.0),
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                               child: Text(
-                                                                                                getJsonField(
+                                                                                                '${getJsonField(
                                                                                                   dataItem,
-                                                                                                  r'''$..reason''',
-                                                                                                ).toString(),
-                                                                                                textAlign: TextAlign.start,
+                                                                                                  r'''$..transactionTrend''',
+                                                                                                ).toString()}%',
+                                                                                                textAlign: TextAlign.center,
                                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                       fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                                      fontSize: 12.0,
-                                                                                                      fontWeight: FontWeight.normal,
+                                                                                                      color: functions.colorChange(getJsonField(
+                                                                                                        dataItem,
+                                                                                                        r'''$..transactionTrend''',
+                                                                                                      )),
                                                                                                       useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                                     ),
                                                                                               ),
+                                                                                            ),
+                                                                                          ),
+                                                                                          Container(
+                                                                                            width: 80.0,
+                                                                                            decoration: BoxDecoration(
+                                                                                              color: Colors.white,
+                                                                                            ),
+                                                                                            child: Align(
+                                                                                              alignment: AlignmentDirectional(0.00, 0.00),
+                                                                                              child: Padding(
+                                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
+                                                                                                child: Text(
+                                                                                                  '${getJsonField(
+                                                                                                    dataItem,
+                                                                                                    r'''$..uptimeTrend''',
+                                                                                                  ).toString()}%',
+                                                                                                  textAlign: TextAlign.center,
+                                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                        fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                        color: functions.colorChange(getJsonField(
+                                                                                                          dataItem,
+                                                                                                          r'''$..uptimeTrend''',
+                                                                                                        )),
+                                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                                      ),
+                                                                                                ),
+                                                                                              ),
+                                                                                            ),
+                                                                                          ),
+                                                                                          Container(
+                                                                                            width: 152.0,
+                                                                                            decoration: BoxDecoration(
+                                                                                              color: Colors.white,
+                                                                                            ),
+                                                                                            child: Row(
+                                                                                              mainAxisSize: MainAxisSize.max,
+                                                                                              children: [
+                                                                                                Align(
+                                                                                                  alignment: AlignmentDirectional(-1.00, 0.00),
+                                                                                                  child: Padding(
+                                                                                                    padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                                                                                                    child: Text(
+                                                                                                      getJsonField(
+                                                                                                        dataItem,
+                                                                                                        r'''$..reason''',
+                                                                                                      ).toString().maybeHandleOverflow(
+                                                                                                            maxChars: 36,
+                                                                                                            replacement: '…',
+                                                                                                          ),
+                                                                                                      textAlign: TextAlign.start,
+                                                                                                      maxLines: 3,
+                                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                            color: Color(0xFF2D2D2D),
+                                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                                          ),
+                                                                                                    ),
+                                                                                                  ),
+                                                                                                ),
+                                                                                                Text(
+                                                                                                  'more',
+                                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                        fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                        color: Color(0xFFFF0026),
+                                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                                      ),
+                                                                                                ),
+                                                                                              ],
                                                                                             ),
                                                                                           ),
                                                                                         ],
@@ -2077,11 +2078,11 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                   ),
                                                 ),
                                               ),
-                                            if (FFAppState().machineDownJson ==
+                                            if (FFAppState()
+                                                    .transactionDipJson ==
                                                 null)
                                               Expanded(
-                                                child: Lottie.asset(
-                                                  'assets/lottie_animations/preLoader.json',
+                                                child: Container(
                                                   width:
                                                       MediaQuery.sizeOf(context)
                                                               .width *
@@ -2089,9 +2090,28 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                   height:
                                                       MediaQuery.sizeOf(context)
                                                               .height *
-                                                          0.15,
-                                                  fit: BoxFit.scaleDown,
-                                                  animate: true,
+                                                          1.0,
+                                                  decoration: BoxDecoration(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryBackground,
+                                                  ),
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          0.00, 0.00),
+                                                  child: Lottie.asset(
+                                                    'assets/lottie_animations/preLoader.json',
+                                                    width: MediaQuery.sizeOf(
+                                                                context)
+                                                            .width *
+                                                        1.0,
+                                                    height: MediaQuery.sizeOf(
+                                                                context)
+                                                            .height *
+                                                        0.15,
+                                                    fit: BoxFit.fitHeight,
+                                                    animate: true,
+                                                  ),
                                                 ),
                                               ),
                                           ],
@@ -2893,6 +2913,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                                                   textAlign: TextAlign.start,
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                         fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                        color: Color(0xFF2D2D2D),
                                                                                                         fontSize: 14.0,
                                                                                                         fontWeight: FontWeight.normal,
                                                                                                         useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
@@ -3020,6 +3041,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                                                   textAlign: TextAlign.start,
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                         fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                        color: Color(0xFF2D2D2D),
                                                                                                         fontSize: 14.0,
                                                                                                         fontWeight: FontWeight.normal,
                                                                                                         useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
@@ -3044,6 +3066,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                                                   textAlign: TextAlign.start,
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                         fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                        color: Color(0xFF2D2D2D),
                                                                                                         fontSize: 14.0,
                                                                                                         fontWeight: FontWeight.normal,
                                                                                                         useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),

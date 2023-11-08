@@ -26,7 +26,7 @@ class DownDipModel extends FlutterFlowModel<DownDipWidget> {
   final unfocusNode = FocusNode();
   // Stores action output result for [Backend Call - API (TransectionDip)] action in Down_Dip widget.
   ApiCallResponse? transactionDipResponse;
-  // Stores action output result for [Backend Call - API (Machine Down)] action in Down_Dip widget.
+  // Stores action output result for [Backend Call - API (Machine Down UAT)] action in Down_Dip widget.
   ApiCallResponse? machineDownResponse;
   // State field(s) for searchfield widget.
   FocusNode? searchfieldFocusNode;
