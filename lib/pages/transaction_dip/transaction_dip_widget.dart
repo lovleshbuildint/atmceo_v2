@@ -572,7 +572,7 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                                   children: [
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 12.0, 0.0, 0.0),
+                                          16.0, 12.0, 6.0, 0.0),
                                       child: Wrap(
                                         spacing: 0.0,
                                         runSpacing: 0.0,
@@ -823,7 +823,7 @@ class _TransactionDipWidgetState extends State<TransactionDipWidget> {
                                                                     context)
                                                                 .bodyMediumFamily,
                                                         color: Colors.white,
-                                                        fontSize: 16.0,
+                                                        fontSize: 14.0,
                                                         useGoogleFonts: GoogleFonts
                                                                 .asMap()
                                                             .containsKey(
