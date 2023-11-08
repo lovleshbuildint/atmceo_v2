@@ -358,12 +358,23 @@ dynamic getCommonReason(
   List<dynamic> commonAtmIdList = [];
   List<dynamic> seenAtmIds = [];
   List<dynamic> finalData = [];
+  List<dynamic> reasonList = [];
+  dynamic getCommaSaparated(String reasons) {
+    List<dynamic> list = reasons.split(',');
+    for (dynamic data in list) {
+      reasonList.add(data);
+    }
+  }
 
+  ;
   for (dynamic data in mainData['data']) {
-    if (seenAtmIds.contains(data[category])) {
-      commonAtmIdList.add(data[category]);
+    getCommaSaparated(data[category]);
+  }
+  for (dynamic data in reasonList) {
+    if (seenAtmIds.contains(data)) {
+      commonAtmIdList.add(data);
     } else {
-      seenAtmIds.add(data[category]);
+      seenAtmIds.add(data);
       finalData.add(data);
     }
   }
