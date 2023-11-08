@@ -354,7 +354,8 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                               FFAppState().bankFilter,
                                               FFAppState().locationFilter,
                                               FFAppState().downTimeFilter,
-                                              FFAppState().sortByFilter),
+                                              FFAppState().sortByFilter,
+                                              FFAppState().reasonFilter),
                                           r'''$.itemCount''',
                                         );
                                       });
@@ -402,7 +403,8 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                 FFAppState().bankFilter,
                                                 FFAppState().locationFilter,
                                                 FFAppState().downTimeFilter,
-                                                FFAppState().sortByFilter),
+                                                FFAppState().sortByFilter,
+                                                FFAppState().reasonFilter),
                                             r'''$.itemCount''',
                                           );
                                         });
@@ -449,7 +451,8 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                 FFAppState().bankFilter,
                                                 FFAppState().locationFilter,
                                                 FFAppState().downTimeFilter,
-                                                FFAppState().sortByFilter),
+                                                FFAppState().sortByFilter,
+                                                FFAppState().reasonFilter),
                                             r'''$.itemCount''',
                                           );
                                         });
@@ -1379,7 +1382,9 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                         FFAppState()
                                                                             .downTimeFilter,
                                                                         FFAppState()
-                                                                            .sortByFilter),
+                                                                            .sortByFilter,
+                                                                        FFAppState()
+                                                                            .reasonFilter),
                                                                     r'''$.data''',
                                                                   ).toList();
                                                                   return SingleChildScrollView(
@@ -2580,7 +2585,9 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                         FFAppState()
                                                                             .downTimeFilter,
                                                                         FFAppState()
-                                                                            .sortByFilter),
+                                                                            .sortByFilter,
+                                                                        FFAppState()
+                                                                            .reasonFilter),
                                                                     r'''$.data''',
                                                                   ).toList();
                                                                   return SingleChildScrollView(
@@ -3682,7 +3689,9 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                         FFAppState()
                                                                             .downTimeFilter,
                                                                         FFAppState()
-                                                                            .sortByFilter),
+                                                                            .sortByFilter,
+                                                                        FFAppState()
+                                                                            .reasonFilter),
                                                                     r'''$.data''',
                                                                   ).toList();
                                                                   return SingleChildScrollView(
@@ -4163,7 +4172,8 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                       FFAppState().bankFilter,
                                       FFAppState().locationFilter,
                                       FFAppState().downTimeFilter,
-                                      FFAppState().sortByFilter),
+                                      FFAppState().sortByFilter,
+                                      FFAppState().reasonFilter),
                                   r'''$.data''',
                                 ).toList();
                                 return ListView.builder(

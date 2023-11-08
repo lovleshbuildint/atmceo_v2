@@ -28,6 +28,7 @@ dynamic filter(
   String? locationFilter,
   String? downTimeFilter,
   String? sortByFilter,
+  String? reasonByFilter,
 ) {
   bool isFilterMultipleEnabled = false;
   int filterCount =
@@ -37,7 +38,8 @@ dynamic filter(
           (gradeFilter != null && gradeFilter.isNotEmpty ? 1 : 0) +
           (uptimeTrendFilter != null && uptimeTrendFilter.isNotEmpty ? 1 : 0) +
           (locationFilter != null && locationFilter.isNotEmpty ? 1 : 0) +
-          (bankFilter != null && bankFilter.isNotEmpty ? 1 : 0);
+          (bankFilter != null && bankFilter.isNotEmpty ? 1 : 0) +
+          (reasonByFilter != null && reasonByFilter.isNotEmpty ? 1 : 0);
 
   isFilterMultipleEnabled = filterCount > 1 ? true : false;
 
@@ -208,6 +210,22 @@ dynamic filter(
     if (gradeFilter != null && gradeFilter.isNotEmpty) {
       for (dynamic data in mainData['data']) {
         if (data['grade'].contains(gradeFilter)) {
+          filteredData1.add(data);
+        }
+      }
+      if (!isFilterMultipleEnabled) {
+        if (sortByFilter != null && sortByFilter.isNotEmpty) {
+          dynamic result = sortBy(filteredData1, sortByFilter);
+          return {'userId': mainData['userId'], 'data': result};
+        } else {
+          return {'userId': mainData['userId'], 'data': filteredData1};
+        }
+      }
+    }
+
+    if (reasonByFilter != null && reasonByFilter.isNotEmpty) {
+      for (dynamic data in mainData['data']) {
+        if (data['reason'].contains(reasonByFilter)) {
           filteredData1.add(data);
         }
       }

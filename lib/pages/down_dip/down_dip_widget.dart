@@ -408,7 +408,8 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                   FFAppState().bankFilter,
                                                   FFAppState().locationFilter,
                                                   FFAppState().downTimeFilter,
-                                                  FFAppState().sortByFilter),
+                                                  FFAppState().sortByFilter,
+                                                  FFAppState().reasonFilter),
                                               r'''$.itemCount''',
                                             );
                                           });
@@ -437,7 +438,8 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                   FFAppState().bankFilter,
                                                   FFAppState().locationFilter,
                                                   FFAppState().downTimeFilter,
-                                                  FFAppState().sortByFilter),
+                                                  FFAppState().sortByFilter,
+                                                  FFAppState().reasonFilter),
                                               r'''$.itemCount''',
                                             );
                                           });
@@ -1757,7 +1759,8 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                               FFAppState().bankFilter,
                                                                               FFAppState().locationFilter,
                                                                               FFAppState().downTimeFilter,
-                                                                              FFAppState().sortByFilter),
+                                                                              FFAppState().sortByFilter,
+                                                                              FFAppState().reasonFilter),
                                                                           r'''$.data''',
                                                                         ).toList();
                                                                         return SingleChildScrollView(
@@ -2893,7 +2896,8 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                               FFAppState().bankFilter,
                                                                               FFAppState().locationFilter,
                                                                               FFAppState().downTimeFilter,
-                                                                              FFAppState().sortByFilter),
+                                                                              FFAppState().sortByFilter,
+                                                                              FFAppState().reasonFilter),
                                                                           r'''$.data''',
                                                                         ).toList();
                                                                         return SingleChildScrollView(
@@ -3417,7 +3421,8 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                           FFAppState().bankFilter,
                                           FFAppState().locationFilter,
                                           FFAppState().downTimeFilter,
-                                          FFAppState().sortByFilter),
+                                          FFAppState().sortByFilter,
+                                          FFAppState().reasonFilter),
                                       r'''$.data''',
                                     ).toList();
                                     return ListView.builder(
