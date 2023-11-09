@@ -1386,7 +1386,7 @@ class _ATMdetailsWidgetState extends State<ATMdetailsWidget> {
                                                                   'MainScreen');
                                                             },
                                                             child: Text(
-                                                              '20',
+                                                              '21',
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodyMedium
