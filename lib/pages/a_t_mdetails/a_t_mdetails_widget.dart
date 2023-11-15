@@ -1292,7 +1292,10 @@ class _ATMdetailsWidgetState extends State<ATMdetailsWidget> {
                                                                 .viewInsetsOf(
                                                                     context),
                                                             child:
-                                                                WebViewWidget(),
+                                                                WebViewWidget(
+                                                              atmId:
+                                                                  widget.atmId!,
+                                                            ),
                                                           ),
                                                         ));
                                                       },

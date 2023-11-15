@@ -10,7 +10,12 @@ import 'web_view_model.dart';
 export 'web_view_model.dart';
 
 class WebViewWidget extends StatefulWidget {
-  const WebViewWidget({Key? key}) : super(key: key);
+  const WebViewWidget({
+    Key? key,
+    required this.atmId,
+  }) : super(key: key);
+
+  final String? atmId;
 
   @override
   _WebViewWidgetState createState() => _WebViewWidgetState();
@@ -50,7 +55,7 @@ class _WebViewWidgetState extends State<WebViewWidget> {
       ),
       child: FlutterFlowWebView(
         content:
-            'https://atmchamp.hitachi-payments.com/ATMChamp_App/ATMStatusReport.aspx?CECode=${FFAppState().cecode}&uname=${FFAppState().userId}',
+            'https://atmchamp.hitachi-payments.com/ATMChamp_App/ATMDetail.aspx?ATMID=${widget.atmId}&cecode=${FFAppState().cecode}&uname=${FFAppState().userId}&ftuserid=',
         width: MediaQuery.sizeOf(context).width * 1.0,
         height: MediaQuery.sizeOf(context).height * 1.0,
         verticalScroll: true,
