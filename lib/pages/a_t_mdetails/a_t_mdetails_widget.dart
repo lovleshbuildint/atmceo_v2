@@ -1271,6 +1271,7 @@ class _ATMdetailsWidgetState extends State<ATMdetailsWidget> {
                                                       backgroundColor:
                                                           Colors.transparent,
                                                       enableDrag: false,
+                                                      useSafeArea: true,
                                                       context: context,
                                                       builder: (context) {
                                                         return WebViewAware(
