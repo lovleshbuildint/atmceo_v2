@@ -3434,7 +3434,6 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                     ).toList();
                                     return ListView.builder(
                                       padding: EdgeInsets.zero,
-                                      shrinkWrap: true,
                                       scrollDirection: Axis.vertical,
                                       itemCount: data2.length,
                                       itemBuilder: (context, data2Index) {
