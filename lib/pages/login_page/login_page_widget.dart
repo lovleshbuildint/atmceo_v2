@@ -9,6 +9,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'login_page_model.dart';
 export 'login_page_model.dart';
 
@@ -363,6 +364,11 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                           userName: _model
                                               .emailAddressController.text,
                                         );
+                                        _model.champLoginResponse =
+                                            await ChampLoginCall.call(
+                                          userName: _model
+                                              .emailAddressController.text,
+                                        );
                                         if ((_model
                                                 .ceoTokenResponse?.succeeded ??
                                             true)) {
@@ -381,6 +387,12 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                             ).toString();
                                             FFAppState().tokenTime =
                                                 getCurrentTimestamp;
+                                            FFAppState().cecode = getJsonField(
+                                              (_model.champLoginResponse
+                                                      ?.jsonBody ??
+                                                  ''),
+                                              r'''$.Cecode''',
+                                            ).toString();
                                           });
 
                                           context.goNamed('MainScreen');
@@ -395,7 +407,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                         await showDialog(
                                           context: context,
                                           builder: (alertDialogContext) {
-                                            return AlertDialog(
+                                            return WebViewAware(
+                                                child: AlertDialog(
                                               title: Text('Alert'),
                                               content: Text(getJsonField(
                                                 (_model.fieldTrackLogin
@@ -411,7 +424,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                   child: Text('Ok'),
                                                 ),
                                               ],
-                                            );
+                                            ));
                                           },
                                         );
                                         setState(() {

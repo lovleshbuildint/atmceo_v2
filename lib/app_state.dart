@@ -193,6 +193,9 @@ class FFAppState extends ChangeNotifier {
       _countFilter =
           await secureStorage.getInt('ff_countFilter') ?? _countFilter;
     });
+    await _safeInitAsync(() async {
+      _cecode = await secureStorage.getString('ff_cecode') ?? _cecode;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -587,6 +590,17 @@ class FFAppState extends ChangeNotifier {
 
   void deleteCountFilter() {
     secureStorage.delete(key: 'ff_countFilter');
+  }
+
+  String _cecode = '';
+  String get cecode => _cecode;
+  set cecode(String _value) {
+    _cecode = _value;
+    secureStorage.setString('ff_cecode', _value);
+  }
+
+  void deleteCecode() {
+    secureStorage.delete(key: 'ff_cecode');
   }
 }
 

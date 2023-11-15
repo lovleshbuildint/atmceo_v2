@@ -12,6 +12,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'main_screen_model.dart';
 export 'main_screen_model.dart';
 
@@ -48,7 +49,8 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
           await showDialog(
             context: context,
             builder: (alertDialogContext) {
-              return AlertDialog(
+              return WebViewAware(
+                  child: AlertDialog(
                 title: Text('Alert'),
                 content: Text('Session Expired - Please Log in again.'),
                 actions: [
@@ -57,7 +59,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                     child: Text('Ok'),
                   ),
                 ],
-              );
+              ));
             },
           );
 
@@ -79,7 +81,8 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
         await showDialog(
           context: context,
           builder: (alertDialogContext) {
-            return AlertDialog(
+            return WebViewAware(
+                child: AlertDialog(
               title: Text('Alert'),
               content: Text('Session Expired - Please Log in again.'),
               actions: [
@@ -88,7 +91,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                   child: Text('Ok'),
                 ),
               ],
-            );
+            ));
           },
         );
 

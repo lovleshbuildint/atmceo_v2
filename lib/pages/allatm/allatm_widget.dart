@@ -14,6 +14,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'allatm_model.dart';
 export 'allatm_model.dart';
 
@@ -90,7 +91,8 @@ class _AllatmWidgetState extends State<AllatmWidget>
           await showDialog(
             context: context,
             builder: (alertDialogContext) {
-              return AlertDialog(
+              return WebViewAware(
+                  child: AlertDialog(
                 title: Text('Alert'),
                 content: Text('Session Expired - Please Log in again.'),
                 actions: [
@@ -99,7 +101,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                     child: Text('Ok'),
                   ),
                 ],
-              );
+              ));
             },
           );
 
@@ -121,7 +123,8 @@ class _AllatmWidgetState extends State<AllatmWidget>
         await showDialog(
           context: context,
           builder: (alertDialogContext) {
-            return AlertDialog(
+            return WebViewAware(
+                child: AlertDialog(
               title: Text('Alert'),
               content: Text('Session Expired - Please Log in again.'),
               actions: [
@@ -130,7 +133,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                   child: Text('Ok'),
                 ),
               ],
-            );
+            ));
           },
         );
 
@@ -711,7 +714,9 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                       useSafeArea: true,
                                                       context: context,
                                                       builder: (context) {
-                                                        return GestureDetector(
+                                                        return WebViewAware(
+                                                            child:
+                                                                GestureDetector(
                                                           onTap: () => _model
                                                                   .unfocusNode
                                                                   .canRequestFocus
@@ -739,7 +744,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                               ),
                                                             ),
                                                           ),
-                                                        );
+                                                        ));
                                                       },
                                                     ).then((value) =>
                                                         safeSetState(() {}));
@@ -1949,7 +1954,9 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                       useSafeArea: true,
                                                       context: context,
                                                       builder: (context) {
-                                                        return GestureDetector(
+                                                        return WebViewAware(
+                                                            child:
+                                                                GestureDetector(
                                                           onTap: () => _model
                                                                   .unfocusNode
                                                                   .canRequestFocus
@@ -1977,7 +1984,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                               ),
                                                             ),
                                                           ),
-                                                        );
+                                                        ));
                                                       },
                                                     ).then((value) =>
                                                         safeSetState(() {}));
@@ -3129,7 +3136,9 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                       useSafeArea: true,
                                                       context: context,
                                                       builder: (context) {
-                                                        return GestureDetector(
+                                                        return WebViewAware(
+                                                            child:
+                                                                GestureDetector(
                                                           onTap: () => _model
                                                                   .unfocusNode
                                                                   .canRequestFocus
@@ -3157,7 +3166,7 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                               ),
                                                             ),
                                                           ),
-                                                        );
+                                                        ));
                                                       },
                                                     ).then((value) =>
                                                         safeSetState(() {}));

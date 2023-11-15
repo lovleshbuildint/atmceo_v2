@@ -10,6 +10,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 
 class LoginPageModel extends FlutterFlowModel<LoginPageWidget> {
   ///  State fields for stateful widgets in this page.
@@ -28,6 +29,8 @@ class LoginPageModel extends FlutterFlowModel<LoginPageWidget> {
   ApiCallResponse? fieldTrackLogin;
   // Stores action output result for [Backend Call - API (User Token Main)] action in Button-Login widget.
   ApiCallResponse? ceoTokenResponse;
+  // Stores action output result for [Backend Call - API (Champ Login )] action in Button-Login widget.
+  ApiCallResponse? champLoginResponse;
 
   /// Initialization and disposal methods.
 

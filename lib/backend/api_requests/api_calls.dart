@@ -514,6 +514,31 @@ class FieldTrakLoginCall {
   }
 }
 
+class ChampLoginCall {
+  static Future<ApiCallResponse> call({
+    String? userName = '',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "userName": "${userName}"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'Champ Login ',
+      apiUrl:
+          'https://atmchamp.hitachi-payments.com/ATMChamp_api/Champ/User/ftlogin',
+      callType: ApiCallType.POST,
+      headers: {},
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+    );
+  }
+}
+
 class ApiPagingParams {
   int nextPageNumber = 0;
   int numItems = 0;

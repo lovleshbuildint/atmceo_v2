@@ -14,6 +14,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'down_dip_model.dart';
 export 'down_dip_model.dart';
 
@@ -95,7 +96,8 @@ class _DownDipWidgetState extends State<DownDipWidget>
             await showDialog(
               context: context,
               builder: (alertDialogContext) {
-                return AlertDialog(
+                return WebViewAware(
+                    child: AlertDialog(
                   title: Text('Alert'),
                   content: Text('Session Expired - Please Log in again.'),
                   actions: [
@@ -104,7 +106,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                       child: Text('Ok'),
                     ),
                   ],
-                );
+                ));
               },
             );
 
@@ -128,7 +130,8 @@ class _DownDipWidgetState extends State<DownDipWidget>
           await showDialog(
             context: context,
             builder: (alertDialogContext) {
-              return AlertDialog(
+              return WebViewAware(
+                  child: AlertDialog(
                 title: Text('Alert'),
                 content: Text('Session Expired - Please Log in again.'),
                 actions: [
@@ -137,7 +140,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                     child: Text('Ok'),
                   ),
                 ],
-              );
+              ));
             },
           );
 
@@ -153,7 +156,8 @@ class _DownDipWidgetState extends State<DownDipWidget>
         await showDialog(
           context: context,
           builder: (alertDialogContext) {
-            return AlertDialog(
+            return WebViewAware(
+                child: AlertDialog(
               title: Text('Alert'),
               content: Text('Session Expired - Please Log in again.'),
               actions: [
@@ -162,7 +166,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                   child: Text('Ok'),
                 ),
               ],
-            );
+            ));
           },
         );
 
@@ -599,7 +603,9 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                         useSafeArea: true,
                                                         context: context,
                                                         builder: (context) {
-                                                          return GestureDetector(
+                                                          return WebViewAware(
+                                                              child:
+                                                                  GestureDetector(
                                                             onTap: () => _model
                                                                     .unfocusNode
                                                                     .canRequestFocus
@@ -620,7 +626,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                 tabBar: 0,
                                                               ),
                                                             ),
-                                                          );
+                                                          ));
                                                         },
                                                       ).then((value) =>
                                                           safeSetState(() {}));
@@ -2331,7 +2337,9 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                             useSafeArea: true,
                                                             context: context,
                                                             builder: (context) {
-                                                              return GestureDetector(
+                                                              return WebViewAware(
+                                                                  child:
+                                                                      GestureDetector(
                                                                 onTap: () => _model
                                                                         .unfocusNode
                                                                         .canRequestFocus
@@ -2351,7 +2359,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                     tabBar: 1,
                                                                   ),
                                                                 ),
-                                                              );
+                                                              ));
                                                             },
                                                           ).then((value) =>
                                                               safeSetState(
