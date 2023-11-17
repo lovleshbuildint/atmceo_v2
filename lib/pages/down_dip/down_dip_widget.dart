@@ -1241,7 +1241,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                 children: [
                                                                   Container(
                                                                     width: (FFAppState().atmInfoState
-                                                                            ? 410
+                                                                            ? 430
                                                                             : 190)
                                                                         .toDouble(),
                                                                     height:
@@ -2486,7 +2486,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                 children: [
                                                                   Container(
                                                                     width: (FFAppState().atmInfoState
-                                                                            ? 410
+                                                                            ? 430
                                                                             : 190)
                                                                         .toDouble(),
                                                                     height:
