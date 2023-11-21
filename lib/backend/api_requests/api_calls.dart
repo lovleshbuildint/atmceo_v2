@@ -127,7 +127,7 @@ class DashboardCopyCall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'Dashboard Copy',
-      apiUrl: 'https://ftweb.hitachi-payments.com:8443/getdashborddata',
+      apiUrl: 'https://ftweb.hitachi-payments.com:8443/uattest/getdashborddata',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -186,7 +186,8 @@ class TransectionDipCall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'TransectionDip',
-      apiUrl: 'https://ftweb.hitachi-payments.com:8443/atm/transaction/dip',
+      apiUrl:
+          'https://ftweb.hitachi-payments.com:8443/uattest/atm/transaction/dip',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -413,7 +414,7 @@ class AllAtmCall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'ALL ATM',
-      apiUrl: 'https://ftweb.hitachi-payments.com:8443/all/atmdetails',
+      apiUrl: 'https://ftweb.hitachi-payments.com:8443/uattest/all/atmdetails',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -473,7 +474,7 @@ class ATMDetailsCall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'ATM Details',
-      apiUrl: 'https://ftweb.hitachi-payments.com:8443/getatmdetails',
+      apiUrl: 'https://ftweb.hitachi-payments.com:8443/uattest/getatmdetails',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
