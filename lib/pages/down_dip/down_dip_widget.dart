@@ -1363,7 +1363,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          282.0,
+                                                                          320.0,
                                                                       height:
                                                                           46.0,
                                                                       decoration:
@@ -1414,7 +1414,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          170.0,
+                                                                          280.0,
                                                                       height:
                                                                           46.0,
                                                                       decoration:
@@ -1629,6 +1629,43 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                     ),
                                                                     alignment:
                                                                         AlignmentDirectional(
+                                                                            -1.00,
+                                                                            0.00),
+                                                                    child:
+                                                                        Padding(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          16.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                      child:
+                                                                          Text(
+                                                                        'MTD Performance',
+                                                                        textAlign:
+                                                                            TextAlign.center,
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .override(
+                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                              fontSize: 12.0,
+                                                                              fontWeight: FontWeight.bold,
+                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                            ),
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                  Container(
+                                                                    width:
+                                                                        100.0,
+                                                                    height:
+                                                                        46.0,
+                                                                    decoration:
+                                                                        BoxDecoration(
+                                                                      color: Color(
+                                                                          0xFFF5F5F5),
+                                                                    ),
+                                                                    alignment:
+                                                                        AlignmentDirectional(
                                                                             0.00,
                                                                             0.00),
                                                                     child:
@@ -1640,7 +1677,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                           0.0),
                                                                       child:
                                                                           Text(
-                                                                        'Down\nTime',
+                                                                        'Down\nTime(hrs)',
                                                                         textAlign:
                                                                             TextAlign.center,
                                                                         style: FlutterFlowTheme.of(context)
@@ -1795,6 +1832,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                                       padding: EdgeInsetsDirectional.fromSTEB(0.0, 14.0, 0.0, 14.0),
                                                                                       child: Row(
                                                                                         mainAxisSize: MainAxisSize.max,
+                                                                                        mainAxisAlignment: MainAxisAlignment.center,
                                                                                         children: [
                                                                                           Container(
                                                                                             width: 130.0,
@@ -1997,6 +2035,105 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                                             decoration: BoxDecoration(
                                                                                               color: Colors.white,
                                                                                             ),
+                                                                                            child: Row(
+                                                                                              mainAxisSize: MainAxisSize.max,
+                                                                                              mainAxisAlignment: MainAxisAlignment.center,
+                                                                                              crossAxisAlignment: CrossAxisAlignment.center,
+                                                                                              children: [
+                                                                                                Expanded(
+                                                                                                  child: Align(
+                                                                                                    alignment: AlignmentDirectional(1.00, 0.00),
+                                                                                                    child: Text(
+                                                                                                      '${getJsonField(
+                                                                                                        dataItem,
+                                                                                                        r'''$..mtdperformance''',
+                                                                                                      ).toString()}%',
+                                                                                                      textAlign: TextAlign.center,
+                                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                            fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                            color: functions.colorChange2(getJsonField(
+                                                                                                              dataItem,
+                                                                                                              r'''$..mtdperformance''',
+                                                                                                            )),
+                                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                                          ),
+                                                                                                    ),
+                                                                                                  ),
+                                                                                                ),
+                                                                                                if ((int transactionTrend) {
+                                                                                                  return transactionTrend < 100 ? true : false;
+                                                                                                }(getJsonField(
+                                                                                                  dataItem,
+                                                                                                  r'''$..mtdperformance''',
+                                                                                                )))
+                                                                                                  Expanded(
+                                                                                                    child: Align(
+                                                                                                      alignment: AlignmentDirectional(-1.00, 0.00),
+                                                                                                      child: Padding(
+                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                                                                                                        child: ClipRRect(
+                                                                                                          borderRadius: BorderRadius.circular(0.0),
+                                                                                                          child: Image.asset(
+                                                                                                            'assets/images/MTD_Down.png',
+                                                                                                            width: 24.0,
+                                                                                                            fit: BoxFit.contain,
+                                                                                                          ),
+                                                                                                        ),
+                                                                                                      ),
+                                                                                                    ),
+                                                                                                  ),
+                                                                                                if ((int transactionTrend) {
+                                                                                                  return transactionTrend > 100 ? true : false;
+                                                                                                }(getJsonField(
+                                                                                                  dataItem,
+                                                                                                  r'''$..mtdperformance''',
+                                                                                                )))
+                                                                                                  Expanded(
+                                                                                                    child: Align(
+                                                                                                      alignment: AlignmentDirectional(-1.00, 0.00),
+                                                                                                      child: Padding(
+                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                                                                                                        child: ClipRRect(
+                                                                                                          borderRadius: BorderRadius.circular(0.0),
+                                                                                                          child: Image.asset(
+                                                                                                            'assets/images/MTD_Up.png',
+                                                                                                            width: 24.0,
+                                                                                                            fit: BoxFit.contain,
+                                                                                                          ),
+                                                                                                        ),
+                                                                                                      ),
+                                                                                                    ),
+                                                                                                  ),
+                                                                                                if ((int transactionTrend) {
+                                                                                                  return (transactionTrend == 100) ? true : false;
+                                                                                                }(getJsonField(
+                                                                                                  dataItem,
+                                                                                                  r'''$..mtdperformance''',
+                                                                                                )))
+                                                                                                  Expanded(
+                                                                                                    child: Align(
+                                                                                                      alignment: AlignmentDirectional(-1.00, 0.00),
+                                                                                                      child: Padding(
+                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                                                                                                        child: ClipRRect(
+                                                                                                          borderRadius: BorderRadius.circular(0.0),
+                                                                                                          child: Image.asset(
+                                                                                                            'assets/images/MTD_Achive.png',
+                                                                                                            width: 24.0,
+                                                                                                            fit: BoxFit.scaleDown,
+                                                                                                          ),
+                                                                                                        ),
+                                                                                                      ),
+                                                                                                    ),
+                                                                                                  ),
+                                                                                              ],
+                                                                                            ),
+                                                                                          ),
+                                                                                          Container(
+                                                                                            width: 100.0,
+                                                                                            decoration: BoxDecoration(
+                                                                                              color: Colors.white,
+                                                                                            ),
                                                                                             alignment: AlignmentDirectional(0.00, 0.00),
                                                                                             child: Padding(
                                                                                               padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
@@ -2004,7 +2141,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                                                 '${getJsonField(
                                                                                                   dataItem,
                                                                                                   r'''$..downTime''',
-                                                                                                ).toString()}%',
+                                                                                                ).toString()}',
                                                                                                 textAlign: TextAlign.center,
                                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                       fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
@@ -2110,6 +2247,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                           fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                                           color: Color(0xFFFF0026),
+                                                                                                          fontSize: 14.0,
                                                                                                           useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                                         ),
                                                                                                   ),

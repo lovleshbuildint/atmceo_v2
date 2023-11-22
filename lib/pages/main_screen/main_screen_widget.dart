@@ -1785,6 +1785,8 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                                                                               .bodyMediumFamily,
                                                                       color: Color(
                                                                           0xFF2D2D2D),
+                                                                      fontSize:
+                                                                          14.0,
                                                                       useGoogleFonts: GoogleFonts
                                                                               .asMap()
                                                                           .containsKey(

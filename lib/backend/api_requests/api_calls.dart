@@ -263,7 +263,7 @@ class MachineDownCall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'Machine Down',
-      apiUrl: 'https://ftweb.hitachi-payments.com:8443/atm/down',
+      apiUrl: 'https://ftweb.hitachi-payments.com:8443/uattest/atm/down',
       callType: ApiCallType.POST,
       headers: {},
       params: {},

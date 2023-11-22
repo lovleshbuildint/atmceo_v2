@@ -263,8 +263,8 @@ class _ATMdetailsWidgetState extends State<ATMdetailsWidget> {
                                               highlightColor:
                                                   Colors.transparent,
                                               onTap: () async {
-                                                context.goNamed(
-                                                  'Allatm',
+                                                context.pushNamed(
+                                                  'Down_Dip',
                                                   queryParameters: {
                                                     'tabBar': serializeParam(
                                                       0,
@@ -1449,7 +1449,7 @@ class _ATMdetailsWidgetState extends State<ATMdetailsWidget> {
                                                                       color: Color(
                                                                           0xFF2D2D2D),
                                                                       fontSize:
-                                                                          40.0,
+                                                                          16.0,
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .normal,
