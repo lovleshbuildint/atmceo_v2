@@ -196,6 +196,9 @@ class FFAppState extends ChangeNotifier {
     await _safeInitAsync(() async {
       _cecode = await secureStorage.getString('ff_cecode') ?? _cecode;
     });
+    await _safeInitAsync(() async {
+      _hardware = await secureStorage.getBool('ff_hardware') ?? _hardware;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -601,6 +604,17 @@ class FFAppState extends ChangeNotifier {
 
   void deleteCecode() {
     secureStorage.delete(key: 'ff_cecode');
+  }
+
+  bool _hardware = false;
+  bool get hardware => _hardware;
+  set hardware(bool _value) {
+    _hardware = _value;
+    secureStorage.setBool('ff_hardware', _value);
+  }
+
+  void deleteHardware() {
+    secureStorage.delete(key: 'ff_hardware');
   }
 }
 
