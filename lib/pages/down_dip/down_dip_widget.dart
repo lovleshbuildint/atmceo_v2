@@ -776,7 +776,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                   setState(() {
                                                                     FFAppState()
                                                                             .hardware =
-                                                                        false;
+                                                                        true;
                                                                   });
                                                                 },
                                                                 child:
