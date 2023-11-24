@@ -761,51 +761,73 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                           0.0,
                                                                           0.0,
                                                                           0.0),
-                                                              child: Container(
-                                                                height: 38.0,
-                                                                decoration:
-                                                                    BoxDecoration(
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryBackground,
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              6.0),
-                                                                  border: Border
-                                                                      .all(
-                                                                    color: Color(
-                                                                        0xFFF2F2F2),
-                                                                    width: 2.0,
-                                                                  ),
-                                                                ),
-                                                                alignment:
-                                                                    AlignmentDirectional(
-                                                                        0.00,
-                                                                        0.00),
-                                                                child: Padding(
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          16.0,
-                                                                          0.0,
-                                                                          16.0,
-                                                                          0.0),
-                                                                  child: Text(
-                                                                    'Hardware Down..',
-                                                                    textAlign:
-                                                                        TextAlign
-                                                                            .center,
-                                                                    style: FlutterFlowTheme.of(
+                                                              child: InkWell(
+                                                                splashColor: Colors
+                                                                    .transparent,
+                                                                focusColor: Colors
+                                                                    .transparent,
+                                                                hoverColor: Colors
+                                                                    .transparent,
+                                                                highlightColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                onTap:
+                                                                    () async {
+                                                                  setState(() {
+                                                                    FFAppState()
+                                                                            .hardware =
+                                                                        false;
+                                                                  });
+                                                                },
+                                                                child:
+                                                                    Container(
+                                                                  height: 38.0,
+                                                                  decoration:
+                                                                      BoxDecoration(
+                                                                    color: FlutterFlowTheme.of(
                                                                             context)
-                                                                        .bodyMedium
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                          color:
-                                                                              Colors.black,
-                                                                          useGoogleFonts:
-                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                        ),
+                                                                        .secondaryBackground,
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            6.0),
+                                                                    border:
+                                                                        Border
+                                                                            .all(
+                                                                      color: Color(
+                                                                          0xFFF2F2F2),
+                                                                      width:
+                                                                          2.0,
+                                                                    ),
+                                                                  ),
+                                                                  alignment:
+                                                                      AlignmentDirectional(
+                                                                          0.00,
+                                                                          0.00),
+                                                                  child:
+                                                                      Padding(
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            16.0,
+                                                                            0.0,
+                                                                            16.0,
+                                                                            0.0),
+                                                                    child: Text(
+                                                                      'Hardware Down..',
+                                                                      textAlign:
+                                                                          TextAlign
+                                                                              .center,
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                            color:
+                                                                                Colors.black,
+                                                                            useGoogleFonts:
+                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                          ),
+                                                                    ),
                                                                   ),
                                                                 ),
                                                               ),
@@ -1363,7 +1385,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          320.0,
+                                                                          380.0,
                                                                       height:
                                                                           46.0,
                                                                       decoration:
@@ -1414,7 +1436,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          280.0,
+                                                                          175.0,
                                                                       height:
                                                                           46.0,
                                                                       decoration:
@@ -3680,20 +3702,24 @@ class _DownDipWidgetState extends State<DownDipWidget>
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text(
-                              _model.reasons,
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: FlutterFlowTheme.of(context)
-                                        .bodyMediumFamily,
-                                    color: Color(0xFF2D2D2D),
-                                    fontWeight: FontWeight.normal,
-                                    useGoogleFonts: GoogleFonts.asMap()
-                                        .containsKey(
-                                            FlutterFlowTheme.of(context)
-                                                .bodyMediumFamily),
-                                  ),
+                            Expanded(
+                              child: Text(
+                                _model.reasons
+                                    .maybeHandleOverflow(maxChars: 100),
+                                textAlign: TextAlign.start,
+                                maxLines: 10,
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .bodyMediumFamily,
+                                      color: Color(0xFF2D2D2D),
+                                      useGoogleFonts: GoogleFonts.asMap()
+                                          .containsKey(
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMediumFamily),
+                                    ),
+                              ),
                             ),
                             InkWell(
                               splashColor: Colors.transparent,
@@ -3706,7 +3732,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                 });
                               },
                               child: Icon(
-                                Icons.clear,
+                                Icons.close,
                                 color: Color(0xFFFF0026),
                                 size: 20.0,
                               ),
