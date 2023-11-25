@@ -616,6 +616,12 @@ class FFAppState extends ChangeNotifier {
   void deleteHardware() {
     secureStorage.delete(key: 'ff_hardware');
   }
+
+  String _HardwareDown = '';
+  String get HardwareDown => _HardwareDown;
+  set HardwareDown(String _value) {
+    _HardwareDown = _value;
+  }
 }
 
 LatLng? _latLngFromString(String? val) {
