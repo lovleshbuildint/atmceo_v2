@@ -753,87 +753,87 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                     ),
                                                               ),
                                                             ),
-                                                            if (FFAppState()
-                                                                .hardware)
-                                                              Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            8.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                child: InkWell(
-                                                                  splashColor:
-                                                                      Colors
-                                                                          .transparent,
-                                                                  focusColor: Colors
-                                                                      .transparent,
-                                                                  hoverColor: Colors
-                                                                      .transparent,
-                                                                  highlightColor:
-                                                                      Colors
-                                                                          .transparent,
-                                                                  onTap:
-                                                                      () async {
-                                                                    setState(
-                                                                        () {
-                                                                      FFAppState()
-                                                                              .hardware =
-                                                                          true;
-                                                                      FFAppState()
-                                                                          .HardwareDown = '';
-                                                                    });
-                                                                  },
-                                                                  child:
-                                                                      Container(
-                                                                    height:
-                                                                        38.0,
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondaryBackground,
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              6.0),
-                                                                      border:
-                                                                          Border
-                                                                              .all(
-                                                                        color: Color(
-                                                                            0xFFF2F2F2),
-                                                                        width:
-                                                                            2.0,
-                                                                      ),
-                                                                    ),
-                                                                    alignment:
-                                                                        AlignmentDirectional(
-                                                                            0.00,
-                                                                            0.00),
-                                                                    child:
-                                                                        Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          16.0,
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          8.0,
                                                                           0.0,
-                                                                          16.0,
+                                                                          0.0,
                                                                           0.0),
-                                                                      child:
-                                                                          Text(
-                                                                        'Hardware Down..',
-                                                                        textAlign:
-                                                                            TextAlign.center,
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .override(
-                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                              color: Colors.black,
-                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                            ),
-                                                                      ),
+                                                              child: InkWell(
+                                                                splashColor: Colors
+                                                                    .transparent,
+                                                                focusColor: Colors
+                                                                    .transparent,
+                                                                hoverColor: Colors
+                                                                    .transparent,
+                                                                highlightColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                onTap:
+                                                                    () async {
+                                                                  setState(() {
+                                                                    FFAppState()
+                                                                            .hardware =
+                                                                        true;
+                                                                    FFAppState()
+                                                                        .HardwareDown = '';
+                                                                  });
+                                                                },
+                                                                child:
+                                                                    Container(
+                                                                  height: 38.0,
+                                                                  decoration:
+                                                                      BoxDecoration(
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .secondaryBackground,
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            6.0),
+                                                                    border:
+                                                                        Border
+                                                                            .all(
+                                                                      color: Color(
+                                                                          0xFFF2F2F2),
+                                                                      width:
+                                                                          2.0,
+                                                                    ),
+                                                                  ),
+                                                                  alignment:
+                                                                      AlignmentDirectional(
+                                                                          0.00,
+                                                                          0.00),
+                                                                  child:
+                                                                      Padding(
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            16.0,
+                                                                            0.0,
+                                                                            16.0,
+                                                                            0.0),
+                                                                    child: Text(
+                                                                      'Hardware Down..',
+                                                                      textAlign:
+                                                                          TextAlign
+                                                                              .center,
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                            color:
+                                                                                Colors.black,
+                                                                            useGoogleFonts:
+                                                                                GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                          ),
                                                                     ),
                                                                   ),
                                                                 ),
                                                               ),
+                                                            ),
                                                             Padding(
                                                               padding:
                                                                   EdgeInsetsDirectional
