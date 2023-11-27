@@ -582,7 +582,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                             Padding(
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(
-                                                      16.0, 19.0, 0.0, 0.0),
+                                                      16.0, 19.0, 16.0, 0.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
@@ -702,151 +702,243 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                     ),
                                                   ),
                                                   Expanded(
-                                                    child: Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      children: [
-                                                        Expanded(
-                                                          child: Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        12.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
-                                                            child:
-                                                                FlutterFlowChoiceChips(
-                                                              options:
-                                                                  (getJsonField(
-                                                                functions.getCommonReason(
-                                                                    FFAppState()
-                                                                        .machineDownJson,
-                                                                    'reason'),
-                                                                r'''$.data''',
-                                                                true,
-                                                              ) as List)
-                                                                      .map<String>(
-                                                                          (s) => s
-                                                                              .toString())
-                                                                      .toList()!
-                                                                      .map((label) =>
-                                                                          ChipData(
-                                                                              label))
-                                                                      .toList(),
-                                                              onChanged:
-                                                                  (val) async {
-                                                                setState(() => _model
-                                                                        .shortCCValue =
-                                                                    val?.first);
+                                                    child: Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  12.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                      child:
+                                                          SingleChildScrollView(
+                                                        scrollDirection:
+                                                            Axis.horizontal,
+                                                        child: Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          children: [
+                                                            InkWell(
+                                                              splashColor: Colors
+                                                                  .transparent,
+                                                              focusColor: Colors
+                                                                  .transparent,
+                                                              hoverColor: Colors
+                                                                  .transparent,
+                                                              highlightColor:
+                                                                  Colors
+                                                                      .transparent,
+                                                              onTap: () async {
                                                                 setState(() {
                                                                   FFAppState()
-                                                                          .reasonFilter =
-                                                                      _model
-                                                                          .shortCCValue!;
+                                                                      .deleteReasonFilter();
+                                                                  FFAppState()
+                                                                      .reasonFilter = '';
+                                                                });
+                                                                setState(() {
+                                                                  _model
+                                                                      .shortCCValueController
+                                                                      ?.reset();
                                                                 });
                                                               },
-                                                              selectedChipStyle:
-                                                                  ChipStyle(
-                                                                backgroundColor:
-                                                                    Color(
-                                                                        0xFFFF0026),
-                                                                textStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .bodyMediumFamily,
-                                                                      color: Colors
+                                                              child: Container(
+                                                                width: 42.0,
+                                                                height: 38.0,
+                                                                decoration:
+                                                                    BoxDecoration(
+                                                                  color: FFAppState().reasonFilter ==
+                                                                              null ||
+                                                                          FFAppState().reasonFilter ==
+                                                                              ''
+                                                                      ? Color(
+                                                                          0xFFFF0026)
+                                                                      : Colors
                                                                           .white,
-                                                                      fontSize:
-                                                                          14.0,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                    ),
-                                                                iconColor: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryText,
-                                                                iconSize: 0.0,
-                                                                labelPadding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            4.0,
-                                                                            3.0,
-                                                                            4.0,
-                                                                            3.0),
-                                                                elevation: 0.0,
-                                                                borderColor: Color(
-                                                                    0xFFFF0026),
-                                                                borderWidth:
-                                                                    2.0,
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            6.0),
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              6.0),
+                                                                  border: Border
+                                                                      .all(
+                                                                    color: FFAppState().reasonFilter ==
+                                                                                null ||
+                                                                            FFAppState().reasonFilter ==
+                                                                                ''
+                                                                        ? Color(
+                                                                            0xFFFF0026)
+                                                                        : Color(
+                                                                            0xFFF2F2F2),
+                                                                    width: 2.0,
+                                                                  ),
+                                                                ),
+                                                                alignment:
+                                                                    AlignmentDirectional(
+                                                                        0.00,
+                                                                        0.00),
+                                                                child: Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          2.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                  child: Text(
+                                                                    'All',
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                          color: FFAppState().reasonFilter == null || FFAppState().reasonFilter == ''
+                                                                              ? Colors.white
+                                                                              : Colors.black,
+                                                                          useGoogleFonts:
+                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                        ),
+                                                                  ),
+                                                                ),
                                                               ),
-                                                              unselectedChipStyle:
-                                                                  ChipStyle(
-                                                                backgroundColor:
-                                                                    Colors
-                                                                        .white,
-                                                                textStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .bodyMediumFamily,
-                                                                      color: Colors
-                                                                          .black,
-                                                                      useGoogleFonts: GoogleFonts
-                                                                              .asMap()
-                                                                          .containsKey(
-                                                                              FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                    ),
-                                                                iconColor: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondaryText,
-                                                                iconSize: 0.0,
-                                                                labelPadding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            4.0,
-                                                                            3.0,
-                                                                            4.0,
-                                                                            3.0),
-                                                                elevation: 0.0,
-                                                                borderColor: Color(
-                                                                    0xFFF2F2F2),
-                                                                borderWidth:
-                                                                    2.0,
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            6.0),
-                                                              ),
-                                                              chipSpacing: 12.0,
-                                                              rowSpacing: 12.0,
-                                                              multiselect:
-                                                                  false,
-                                                              alignment:
-                                                                  WrapAlignment
-                                                                      .start,
-                                                              controller: _model
-                                                                      .shortCCValueController ??=
-                                                                  FormFieldController<
-                                                                      List<
-                                                                          String>>(
-                                                                [],
-                                                              ),
-                                                              wrapped: false,
                                                             ),
-                                                          ),
+                                                            if (FFAppState()
+                                                                    .machineDownJson !=
+                                                                null)
+                                                              Padding(
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            12.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                child:
+                                                                    FlutterFlowChoiceChips(
+                                                                  options: (getJsonField(
+                                                                    functions.getCommonReason(
+                                                                        FFAppState()
+                                                                            .machineDownJson,
+                                                                        'reason'),
+                                                                    r'''$.data''',
+                                                                    true,
+                                                                  ) as List)
+                                                                      .map<String>((s) => s.toString())
+                                                                      .toList()!
+                                                                      .map((label) => ChipData(label))
+                                                                      .toList(),
+                                                                  onChanged:
+                                                                      (val) async {
+                                                                    setState(() =>
+                                                                        _model.shortCCValue =
+                                                                            val?.first);
+                                                                    setState(
+                                                                        () {
+                                                                      FFAppState()
+                                                                              .reasonFilter =
+                                                                          _model
+                                                                              .shortCCValue!;
+                                                                    });
+                                                                  },
+                                                                  selectedChipStyle:
+                                                                      ChipStyle(
+                                                                    backgroundColor:
+                                                                        Color(
+                                                                            0xFFFF0026),
+                                                                    textStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                          color:
+                                                                              Colors.white,
+                                                                          fontSize:
+                                                                              14.0,
+                                                                          useGoogleFonts:
+                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                        ),
+                                                                    iconColor: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryText,
+                                                                    iconSize:
+                                                                        0.0,
+                                                                    labelPadding:
+                                                                        EdgeInsetsDirectional.fromSTEB(
+                                                                            4.0,
+                                                                            3.0,
+                                                                            4.0,
+                                                                            3.0),
+                                                                    elevation:
+                                                                        0.0,
+                                                                    borderColor:
+                                                                        Color(
+                                                                            0xFFFF0026),
+                                                                    borderWidth:
+                                                                        2.0,
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            6.0),
+                                                                  ),
+                                                                  unselectedChipStyle:
+                                                                      ChipStyle(
+                                                                    backgroundColor:
+                                                                        Colors
+                                                                            .white,
+                                                                    textStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                          color:
+                                                                              Colors.black,
+                                                                          useGoogleFonts:
+                                                                              GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                        ),
+                                                                    iconColor: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .secondaryText,
+                                                                    iconSize:
+                                                                        0.0,
+                                                                    labelPadding:
+                                                                        EdgeInsetsDirectional.fromSTEB(
+                                                                            4.0,
+                                                                            3.0,
+                                                                            4.0,
+                                                                            3.0),
+                                                                    elevation:
+                                                                        0.0,
+                                                                    borderColor:
+                                                                        Color(
+                                                                            0xFFF2F2F2),
+                                                                    borderWidth:
+                                                                        2.0,
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            6.0),
+                                                                  ),
+                                                                  chipSpacing:
+                                                                      12.0,
+                                                                  rowSpacing:
+                                                                      12.0,
+                                                                  multiselect:
+                                                                      false,
+                                                                  alignment:
+                                                                      WrapAlignment
+                                                                          .start,
+                                                                  controller: _model
+                                                                          .shortCCValueController ??=
+                                                                      FormFieldController<
+                                                                          List<
+                                                                              String>>(
+                                                                    [],
+                                                                  ),
+                                                                  wrapped:
+                                                                      false,
+                                                                ),
+                                                              ),
+                                                          ],
                                                         ),
-                                                      ],
+                                                      ),
                                                     ),
                                                   ),
                                                 ],
@@ -949,8 +1041,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                 ],
                                               ),
                                             ),
-                                            if (FFAppState()
-                                                    .transactionDipJson !=
+                                            if (FFAppState().machineDownJson !=
                                                 null)
                                               Expanded(
                                                 child: Padding(
@@ -1163,7 +1254,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                     child:
                                                                         Container(
                                                                       width:
-                                                                          175.0,
+                                                                          172.0,
                                                                       height:
                                                                           46.0,
                                                                       decoration:
@@ -3436,12 +3527,27 @@ class _DownDipWidgetState extends State<DownDipWidget>
                     ),
                   ),
                 if (_model.more)
-                  Container(
-                    width: MediaQuery.sizeOf(context).width * 1.0,
-                    height: MediaQuery.sizeOf(context).height * 1.0,
-                    decoration: BoxDecoration(
-                      color: Color(0x3E000000),
+                  InkWell(
+                    splashColor: Colors.transparent,
+                    focusColor: Colors.transparent,
+                    hoverColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    onTap: () async {
+                      setState(() {
+                        _model.more = false;
+                      });
+                    },
+                    child: Container(
+                      width: MediaQuery.sizeOf(context).width * 1.0,
+                      height: MediaQuery.sizeOf(context).height * 1.0,
+                      decoration: BoxDecoration(
+                        color: Color(0x3E000000),
+                      ),
+                      alignment: AlignmentDirectional(0.00, 0.00),
                     ),
+                  ),
+                if (_model.more)
+                  Align(
                     alignment: AlignmentDirectional(0.00, 0.00),
                     child: Padding(
                       padding:
