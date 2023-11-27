@@ -864,9 +864,9 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                     labelPadding:
                                                                         EdgeInsetsDirectional.fromSTEB(
                                                                             4.0,
-                                                                            3.0,
+                                                                            0.0,
                                                                             4.0,
-                                                                            3.0),
+                                                                            0.0),
                                                                     elevation:
                                                                         0.0,
                                                                     borderColor:
