@@ -635,7 +635,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                     },
                                                     child: Container(
                                                       width: 87.0,
-                                                      height: 38.0,
+                                                      height: 40.0,
                                                       decoration: BoxDecoration(
                                                         color: FlutterFlowTheme
                                                                 .of(context)
@@ -743,7 +743,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                               },
                                                               child: Container(
                                                                 width: 42.0,
-                                                                height: 38.0,
+                                                                height: 40.0,
                                                                 decoration:
                                                                     BoxDecoration(
                                                                   color: FFAppState().reasonFilter ==
