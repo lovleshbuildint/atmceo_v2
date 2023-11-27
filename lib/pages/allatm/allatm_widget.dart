@@ -1454,6 +1454,13 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                                   ParamType.int,
                                                                                                 ),
                                                                                               }.withoutNulls,
+                                                                                              extra: <String, dynamic>{
+                                                                                                kTransitionInfoKey: TransitionInfo(
+                                                                                                  hasTransition: true,
+                                                                                                  transitionType: PageTransitionType.fade,
+                                                                                                  duration: Duration(milliseconds: 0),
+                                                                                                ),
+                                                                                              },
                                                                                             );
                                                                                           },
                                                                                           child: Text(
@@ -2663,6 +2670,13 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                                   ParamType.int,
                                                                                                 ),
                                                                                               }.withoutNulls,
+                                                                                              extra: <String, dynamic>{
+                                                                                                kTransitionInfoKey: TransitionInfo(
+                                                                                                  hasTransition: true,
+                                                                                                  transitionType: PageTransitionType.fade,
+                                                                                                  duration: Duration(milliseconds: 0),
+                                                                                                ),
+                                                                                              },
                                                                                             );
                                                                                           },
                                                                                           child: Text(
@@ -3773,6 +3787,13 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                                   ParamType.int,
                                                                                                 ),
                                                                                               }.withoutNulls,
+                                                                                              extra: <String, dynamic>{
+                                                                                                kTransitionInfoKey: TransitionInfo(
+                                                                                                  hasTransition: true,
+                                                                                                  transitionType: PageTransitionType.fade,
+                                                                                                  duration: Duration(milliseconds: 0),
+                                                                                                ),
+                                                                                              },
                                                                                             );
                                                                                           },
                                                                                           child: Text(
