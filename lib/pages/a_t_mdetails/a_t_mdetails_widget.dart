@@ -19,9 +19,11 @@ class ATMdetailsWidget extends StatefulWidget {
   const ATMdetailsWidget({
     Key? key,
     this.atmId,
+    required this.pageId,
   }) : super(key: key);
 
   final String? atmId;
+  final int? pageId;
 
   @override
   _ATMdetailsWidgetState createState() => _ATMdetailsWidgetState();
@@ -263,26 +265,49 @@ class _ATMdetailsWidgetState extends State<ATMdetailsWidget> {
                                               highlightColor:
                                                   Colors.transparent,
                                               onTap: () async {
-                                                context.pushNamed(
-                                                  'Down_Dip',
-                                                  queryParameters: {
-                                                    'tabBar': serializeParam(
-                                                      0,
-                                                      ParamType.int,
-                                                    ),
-                                                  }.withoutNulls,
-                                                  extra: <String, dynamic>{
-                                                    kTransitionInfoKey:
-                                                        TransitionInfo(
-                                                      hasTransition: true,
-                                                      transitionType:
-                                                          PageTransitionType
-                                                              .fade,
-                                                      duration: Duration(
-                                                          milliseconds: 0),
-                                                    ),
-                                                  },
-                                                );
+                                                if (widget.pageId == 0) {
+                                                  context.goNamed(
+                                                    'Allatm',
+                                                    queryParameters: {
+                                                      'tabBar': serializeParam(
+                                                        0,
+                                                        ParamType.int,
+                                                      ),
+                                                    }.withoutNulls,
+                                                    extra: <String, dynamic>{
+                                                      kTransitionInfoKey:
+                                                          TransitionInfo(
+                                                        hasTransition: true,
+                                                        transitionType:
+                                                            PageTransitionType
+                                                                .fade,
+                                                        duration: Duration(
+                                                            milliseconds: 0),
+                                                      ),
+                                                    },
+                                                  );
+                                                } else {
+                                                  context.goNamed(
+                                                    'Down_Dip',
+                                                    queryParameters: {
+                                                      'tabBar': serializeParam(
+                                                        0,
+                                                        ParamType.int,
+                                                      ),
+                                                    }.withoutNulls,
+                                                    extra: <String, dynamic>{
+                                                      kTransitionInfoKey:
+                                                          TransitionInfo(
+                                                        hasTransition: true,
+                                                        transitionType:
+                                                            PageTransitionType
+                                                                .fade,
+                                                        duration: Duration(
+                                                            milliseconds: 0),
+                                                      ),
+                                                    },
+                                                  );
+                                                }
                                               },
                                               child: Icon(
                                                 Icons.arrow_back_rounded,
@@ -369,6 +394,10 @@ class _ATMdetailsWidgetState extends State<ATMdetailsWidget> {
                                                         r'''$.data.atmId''',
                                                       ).toString(),
                                                       ParamType.String,
+                                                    ),
+                                                    'pageId': serializeParam(
+                                                      widget.pageId,
+                                                      ParamType.int,
                                                     ),
                                                   }.withoutNulls,
                                                 );

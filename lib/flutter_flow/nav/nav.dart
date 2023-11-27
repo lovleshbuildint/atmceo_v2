@@ -56,6 +56,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: '/aTMdetails',
           builder: (context, params) => ATMdetailsWidget(
             atmId: params.getParam('atmId', ParamType.String),
+            pageId: params.getParam('pageId', ParamType.int),
           ),
         ),
         FFRoute(

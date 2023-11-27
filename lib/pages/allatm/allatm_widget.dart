@@ -1449,6 +1449,10 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                                   ).toString(),
                                                                                                   ParamType.String,
                                                                                                 ),
+                                                                                                'pageId': serializeParam(
+                                                                                                  0,
+                                                                                                  ParamType.int,
+                                                                                                ),
                                                                                               }.withoutNulls,
                                                                                             );
                                                                                           },
@@ -2654,6 +2658,10 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                                   ).toString(),
                                                                                                   ParamType.String,
                                                                                                 ),
+                                                                                                'pageId': serializeParam(
+                                                                                                  0,
+                                                                                                  ParamType.int,
+                                                                                                ),
                                                                                               }.withoutNulls,
                                                                                             );
                                                                                           },
@@ -3759,6 +3767,10 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                                     r'''$..atmId''',
                                                                                                   ).toString(),
                                                                                                   ParamType.String,
+                                                                                                ),
+                                                                                                'pageId': serializeParam(
+                                                                                                  0,
+                                                                                                  ParamType.int,
                                                                                                 ),
                                                                                               }.withoutNulls,
                                                                                             );
