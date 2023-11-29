@@ -97,8 +97,7 @@ class ProfileCall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'Profile',
-      apiUrl:
-          'https://ftweb.hitachi-payments.com:8443/uattest/profile/profiledetails',
+      apiUrl: 'https://ftweb.hitachi-payments.com:8443/profile/profiledetails',
       callType: ApiCallType.POST,
       headers: {},
       params: {},

@@ -452,7 +452,8 @@ class _ATMdetailsWidgetState extends State<ATMdetailsWidget> {
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 8.0, 0.0, 0.0),
+                                                  .fromSTEB(
+                                                      0.0, 8.0, 0.0, 10.0),
                                               child: Text(
                                                 getJsonField(
                                                   aTMdetailsATMDetailsResponse
