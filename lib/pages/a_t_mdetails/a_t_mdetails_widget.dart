@@ -20,10 +20,12 @@ class ATMdetailsWidget extends StatefulWidget {
     Key? key,
     this.atmId,
     required this.pageId,
+    required this.banktype,
   }) : super(key: key);
 
   final String? atmId;
   final int? pageId;
+  final String? banktype;
 
   @override
   _ATMdetailsWidgetState createState() => _ATMdetailsWidgetState();
@@ -398,6 +400,10 @@ class _ATMdetailsWidgetState extends State<ATMdetailsWidget> {
                                                     'pageId': serializeParam(
                                                       widget.pageId,
                                                       ParamType.int,
+                                                    ),
+                                                    'banktype': serializeParam(
+                                                      widget.banktype,
+                                                      ParamType.String,
                                                     ),
                                                   }.withoutNulls,
                                                 );
@@ -1325,6 +1331,8 @@ class _ATMdetailsWidgetState extends State<ATMdetailsWidget> {
                                                                 WebViewWidget(
                                                               atmId:
                                                                   widget.atmId!,
+                                                              bankType: widget
+                                                                  .banktype!,
                                                             ),
                                                           ),
                                                         ));

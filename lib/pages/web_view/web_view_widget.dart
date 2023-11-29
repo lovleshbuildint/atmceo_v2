@@ -13,9 +13,11 @@ class WebViewWidget extends StatefulWidget {
   const WebViewWidget({
     Key? key,
     required this.atmId,
+    required this.bankType,
   }) : super(key: key);
 
   final String? atmId;
+  final String? bankType;
 
   @override
   _WebViewWidgetState createState() => _WebViewWidgetState();
@@ -54,8 +56,9 @@ class _WebViewWidgetState extends State<WebViewWidget> {
         color: FlutterFlowTheme.of(context).secondaryBackground,
       ),
       child: FlutterFlowWebView(
-        content:
-            'https://atmchamp.hitachi-payments.com/ATMChamp_App/ATMDetail.aspx?ATMID=${widget.atmId}&cecode=${FFAppState().cecode}&uname=${FFAppState().userId}&ftuserid=',
+        content: widget.bankType == 'Main'
+            ? 'https://atmchamp.hitachi-payments.com/ATMChamp_App/ATMDetail.aspx?ATMID=${widget.atmId}&cecode=${FFAppState().cecode}&uname=${FFAppState().userId}&ftuserid='
+            : 'https://atmchampc.hitachi-payments.com/ATMChamp_App/ATMDetail.aspx?ATMID=${widget.atmId}&cecode=${FFAppState().cecode}&uname=${FFAppState().userId}&ftuserid=',
         width: MediaQuery.sizeOf(context).width * 1.0,
         height: MediaQuery.sizeOf(context).height * 1.0,
         verticalScroll: true,

@@ -1453,6 +1453,13 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                                   0,
                                                                                                   ParamType.int,
                                                                                                 ),
+                                                                                                'banktype': serializeParam(
+                                                                                                  getJsonField(
+                                                                                                    dataItem,
+                                                                                                    r'''$..bankType''',
+                                                                                                  ).toString(),
+                                                                                                  ParamType.String,
+                                                                                                ),
                                                                                               }.withoutNulls,
                                                                                               extra: <String, dynamic>{
                                                                                                 kTransitionInfoKey: TransitionInfo(
@@ -2669,6 +2676,13 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                                   0,
                                                                                                   ParamType.int,
                                                                                                 ),
+                                                                                                'banktype': serializeParam(
+                                                                                                  getJsonField(
+                                                                                                    dataItem,
+                                                                                                    r'''$..bankType''',
+                                                                                                  ).toString(),
+                                                                                                  ParamType.String,
+                                                                                                ),
                                                                                               }.withoutNulls,
                                                                                               extra: <String, dynamic>{
                                                                                                 kTransitionInfoKey: TransitionInfo(
@@ -3785,6 +3799,13 @@ class _AllatmWidgetState extends State<AllatmWidget>
                                                                                                 'pageId': serializeParam(
                                                                                                   0,
                                                                                                   ParamType.int,
+                                                                                                ),
+                                                                                                'banktype': serializeParam(
+                                                                                                  getJsonField(
+                                                                                                    dataItem,
+                                                                                                    r'''$..bankType''',
+                                                                                                  ).toString(),
+                                                                                                  ParamType.String,
                                                                                                 ),
                                                                                               }.withoutNulls,
                                                                                               extra: <String, dynamic>{

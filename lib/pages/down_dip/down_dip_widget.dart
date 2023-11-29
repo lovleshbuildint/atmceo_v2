@@ -1702,6 +1702,13 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                                                         1,
                                                                                                         ParamType.int,
                                                                                                       ),
+                                                                                                      'banktype': serializeParam(
+                                                                                                        getJsonField(
+                                                                                                          dataItem,
+                                                                                                          r'''$..bankType''',
+                                                                                                        ).toString(),
+                                                                                                        ParamType.String,
+                                                                                                      ),
                                                                                                     }.withoutNulls,
                                                                                                     extra: <String, dynamic>{
                                                                                                       kTransitionInfoKey: TransitionInfo(
@@ -1996,10 +2003,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                                                 textAlign: TextAlign.center,
                                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                       fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                                      color: functions.colorChange(getJsonField(
-                                                                                                        dataItem,
-                                                                                                        r'''$..downTime''',
-                                                                                                      )),
+                                                                                                      color: Color(0xFF080808),
                                                                                                       useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                                     ),
                                                                                               ),
@@ -2977,6 +2981,13 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                                                       'pageId': serializeParam(
                                                                                                         1,
                                                                                                         ParamType.int,
+                                                                                                      ),
+                                                                                                      'banktype': serializeParam(
+                                                                                                        getJsonField(
+                                                                                                          dataItem,
+                                                                                                          r'''$..bankType''',
+                                                                                                        ).toString(),
+                                                                                                        ParamType.String,
                                                                                                       ),
                                                                                                     }.withoutNulls,
                                                                                                     extra: <String, dynamic>{
