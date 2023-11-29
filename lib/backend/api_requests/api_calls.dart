@@ -127,7 +127,7 @@ class DashboardCopyCall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'Dashboard Copy',
-      apiUrl: 'https://ftweb.hitachi-payments.com:8443/uattest/getdashborddata',
+      apiUrl: 'https://ftweb.hitachi-payments.com:8443/getdashborddata',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -186,8 +186,7 @@ class TransectionDipCall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'TransectionDip',
-      apiUrl:
-          'https://ftweb.hitachi-payments.com:8443/uattest/atm/transaction/dip',
+      apiUrl: 'https://ftweb.hitachi-payments.com:8443/atm/transaction/dip',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -263,7 +262,7 @@ class MachineDownCall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'Machine Down',
-      apiUrl: 'https://ftweb.hitachi-payments.com:8443/uattest/atm/down',
+      apiUrl: 'https://ftweb.hitachi-payments.com:8443/atm/down',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -339,7 +338,7 @@ class MachineDownUATCall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'Machine Down UAT',
-      apiUrl: 'https://ftweb.hitachi-payments.com:8443/uattest/atm/down',
+      apiUrl: 'https://ftweb.hitachi-payments.com:8443/atm/down',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -414,7 +413,7 @@ class AllAtmCall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'ALL ATM',
-      apiUrl: 'https://ftweb.hitachi-payments.com:8443/uattest/all/atmdetails',
+      apiUrl: 'https://ftweb.hitachi-payments.com:8443/all/atmdetails',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -474,7 +473,7 @@ class ATMDetailsCall {
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'ATM Details',
-      apiUrl: 'https://ftweb.hitachi-payments.com:8443/uattest/getatmdetails',
+      apiUrl: 'https://ftweb.hitachi-payments.com:8443/getatmdetails',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
