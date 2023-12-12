@@ -1948,12 +1948,18 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                                                     ),
                                                                                                   ),
                                                                                                 ),
-                                                                                                if ((int? transactionTrend) {
-                                                                                                  return transactionTrend != null && transactionTrend is int && transactionTrend < 100 ? true : false;
-                                                                                                }(getJsonField(
-                                                                                                  dataItem,
-                                                                                                  r'''$..mtdperformance''',
-                                                                                                )))
+                                                                                                if (getJsonField(
+                                                                                                          dataItem,
+                                                                                                          r'''$..mtdperformance''',
+                                                                                                        ) !=
+                                                                                                        null
+                                                                                                    ? ((int? transactionTrend) {
+                                                                                                        return transactionTrend != null && transactionTrend is int && transactionTrend < 100 ? true : false;
+                                                                                                      }(getJsonField(
+                                                                                                        dataItem,
+                                                                                                        r'''$..mtdperformance''',
+                                                                                                      )))
+                                                                                                    : false)
                                                                                                   Expanded(
                                                                                                     child: Align(
                                                                                                       alignment: AlignmentDirectional(-1.00, 0.00),
@@ -1970,12 +1976,18 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                                                       ),
                                                                                                     ),
                                                                                                   ),
-                                                                                                if ((int transactionTrend) {
-                                                                                                  return transactionTrend != null && transactionTrend is int && transactionTrend > 100 ? true : false;
-                                                                                                }(getJsonField(
-                                                                                                  dataItem,
-                                                                                                  r'''$..mtdperformance''',
-                                                                                                )))
+                                                                                                if (getJsonField(
+                                                                                                          dataItem,
+                                                                                                          r'''$..mtdperformance''',
+                                                                                                        ) !=
+                                                                                                        null
+                                                                                                    ? ((int transactionTrend) {
+                                                                                                        return transactionTrend != null && transactionTrend is int && transactionTrend > 100 ? true : false;
+                                                                                                      }(getJsonField(
+                                                                                                        dataItem,
+                                                                                                        r'''$..mtdperformance''',
+                                                                                                      )))
+                                                                                                    : false)
                                                                                                   Expanded(
                                                                                                     child: Align(
                                                                                                       alignment: AlignmentDirectional(-1.00, 0.00),
