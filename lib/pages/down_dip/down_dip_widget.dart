@@ -1845,33 +1845,36 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                                             ),
                                                                                           ),
                                                                                           if (FFAppState().atmInfoState)
-                                                                                            Container(
-                                                                                              width: 100.0,
-                                                                                              decoration: BoxDecoration(
-                                                                                                color: Colors.white,
-                                                                                              ),
-                                                                                              alignment: AlignmentDirectional(-1.00, 0.00),
-                                                                                              child: Padding(
-                                                                                                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
-                                                                                                child: Text(
-                                                                                                  getJsonField(
+                                                                                            Padding(
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 15.0, 0.0),
+                                                                                              child: Container(
+                                                                                                width: 100.0,
+                                                                                                decoration: BoxDecoration(
+                                                                                                  color: Colors.white,
+                                                                                                ),
+                                                                                                alignment: AlignmentDirectional(-1.00, 0.00),
+                                                                                                child: Padding(
+                                                                                                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 30.0, 0.0),
+                                                                                                  child: Text(
+                                                                                                    getJsonField(
+                                                                                                              dataItem,
+                                                                                                              r'''$..bankName''',
+                                                                                                            ) !=
+                                                                                                            null
+                                                                                                        ? getJsonField(
                                                                                                             dataItem,
                                                                                                             r'''$..bankName''',
-                                                                                                          ) !=
-                                                                                                          null
-                                                                                                      ? getJsonField(
-                                                                                                          dataItem,
-                                                                                                          r'''$..bankName''',
-                                                                                                        ).toString()
-                                                                                                      : '-',
-                                                                                                  textAlign: TextAlign.start,
-                                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                        fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                                        color: Color(0xFF2D2D2D),
-                                                                                                        fontSize: 14.0,
-                                                                                                        fontWeight: FontWeight.normal,
-                                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                                      ),
+                                                                                                          ).toString()
+                                                                                                        : '-',
+                                                                                                    textAlign: TextAlign.start,
+                                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                          fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                          color: Color(0xFF2D2D2D),
+                                                                                                          fontSize: 14.0,
+                                                                                                          fontWeight: FontWeight.normal,
+                                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                                        ),
+                                                                                                  ),
                                                                                                 ),
                                                                                               ),
                                                                                             ),
@@ -1918,7 +1921,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                                               children: [
                                                                                                 Expanded(
                                                                                                   child: Align(
-                                                                                                    alignment: AlignmentDirectional(1.00, 0.00),
+                                                                                                    alignment: AlignmentDirectional(0.00, 0.00),
                                                                                                     child: Text(
                                                                                                       getJsonField(
                                                                                                                 dataItem,
