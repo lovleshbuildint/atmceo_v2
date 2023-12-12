@@ -1721,9 +1721,15 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                                                 },
                                                                                                 child: Text(
                                                                                                   getJsonField(
-                                                                                                    dataItem,
-                                                                                                    r'''$..atmId''',
-                                                                                                  ).toString(),
+                                                                                                            dataItem,
+                                                                                                            r'''$..atmId''',
+                                                                                                          ) !=
+                                                                                                          null
+                                                                                                      ? getJsonField(
+                                                                                                          dataItem,
+                                                                                                          r'''$..atmId''',
+                                                                                                        ).toString()
+                                                                                                      : '-',
                                                                                                   textAlign: TextAlign.start,
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                         fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
@@ -1849,9 +1855,15 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                                                 padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                                 child: Text(
                                                                                                   getJsonField(
-                                                                                                    dataItem,
-                                                                                                    r'''$..bankName''',
-                                                                                                  ).toString(),
+                                                                                                            dataItem,
+                                                                                                            r'''$..bankName''',
+                                                                                                          ) !=
+                                                                                                          null
+                                                                                                      ? getJsonField(
+                                                                                                          dataItem,
+                                                                                                          r'''$..bankName''',
+                                                                                                        ).toString()
+                                                                                                      : '-',
                                                                                                   textAlign: TextAlign.start,
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                         fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
@@ -1874,9 +1886,15 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                                                 padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                                 child: Text(
                                                                                                   getJsonField(
-                                                                                                    dataItem,
-                                                                                                    r'''$..location''',
-                                                                                                  ).toString(),
+                                                                                                            dataItem,
+                                                                                                            r'''$..location''',
+                                                                                                          ) !=
+                                                                                                          null
+                                                                                                      ? getJsonField(
+                                                                                                          dataItem,
+                                                                                                          r'''$..location''',
+                                                                                                        ).toString()
+                                                                                                      : '-',
                                                                                                   textAlign: TextAlign.start,
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                         fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
@@ -1902,24 +1920,36 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                                                   child: Align(
                                                                                                     alignment: AlignmentDirectional(1.00, 0.00),
                                                                                                     child: Text(
-                                                                                                      '${getJsonField(
-                                                                                                        dataItem,
-                                                                                                        r'''$..mtdperformance''',
-                                                                                                      ).toString()}%',
+                                                                                                      getJsonField(
+                                                                                                                dataItem,
+                                                                                                                r'''$..mtdperformance''',
+                                                                                                              ) !=
+                                                                                                              null
+                                                                                                          ? '${getJsonField(
+                                                                                                              dataItem,
+                                                                                                              r'''$..mtdperformance''',
+                                                                                                            ).toString()}%'
+                                                                                                          : '-',
                                                                                                       textAlign: TextAlign.center,
                                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                             fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                                            color: functions.colorChange2(getJsonField(
-                                                                                                              dataItem,
-                                                                                                              r'''$..mtdperformance''',
-                                                                                                            )),
+                                                                                                            color: getJsonField(
+                                                                                                                      dataItem,
+                                                                                                                      r'''$..mtdperformance''',
+                                                                                                                    ) !=
+                                                                                                                    null
+                                                                                                                ? functions.colorChange2(getJsonField(
+                                                                                                                    dataItem,
+                                                                                                                    r'''$..mtdperformance''',
+                                                                                                                  ))
+                                                                                                                : Colors.black,
                                                                                                             useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                                           ),
                                                                                                     ),
                                                                                                   ),
                                                                                                 ),
-                                                                                                if ((int transactionTrend) {
-                                                                                                  return transactionTrend < 100 ? true : false;
+                                                                                                if ((int? transactionTrend) {
+                                                                                                  return transactionTrend != null && transactionTrend < 100 ? true : false;
                                                                                                 }(getJsonField(
                                                                                                   dataItem,
                                                                                                   r'''$..mtdperformance''',
@@ -1941,7 +1971,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                                                     ),
                                                                                                   ),
                                                                                                 if ((int transactionTrend) {
-                                                                                                  return transactionTrend > 100 ? true : false;
+                                                                                                  return transactionTrend != null && transactionTrend > 100 ? true : false;
                                                                                                 }(getJsonField(
                                                                                                   dataItem,
                                                                                                   r'''$..mtdperformance''',
@@ -1963,7 +1993,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                                                     ),
                                                                                                   ),
                                                                                                 if ((int transactionTrend) {
-                                                                                                  return (transactionTrend == 100) ? true : false;
+                                                                                                  return (transactionTrend != null && transactionTrend == 100) ? true : false;
                                                                                                 }(getJsonField(
                                                                                                   dataItem,
                                                                                                   r'''$..mtdperformance''',
@@ -1996,10 +2026,16 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                                             child: Padding(
                                                                                               padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                               child: Text(
-                                                                                                '${getJsonField(
-                                                                                                  dataItem,
-                                                                                                  r'''$..downTime''',
-                                                                                                ).toString()}',
+                                                                                                getJsonField(
+                                                                                                          dataItem,
+                                                                                                          r'''$..downTime''',
+                                                                                                        ) !=
+                                                                                                        null
+                                                                                                    ? getJsonField(
+                                                                                                        dataItem,
+                                                                                                        r'''$..downTime''',
+                                                                                                      ).toString()
+                                                                                                    : '-',
                                                                                                 textAlign: TextAlign.center,
                                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                       fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
@@ -2018,17 +2054,29 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                                             child: Padding(
                                                                                               padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                               child: Text(
-                                                                                                '${getJsonField(
-                                                                                                  dataItem,
-                                                                                                  r'''$..transactionTrend''',
-                                                                                                ).toString()}%',
+                                                                                                getJsonField(
+                                                                                                          dataItem,
+                                                                                                          r'''$..transactionTrend''',
+                                                                                                        ) !=
+                                                                                                        null
+                                                                                                    ? '${getJsonField(
+                                                                                                        dataItem,
+                                                                                                        r'''$..transactionTrend''',
+                                                                                                      ).toString()}%'
+                                                                                                    : '-',
                                                                                                 textAlign: TextAlign.center,
                                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                       fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                                      color: functions.colorChange(getJsonField(
-                                                                                                        dataItem,
-                                                                                                        r'''$..transactionTrend''',
-                                                                                                      )),
+                                                                                                      color: getJsonField(
+                                                                                                                dataItem,
+                                                                                                                r'''$..transactionTrend''',
+                                                                                                              ) !=
+                                                                                                              null
+                                                                                                          ? functions.colorChange(getJsonField(
+                                                                                                              dataItem,
+                                                                                                              r'''$..transactionTrend''',
+                                                                                                            ))
+                                                                                                          : Colors.black,
                                                                                                       useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                                     ),
                                                                                               ),
@@ -2044,17 +2092,29 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                                               child: Padding(
                                                                                                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
                                                                                                 child: Text(
-                                                                                                  '${getJsonField(
-                                                                                                    dataItem,
-                                                                                                    r'''$..uptimeTrend''',
-                                                                                                  ).toString()}%',
+                                                                                                  getJsonField(
+                                                                                                            dataItem,
+                                                                                                            r'''$..uptimeTrend''',
+                                                                                                          ) !=
+                                                                                                          null
+                                                                                                      ? '${getJsonField(
+                                                                                                          dataItem,
+                                                                                                          r'''$..uptimeTrend''',
+                                                                                                        ).toString()}%'
+                                                                                                      : '-',
                                                                                                   textAlign: TextAlign.center,
                                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                         fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                                        color: functions.colorChange(getJsonField(
-                                                                                                          dataItem,
-                                                                                                          r'''$..uptimeTrend''',
-                                                                                                        )),
+                                                                                                        color: getJsonField(
+                                                                                                                  dataItem,
+                                                                                                                  r'''$..uptimeTrend''',
+                                                                                                                ) !=
+                                                                                                                null
+                                                                                                            ? functions.colorChange(getJsonField(
+                                                                                                                dataItem,
+                                                                                                                r'''$..uptimeTrend''',
+                                                                                                              ))
+                                                                                                            : Colors.black,
                                                                                                         useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                                       ),
                                                                                                 ),
@@ -2080,12 +2140,18 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                                                           padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                                                                                                           child: Text(
                                                                                                             getJsonField(
-                                                                                                              dataItem,
-                                                                                                              r'''$..reason''',
-                                                                                                            ).toString().maybeHandleOverflow(
-                                                                                                                  maxChars: 36,
-                                                                                                                  replacement: '…',
-                                                                                                                ),
+                                                                                                                      dataItem,
+                                                                                                                      r'''$..reason''',
+                                                                                                                    ) !=
+                                                                                                                    null
+                                                                                                                ? getJsonField(
+                                                                                                                    dataItem,
+                                                                                                                    r'''$..reason''',
+                                                                                                                  ).toString()
+                                                                                                                : '-'.maybeHandleOverflow(
+                                                                                                                    maxChars: 36,
+                                                                                                                    replacement: '…',
+                                                                                                                  ),
                                                                                                             textAlign: TextAlign.start,
                                                                                                             maxLines: 3,
                                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -2105,13 +2171,19 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                                                         hoverColor: Colors.transparent,
                                                                                                         highlightColor: Colors.transparent,
                                                                                                         onTap: () async {
-                                                                                                          setState(() {
-                                                                                                            _model.reasons = getJsonField(
-                                                                                                              dataItem,
-                                                                                                              r'''$..reason''',
-                                                                                                            ).toString();
-                                                                                                            _model.more = true;
-                                                                                                          });
+                                                                                                          if (getJsonField(
+                                                                                                                dataItem,
+                                                                                                                r'''$..reason''',
+                                                                                                              ) !=
+                                                                                                              null) {
+                                                                                                            setState(() {
+                                                                                                              _model.reasons = getJsonField(
+                                                                                                                dataItem,
+                                                                                                                r'''$..reason''',
+                                                                                                              ).toString();
+                                                                                                              _model.more = true;
+                                                                                                            });
+                                                                                                          }
                                                                                                         },
                                                                                                         child: Text(
                                                                                                           'more',
