@@ -1949,7 +1949,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                                                   ),
                                                                                                 ),
                                                                                                 if ((int? transactionTrend) {
-                                                                                                  return transactionTrend != null && transactionTrend < 100 ? true : false;
+                                                                                                  return transactionTrend != null && transactionTrend is int && transactionTrend < 100 ? true : false;
                                                                                                 }(getJsonField(
                                                                                                   dataItem,
                                                                                                   r'''$..mtdperformance''',
@@ -1971,7 +1971,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                                                     ),
                                                                                                   ),
                                                                                                 if ((int transactionTrend) {
-                                                                                                  return transactionTrend != null && transactionTrend > 100 ? true : false;
+                                                                                                  return transactionTrend != null && transactionTrend is int && transactionTrend > 100 ? true : false;
                                                                                                 }(getJsonField(
                                                                                                   dataItem,
                                                                                                   r'''$..mtdperformance''',
@@ -1993,7 +1993,7 @@ class _DownDipWidgetState extends State<DownDipWidget>
                                                                                                     ),
                                                                                                   ),
                                                                                                 if ((int transactionTrend) {
-                                                                                                  return (transactionTrend != null && transactionTrend == 100) ? true : false;
+                                                                                                  return (transactionTrend != null && transactionTrend is int && transactionTrend == 100) ? true : false;
                                                                                                 }(getJsonField(
                                                                                                   dataItem,
                                                                                                   r'''$..mtdperformance''',
